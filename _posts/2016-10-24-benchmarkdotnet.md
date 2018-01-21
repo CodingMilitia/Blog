@@ -22,55 +22,47 @@ That was a lot of boilerplate and no one ever came around to writing a library w
 
 The way the library works, as per the documentation:
 
-
-<blockquote>BenchmarkDotNet follows the following steps to run your benchmarks:
-
+> BenchmarkDotNet follows the following steps to run your benchmarks:
+>
 > 
 > 
- 	
+>	
 >   1. `BenchmarkRunner` generates an isolated project per each benchmark method/job/params and builds it in Release mode.
 > 
- 	
+>	
 >   2. Next, we take each method/job/params combination and try to measure its performance by launching benchmark process several times (`LaunchCount`).
 > 
- 	
+>
 >   3. An invocation of the target method is an _operation_. A bunch of operation is an _iteration_. If you have a `Setup` method, it will be invoked before each iteration, but not between operations. We have the following type of iterations:
-
- 	
+>
+>	
 >     * `Pilot`: The best operation count will be chosen.
 > 
- 	
+>	
 >     * `IdleWarmup`, `IdleTarget`: BenchmarkDotNet overhead will be evaluated.
 > 
- 	
+>	
 >     * `MainWarmup`: Warmup of the main method.
 > 
- 	
+>	
 >     * `MainTarget`: Main measurements.
 > 
- 	
+>	
 >     * `Result` = `MainTarget` - ``
 > 
-
-
+>
 > 
- 	
+>	
 >   4. After all of the measurements, BenchmarkDotNet creates:
-
- 	
+>
+>	
 >     * An instance of the `Summary` class that contains all information about benchmark runs.
 > 
- 	
+>	
 >     * A set of files that contains summary in human-readable and machine-readable formats.
 > 
- 	
+>	
 >     * A set of plots.
-> 
-
-
-> 
-
-</blockquote>
 
 
 For my simple test (you can check it on [GitHub](https://github.com/joaofbantunes/BenchmarkDotNetSample)) I created a console application using .NET Core and added [BenchmarkDotNet](https://www.nuget.org/packages/BenchmarkDotNet/) and [BenchmarkDotNet.Core](https://www.nuget.org/packages/BenchmarkDotNet.Core/) Nuget packages. Then created a class with the code to benchmark.

@@ -19,12 +19,12 @@ h1, h2, h3, h4, h5, h6 {
     color: $title-color;
 }
 
-h1 a {
-    color: $title-color;
+a {
+    color: $link-color;
 }
 
-h1 a:visited {
-    color: $title-color;
+a:visited {
+    color: $link-visited-color;
 }
 
 .site-title {
@@ -34,20 +34,13 @@ h1 a:visited {
 
 .site-title:visited {
     color: $title-color;
+    font-weight: bold;
 }
 
-h2 a {
+.post-link {
     color: $title-color;
 }
 
-h2 a:visited {
+.post-link:visited {
     color: $title-color;
-}
-
-a {
-    color: $link-color;
-}
-
-a:visited {
-    color: $link-visited-color;
 }

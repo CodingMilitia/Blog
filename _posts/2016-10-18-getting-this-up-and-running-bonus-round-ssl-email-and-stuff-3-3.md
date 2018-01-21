@@ -3,10 +3,8 @@ author: johnny
 comments: true
 date: 2016-10-18 08:32:37+00:00
 layout: post
-link: https://blog.codingmilitia.com/2016/10/18/getting-this-up-and-running-bonus-round-ssl-email-and-stuff-3-3/
 slug: getting-this-up-and-running-bonus-round-ssl-email-and-stuff-3-3
 title: 'Getting this up and running – Bonus round: SSL, Email and stuff (3/3)'
-wordpress_id: 159
 categories:
 - infrastructure
 tags:
@@ -64,9 +62,9 @@ Then launched Certbot:
 
 And answered the questions the tool asked.
 
-[![Certbot - Standalone Server](https://blog.codingmilitia.com/wp-content/uploads/2016/10/08-certbot-docker-standaloneserver-1024x555.jpg)](https://blog.codingmilitia.com/wp-content/uploads/2016/10/08-certbot-docker-standaloneserver.jpg)
+[![Certbot - Standalone Server](/assets/2016/10/18/08-certbot-docker-standaloneserver.jpg)](/assets/2016/10/18/08-certbot-docker-standaloneserver.jpg)
 
-[![Certbot - Choose Domains](https://blog.codingmilitia.com/wp-content/uploads/2016/10/09-certbot-docker-choose-domains-1024x555.jpg)](https://blog.codingmilitia.com/wp-content/uploads/2016/10/09-certbot-docker-choose-domains.jpg)
+[![Certbot - Choose Domains](/assets/2016/10/18/09-certbot-docker-choose-domains.jpg)](/assets/2016/10/18/09-certbot-docker-choose-domains.jpg)
 
 If all went well, the certificates were created in `/etc/letsencrypt/archive/yourdomain.com`, but also take a look in `/etc/letsencrypt/live/yourdomain.com` where it creates a bunch of symbolic links (which unfortunately don't work well when within a container).
 

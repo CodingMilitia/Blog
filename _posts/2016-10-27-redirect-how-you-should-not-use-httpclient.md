@@ -3,10 +3,8 @@ author: johnny
 comments: true
 date: 2016-10-27 21:24:18+00:00
 layout: post
-link: https://blog.codingmilitia.com/2016/10/27/redirect-how-you-should-not-use-httpclient/
 slug: redirect-how-you-should-not-use-httpclient
 title: '[Redirect] How you should (not) use HttpClient'
-wordpress_id: 237
 categories:
 - dotnet
 - redirect
@@ -19,13 +17,13 @@ tags:
 
 So, how do you use the HttpClient (.NET)? Like this?
 
-[code lang="csharp"]
+{% highlight csharp linenos %}
 using (var client = new HttpClient())
 {
     var result = await client.GetAsync("http://xpto.com/api/stuff");
     //...
 }
-[/code]
+{% endhighlight %}
 
 Well, so do I. And it's **wrong**.
 

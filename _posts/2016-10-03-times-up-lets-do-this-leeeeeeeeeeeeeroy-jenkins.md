@@ -3,10 +3,8 @@ author: johnny
 comments: true
 date: 2016-10-03 21:19:42+00:00
 layout: post
-link: https://blog.codingmilitia.com/2016/10/03/times-up-lets-do-this-leeeeeeeeeeeeeroy-jenkins/
 slug: times-up-lets-do-this-leeeeeeeeeeeeeroy-jenkins
 title: '"Time''s up, let''s do this! Leeeeeeeeeeeeeroy Jenkins!"'
-wordpress_id: 9
 categories:
 - smalltalk
 ---

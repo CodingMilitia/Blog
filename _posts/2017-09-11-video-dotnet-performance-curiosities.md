@@ -3,10 +3,8 @@ author: johnny
 comments: true
 date: 2017-09-11 19:31:43+00:00
 layout: post
-link: https://blog.codingmilitia.com/2017/09/11/video-dotnet-performance-curiosities/
 slug: video-dotnet-performance-curiosities
 title: '[Video] .NET performance curiosities'
-wordpress_id: 321
 categories:
 - dotnet
 - video
@@ -18,7 +16,7 @@ tags:
 
 I added a new video, just talking about very simple stuff we do all the time that can have some impact on our applications performance, and the just as simple ways we can avoid these situations.
 
-https://youtu.be/w2dIePAoEOs
+{% youtube "https://youtu.be/w2dIePAoEOs" %}
 
 The source code for the sample is here at [GitHub](https://github.com/joaofbantunes/DotNetPerfCuriositiesSample)
 

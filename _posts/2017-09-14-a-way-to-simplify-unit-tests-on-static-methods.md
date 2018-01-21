@@ -3,10 +3,8 @@ author: johnny
 comments: true
 date: 2017-09-14 18:08:49+00:00
 layout: post
-link: https://blog.codingmilitia.com/2017/09/14/a-way-to-simplify-unit-tests-on-static-methods/
 slug: a-way-to-simplify-unit-tests-on-static-methods
 title: A way to simplify unit tests on static methods
-wordpress_id: 325
 categories:
 - dotnet
 - testing
@@ -38,81 +36,81 @@ Let's go for an example (way too simple, but it think it's enough): I want to im
 
 So, as I mentioned, I'd start by creating a non-static class to hold the logic.
 
-[code lang="csharp"]
+{% highlight csharp linenos %}
 using System;
 
 namespace CodingMilitia.UnitTestingStaticsSample.Library
 {
-public class CacheableStuffCalculator
-{
-private readonly ICache<int,string> _cache;
+    public class CacheableStuffCalculator
+    {
+        private readonly ICache<int,string> _cache;
 
-public CacheableStuffCalculator(ICache<int,string> cache)
-{
-_cache = cache;
-}
+        public CacheableStuffCalculator(ICache<int,string> cache)
+        {
+            _cache = cache;
+        }
 
-public string GetStringWithNLength(int n)
-{
-return _cache.GetOrAdd(n, nAgain => new string('n', nAgain));
+        public string GetStringWithNLength(int n)
+        {
+            return _cache.GetOrAdd(n, nAgain => new string('n', nAgain));
+        }
+    }
 }
-}
-}
-[/code]
+{% endhighlight %}
 
 Then we implement the static wrapper, that knows how to construct the `CacheableStuffCalculator` and provide its dependencies, and then forward any calls to it.
 
-[code lang="csharp"]
+{% highlight csharp linenos %}
 namespace CodingMilitia.UnitTestingStaticsSample.Library
 {
-public static class StaticCacheableStuffCalculatorWrapper
-{
-private static readonly CacheableStuffCalculator CalculatorInstance;
+    public static class StaticCacheableStuffCalculatorWrapper
+    {
+        private static readonly CacheableStuffCalculator CalculatorInstance;
 
-static StaticCacheableStuffCalculatorWrapper()
-{
-CalculatorInstance = new CacheableStuffCalculator(new SampleCache<int,string>());
-}
+        static StaticCacheableStuffCalculatorWrapper()
+        {
+            CalculatorInstance = new CacheableStuffCalculator(new SampleCache<int,string>());
+        }
 
-public static string GetStringWithNLength(this int n)
-{
-return CalculatorInstance.GetStringWithNLength(n);
+        public static string GetStringWithNLength(this int n)
+        {
+            return CalculatorInstance.GetStringWithNLength(n);
+        }
+    }
 }
-}
-}
-[/code]
+{% endhighlight %}
 
 With this in place, it's pretty easy to make our unit tests on `CacheableStuffCalculator` as we usually do, avoiding problems with shared state.
 
-[code lang="csharp"]
+{% highlight csharp linenos %}
 using System;
 using Xunit;
 using Moq;
 
 namespace CodingMilitia.UnitTestingStaticsSample.Library.Tests
 {
-public class GetStringWithNLengthTest
-{
-[Fact]
-public void GivenLength1ReturnsStringWithLength1()
-{
-//prepare
-var cacheMock = new Mock<ICache<int, string>>();
+    public class GetStringWithNLengthTest
+    {
+        [Fact]
+        public void GivenLength1ReturnsStringWithLength1()
+        {
+            //prepare
+            var cacheMock = new Mock<ICache<int, string>>();
 
-cacheMock.Setup(cache => cache.GetOrAdd(It.IsAny<int>(), It.IsAny<Func<int, string>>()))
-.Returns((int key, Func<int, string> valueProvider) => valueProvider(key));
+            cacheMock.Setup(cache => cache.GetOrAdd(It.IsAny<int>(), It.IsAny<Func<int, string>>()))
+                .Returns((int key, Func<int, string> valueProvider) => valueProvider(key));
 
-var calculator = new CacheableStuffCalculator(cacheMock.Object);
+            var calculator = new CacheableStuffCalculator(cacheMock.Object);
 
-//execute
-var result = calculator.GetStringWithNLength(1);
+            //execute
+            var result = calculator.GetStringWithNLength(1);
 
-//assert
-Assert.Equal(1, result.Length);
+            //assert
+            Assert.Equal(1, result.Length);
+        }
+    }
 }
-}
-}
-[/code]
+{% endhighlight %}
 
 
 ## Wrapping up

@@ -3,10 +3,8 @@ author: johnny
 comments: true
 date: 2016-10-08 15:23:32+00:00
 layout: post
-link: https://blog.codingmilitia.com/2016/10/08/getting-this-up-and-running-initial-server-setup-1-3/
 slug: getting-this-up-and-running-initial-server-setup-1-3
 title: Getting this up and running – Initial server setup (1/3)
-wordpress_id: 33
 categories:
 - infrastructure
 tags:
@@ -32,25 +30,25 @@ I guess the first thing you need to do is create an account on Linode but I'll s
 
 As you see in the following image, the first thing you do is select the capabilities and location of your virtual machine. There are a bunch of options. I went with the cheapest one as it serves my needs. For location select the one closest to where you expect your applications to be more used, to keep latency to a minimum.
 
-[![Linode - Selecting VM](https://blog.codingmilitia.com/wp-content/uploads/2016/10/00-selecting-vm-1024x555.jpg)](https://blog.codingmilitia.com/wp-content/uploads/2016/10/00-selecting-vm.jpg)
+[![Linode - Selecting VM](/assets/2016/10/08/00-selecting-vm.jpg)](/assets/2016/10/08/00-selecting-vm.jpg)
 
 After the VM is created, it will appear on your list of VMs.
 
-[![Linode - VM List](https://blog.codingmilitia.com/wp-content/uploads/2016/10/01-vm-list-1024x555.jpg)](https://blog.codingmilitia.com/wp-content/uploads/2016/10/01-vm-list.jpg)
+[![Linode - VM List](/assets/2016/10/08/01-vm-list.jpg)](/assets/2016/10/08/01-vm-list.jpg)
 
 Now click on the VM name so you can access its dashboard and install an image to it.
 
-[![Linode - VM Dashboard](https://blog.codingmilitia.com/wp-content/uploads/2016/10/02-vm-dashboard-1024x555.jpg)](https://blog.codingmilitia.com/wp-content/uploads/2016/10/02-vm-dashboard.jpg)
+[![Linode - VM Dashboard](/assets/2016/10/08/02-vm-dashboard.jpg)](/assets/2016/10/08/02-vm-dashboard.jpg)
 
 Click "Deploy an Image" to go onto the image selection and configuration.
 
-[![Linode - VM Image Selection](https://blog.codingmilitia.com/wp-content/uploads/2016/10/03-vm-image-select-1024x555.jpg)](https://blog.codingmilitia.com/wp-content/uploads/2016/10/03-vm-image-select.jpg)
+[![Linode - VM Image Selection](/assets/2016/10/08/03-vm-image-select.jpg)](/assets/2016/10/08/03-vm-image-select.jpg)
 
 There are a bunch of images to choose from. I went with Ubuntu because it's probably the more main stream Linux distribution, what results in more documentation around the _interwebs_. I didn't touch the remainder of the options (except setting the root password of course).
 
 When you click deploy it will (tan tan taaaaan)... start deploying, as you can see in the following image.
 
-[![Linode - VM Image Deplying](https://blog.codingmilitia.com/wp-content/uploads/2016/10/04-vm-image-deploying-1024x555.jpg)](https://blog.codingmilitia.com/wp-content/uploads/2016/10/04-vm-image-deploying.jpg)
+[![Linode - VM Image Deplying](/assets/2016/10/08/04-vm-image-deploying.jpg)](/assets/2016/10/08/04-vm-image-deploying.jpg)
 
 And that's it for getting the virtual machine up. Now we need to do some initial configurations, namely users and remote access configuration.
 
@@ -213,17 +211,17 @@ Now back to configuring stuff (you can also ignore my explanation and go [here](
 
 Now get back to Linode and go to "DNS Manager".
 
-[![Linode - DNS Zone List](https://blog.codingmilitia.com/wp-content/uploads/2016/10/06-dns-zone-list-1024x555.jpg)](https://blog.codingmilitia.com/wp-content/uploads/2016/10/06-dns-zone-list.jpg)
+[![Linode - DNS Zone List](/assets/2016/10/08/06-dns-zone-list.jpg)](/assets/2016/10/08/06-dns-zone-list.jpg)
 
 Then add a new domain zone and start to configure it.
 
-[![Linode - New DNS Zone](https://blog.codingmilitia.com/wp-content/uploads/2016/10/07-dns-new-zone-1024x555.jpg)](https://blog.codingmilitia.com/wp-content/uploads/2016/10/07-dns-new-zone.jpg)
+[![Linode - New DNS Zone](/assets/2016/10/08/07-dns-new-zone.jpg)](/assets/2016/10/08/07-dns-new-zone.jpg)
 
 At the top of the page you can see the nameservers you used previously. The main thing to check out are the "A/AAAA" records. That's where you associate your virtual machine's IP address (v4 and v6) with your domain. A blank record hostname means "yourdomain.com" will lead to your VM, and a hostname of "www" means "www.yourdomain.com" will lead to the VM. You get the picture, so you can simply follow this logic to add more sub-domains.
 
-[![Linode - DNS Zone Setup 1/2](https://blog.codingmilitia.com/wp-content/uploads/2016/10/08-dns-setup-zone-including-google-part1-1024x555.jpg)](https://blog.codingmilitia.com/wp-content/uploads/2016/10/08-dns-setup-zone-including-google-part1.jpg)
+[![Linode - DNS Zone Setup 1/2](/assets/2016/10/08/08-dns-setup-zone-including-google-part1.jpg)](/assets/2016/10/08/08-dns-setup-zone-including-google-part1.jpg)
 
-[![Linode - DNS Zone Setup 2/2](https://blog.codingmilitia.com/wp-content/uploads/2016/10/09-dns-setup-zone-including-google-part2-1024x555.jpg)](https://blog.codingmilitia.com/wp-content/uploads/2016/10/09-dns-setup-zone-including-google-part2.jpg)
+[![Linode - DNS Zone Setup 2/2](/assets/2016/10/08/09-dns-setup-zone-including-google-part2.jpg)](/assets/2016/10/08/09-dns-setup-zone-including-google-part2.jpg)
 
 Now for a bonus. I also have a G Suite account (previously Google Apps For Work). You can see in the two previous images that some "MX" and "CNAME" records are defined. They're all relative to the G Suite. The "MX" records are configurations relative to the email. The "CNAME" records are configurations to allow you to access the applications through your domain (e.g. calendar.yourdomain.com).
 

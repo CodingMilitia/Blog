@@ -3,10 +3,8 @@ author: johnny
 comments: true
 date: 2016-10-05 11:08:21+00:00
 layout: post
-link: https://blog.codingmilitia.com/2016/10/05/getting-this-up-and-running-intro/
 slug: getting-this-up-and-running-intro
 title: Getting this up and running - Intro
-wordpress_id: 19
 categories:
 - infrastructure
 - intro

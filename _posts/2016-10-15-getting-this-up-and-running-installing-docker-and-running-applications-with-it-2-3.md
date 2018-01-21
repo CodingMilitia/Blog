@@ -3,11 +3,9 @@ author: johnny
 comments: true
 date: 2016-10-15 08:12:28+00:00
 layout: post
-link: https://blog.codingmilitia.com/2016/10/15/getting-this-up-and-running-installing-docker-and-running-applications-with-it-2-3/
 slug: getting-this-up-and-running-installing-docker-and-running-applications-with-it-2-3
 title: Getting this up and running – Installing Docker and running applications with
   it (2/3)
-wordpress_id: 124
 categories:
 - infrastructure
 tags:

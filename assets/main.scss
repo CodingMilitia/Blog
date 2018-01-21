@@ -1,0 +1,53 @@
+---
+
+---
+@import "minima";
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+$title-color: #880000;
+$link-color: #777777;
+$link-visited-color: #999999;
+
+// Styles
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: normal;
+    background-color: #F2F2F2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $title-color;
+}
+
+h1 a {
+    color: $title-color;
+}
+
+h1 a:visited {
+    color: $title-color;
+}
+
+.site-title {
+    color: $title-color;
+    font-weight: bold;
+}
+
+.site-title:visited {
+    color: $title-color;
+}
+
+h2 a {
+    color: $title-color;
+}
+
+h2 a:visited {
+    color: $title-color;
+}
+
+a {
+    color: $link-color;
+}
+
+a:visited {
+    color: $link-visited-color;
+}

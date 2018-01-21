@@ -3,10 +3,8 @@ author: johnny
 comments: true
 date: 2016-10-24 08:37:46+00:00
 layout: post
-link: https://blog.codingmilitia.com/2016/10/24/benchmarkdotnet/
 slug: benchmarkdotnet
 title: BenchmarkDotNet - Library for benchmarking .NET code
-wordpress_id: 196
 categories:
 - dotnet
 - libraries
@@ -77,7 +75,7 @@ The way the library works, as per the documentation:
 
 For my simple test (you can check it on [GitHub](https://github.com/joaofbantunes/BenchmarkDotNetSample)) I created a console application using .NET Core and added [BenchmarkDotNet](https://www.nuget.org/packages/BenchmarkDotNet/) and [BenchmarkDotNet.Core](https://www.nuget.org/packages/BenchmarkDotNet.Core/) Nuget packages. Then created a class with the code to benchmark.
 
-[code lang="csharp"]
+{% highlight csharp linenos %}
 using BenchmarkDotNet.Attributes;
 
 namespace BenchmarkDotNetSample
@@ -97,13 +95,13 @@ namespace BenchmarkDotNetSample
         }
     }
 }
-[/code]
+{% endhighlight %}
 
 Pretty simple right? (and the code to benchmark itself couldn't be more useless, you can see what'll happen from a mile away)
 
 Now to run the benchmark, Program.cs looks like this:
 
-[code lang="csharp"]using BenchmarkDotNet.Configs;
+{% highlight csharp linenos %}using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 
@@ -117,11 +115,11 @@ namespace BenchmarkDotNetSample
         }
     }
 }
-[/code]
+{% endhighlight %}
 
 This is just running the default configuration, we can play around with the parameters, depending on what we want.
 
-[code lang="csharp"]using BenchmarkDotNet.Configs;
+{% highlight csharp linenos %}using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 
@@ -141,7 +139,7 @@ namespace BenchmarkDotNetSample
                 ));
         }
     }
-}[/code]
+}{% endhighlight %}
 
 With this changes the output doesn't change a lot, I'm just messing a bit with the iterations used to perform the benchmark (the `Mode.Throughput` isn't doing anything as it's already the default).
 

@@ -3,10 +3,8 @@ author: johnny
 comments: true
 date: 2016-11-01 18:29:00+00:00
 layout: post
-link: https://blog.codingmilitia.com/2016/11/01/boilerplate-hunting-with-castle-dynamicproxy/
 slug: boilerplate-hunting-with-castle-dynamicproxy
 title: Boilerplate hunting with Castle DynamicProxy
-wordpress_id: 220
 categories:
 - dotnet
 - libraries
@@ -32,7 +30,7 @@ I'm starting with the simplest one (at least in my barebones sample implementat
 
 The implementation of the interceptor in this case is fairly simple.
 
-[code lang="csharp"]
+{% highlight csharp linenos %}
 public class TimingInterceptor : IInterceptor
 {
     private readonly ILogger<TimingInterceptor> _logger;
@@ -61,19 +59,19 @@ public class TimingInterceptor : IInterceptor
         }
     }
 }
-[/code]
+{% endhighlight %}
 
 Ok, now to be honest, this is without considering async methods. Considering them we get something a bit more complex, you can check the complete implementation [here](https://github.com/joaofbantunes/CastleDynamicProxySample/blob/master/CastleDynamicProxySample/Timing/TimingInterceptor.cs).
 
 Now to use the interceptor we must create a proxy and provide it with an interceptor instance.
 
-[code lang="csharp"]
+{% highlight csharp linenos %}
 var proxyGenerator = new ProxyGenerator();
 var service = new StuffService();
 var timingInterceptor = new TimingInterceptor(null);
 var proxiedService = proxyGenerator
     .CreateInterfaceProxyWithTarget<IStuffService>(service, timingInterceptor);
-[/code]
+{% endhighlight %}
 
 Then to use it you just need to invoke the methods on the `proxiedService` instance instead of the `service` instance.
 
@@ -85,7 +83,7 @@ I'm not going into much detail about this one, because it has more logic related
 
 I'm not copying the whole code to the article, it has a bunch of components, so I'll just paste a simplified version (no async support) of the main class `CacheInterceptor` (in this case `SimplifiedCacheInterceptor`) so you can get a general idea of the implementation.
 
-[code lang="csharp"]
+{% highlight csharp linenos %}
 public class SimplifiedCacheInterceptor : IInterceptor
 {
     private readonly ICache _cacheProvider;
@@ -181,13 +179,13 @@ public class SimplifiedCacheInterceptor : IInterceptor
         return collection.Cast<object>().Any();
     }
 }
-[/code]
+{% endhighlight %}
 
 If you take a look at the main method `Intercept`, you'll see the logic is fairly simple. I did however extract some logic to other classes, like the cache key generation (allowing for different strategies) and the operation's cache configuration fetching (allowing the configuration to be stored in different locations, in my implementation, I used a custom attribute).
 
 For the creation of the cache key I implemented two strategies: `ConfigurationBasedCacheKeyCreationStrategy` and `ReflectionBasedCacheKeyCreationStrategy`. The former is provided with the logic to create the keys on the constructor, whilst the latter uses information about the invocation to create the key. I'll show you this second one to exemplify some of the information we have access when intercepting invocations, useful for cases like this.
 
-[code lang="csharp"]
+{% highlight csharp linenos %}
 public class ReflectionBasedCacheKeyCreationStrategy : ICacheKeyCreationStrategy
 {
     private readonly ILogger<ReflectionBasedCacheKeyCreationStrategy> _logger;
@@ -232,7 +230,7 @@ public class ReflectionBasedCacheKeyCreationStrategy : ICacheKeyCreationStrategy
         return cacheKey;
     }
 }
-[/code]
+{% endhighlight %}
 
 As you can see I'm using a good amount of info from the invocation, like the generic arguments, the `MethodInfo` for the target method, the concrete arguments and the type of the target class (the one that is being proxied to).
 

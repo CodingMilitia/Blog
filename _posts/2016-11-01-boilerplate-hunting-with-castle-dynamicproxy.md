@@ -245,53 +245,57 @@ Using BenchmarkDotNet I created some tests. You can see the results below.
 **TimingInterceptor**
 
     
-    <code>// * Summary *
-    
-    Host Process Environment Information:
-    BenchmarkDotNet.Core=v0.9.9.0
-    OS=Windows
-    Processor=?, ProcessorCount=8
-    Frequency=2740595 ticks, Resolution=364.8843 ns, Timer=TSC
-    CLR=CORE, Arch=64-bit ? [RyuJIT]
-    GC=Concurrent Workstation
-    dotnet cli version: 1.0.0-preview2-003133
-    
-    Type=TimingBenchmark  Mode=Throughput
-    
-                          Method |        Median |     StdDev |
-    ---------------------------- |-------------- |----------- |
-                    DynamicProxy |   211.0648 ns |  1.0241 ns |
-               DynamicProxyAsync |   316.2422 ns |  4.2481 ns |
-     DynamicProxyWithResultAsync | 2,057.3374 ns | 28.1047 ns |
-                       Decorator |    50.2034 ns |  0.6157 ns |
-                  DecoratorAsync |   116.6465 ns |  1.4087 ns |
-        DecoratorWithResultAsync |   133.0129 ns |  1.9464 ns |</code>
+~~~~
+// * Summary *
+
+Host Process Environment Information:
+BenchmarkDotNet.Core=v0.9.9.0
+OS=Windows
+Processor=?, ProcessorCount=8
+Frequency=2740595 ticks, Resolution=364.8843 ns, Timer=TSC
+CLR=CORE, Arch=64-bit ? [RyuJIT]
+GC=Concurrent Workstation
+dotnet cli version: 1.0.0-preview2-003133
+
+Type=TimingBenchmark  Mode=Throughput
+
+                        Method |        Median |     StdDev |
+  ---------------------------- |-------------- |----------- |
+                  DynamicProxy |   211.0648 ns |  1.0241 ns |
+             DynamicProxyAsync |   316.2422 ns |  4.2481 ns |
+   DynamicProxyWithResultAsync | 2,057.3374 ns | 28.1047 ns |
+                     Decorator |    50.2034 ns |  0.6157 ns |
+                DecoratorAsync |   116.6465 ns |  1.4087 ns |
+      DecoratorWithResultAsync |   133.0129 ns |  1.9464 ns |
+~~~~
 
 
 **CacheInterceptor**
 
     
-    <code>// * Summary *
-    
-    Host Process Environment Information:
-    BenchmarkDotNet.Core=v0.9.9.0
-    OS=Windows
-    Processor=?, ProcessorCount=8
-    Frequency=2740595 ticks, Resolution=364.8843 ns, Timer=TSC
-    CLR=CORE, Arch=64-bit ? [RyuJIT]
-    GC=Concurrent Workstation
-    dotnet cli version: 1.0.0-preview2-003133
-    
-    Type=CacheBenchmark  Mode=Throughput
-    
-                           Method |         Median |        StdDev |
-    ----------------------------- |--------------- |-------------- |
-           ProxyWithGeneratedKeys | 42,423.5197 ns | 2,722.0279 ns |
-          ProxyWithConfiguredKeys | 26,318.9704 ns |   270.8096 ns |
-      ProxyWithGeneratedKeysAsync | 48,604.7269 ns |   787.1521 ns |
-     ProxyWithConfiguredKeysAsync | 32,578.6152 ns | 1,675.7112 ns |
-                        Decorator |    407.3324 ns |    16.3274 ns |
-                   DecoratorAsync |    524.9182 ns |     5.6404 ns |</code>
+~~~~
+// * Summary *
+
+Host Process Environment Information:
+BenchmarkDotNet.Core=v0.9.9.0
+OS=Windows
+Processor=?, ProcessorCount=8
+Frequency=2740595 ticks, Resolution=364.8843 ns, Timer=TSC
+CLR=CORE, Arch=64-bit ? [RyuJIT]
+GC=Concurrent Workstation
+dotnet cli version: 1.0.0-preview2-003133
+
+Type=CacheBenchmark  Mode=Throughput
+
+                        Method |         Median |        StdDev |
+ ----------------------------- |--------------- |-------------- |
+        ProxyWithGeneratedKeys | 42,423.5197 ns | 2,722.0279 ns |
+       ProxyWithConfiguredKeys | 26,318.9704 ns |   270.8096 ns |
+   ProxyWithGeneratedKeysAsync | 48,604.7269 ns |   787.1521 ns |
+  ProxyWithConfiguredKeysAsync | 32,578.6152 ns | 1,675.7112 ns |
+                     Decorator |    407.3324 ns |    16.3274 ns |
+                DecoratorAsync |    524.9182 ns |     5.6404 ns |
+~~~~
 
 
 The best benchmark result to get insight of the impact of using the DynamicProxy is the first one on the `TimingInterceptor` results. It's the one that has less logic on the interceptor. The others, as we should expect, as complexity rises so does the execution time. The best example of this is the `CacheInterceptor` when it needs to create _auto-magically_ the cache key, resorting to reflection multiple times.
@@ -304,6 +308,6 @@ At the end of the day it comes down to whether the speed decrease is acceptable 
 
 So we can see that in terms of code that can be reused, we've got a win. It does, depending on what we want to do with the proxy, come with a penalty in terms of performance. It will depend on the type of system we're building if the impact is acceptable or not.
 
-Any suggetions and/or improvements, don't hesitate, shout about it!
+Any suggestions and/or improvements, don't hesitate, shout about it!
 
 Cyaz

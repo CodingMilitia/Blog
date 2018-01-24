@@ -138,24 +138,26 @@ With this changes the output doesn't change a lot, I'm just messing a bit with 
 The final console output from the above sample, disregarding all that's being written while performing the benchmarks, is something like this (besides some HTML, CSV and markdown files that are also generated):
 
     
-    <code>// * Summary *
-    
-    Host Process Environment Information:
-    BenchmarkDotNet.Core=v0.9.9.0
-    OS=Windows
-    Processor=?, ProcessorCount=8
-    Frequency=2740584 ticks, Resolution=364.8857 ns, Timer=TSC
-    CLR=CORE, Arch=64-bit ? [RyuJIT]
-    GC=Concurrent Workstation
-    dotnet cli version: 1.0.0-preview2-003133
-    
-    Type=GetNameBenchmark  Mode=Throughput  LaunchCount=2
-    WarmupCount=10  TargetCount=200
-    
-         Method |     Median |    StdDev |
-    ----------- |----------- |---------- |
-     Reflection | 16.0348 ns | 0.7896 ns |
-         NameOf |  0.0005 ns | 0.0147 ns |</code>
+~~~~
+// * Summary *
+
+Host Process Environment Information:
+BenchmarkDotNet.Core=v0.9.9.0
+OS=Windows
+Processor=?, ProcessorCount=8
+Frequency=2740584 ticks, Resolution=364.8857 ns, Timer=TSC
+CLR=CORE, Arch=64-bit ? [RyuJIT]
+GC=Concurrent Workstation
+dotnet cli version: 1.0.0-preview2-003133
+
+Type=GetNameBenchmark  Mode=Throughput  LaunchCount=2
+WarmupCount=10  TargetCount=200
+
+        Method |     Median |    StdDev |
+   ----------- |----------- |---------- |
+    Reflection | 16.0348 ns | 0.7896 ns |
+        NameOf |  0.0005 ns | 0.0147 ns |
+~~~~
 
 
 There a lot more options than the ones I used, like running the benchmarks in different framework versions, different runtimes, different jits, export in different formats and more. You can check all the options at the [docs](https://perfdotnet.github.io/BenchmarkDotNet/Configuration.htm).

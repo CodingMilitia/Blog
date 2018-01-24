@@ -63,18 +63,20 @@ To start with, you need an SSH client to connect to your virtual machine. The us
 SSH into the virtual machine.
 
     
-    <code>C:\ssh root@178.79.182.22
-    root@178.79.182.22's password:
-    Welcome to Ubuntu 16.04 LTS (GNU/Linux 4.6.5-x86_64-linode71 x86_64)
-    
-    * Documentation: https://help.ubuntu.com/
-    
-    The programs included with the Ubuntu system are free software;
-    the exact distribution terms for each program are described in the
-    individual files in /usr/share/doc/*/copyright.
-    
-    Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
-    applicable law.</code>
+~~~~
+C:\ssh root@178.79.182.22
+root@178.79.182.22's password:
+Welcome to Ubuntu 16.04 LTS (GNU/Linux 4.6.5-x86_64-linode71 x86_64)
+
+* Documentation: https://help.ubuntu.com/
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+~~~~
 
 
 (Sorry for the Windows command line/bash mix in the same snippet :P Only the first line is Windows)
@@ -87,13 +89,17 @@ Now it's time to setup a user, we don't want to play around using the root user.
 Create a new user for you.
 
     
-    <code>root@ubuntu:~$adduser johnny</code>
+~~~~
+root@ubuntu:~$adduser johnny
+~~~~
 
 
 Then give it root privileges.
 
     
-    <code>root@ubuntu:~$usermod -aG sudo johnny</code>
+~~~~
+root@ubuntu:~$usermod -aG sudo johnny
+~~~~
 
 
 
@@ -108,26 +114,34 @@ To begin with, we need to generate a key pair. I already had one generated so I 
 For the server to acknowledge our private key, we need to add to it the public key associated with the user. To begin with, temporarily switch to the new user.
 
     
-    <code>root@ubuntu:~$su - johnny</code>
+~~~~
+root@ubuntu:~$su - johnny
+~~~~
 
 
 Then create the folder to keep the key and adjust its permissions.
 
     
-    <code>johnny@ubuntu:~$mkdir ~/.ssh
-    johnny@ubuntu:~$chmod 700 ~/.ssh</code>
+~~~~
+johnny@ubuntu:~$mkdir ~/.ssh
+johnny@ubuntu:~$chmod 700 ~/.ssh
+~~~~
 
 
 Now create a file in this folder to store the public key (I use Nano file editor to do that).
 
     
-    <code>johnny@ubuntu:~$nano ~/.ssh/authorized_keys</code>
+~~~~
+johnny@ubuntu:~$nano ~/.ssh/authorized_keys
+~~~~
 
 
 Paste the public key here and then restrict the permissions of the file.
 
     
-    <code>johnny@ubuntu:~$chmod 600 ~/.ssh/authorized_keys</code>
+~~~~
+johnny@ubuntu:~$chmod 600 ~/.ssh/authorized_keys
+~~~~
 
 
 You can then type `exit` to get back to the root user.
@@ -137,21 +151,27 @@ With the SSH keys configured we can now disable password authentication, so you
 Open the SSH daemon configuration file.
 
     
-    <code>johnny@ubuntu:~$sudo nano /etc/ssh/sshd_config</code>
+~~~~
+johnny@ubuntu:~$sudo nano /etc/ssh/sshd_config
+~~~~
 
 
 Then set `PasswordAuthentication` to `no`.
 Make sure the following values are set this way.
 
     
-    <code>PubkeyAuthentication yes
-    ChallengeResponseAuthentication no</code>
+~~~~
+PubkeyAuthentication yes
+ChallengeResponseAuthentication no
+~~~~
 
 
 Now reload the SSH daemon so the new configuration can take place.
 
     
-    <code>johnny@ubuntu:~$sudo systemctl reload sshd</code>
+~~~~
+johnny@ubuntu:~$sudo systemctl reload sshd
+~~~~
 
 
 
@@ -164,38 +184,48 @@ To wrap up this initial virtual machine setup, let's put the firewall to work.
 We need to make sure SSH is allowed through the firewall so we can connect. The following command shows you the applications that are available to be configured in the firewall.
 
     
-    <code>johnny@ubuntu:~$sudo ufw app list
-    Available applications:
-      OpenSSH</code>
+~~~~
+johnny@ubuntu:~$sudo ufw app list
+Available applications:
+    OpenSSH
+~~~~
 
 
 Then we make sure SSH is allowed.
 
     
-    <code>johnny@ubuntu:~$sudo ufw allow OpenSSH</code>
+~~~~
+johnny@ubuntu:~$sudo ufw allow OpenSSH
+~~~~
 
 
 So you can enable the firewall.
 
     
-    <code>johnny@ubuntu:~$sudo ufw enable</code>
+~~~~
+johnny@ubuntu:~$sudo ufw enable
+~~~~
 
 
 And check its status.
 
     
-    <code>johnny@ubuntu:~$sudo ufw status</code>
+~~~~
+johnny@ubuntu:~$sudo ufw status
+~~~~
 
 
 The output should be something like this:
 
     
-    <code>Status: active
-    
-    To                         Action      From
-    --                         ------      ----
-    OpenSSH                    ALLOW       Anywhere
-    OpenSSH (v6)               ALLOW       Anywhere (v6)</code>
+~~~~
+Status: active
+
+To                         Action      From
+--                         ------      ----
+OpenSSH                    ALLOW       Anywhere
+OpenSSH (v6)               ALLOW       Anywhere (v6)
+~~~~
 
 
 

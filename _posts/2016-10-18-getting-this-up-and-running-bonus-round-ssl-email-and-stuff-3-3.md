@@ -48,16 +48,20 @@ Now getting really down to business, I used the Docker way of getting the cert
 So I stopped the NGINX container:
 
     
-    <code>docker stop nginx</code>
+~~~~
+docker stop nginx
+~~~~
 
 
 Then launched Certbot:
 
     
-    <code>sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
-                -v "/etc/letsencrypt:/etc/letsencrypt" \
-                -v "/var/lib/letsencrypt:/var/lib/letsencrypt" \
-                quay.io/letsencrypt/letsencrypt:latest certonly</code>
+~~~~
+sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
+            -v "/etc/letsencrypt:/etc/letsencrypt" \
+            -v "/var/lib/letsencrypt:/var/lib/letsencrypt" \
+            quay.io/letsencrypt/letsencrypt:latest certonly
+~~~~
 
 
 And answered the questions the tool asked.
@@ -71,7 +75,9 @@ If all went well, the certificates were created in `/etc/letsencrypt/archive/you
 In the meantime we can get NGINX back up if we don't want it down while we prepare for the new certificates (for instance if you have more applications using it as reverse proxy).
 
     
-    <code>docker start nginx</code>
+~~~~
+docker start nginx
+~~~~
 
 
 
@@ -84,29 +90,31 @@ Now that we have the certificates we have to configure NGINX to use them. No co
 The configration file will now look like this:
 
     
-    <code>server {
-           listen         80;
-           server_name    yourdomain.com www.yourdomain.com;
-           return         301 https://$server_name$request_uri;
-    }
-    
-    server {
-        listen         443 ssl;
+~~~~
+server {
+        listen         80;
         server_name    yourdomain.com www.yourdomain.com;
-    
-        add_header Strict-Transport-Security "max-age=31536000"; 
-    
-        ssl_certificate /etc/nginx/ssl/yourdomain.com/fullchain.pem;
-        ssl_certificate_key /etc/nginx/ssl/yourdomain.com/privkey.pem;
-    
-        location / {
-            proxy_pass http://your-blog:80;
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-        }
-    }</code>
+        return         301 https://$server_name$request_uri;
+}
+
+server {
+    listen         443 ssl;
+    server_name    yourdomain.com www.yourdomain.com;
+
+    add_header Strict-Transport-Security "max-age=31536000"; 
+
+    ssl_certificate /etc/nginx/ssl/yourdomain.com/fullchain.pem;
+    ssl_certificate_key /etc/nginx/ssl/yourdomain.com/privkey.pem;
+
+    location / {
+        proxy_pass http://your-blog:80;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+~~~~
 
 
 So, what happened there? The location part of the configuration stays the same, pointing to the WordPress container, just moved to another server section. The server keeps listening on port 80 (standard HTTP) but instead of serving the content directly it redirects to HTTPS (on port 443). Listening on port 443, we specify it should use SSL, then we add some more arguments, enabling [Strict Transport Security](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet) and providing the certificate to be used (public and private parts).
@@ -114,13 +122,17 @@ So, what happened there? The location part of the configuration stays the same, 
 Now we need to remove the NGINX container and start it again so we can map the certificate's location as a volume.
 
     
-    <code>docker stop nginx
-    docker rm nginx</code>
+~~~~
+docker stop nginx
+docker rm nginx
+~~~~
 
 
 
     
-    <code>docker run --name nginx --network=isolated_nw -v /etc/letsencrypt/archive:/etc/nginx/ssl -v /conf/nginx/sites-enabled/:/etc/nginx/sites-enabled/ -v /conf/nginx/sites-available/:/etc/nginx/sites-available/ -v /conf/nginx/nginx.conf:/etc/nginx/nginx.conf:ro  --restart unless-stopped -p 80:80 -p 443:443 -d nginx</code>
+~~~~
+docker run --name nginx --network=isolated_nw -v /etc/letsencrypt/archive:/etc/nginx/ssl -v /conf/nginx/sites-enabled/:/etc/nginx/sites-enabled/ -v /conf/nginx/sites-available/:/etc/nginx/sites-available/ -v /conf/nginx/nginx.conf:/etc/nginx/nginx.conf:ro  --restart unless-stopped -p 80:80 -p 443:443 -d nginx
+~~~~
 
 
 And that should be it, the site is now using HTTPS.
@@ -140,7 +152,9 @@ Whilst running WordPress on a Docker container I came across an issue where the 
 I used [Postfix](http://www.postfix.org/) which has some ready to fire up Docker images around the [hub](https://hub.docker.com/search/?isAutomated=0&isOfficial=0&page=1&pullCount=0&q=postfix&starCount=0). It has a bunch of options I have not yet explored, but it just works out of the box, running the following command:
 
     
-    <code>docker run --name postfix --network=isolated_nw -e maildomain=yourdomain.com -e smtp_user=AN_SMTP_USER:AN_SMTP_PASSWORD -d catatnight/postfix</code>
+~~~~
+docker run --name postfix --network=isolated_nw -e maildomain=yourdomain.com -e smtp_user=AN_SMTP_USER:AN_SMTP_PASSWORD -d catatnight/postfix
+~~~~
 
 
 Then we need to configure WordPress to use it. Now this is done using WordPress administration area. I installed [SMTP Mailer](https://wordpress.org/plugins/smtp-mailer/) plugin and then configured it to use Postfix.

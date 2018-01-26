@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<h2>Archives</h2>
+
+<h3>Categories</h3>
+<ul class="category-list">
+    {% for category in site.categories %}
+	<a href="/category/{{ category | first | slugify }}">{{ category | first }}</a>
+    {% endfor %}
+</ul>
+
+<h3>Tags</h3>
+<ul class="tag-list">
+    {% for tag in site.tags %}
+	<a href="/tag/{{ tag | first | slugify }}">{{ tag | first }}</a>
+    {% endfor %}
+</ul>
+
+<h3>By date</h3>
+<ul class="archive-post-list">
+    {% for post in site.posts %}
+    {% unless post.next %}
+        <h4>{{ post.date | date: '%Y %B' }}</h4>
+    {% else %}
+        {% capture year %}{{ post.date | date: '%Y %b' }}{% endcapture %}
+        {% capture nyear %}{{ post.next.date | date: '%Y %b' }}{% endcapture %}
+        {% if year != nyear %}
+        <h4>{{ post.date | date: '%Y %B' }}</h4>
+        {% endif %}
+    {% endunless %}
+
+    <li><a class="archive-post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>

@@ -44,3 +44,11 @@ a:visited {
 .post-link:visited {
     color: $title-color;
 }
+
+.archive-post-list {
+    list-style-type: none;
+}
+
+.archive-post-list h4 {
+    margin-bottom: 0px;
+}

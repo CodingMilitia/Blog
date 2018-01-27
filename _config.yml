@@ -19,12 +19,15 @@ description: >- # this means to ignore newlines until "baseurl:"
   Code, headbang, grouch, repeat!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://blog.codingmilitia.com" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: joaofbantunes
-github_username:  joaofbantunes
 disqus:
   shortname: codingmilitia
+# author: joaofbantunes
 
-rss: rss
+# social_sites:
+#   twitter: joaofbantunes
+#   github:  joaofbantunes
+
+# rss: rss
 
 # Build settings
 markdown: kramdown

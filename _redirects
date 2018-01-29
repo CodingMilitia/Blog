@@ -1,0 +1,2 @@
+# Redirect domain aliases to primary domain
+https://www.blog.codingmilitia.com/* https://blog.codingmilitia.com/:splat 301!

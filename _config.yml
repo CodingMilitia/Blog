@@ -41,7 +41,7 @@ plugins:
 paginate: 10
   
 
-permalink: /:year/:month/:day/:title.html
+permalink: /:year/:month/:day/:title
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

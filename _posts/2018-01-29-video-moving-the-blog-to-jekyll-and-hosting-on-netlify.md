@@ -5,6 +5,7 @@ layout: post
 title: '[Video] Moving the blog to Jekyll and hosting on Netlify'
 categories:
 - infrastructure
+- video
 tags:
 - jekyll
 - netlify

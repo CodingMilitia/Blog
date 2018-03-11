@@ -19,6 +19,8 @@ h1, h2, h3, h4, h5, h6 {
     color: $title-color;
 }
 
+
+
 a {
     color: $link-color;
 }
@@ -61,4 +63,42 @@ a:visited {
     .site-nav {
         background-color: #CCCCCC;
     }
+}
+
+.post-content {
+    margin-bottom: 30px;
+}
+
+.post-content h1 {
+    font-size: 32px;
+}
+@media screen and (max-width: 800px) {
+    .post-content h1 {
+        font-size: 30px;
+   }
+}
+
+.post-content h2 {
+    font-size: 28px;
+}
+@media screen and (max-width: 800px) {
+    .post-content h2 {
+        font-size: 26px;
+   }
+}
+.post-content h3 {
+    font-size: 22px;
+}
+@media screen and (max-width: 800px) {
+    .post-content h3 {
+        font-size: 18px;
+   }
+}
+.post-content h4 {
+    font-size: 16px;
+}
+@media screen and (max-width: 800px) {
+    .post-content h4 {
+        font-size: 14px;
+   }
 }

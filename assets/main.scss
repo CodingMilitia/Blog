@@ -27,11 +27,19 @@ h2 a {
     color: $title-color;
 }
 
+h3 a {
+    color: $title-color;
+}
+
 h1 a:visited {
     color: $title-color;
 }
 
 h2 a:visited {
+    color: $title-color;
+}
+
+h3 a:visited {
     color: $title-color;
 }
 

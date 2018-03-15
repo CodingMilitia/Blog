@@ -17,7 +17,7 @@ I'm not going for a pros and cons approach, those were already written plenty of
 
 ## The less fantasised part of "work from anywhere"
 
-What triggered todays ideas had nothing to do with remote work, development or any of the usual stuff. I was simply watching the news and a piece on a less populous village started. It got me thinking.
+What triggered today's ideas had nothing to do with remote work, development or any of the usual stuff. I was simply watching the news and a piece on a less populous village started. It got me thinking.
 
 Here in my country (and probably in others, but I'll talk about what I know) we have a problem with the desertification of some (a lot?) of areas. Basically there are villages that have very few inhabitants, once upon a time there were people there, but with the lack of jobs and way to provide to oneself, people relocated to other parts of the country or other countries. 
 

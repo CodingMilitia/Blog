@@ -3,6 +3,7 @@
 ---
 @import "minima";
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://use.fontawesome.com/releases/v5.0.8/css/all.css');
 
 $title-color: #880000;
 $link-color: #777777;
@@ -19,28 +20,17 @@ h1, h2, h3, h4, h5, h6 {
     color: $title-color;
 }
 
-h1 a {
+h1 a, h1 a:visited, h2 a, h2 a:visited, h3 a, h3 a:visited {
     color: $title-color;
 }
 
-h2 a {
-    color: $title-color;
-}
-
-h3 a {
-    color: $title-color;
-}
-
-h1 a:visited {
-    color: $title-color;
-}
-
-h2 a:visited {
-    color: $title-color;
-}
-
-h3 a:visited {
-    color: $title-color;
+h2 a:before {
+    content: "\f0c1";
+    font-family: "Font Awesome 5 Free";
+    display: inline-block;
+    font-weight: 600;
+    padding-right: 0.2em;
+    font-size: 24px;
 }
 
 a {

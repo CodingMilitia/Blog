@@ -1,7 +1,7 @@
 ---
 author: johnny
 comments: true
-date: 2018-03-25 11:00:00+00:00
+date: 2018-03-25 11:00:00+01:00
 layout: post
 title: '[Redirect Magazine] #3 - DDD with EF Core, ASP.NET Core, JS and .NET perf and some logging bits'
 categories:

@@ -1,7 +1,7 @@
 ---
 author: johnny
 comments: true
-date: 2018-04-08 10:00:00+01:00
+date: 2018-04-15 10:00:00+01:00
 layout: post
 title: '[Redirect Magazine] #6 - Code reviews, side projects, functions as dependencies and performance profiling'
 categories:

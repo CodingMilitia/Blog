@@ -11,6 +11,8 @@ tags:
 - services
 ---
 
+[![C# + gRPC](/assets/2018/04/15/csharp-grpc.jpg)](/assets/2018/04/15/csharp-grpc.jpg)
+
 I started this little proof of concept with the simple goal of creating some helper functions to aid in hosting gRPC services in .NET in a way similar to ASP.NET applications. However, while scouring the web, reading some articles to try and find the best way to do that, I came across this [article](http://bartoszsypytkowski.com/c-using-grpc-with-custom-serializers/) and realized I could get a little more creative - maybe I ended up being too much, but at least I had fun along the way :).
 
 I’ll try to cover the main bits of what I’ve done here, but if something you find important to get the whole picture that isn't here, please tell me and I’ll try to improve the explanation.

@@ -3,6 +3,8 @@ author: johnny
 date: 2018-04-21 19:00:00+01:00
 layout: post
 title: 'Using cancellation tokens on ASP.NET Core MVC actions'
+summary: 'Cancellation tokens are really useful when working with async stuff, and this is the simplest way of getting some nice free benefits in ASP.NET applications using them.'
+image: '/assets/2018/04/21/2018-04-21-aspnet-ct-cover.jpg'
 categories:
 - dotnet
 - video

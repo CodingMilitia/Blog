@@ -76,7 +76,7 @@ public async Task<IActionResult> GetAnotherThingAsync(CancellationToken ct)
 }
 {% endhighlight %}
 
-In this case, besides passing the `CancellationToken` along to other asynchronous methods - in this case a `Task.Delay` but the result of the cancellation is similar to the `HttpClient.GetAsync` - I'm checking the token to see if it was signaled for cancellation. So, imagine the `Task.Delay` method didn't accept a `CancellationToken` as an argument, when the next iteration of the loop, the code would check for a cancellation request and would throw an exception (in this case an `OperationCanceledException`).
+In this case, besides passing the `CancellationToken` along to other asynchronous methods - in this case a `Task.Delay` but the result of the cancellation is similar to the `HttpClient.GetAsync` - I'm checking the token to see if it was signaled for cancellation. So, imagine the `Task.Delay` method didn't accept a `CancellationToken` as an argument, on the next loop iteration the code would check for a cancellation request and would throw an exception (in this case an `OperationCanceledException`).
 
 This may be useful in scenarios we're not doing async work that nevertheless takes a while to complete and would benefit from being cancellable along the way.
 

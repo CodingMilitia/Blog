@@ -24,7 +24,7 @@ h1 a, h1 a:visited, h2 a, h2 a:visited, h3 a, h3 a:visited {
     color: $title-color;
 }
 
-h2 a:before {
+h2 a:before :not(.no-anchor-icon) {
     content: "\f0c1";
     font-family: "Font Awesome 5 Free";
     display: inline-block;

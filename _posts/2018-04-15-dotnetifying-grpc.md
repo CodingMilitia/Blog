@@ -3,6 +3,8 @@ author: johnny
 date: 2018-04-15 20:40:00+01:00
 layout: post
 title: 'Dotnetifying gRPC'
+summary: 'Very likely over-engineered PoC on making development of gRPC service development more dotnetish.'
+image: '/assets/2018/04/15/csharp-grpc.jpg'
 categories:
 - dotnet
 tags:

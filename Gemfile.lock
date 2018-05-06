@@ -72,7 +72,6 @@ GEM
       thread_safe (~> 0.1)
     tzinfo-data (1.2018.3)
       tzinfo (>= 1.0.0)
-    wdm (0.1.1)
 
 PLATFORMS
   ruby
@@ -86,7 +85,6 @@ DEPENDENCIES
   jekyll-youtube
   minima (~> 2.5.0)
   tzinfo-data
-  wdm (>= 0.1.0)
 
 BUNDLED WITH
    1.16.1

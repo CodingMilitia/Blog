@@ -79,3 +79,5 @@ jekyll-archives:
 google_analytics: UA-58690226-4
 
 title_image: '/assets/logo.jpg'
+
+include: [_redirects]

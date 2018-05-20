@@ -27,7 +27,7 @@ Starting with some history and getting into the latest additions, a nice little 
 Some recommendations on taking care of the dependency injection configuration code.
 <br/>
 ## ["How to Use Git Merge [the Correct Way] "](https://dev.to/neshaz/how-to-use-git-merge-the-correctway-25pd)
-Introductory article on using Git merge. Although I normally also develop using feature branches, I'd like to add that some prefer avoiding it, as sometimes the merges can be a pain when there are conflicts, using other strategies like feature toggles can be useful. The video I added below about Spotify's engineering culture mentions this, as well as some comments on the article.
+Introductory article on using Git merge. Although I normally also develop using feature branches, I'd like to add that some prefer avoiding it, as sometimes the merges can be a pain when there are conflicts. Using other strategies like feature toggles can be useful. The video I added below about Spotify's engineering culture mentions this, as well as some comments on the article.
 <br/>
 # Videos
 ## ["Spotify Engineering Culture Full Video (Agile Enterprise Transition with Scrum and Kanban)"](https://www.youtube.com/watch?v=R2o-Xm3UVjs)

@@ -29,7 +29,8 @@ The first thing to do is defining the service, much like one would create a WSDL
 {% highlight protobuf linenos %}
 syntax = "proto3";
 
-option csharp_namespace = "CodingMilitia.GrpcExtensions.ScopedRequestHandlerSample.Generated";
+option csharp_namespace 
+    = "CodingMilitia.GrpcExtensions.ScopedRequestHandlerSample.Generated";
 
 service SampleService {
     rpc Send(SampleRequest) returns (SampleResponse) {}
@@ -65,7 +66,10 @@ One of the generated classes for our sample is the `SampleServiceClient`. To use
 {% highlight csharp linenos %}
 services.AddSingleton(_ =>
 {
-    var channel = new Channel("127.0.0.1:5050", ChannelCredentials.Insecure);
+    var channel = new Channel(
+        "127.0.0.1:5050", 
+        ChannelCredentials.Insecure
+    );
     return new SampleServiceClient(channel);
 });
 {% endhighlight %}
@@ -82,37 +86,46 @@ The service implementation is the same for the most part, as we must inherit fro
 So to reduce the need fiddle around with DI when we should be focusing on the service’s logic, the best way is probably to implement the service logic in another class, which in the simplest case (like this unary method case we’re using as sample) doesn’t even need to know anything about gRPC.
 
 {% highlight csharp linenos %}
-namespace CodingMilitia.GrpcExtensions.ScopedRequestHandlerSample.Server
+public class RandomSampleServiceLogic : ISampleServiceLogic
 {
-    public class RandomSampleServiceLogic : ISampleServiceLogic
+    private static readonly Random RandomSource = new Random();
+    private readonly ILogger<RandomSampleServiceLogic> _logger;
+
+    public RandomSampleServiceLogic(
+        ILogger<RandomSampleServiceLogic> logger
+    )
     {
-        private static readonly Random RandomSource = new Random();
-        private readonly ILogger<RandomSampleServiceLogic> _logger;
+        _logger = logger;
+    }
+    public async Task<SampleResponse> SendAsync(
+        SampleRequest request, 
+        CancellationToken ct
+    )
+    {
+        _logger.LogInformation(
+            "Received request with value {requestValue}",
+            request.Value
+        );
+        
+        _logger.LogInformation(
+            "Simulating slow operation with a delay for request value {requestValue}", 
+            request.Value
+        );
 
-        public RandomSampleServiceLogic(ILogger<RandomSampleServiceLogic> logger)
+        await Task.Delay(1000, ct);
+
+        var response = new SampleResponse
         {
-            _logger = logger;
-        }
-        public async Task<SampleResponse> SendAsync(SampleRequest request, CancellationToken ct)
-        {
-            _logger.LogInformation("Received request with value {requestValue}", request.Value);
-            
-            _logger.LogInformation("Simulating slow operation with a delay for request value {requestValue}", request.Value);
-            await Task.Delay(1000, ct);
+            Value = request.Value + RandomSource.Next()
+        };
 
-            var response = new SampleResponse
-            {
-                Value = request.Value + RandomSource.Next()
-            };
+        _logger.LogInformation(
+            "Random response to request with value {requestValue} will be {responseValue}",
+            request.Value,
+            response.Value
+        );
 
-            _logger.LogInformation(
-                "Random response to request with value {requestValue} will be {responseValue}",
-                request.Value,
-                response.Value
-            );
-
-            return response;
-        }
+        return response;
     }
 }
 {% endhighlight %}
@@ -122,25 +135,33 @@ Notice the `CancellationToken` is passed as an argument to `SendAsync` method, a
 Then the service implementation to be hosted can be something like the following.
 
 {% highlight csharp linenos %}
-namespace CodingMilitia.GrpcExtensions.ScopedRequestHandlerSample.Server
+public class AnotherSampleServiceImplementation : SampleServiceBase
 {
-    public class AnotherSampleServiceImplementation : SampleServiceBase
+    private readonly IServiceScopeFactory _scopeFactory;
+
+    public AnotherSampleServiceImplementation(
+        IServiceScopeFactory scopeFactory
+    )
     {
-        private readonly IServiceScopeFactory _scopeFactory;
+        _scopeFactory = scopeFactory;
+    }
 
-        public AnotherSampleServiceImplementation(IServiceScopeFactory scopeFactory)
+    public override async Task<Generated.SampleResponse> Send(
+        Generated.SampleRequest request, 
+        ServerCallContext context
+    )
+    {
+        using (var scope = _scopeFactory.CreateScope())
         {
-            _scopeFactory = scopeFactory;
-        }
+            var service = scope.ServiceProvider
+                .GetRequiredService<ISampleServiceLogic>();
 
-        public override async Task<Generated.SampleResponse> Send(Generated.SampleRequest request, ServerCallContext context)
-        {
-            using (var scope = _scopeFactory.CreateScope())
-            {
-                var service = scope.ServiceProvider.GetRequiredService<ISampleServiceLogic>();
-                var response = await service.SendAsync(request.ToInternalRequest(), context.CancellationToken);
-                return response.ToExternalResponse();
-            }
+            var response = await service.SendAsync(
+                request.ToInternalRequest(), 
+                context.CancellationToken
+            );
+
+            return response.ToExternalResponse();
         }
     }
 }
@@ -149,25 +170,32 @@ namespace CodingMilitia.GrpcExtensions.ScopedRequestHandlerSample.Server
 Alternatively I created a `IScopedExecutor` that can be used to abstract away this, but in reality there’s not that much need for it.
 
 {% highlight csharp linenos %}
-namespace CodingMilitia.GrpcExtensions.ScopedRequestHandlerSample.Server
+public class SampleServiceImplementation : SampleServiceBase
 {
-    public class SampleServiceImplementation : SampleServiceBase
+    private readonly IScopedExecutor _scopedExecutor;
+
+    public SampleServiceImplementation(
+        IScopedExecutor scopedExecutor
+    )
     {
-        private readonly IScopedExecutor _scopedExecutor;
+        _scopedExecutor = scopedExecutor;
+    }
 
-        public SampleServiceImplementation(IScopedExecutor scopedExecutor)
-        {
-            _scopedExecutor = scopedExecutor;
-        }
-
-        public override async Task<Generated.SampleResponse> Send(Generated.SampleRequest request, ServerCallContext context)
-        {
-            return await _scopedExecutor.ExecuteAsync<ISampleServiceLogic, Generated.SampleResponse>(async (service) =>
-            {
-                var response = await service.SendAsync(request.ToInternalRequest(), context.CancellationToken);
-                return response.ToExternalResponse();
-            });
-        }
+    public override async Task<Generated.SampleResponse> Send(
+        Generated.SampleRequest request, 
+        ServerCallContext context
+    )
+    {
+        return await _scopedExecutor
+            .ExecuteAsync<ISampleServiceLogic, Generated.SampleResponse>(
+                async (service) =>
+                {
+                    var response = await service.SendAsync(
+                        request.ToInternalRequest(), 
+                        context.CancellationToken);
+                        
+                    return response.ToExternalResponse();
+                });
     }
 }
 {% endhighlight %}
@@ -181,60 +209,67 @@ To start with, how to host the service? The simpler way is probably just to inst
 So with this in mind I started by implementing the `GrpcBackgroundService` class. This is a pretty simple class, receiving the `Server` instances to host in the constructor, so only one `GrpcBackgroundService` instance is needed even if we want to host multiple services in multiple `Server`s (we can also host multiple services in a single `Server`).
 
 {% highlight csharp linenos %}
-namespace CodingMilitia.GrpcExtensions.Hosting.Internal
+internal class GrpcBackgroundService : IHostedService
 {
-    internal class GrpcBackgroundService : IHostedService
+    private readonly IEnumerable<Server> _servers;
+    private readonly ILogger<GrpcBackgroundService> _logger;
+
+    public GrpcBackgroundService(
+        IEnumerable<Server> servers, 
+        ILogger<GrpcBackgroundService> logger
+    )
     {
-        private readonly IEnumerable<Server> _servers;
-        private readonly ILogger<GrpcBackgroundService> _logger;
+        _servers = servers;
+        _logger = logger;
+    }
 
-        public GrpcBackgroundService(IEnumerable<Server> servers, ILogger<GrpcBackgroundService> logger)
+    public Task StartAsync(CancellationToken cancellationToken)
+    {
+        _logger.LogDebug("Starting gRPC background service");
+
+        foreach(var server in _servers)
         {
-            _servers = servers;
-            _logger = logger;
+            StartServer(server);
         }
 
-        public Task StartAsync(CancellationToken cancellationToken)
-        {
-            _logger.LogDebug("Starting gRPC background service");
+        _logger.LogDebug("gRPC background service started");
 
-            foreach(var server in _servers)
-            {
-                StartServer(server);
-            }
-
-            _logger.LogDebug("gRPC background service started");
-
-            return Task.CompletedTask;
-        }
+        return Task.CompletedTask;
+    }
 
 
 
-        public async Task StopAsync(CancellationToken cancellationToken)
-        {
-            _logger.LogDebug("Stopping gRPC background service");
+    public async Task StopAsync(CancellationToken cancellationToken)
+    {
+        _logger.LogDebug("Stopping gRPC background service");
 
-            var shutdownTasks = _servers.Select(server => server.ShutdownAsync()).ToList();
-            
-            await Task.WhenAll(shutdownTasks).ConfigureAwait(false);
+        var shutdownTasks = _servers
+            .Select(server => server.ShutdownAsync()).ToList();
+        
+        await Task.WhenAll(shutdownTasks).ConfigureAwait(false);
 
-            _logger.LogDebug("gRPC background service stopped");
-        }
+        _logger.LogDebug("gRPC background service stopped");
+    }
 
-        private void StartServer(Server server)
-        {
-            _logger.LogDebug(
-                "Starting gRPC server listening on: {hostingEndpoints}",
-                string.Join("; ", server.Ports.Select(p => $"{p.Host}:{p.BoundPort}"))
-            );
+    private void StartServer(Server server)
+    {
+        _logger.LogDebug(
+            "Starting gRPC server listening on: {hostingEndpoints}",
+            string.Join(
+                "; ", 
+                server.Ports.Select(p => $"{p.Host}:{p.BoundPort}")
+            )
+        );
 
-            server.Start();
+        server.Start();
 
-            _logger.LogDebug(
-                "Started gRPC server listening on: {hostingEndpoints}",
-                string.Join("; ", server.Ports.Select(p => $"{p.Host}:{p.BoundPort}"))
-            );
-        }
+        _logger.LogDebug(
+            "Started gRPC server listening on: {hostingEndpoints}",
+            string.Join(
+                "; ", 
+                server.Ports.Select(p => $"{p.Host}:{p.BoundPort}")
+            )
+        );
     }
 }
 {% endhighlight %}
@@ -252,7 +287,8 @@ public static IServiceCollection AddGrpcServer<TService>(
     where TService : class
 {
     return serviceCollection.AddGrpcServer(
-            serverConfigurator: configurator => configurator.AddService<TService>(),
+            serverConfigurator: 
+                configurator => configurator.AddService<TService>(),
             ports: ports,
             channelOptions: channelOptions
         );
@@ -282,13 +318,22 @@ public static IServiceCollection AddGrpcServer(
 
     if (!ports.Any())
     {
-        throw new ArgumentException(message: "At least one port must be specified", paramName: nameof(ports));
+        throw new ArgumentException(
+            message: "At least one port must be specified", 
+            paramName: nameof(ports)
+        );
     }
 
-    var builder = new GrpcServerBuilder(serviceCollection, ports, channelOptions);
+    var builder = new GrpcServerBuilder(
+        serviceCollection, 
+        ports, 
+        channelOptions
+    );
     serverConfigurator(builder);
     builder.AddServerToServiceCollection();
-    serviceCollection.AddGrpcBackgroundServiceIfNotAlreadyRegistered();
+    serviceCollection
+        .AddGrpcBackgroundServiceIfNotAlreadyRegistered();
+
     return serviceCollection;
 }
 
@@ -301,96 +346,139 @@ Regarding the methods signature, the first one is a version that registers a sin
 With all the required dependencies, an instance of the `IGrpcServerBuilder` implementation (`GrpcServerBuilder`) is created and takes care of building a `Server` to be hosted by the application.
 
 {% highlight csharp linenos %}
-namespace CodingMilitia.GrpcExtensions.Hosting.Internal
+internal class GrpcServerBuilder : IGrpcServerBuilder
 {
-    internal class GrpcServerBuilder : IGrpcServerBuilder
+    private readonly IServiceCollection _serviceCollection;
+    private readonly IEnumerable<ServerPort> _ports;
+    private readonly IEnumerable<ChannelOption> _channelOptions;
+    private readonly List<ServiceRegistrationInfo> _registrationInfo;
+    private bool _built;
+
+    public GrpcServerBuilder(
+        IServiceCollection serviceCollection, 
+        IEnumerable<ServerPort> ports,
+        IEnumerable<ChannelOption> channelOptions
+    )
     {
-        private readonly IServiceCollection _serviceCollection;
-        private readonly IEnumerable<ServerPort> _ports;
-        private readonly IEnumerable<ChannelOption> _channelOptions;
-        private readonly List<ServiceRegistrationInfo> _registrationInfo;
-        private bool _built;
-
-        public GrpcServerBuilder(IServiceCollection serviceCollection, IEnumerable<ServerPort> ports, IEnumerable<ChannelOption> channelOptions)
+        if (ports == null)
         {
-            if (ports == null)
-            {
-                throw new ArgumentNullException(nameof(ports));
-            }
-
-            if (!ports.Any())
-            {
-                throw new ArgumentException(message: "At least one port must be specified", paramName: nameof(ports));
-            }
-
-            _serviceCollection = serviceCollection;
-            _ports = ports;
-            _channelOptions = channelOptions ?? Array.Empty<ChannelOption>();
-            _registrationInfo = new List<ServiceRegistrationInfo>();
-            _built = false;
-
+            throw new ArgumentNullException(nameof(ports));
         }
 
-        public IGrpcServerBuilder AddService<TService>() where TService : class
+        if (!ports.Any())
         {
-            ThrowIfServerAlreadyBuilt();
-
-            var serviceType = typeof(TService);
-            if (_serviceCollection.Any(s => s.ServiceType.Equals(serviceType)) || _registrationInfo.Any(s => s.ServiceType.Equals(serviceType)))
-            {
-                throw new InvalidOperationException($"{typeof(TService).Name} is already registered in the container.");
-            }
-
-            _serviceCollection.AddSingleton<TService>();
-            var serviceBinder = ServerBuildHelpers.GetServiceBinder<TService>();
-            //Storing a lambda to use later, because this avoids reflection tricks later when we don't have access to the TService type so easily to invoke the binder.
-            //Not invoking it immediately to keep it lazy.
-            _registrationInfo.Add(new ServiceRegistrationInfo(serviceType, appServices => serviceBinder(appServices.GetRequiredService<TService>())));
-
-            return this;
+            throw new ArgumentException(
+                message: "At least one port must be specified", 
+                paramName: nameof(ports)
+            );
         }
 
-        public void AddServerToServiceCollection()
+        _serviceCollection = serviceCollection;
+        _ports = ports;
+        _channelOptions = 
+            channelOptions ?? Array.Empty<ChannelOption>();
+        _registrationInfo = new List<ServiceRegistrationInfo>();
+        _built = false;
+
+    }
+
+    public IGrpcServerBuilder AddService<TService>() 
+        where TService : class
+    {
+        ThrowIfServerAlreadyBuilt();
+
+        var serviceType = typeof(TService);
+        if (
+            _serviceCollection.Any(
+                s => s.ServiceType.Equals(serviceType)
+            ) 
+            || 
+            _registrationInfo.Any(
+                s => s.ServiceType.Equals(serviceType)
+            )
+        )
         {
-            ThrowIfServerAlreadyBuilt();
-
-            if (_registrationInfo.Count == 0)
-            {
-                throw new InvalidOperationException("Must add at least one service for a server to be created.");
-            }
-
-            _serviceCollection.AddSingleton(appServices =>
-           {
-               var server = _channelOptions.Count() > 0 ? new Server(_channelOptions) : new Server();
-               server.AddPorts(_ports);
-               foreach (var serviceDefinition in _registrationInfo)
-               {
-                   server.AddServices(serviceDefinition.ServiceDefinitionProvider(appServices));
-               }
-               return server;
-           });
-
-            _built = true;
+            throw new InvalidOperationException(
+                $"{typeof(TService).Name} is already registered in the container."
+            );
         }
 
-        private void ThrowIfServerAlreadyBuilt()
+        _serviceCollection.AddSingleton<TService>();
+        var serviceBinder = ServerBuildHelpers.GetServiceBinder<TService>();
+
+        //Storing a lambda to use later, because this avoids 
+        //reflection tricks later when we don't have access 
+        //to the TService type so easily to invoke the binder.
+
+        //Also, not invoking it immediately to keep it lazy.
+        
+        _registrationInfo.Add(
+            new ServiceRegistrationInfo(
+                serviceType, 
+                appServices 
+                    => serviceBinder(appServices.GetRequiredService<TService>())
+            )
+        );
+
+        return this;
+    }
+
+    public void AddServerToServiceCollection()
+    {
+        ThrowIfServerAlreadyBuilt();
+
+        if (_registrationInfo.Count == 0)
         {
-            if (_built)
-            {
-                throw new InvalidOperationException("Server already build.");
-            }
+            throw new InvalidOperationException(
+                "Must add at least one service for a server to be created."
+            );
         }
 
-        private class ServiceRegistrationInfo
+        _serviceCollection.AddSingleton(appServices =>
         {
-            public Type ServiceType { get; }
-            public Func<IServiceProvider, ServerServiceDefinition> ServiceDefinitionProvider { get; }
+            var server = _channelOptions.Count() > 0 
+                ? new Server(_channelOptions) 
+                : new Server();
 
-            public ServiceRegistrationInfo(Type serviceType, Func<IServiceProvider, ServerServiceDefinition> serviceDefinitionProvider)
+            server.AddPorts(_ports);
+
+            foreach (var serviceDefinition in _registrationInfo)
             {
-                ServiceType = serviceType;
-                ServiceDefinitionProvider = serviceDefinitionProvider;
+                server.AddServices(
+                    serviceDefinition
+                        .ServiceDefinitionProvider(appServices)
+                );
             }
+            return server;
+        });
+
+        _built = true;
+    }
+
+    private void ThrowIfServerAlreadyBuilt()
+    {
+        if (_built)
+        {
+            throw new InvalidOperationException(
+                "Server already build."
+            );
+        }
+    }
+
+    private class ServiceRegistrationInfo
+    {
+        public Type ServiceType { get; }
+        public Func<IServiceProvider, ServerServiceDefinition> 
+            ServiceDefinitionProvider { get; }
+
+        public ServiceRegistrationInfo(
+            Type serviceType, 
+            Func<IServiceProvider, ServerServiceDefinition> 
+                serviceDefinitionProvider
+        )
+        {
+            ServiceType = serviceType;
+            ServiceDefinitionProvider = serviceDefinitionProvider;
         }
     }
 }
@@ -399,7 +487,9 @@ namespace CodingMilitia.GrpcExtensions.Hosting.Internal
 The `AddService` method makes some initial validity checks, registers the services in the DI container and stores some information to use when finally building the service. The most important part of this information to use when building the `Server` is what I called the `serviceBinder`, which is used to bind the service implementation to the `ServerServiceDefinition` that is registered to the `Server`. We can see this method in the generated `SampleService` class with the name `BindService`. Initially I was passing this method as an argument to the `AddGrpcServer` methods, but then I went ahead and created an helper to fetch this for me given the service implementation class.
 
 {% highlight csharp linenos %}
-//Using reflection tricks and assumptions on the way the core gRPC lib works so, if Google changes this, it'll break and only be noticed at runtime :)
+//Using reflection tricks and assumptions on the way 
+//the core gRPC lib works so, if Google changes this, 
+//it'll break and only be noticed at runtime :)
 public static Func<TService, ServerServiceDefinition> GetServiceBinder<TService>()
 {
     var serviceType = typeof(TService);
@@ -407,25 +497,42 @@ public static Func<TService, ServerServiceDefinition> GetServiceBinder<TService>
     var serviceDefinitionType = typeof(ServerServiceDefinition);
 
     var serviceContainerType = baseServiceType.DeclaringType;
-    var methods = serviceContainerType.GetMethods(BindingFlags.Public | BindingFlags.Static);
+    var methods = serviceContainerType
+        .GetMethods(BindingFlags.Public | BindingFlags.Static);
+
     var binder =
         (from m in methods
             let parameters = m.GetParameters()
             where m.Name.Equals("BindService")
                 && parameters.Length == 1
-                && parameters.First().ParameterType.Equals(baseServiceType)
+                && parameters.First()
+                    .ParameterType.Equals(baseServiceType)
                 && m.ReturnType.Equals(serviceDefinitionType)
             select m)
     .SingleOrDefault();
 
     if (binder == null)
     {
-        throw new InvalidOperationException($"Could not find service binder for provided service {serviceType.Name}");
+        throw new InvalidOperationException(
+            $"Could not find service binder for provided service {serviceType.Name}"
+        );
     }
 
     var serviceParameter = Expression.Parameter(serviceType);
-    var invocation = Expression.Call(null, binder, new[] { serviceParameter });
-    var func = Expression.Lambda<Func<TService, ServerServiceDefinition>>(invocation, false, new[] { serviceParameter }).Compile();
+
+    var invocation = Expression.Call(
+        null, 
+        binder, 
+        new[] { serviceParameter }
+    );
+
+    var func = Expression
+        .Lambda<Func<TService, ServerServiceDefinition>>(
+            invocation, 
+            false, 
+            new[] { serviceParameter }
+        ).Compile();
+
     return func;
 }
 {% endhighlight %}
@@ -443,46 +550,68 @@ Everything that’s being added to DI is using the singleton scope, as we’ll o
 Now to configure the application, it’s just a matter of creating an `HostBuilder` and using the previously described extensions to configure the services.
 
 {% highlight csharp linenos %}
-namespace CodingMilitia.GrpcExtensions.ScopedRequestHandlerSample
+class Program
 {
-    class Program
+    static async Task Main(string[] args)
     {
-        static async Task Main(string[] args)
+        var serverHostBuilder = new HostBuilder()
+        .ConfigureAppConfiguration((hostingContext, config) =>
         {
-            var serverHostBuilder = new HostBuilder()
-            .ConfigureAppConfiguration((hostingContext, config) =>
+            //...
+        })
+        .ConfigureLogging((context, logging) =>
+        {
+            //...
+        })
+        .ConfigureServices((hostContext, services) =>
+        {
+            services
+            .AddScoped<
+                ISampleServiceLogic, 
+                RandomSampleServiceLogic
+            >()
+            .AddScopedExecutor()
+            //the most "magic" solution
+            .AddGrpcServer<SampleServiceImplementation>(
+                new[] { 
+                    new ServerPort(
+                        "127.0.0.1", 
+                        5050, 
+                        ServerCredentials.Insecur
+                    e) 
+                }
+            )
+            //a more manual solution if the flexibility is required
+            //also not using the IScopedExecutor (although it could) 
+            //for a more traditional example
+            .AddGrpcServer(appServices =>
             {
-                //...
-            })
-            .ConfigureLogging((context, logging) =>
-            {
-                //...
-            })
-            .ConfigureServices((hostContext, services) =>
-            {
-                services
-                .AddScoped<ISampleServiceLogic, RandomSampleServiceLogic>()
-                .AddScopedExecutor()
-                //the most "magic" solution
-                .AddGrpcServer<SampleServiceImplementation>(
-                    new[] { new ServerPort("127.0.0.1", 5050, ServerCredentials.Insecure) }
-                )
-                //a more manual solution if the flexibility is required
-                //also not using the IScopedExecutor (although it could) for a more traditional example
-                .AddGrpcServer(appServices =>
+                var scopeFactory 
+                    = appServices.GetRequiredService<
+                        IServiceScopeFactory
+                    >();
+                var server = new Grpc.Core.Server
                 {
-                    var scopeFactory = appServices.GetRequiredService<IServiceScopeFactory>();
-                    var server = new Grpc.Core.Server
-                    {
-                        Services = { SampleService.BindService(new AnotherSampleServiceImplementation(scopeFactory)) },
-                        Ports = { new ServerPort("127.0.0.1", 5051, ServerCredentials.Insecure) }
-                    };
-                    return server;
-                });
+                    Services = { 
+                        SampleService.BindService(
+                            new AnotherSampleServiceImplementation(
+                                scopeFactory
+                            )
+                        ) 
+                    },
+                    Ports = { 
+                        new ServerPort(
+                            "127.0.0.1", 
+                            5051, 
+                            ServerCredentials.Insecure
+                        ) 
+                    }
+                };
+                return server;
             });
+        });
 
-            await serverHostBuilder.RunConsoleAsync();
-        }
+        await serverHostBuilder.RunConsoleAsync();
     }
 }
 {% endhighlight %}

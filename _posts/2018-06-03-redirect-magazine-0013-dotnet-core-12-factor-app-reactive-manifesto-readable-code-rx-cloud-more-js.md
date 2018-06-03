@@ -36,7 +36,7 @@ Focused on Angular but applies to pretty much any technology, some tips to get r
 ## ["Cloud-Scale Event Processing with the Reactive Extensions (Rx) - Bart De Smet"](https://vimeo.com/132192255)
 Really nice talk on using Rx (.NET) in cloud scenarios, showing a bunch of really cool stuff like composing an event stream query locally to run in the cloud.
 
-<iframe src="https://player.vimeo.com/video/132192255" width="740" height="416.25" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/132192255" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 <br/>
 ## ["ASYNC + AWAIT (or How To Write Syncronous Looking Code, Without The Wait)"](https://youtu.be/BDqZLfBFeGk)
 Using async await in JavaScript (very similar to .NET).

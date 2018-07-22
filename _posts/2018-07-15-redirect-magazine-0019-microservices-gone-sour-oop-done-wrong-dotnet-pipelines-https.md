@@ -1,7 +1,7 @@
 ---
 author: johnny
 comments: true
-date: 2018-07-08 19:30:00+01:00
+date: 2018-07-15 19:30:00+01:00
 layout: post
 title: "[Redirect Magazine] #19 - Microservices gone sour, OOP done wrong, more on .NET's new Pipelines and HTTPS all the things"
 categories:

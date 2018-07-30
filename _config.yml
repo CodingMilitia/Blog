@@ -38,6 +38,7 @@ plugins:
   - jekyll-youtube
   - jekyll-archives
   - jekyll-paginate
+  - jekyll-gist
 
 paginate: 10
   

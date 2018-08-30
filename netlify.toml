@@ -3,7 +3,6 @@
 from = "/h/*"
 to = "https://www.youtube.com/watch?v=082C6EdNvus"
 status = 303
-force = true
 
 # Redirect domain aliases to primary domain
 [[redirects]]

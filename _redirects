@@ -1,7 +1,0 @@
-# Annoy the bots
-/h/* https://www.youtube.com/watch?v=082C6EdNvus 303!
-
-# Redirect domain aliases to primary domain
-https://www.blog.codingmilitia.com/* https://blog.codingmilitia.com/:splat 301!
-https://codingmilitia.com/* https://blog.codingmilitia.com/:splat 301!
-https://www.codingmilitia.com/* https://blog.codingmilitia.com/:splat 301!

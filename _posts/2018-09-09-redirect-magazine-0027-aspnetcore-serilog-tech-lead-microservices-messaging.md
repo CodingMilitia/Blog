@@ -17,7 +17,7 @@ tags:
 
 Another week, another bunch of links!
 
-I think I'll reduce the cadence from now on though, to do a little more of my own posts/videos and not have the blog almost exclusively filled with links.
+I think I'll reduce the cadence from now on though, to do a little more of my own posts/videos and not have the blog almost exclusively filled with links 🙂.
 
 # Articles
 ## ["Writing logs to Elasticsearch with Fluentd using Serilog in ASP.NET Core"](https://andrewlock.net/writing-logs-to-elasticsearch-with-fluentd-using-serilog-in-asp-net-core/)

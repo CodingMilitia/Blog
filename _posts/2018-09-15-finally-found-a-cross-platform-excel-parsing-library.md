@@ -12,7 +12,6 @@ tags:
 - excel
 ---
 
-# replace image
 [![Excel](/assets/2018/09/15/exceldatareader-post-image.jpg)](/assets/2018/09/15/exceldatareader-post-image.jpg)
 
 ## Intro

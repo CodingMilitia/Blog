@@ -4,6 +4,12 @@ from = "/h/*"
 to = "https://www.youtube.com/watch?v=082C6EdNvus"
 status = 302
 
+# youtube shortcut
+[[redirects]]
+from = "/youtube"
+to = "https://www.youtube.com/channel/UCWwlh9aTz2pGn6q2__yMn_g"
+status = 307
+
 # Redirect domain aliases to primary domain
 [[redirects]]
 from = "https://www.blog.codingmilitia.com/*"

@@ -2,7 +2,7 @@
 author: johnny
 date: 2018-10-06 18:20:00+01:00
 layout: post
-title: 'Episode 001 - The Reference Project - ASP.NET Core: From 0 to overkill'
+title: "Episode 001 - The Reference Project - ASP.NET Core: From 0 to overkill"
 summary: "In this post, we'll take a look at the objective of the reference, before starting to code like there's no tomorrow without anyone understanding the context."
 image: '/assets/2018/10/06/aspnet-core-from-zero-to-overkill-e001.jpg'
 categories:

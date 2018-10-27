@@ -75,7 +75,7 @@ Now that we made a really simple middleware, let's take a look at another builti
 
 Remember, the order in which the middlewares are registered is important, so given that we used the static files middleware before the custom response header one, the header won't be present when we fetch static files, only when the request reaches MVC.
 
-In the end , the `Configure` method looks like this:
+In the end, the `Configure` method looks like this:
 
 {% gist 7c96f7b2f6bd55be83b6d7c2236e0bef %}
 

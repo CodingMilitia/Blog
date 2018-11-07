@@ -7,7 +7,7 @@ status = 302
 # youtube shortcut
 [[redirects]]
 from = "/youtube"
-to = "https://www.youtube.com/channel/UCWwlh9aTz2pGn6q2__yMn_g"
+to = "https://www.youtube.com/c/CodingMilitia"
 status = 302
 
 # Redirect domain aliases to primary domain

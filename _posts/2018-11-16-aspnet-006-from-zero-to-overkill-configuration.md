@@ -3,7 +3,7 @@ author: johnny
 date: 2018-11-16 19:00:00+01:00
 layout: post
 title: "Episode 006 - Configuration - ASP.NET Core: From 0 to overkill"
-summary: "In this episode we take a look at configuration in ASP.NET Core, the possible sources, how to read from them, the options pattern (and how to avoid it), wrapping up with development time secrets."
+summary: "In this episode we take a look at configuration in ASP.NET Core, the possible sources, how to read from them, the options pattern, wrapping up with development time secrets."
 image: '/assets/2018/11/16/aspnet-core-from-zero-to-overkill-e006.jpg'
 categories:
 - fromzerotooverkill
@@ -12,7 +12,7 @@ tags:
 - aspnetcore
 ---
 
-In this episode we take a look at configuration in ASP.NET Core, the possible sources, how to read from them, the options pattern (and how to avoid it), wrapping up with development time secrets.
+In this episode we take a look at configuration in ASP.NET Core, the possible sources, how to read from them, the options pattern, wrapping up with development time secrets.
 
 For the walk-through you can check the next video, but if you prefer a quick read, skip to the written synthesis.
 

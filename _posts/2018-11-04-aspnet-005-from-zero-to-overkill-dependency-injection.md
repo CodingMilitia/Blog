@@ -1,6 +1,6 @@
 ---
 author: johnny
-date: 2018-11-04 11:30:00+01:00
+date: 2018-11-04 11:30:00+00:00
 layout: post
 title: "Episode 005 - Dependency Injection - ASP.NET Core: From 0 to overkill"
 summary: "In this episode we go a little bit deeper into dependency injection, extracting our logic from the controller and into a service."

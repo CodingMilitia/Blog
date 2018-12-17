@@ -1,6 +1,6 @@
 ---
 author: johnny
-date: 2018-11-21 19:30:00+01:00
+date: 2018-11-21 19:30:00+00:00
 layout: post
 title: "Episode 007 - Logging - ASP.NET Core: From 0 to overkill"
 summary: "In this episode we take a look at logging in ASP.NET Core, the builtin support and providers, as well as using third party implementations, namely NLog."

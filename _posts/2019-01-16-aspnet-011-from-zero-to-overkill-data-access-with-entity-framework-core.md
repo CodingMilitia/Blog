@@ -13,7 +13,8 @@ tags:
 ---
 
 In this episode, we replace our current groups "persistence" with an actual database, accessing it with Entity Framework Core.
-For the walk-through you can check the next couple of videos, but if you prefer a quick read, skip to the written synthesis.
+
+For the walk-through you can check the next video, but if you prefer a quick read, skip to the written synthesis.
 
 {% youtube "https://youtu.be/gb2SOufcbQg" %}
 

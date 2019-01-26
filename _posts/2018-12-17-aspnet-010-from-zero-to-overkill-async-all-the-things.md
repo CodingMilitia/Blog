@@ -13,6 +13,7 @@ tags:
 ---
 
 In this episode, we take a look at using async await in ASP.NET Core, why it's important, the happy path and some sad paths, along with some interesting bits.
+
 For the walk-through you can check the next couple of videos, but if you prefer a quick read, skip to the written synthesis.
 
 Main video:

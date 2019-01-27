@@ -7,31 +7,47 @@ layout: default
         <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
         <p class="post-meta">
             <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-                {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %} {{ page.date | date: date_format }}
+                {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %} {{ page.date | date:
+                date_format }}
             </time>
             {% if page.author %} •
             <span itemprop="author" itemscope itemtype="http://schema.org/Person">
                 <span class="p-author h-card" itemprop="name">{{ page.author }}</span>
             </span>
             {% endif %}
-        </p>        
+        </p>
     </header>
 
     <div class="post-content e-content" itemprop="articleBody">
         {{ content }}
     </div>
+
     <p class="post-meta">
-        Categories: 
+        Categories:
         {% for category in page.categories %}
-            <a href="/category/{{ category | slugify }}">{{ category }}</a>
+        <a href="/category/{{ category | slugify }}">{{ category }}</a>
         {% endfor %}
     </p>
     <p class="post-meta">
-        Tags: 
+        Tags:
         {% for tag in page.tags %}
-            <a href="/tag/{{ tag | slugify }}">{{ tag }}</a>
+        <a href="/tag/{{ tag | slugify }}">{{ tag }}</a>
         {% endfor %}
     </p>
+    <div>
+        <span>
+            Share this article on:
+            <a class="btn share-button" href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ page.url | absolute_url | uri_escape }}&via=joaofbantunes">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a class="btn share-button" href="https://www.linkedin.com/shareArticle?mini=true&title={{ page.title | uri_escape }}&url={{ page.url | absolute_url | uri_escape }}">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a class="btn share-button" href="mailto:?Subject={{ page.title | uri_escape }}&Body={{ page.title | uri_escape }}%0A{{ page.url | absolute_url | uri_escape }}">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </span>
+    </div>
     {% if site.disqus.shortname %} {% include disqus_comments.html %} {% endif %}
 
     <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>

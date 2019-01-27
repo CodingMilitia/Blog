@@ -37,15 +37,12 @@ layout: default
     <div>
         <span>
             Share this article on:
-            <a class="btn share-button" href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ page.url | absolute_url | uri_escape }}&via=joaofbantunes">
-                <i class="fab fa-twitter"></i>
-            </a>
+            <a class="btn share-button" href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ page.url | absolute_url | uri_escape }}&via=joaofbantunes"><i
+                    class="fab fa-twitter"></i></a>
             <a class="btn share-button" href="https://www.linkedin.com/shareArticle?mini=true&title={{ page.title | uri_escape }}&url={{ page.url | absolute_url | uri_escape }}">
-                <i class="fab fa-linkedin"></i>
-            </a>
+                <i class="fab fa-linkedin"></i></a>
             <a class="btn share-button" href="mailto:?Subject={{ page.title | uri_escape }}&Body={{ page.title | uri_escape }}%0A{{ page.url | absolute_url | uri_escape }}">
-                <i class="fas fa-envelope"></i>
-            </a>
+                <i class="fas fa-envelope"></i></a>
         </span>
     </div>
     {% if site.disqus.shortname %} {% include disqus_comments.html %} {% endif %}

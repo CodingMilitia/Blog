@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2019-02-02 19:20:00+00:00
 layout: post
 title: "Episode 013 - Starting the frontend with Vue.js - ASP.NET Core: From 0 to overkill"

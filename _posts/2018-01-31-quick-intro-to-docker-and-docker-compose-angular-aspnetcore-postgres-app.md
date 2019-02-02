@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2018-01-31 19:30:00+00:00
 layout: post
 title: 'Quick intro to Docker and Docker Compose: Angular, ASP.NET Core and Postgres app'

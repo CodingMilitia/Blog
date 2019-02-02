@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2018-11-16 19:00:00+00:00
 layout: post
 title: "Episode 006 - Configuration - ASP.NET Core: From 0 to overkill"

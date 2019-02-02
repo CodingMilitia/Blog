@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2018-07-30 20:00:02+01:00
 layout: post
 title: 'Creating a CI/CD pipeline for a .NET library: Part 3 - Building on AppVeyor and Travis CI'

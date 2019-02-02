@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2018-04-21 19:00:00+01:00
 layout: post
 title: 'Using cancellation tokens on ASP.NET Core MVC actions'

@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2018-07-30 20:00:01+01:00
 layout: post
 title: 'Creating a CI/CD pipeline for a .NET library: Part 2 - Defining the build with Cake and publishing to NuGet'

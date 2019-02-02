@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2018-10-07 10:00:00+01:00
 layout: post
 title: "Episode 002 - Project structure plus first application - ASP.NET Core: From 0 to overkill"

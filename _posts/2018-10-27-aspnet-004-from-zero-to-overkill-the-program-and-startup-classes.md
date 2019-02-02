@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2018-10-27 21:45:00+01:00
 layout: post
 title: "Episode 004 - The Program and Startup classes - ASP.NET Core: From 0 to overkill"

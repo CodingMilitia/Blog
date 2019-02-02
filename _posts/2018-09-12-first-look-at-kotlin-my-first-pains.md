@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2018-09-12 19:45:00+01:00
 layout: post
 title: 'First look at Kotlin - my first pains'

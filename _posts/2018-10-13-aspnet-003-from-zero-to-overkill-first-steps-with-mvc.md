@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2018-10-13 16:30:00+01:00
 layout: post
 title: "Episode 003 - First steps with MVC - ASP.NET Core: From 0 to overkill"

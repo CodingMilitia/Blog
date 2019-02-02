@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2018-08-19 09:50:00+01:00
 layout: post
 title: '[Video] Creating a CI/CD pipeline for a .NET library'

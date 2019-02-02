@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2019-01-26 17:30:00+00:00
 layout: post
 title: "Episode 012 - Move to a Web API - ASP.NET Core: From 0 to overkill"

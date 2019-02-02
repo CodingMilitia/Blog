@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2019-01-16 20:45:00+00:00
 layout: post
 title: "Episode 011 - Data access with Entity Framework Core - ASP.NET Core: From 0 to overkill"

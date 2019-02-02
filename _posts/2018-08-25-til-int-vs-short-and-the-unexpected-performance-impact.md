@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2018-08-25 12:30:00+01:00
 layout: post
 title: '[TIL] int vs short and the (unexpected) performance impact'

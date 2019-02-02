@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2018-10-06 18:20:00+01:00
 layout: post
 title: "Episode 001 - The Reference Project - ASP.NET Core: From 0 to overkill"

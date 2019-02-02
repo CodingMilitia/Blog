@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2018-04-28 12:00:00+01:00
 layout: post
 title: "Using .NET's HttpClient without following redirects"

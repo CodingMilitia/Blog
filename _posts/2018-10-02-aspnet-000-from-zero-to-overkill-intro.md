@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2018-10-02 22:40:00+01:00
 layout: post
 title: 'ASP.NET Core: From 0 to overkill - Intro'

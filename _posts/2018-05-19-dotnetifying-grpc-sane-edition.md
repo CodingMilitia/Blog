@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2018-05-19 12:00:00+01:00
 layout: post
 title: 'Dotnetifying gRPC: Sane Edition'

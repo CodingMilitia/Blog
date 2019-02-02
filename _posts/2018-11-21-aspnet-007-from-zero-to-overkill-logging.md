@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2018-11-21 19:30:00+00:00
 layout: post
 title: "Episode 007 - Logging - ASP.NET Core: From 0 to overkill"

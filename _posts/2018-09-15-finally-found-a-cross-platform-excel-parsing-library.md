@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2018-09-15 13:00:00+01:00
 layout: post
 title: 'Finally found a cross-platform Excel parsing library'

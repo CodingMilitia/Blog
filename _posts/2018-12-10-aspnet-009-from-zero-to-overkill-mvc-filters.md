@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2018-12-10 17:25:00+00:00
 layout: post
 title: "Episode 009 - MVC filters - ASP.NET Core: From 0 to overkill"

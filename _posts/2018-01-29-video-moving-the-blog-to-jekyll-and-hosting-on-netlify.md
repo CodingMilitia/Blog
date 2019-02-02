@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2018-01-29 22:00:00+00:00
 layout: post
 title: '[Video] Moving the blog to Jekyll and hosting on Netlify'

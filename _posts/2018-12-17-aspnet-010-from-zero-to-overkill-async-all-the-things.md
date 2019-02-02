@@ -1,5 +1,5 @@
 ---
-author: johnny
+author: João Antunes
 date: 2018-12-17 20:00:00+00:00
 layout: post
 title: "Episode 010 - Async all the things - ASP.NET Core: From 0 to overkill"

@@ -35,7 +35,7 @@ We'll take a look at the following options:
 1. New web application with Identity pre-configured
 2. Adding Identity to an application using the scaffolding tool
 3. Add Identity to an application manually
-4. Ignore Identity, role our own
+4. Ignore Identity, roll our own
 
 ### 1. New web application with Identity pre-configured
 This is the easiest way to get a fully working application with authentication. You'll probably need to make some adjustments afterwards (e.g. it uses a SQLite database by default) but you'll be up and running in no time.
@@ -84,8 +84,8 @@ This approach is probably more work than required, as the previous options would
 
 To avoid wasting too much time though, we can create another project and scaffold Identity on to it, so we can use it as reference.
 
-### 4. Ignore Identity, role our own
-We also have the option of ignoring what's already out there and role our own. It may make sense in some cases, but I'd say most of the time it doesn't, particularly in a more complex topic like authentication.
+### 4. Ignore Identity, roll our own
+We also have the option of ignoring what's already out there and roll our own. It may make sense in some cases, but I'd say most of the time it doesn't, particularly in a more complex topic like authentication.
 
 If there is something that's already tested and proven to work well (and also built by people smarter than me), I would say that using such resources is a better option.
 

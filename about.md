@@ -13,3 +13,7 @@ Outside the programming world, I'm a bit of gadget addict, headbanger (didn't yo
 
 Feel free to drop a comment, hit me up on [Twitter](https://twitter.com/joaofbantunes) or if you prefer [LinkedIn](https://www.linkedin.com/in/joaofbantunes), I'm always open for a chat.
 If you're a younger/less experienced developer, and would like some advice, mentoring or just think I can help you out with something, reach out, I'll do my best to assist.
+
+<a href="https://mvp.microsoft.com/en-us/PublicProfile/5003375">
+    <img src="/assets/mvp.png" alt="MVP Profile" style="max-width: 400px;">
+</a>

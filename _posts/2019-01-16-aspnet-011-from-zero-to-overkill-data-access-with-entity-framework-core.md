@@ -7,6 +7,7 @@ summary: 'In this episode, we replace our current groups "persistence" with an a
 image: '/assets/2019/01/16/aspnet-core-from-zero-to-overkill-e011.jpg'
 categories:
 - fromzerotooverkill
+- dotnet
 tags:
 - dotnet
 - aspnetcore

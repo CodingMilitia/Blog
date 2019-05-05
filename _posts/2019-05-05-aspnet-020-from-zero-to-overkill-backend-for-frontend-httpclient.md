@@ -7,6 +7,7 @@ summary: "In this episode, we'll start building our backend for frontend, which 
 image: '/assets/2019/05/05/aspnet-core-from-zero-to-overkill-e020.jpg'
 categories:
 - fromzerotooverkill
+- dotnet
 tags:
 - dotnet
 - aspnetcore

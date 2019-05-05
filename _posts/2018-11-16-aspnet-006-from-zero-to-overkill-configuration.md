@@ -7,6 +7,7 @@ summary: "In this episode we take a look at configuration in ASP.NET Core, the p
 image: '/assets/2018/11/16/aspnet-core-from-zero-to-overkill-e006.jpg'
 categories:
 - fromzerotooverkill
+- dotnet
 tags:
 - dotnet
 - aspnetcore

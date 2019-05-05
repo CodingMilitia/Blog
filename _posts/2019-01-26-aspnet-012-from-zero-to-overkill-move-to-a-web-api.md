@@ -7,6 +7,7 @@ summary: "In this episode, we start transforming the current application into a 
 image: '/assets/2019/01/26/aspnet-core-from-zero-to-overkill-e012.jpg'
 categories:
 - fromzerotooverkill
+- dotnet
 tags:
 - dotnet
 - aspnetcore

@@ -7,6 +7,7 @@ summary: "In this episode, we take a look at using async await in ASP.NET Core, 
 image: '/assets/2018/12/17/aspnet-core-from-zero-to-overkill-e010.jpg'
 categories:
 - fromzerotooverkill
+- dotnet
 tags:
 - dotnet
 - aspnetcore

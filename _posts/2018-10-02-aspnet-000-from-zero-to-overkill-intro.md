@@ -7,6 +7,7 @@ summary: "This post serves as an introduction to a new series of videos (and I'l
 image: '/assets/2018/10/02/aspnet-core-from-zero-to-overkill-post-image.jpg'
 categories:
 - fromzerotooverkill
+- dotnet
 tags:
 - dotnet
 - aspnetcore

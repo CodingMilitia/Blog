@@ -7,6 +7,7 @@ summary: "Wrapping up this first look at the frontend application built with Vue
 image: '/assets/2019/02/12/aspnet-core-from-zero-to-overkill-e015.jpg'
 categories:
 - fromzerotooverkill
+- dotnet
 tags:
 - dotnet
 - aspnetcore

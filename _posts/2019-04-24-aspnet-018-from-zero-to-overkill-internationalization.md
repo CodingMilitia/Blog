@@ -7,6 +7,7 @@ summary: "In this episode, we'll use ASP.NET Core internationalization support t
 image: '/assets/2019/04/24/aspnet-core-from-zero-to-overkill-e018.jpg'
 categories:
 - fromzerotooverkill
+- dotnet
 tags:
 - dotnet
 - aspnetcore

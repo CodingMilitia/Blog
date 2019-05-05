@@ -7,6 +7,7 @@ summary: "In this episode, we continue playing around in the frontend, by centra
 image: '/assets/2019/02/07/aspnet-core-from-zero-to-overkill-e014.jpg'
 categories:
 - fromzerotooverkill
+- dotnet
 tags:
 - dotnet
 - aspnetcore

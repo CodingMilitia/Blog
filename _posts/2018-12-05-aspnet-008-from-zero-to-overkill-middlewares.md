@@ -7,6 +7,7 @@ summary: "In this episode we take a look at ASP.NET Core's middlewares, how to c
 image: '/assets/2018/12/05/aspnet-core-from-zero-to-overkill-e008.jpg'
 categories:
 - fromzerotooverkill
+- dotnet
 tags:
 - dotnet
 - aspnetcore

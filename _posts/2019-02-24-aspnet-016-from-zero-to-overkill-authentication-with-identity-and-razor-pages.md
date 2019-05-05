@@ -8,6 +8,7 @@ It will be a standalone application centralizing all the required user authentic
 image: '/assets/2019/02/24/aspnet-core-from-zero-to-overkill-e016.jpg'
 categories:
 - fromzerotooverkill
+- dotnet
 tags:
 - dotnet
 - aspnetcore

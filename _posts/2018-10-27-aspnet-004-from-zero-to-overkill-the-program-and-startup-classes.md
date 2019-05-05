@@ -7,6 +7,7 @@ summary: "In this episode we take a step back to look at some important infrastr
 image: '/assets/2018/10/27/aspnet-core-from-zero-to-overkill-e004.jpg'
 categories:
 - fromzerotooverkill
+- dotnet
 tags:
 - dotnet
 - aspnetcore

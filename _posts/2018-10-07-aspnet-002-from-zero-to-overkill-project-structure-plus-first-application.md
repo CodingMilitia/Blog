@@ -7,6 +7,7 @@ summary: "In this post we finally see some code, although not much 😛 We start
 image: '/assets/2018/10/07/aspnet-core-from-zero-to-overkill-e002.jpg'
 categories:
 - fromzerotooverkill
+- dotnet
 tags:
 - dotnet
 - aspnetcore

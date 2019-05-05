@@ -7,6 +7,7 @@ summary: "In this episode we pick up on the component started previously for gro
 image: '/assets/2018/10/13/aspnet-core-from-zero-to-overkill-e003.jpg'
 categories:
 - fromzerotooverkill
+- dotnet
 tags:
 - dotnet
 - aspnetcore

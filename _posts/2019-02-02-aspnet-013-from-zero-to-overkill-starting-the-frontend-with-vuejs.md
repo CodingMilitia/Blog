@@ -7,6 +7,7 @@ summary: "In this episode, we start the frontend development with Vue.js. One ca
 image: '/assets/2019/02/02/aspnet-core-from-zero-to-overkill-e013.jpg'
 categories:
 - fromzerotooverkill
+- dotnet
 tags:
 - dotnet
 - aspnetcore

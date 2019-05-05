@@ -7,6 +7,7 @@ summary: "In this episode, we get back to the authorization topic, playing a bit
 image: '/assets/2019/04/29/aspnet-core-from-zero-to-overkill-e019.jpg'
 categories:
 - fromzerotooverkill
+- dotnet
 tags:
 - dotnet
 - aspnetcore

@@ -7,6 +7,7 @@ summary: "In this episode we go a little bit deeper into dependency injection, e
 image: '/assets/2018/11/04/aspnet-core-from-zero-to-overkill-e005.jpg'
 categories:
 - fromzerotooverkill
+- dotnet
 tags:
 - dotnet
 - aspnetcore

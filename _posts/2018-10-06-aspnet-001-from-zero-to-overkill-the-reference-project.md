@@ -7,6 +7,7 @@ summary: "In this post, we'll take a look at the objective of the reference, bef
 image: '/assets/2018/10/06/aspnet-core-from-zero-to-overkill-e001.jpg'
 categories:
 - fromzerotooverkill
+- dotnet
 tags:
 - dotnet
 - aspnetcore

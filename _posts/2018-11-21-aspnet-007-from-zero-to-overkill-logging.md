@@ -7,6 +7,7 @@ summary: "In this episode we take a look at logging in ASP.NET Core, the builtin
 image: '/assets/2018/11/21/aspnet-core-from-zero-to-overkill-e007.jpg'
 categories:
 - fromzerotooverkill
+- dotnet
 tags:
 - dotnet
 - aspnetcore

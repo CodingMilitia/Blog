@@ -7,6 +7,7 @@ summary: "In this episode, we continue exploring ASP.NET Core Identity and Razor
 image: '/assets/2019/03/31/aspnet-core-from-zero-to-overkill-e017.jpg'
 categories:
 - fromzerotooverkill
+- dotnet
 tags:
 - dotnet
 - aspnetcore

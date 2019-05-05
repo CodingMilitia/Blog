@@ -7,6 +7,7 @@ summary: "Following up on the previous episode on ASP.NET Core middlewares, in t
 image: '/assets/2018/12/10/aspnet-core-from-zero-to-overkill-e009.jpg'
 categories:
 - fromzerotooverkill
+- dotnet
 tags:
 - dotnet
 - aspnetcore

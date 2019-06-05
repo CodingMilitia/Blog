@@ -72,6 +72,8 @@ The [implicit flow](https://openid.net/specs/openid-connect-core-1_0.html#Implic
 ### Hybrid flow
 The [hybrid flow](https://openid.net/specs/openid-connect-core-1_0.html#HybridFlowAuth), has the name implies, his an hybrid of the previous two. It requires the ability to keep a secret, like the authorization code flow (allowing for the usage of refresh tokens) but in addition some tokens are returned when the login process finishes (like the access token), allowing for other requests that need those tokens to be started immediately.
 
+**UPDATE:** one thing I didn't mention and is important is there's also the option of using [PKCE](https://oauth.net/2/pkce/) (Proof Key for Code Exchange), which allows us to use a code flow in typically less secure clients (mobile and purely browser based applications) and is recommended over the implicit flow.
+
 ## Outro
 That's all for this quick overview of what we need to do to get everything working together. In the next episode, we'll start by integrating IdentityServer4 into the authentication service.
 
@@ -83,6 +85,7 @@ Links in the post:
 - [IdentityServer on GitHub](https://github.com/IdentityServer)
 - [OpenID Connect Flows](https://www.scottbrady91.com/OpenID-Connect/OpenID-Connect-Flows)
 - [Which OpenID Connect/OAuth 2.0 Flow is the right One?](https://leastprivilege.com/2016/01/17/which-openid-connectoauth-2-o-flow-is-the-right-one/)
+- [RFC 7636: Proof Key for Code Exchange](https://oauth.net/2/pkce/)
 
 
 The source code for this sub-series of posts is scattered across a bunch of repositories in the ["Coding Militia: ASP.NET Core - From 0 to overkill" organization](https://github.com/AspNetCoreFromZeroToOverkill), tagged as `episode021`.

@@ -195,6 +195,44 @@ In the lambda that configures MVC, we can see the new filter being added to vali
 
 After the filter, we can see the configuration of the anti-forgery services, with the call to the `AddAntiforgery` extension method. The `HeaderName` property we're setting, is the name of the header that the SPA will send with the anti-forgery token, so it can be validated server side. If we didn't set this, the server would only try to find the token in the submitted form data, which is the typical behavior in MVC/Razor Pages applications.
 
+Now for the SPA to be able to set the header, it needs to get it from somewhere. That's where we get back to the `AuthController`. In the `GetInfo` action, we'll generate the anti-forgery token and set a cookie with it, so that the SPA is able to use it.
+
+`Features/Auth/AuthController.cs`
+```csharp
+[Route("auth")]
+public class AuthController : ControllerBase
+{
+    private readonly IAntiforgery _antiForgery;
+
+    public AuthController(IAntiforgery antiForgery)
+    {
+        _antiForgery = antiForgery;
+    }
+
+    [HttpGet]
+    [Route("info")]
+    public ActionResult<AuthInfoModel> GetInfo()
+    {
+        var tokens = _antiForgery.GetAndStoreTokens(HttpContext);
+            HttpContext.Response.Cookies.Append(
+                "XSRF-TOKEN", 
+                tokens.RequestToken, 
+                new CookieOptions() {HttpOnly = false}); //allow JS to grab the cookie to put it in the request header
+            
+            return new AuthInfoModel
+            {
+                Name = User.FindFirst("name").Value
+            };
+    }
+
+    // ...
+}
+```
+
+We now get a dependency in the constructor, `IAntiforgery` which allows us to generate the anti-forgery token. We make use of it in the `GetInfo` action, where we can see that besides generating the token, this service also stores it so it can validated when the client application sends it back in the header.
+
+For the SPA to get the token, we're adding the cookie and setting its `HttpOnly` property to `false`, otherwise the browser wouldn't allow for the application to access it.
+
 ## Provide the access token on API calls
 Probably the first thing that comes to mind when we think that we must send the access token in each request we'll make to the API, is going to the place we're making the requests and add the header. This would certainly work, but we can use a cleaner solution, which is very reusable: create a class inheriting from `DelegatingHandler` and configure the `HttpClient`s we want to use it.
 

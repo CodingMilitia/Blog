@@ -3,7 +3,7 @@ author: João Antunes
 date: 2019-09-11 18:30:00+01:00
 layout: post
 title: "Episode 029 - Simplifying the BFF with ProxyKit - ASP.NET Core: From 0 to overkill"
-summary: "In this episode, we'll revise our current backend for front implementation, introducing ProxyKit to simplify request routing to backing APIs, foregoing the need to implement everything manually."
+summary: "In this episode, we'll revise our current backend for frontend implementation, introducing ProxyKit to simplify request routing to backing APIs, foregoing the need to implement everything manually."
 image: '/assets/2019/09/11/aspnet-core-from-zero-to-overkill-e029.jpg'
 categories:
 - fromzerotooverkill
@@ -14,7 +14,7 @@ tags:
 - proxykit
 ---
 
-In this episode, we'll revise our current backend for front implementation, introducing ProxyKit to simplify request routing to backing APIs, foregoing the need to implement everything manually.
+In this episode, we'll revise our current backend for frontend implementation, introducing ProxyKit to simplify request routing to backing APIs, foregoing the need to implement everything manually.
 
 For the walk-through you can check out the next video, but if you prefer a quick read, skip to the written synthesis.
 

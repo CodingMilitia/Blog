@@ -12,14 +12,14 @@
     <!-- Twitter cards -->
     <meta name="twitter:site"    content="@{{ site.twitter_username }}">
     {% if page.title %}
-    <meta name="twitter:title"   content="{{ page.title }}">
+    <meta name="twitter:title"   content="{{ page.title | escape }}">
     {% else %}
-    <meta name="twitter:title"   content="{{ site.title }}">
+    <meta name="twitter:title"   content="{{ site.title | escape }}">
     {% endif %}
     {% if page.summary %}
-    <meta name="twitter:description" content="{{ page.summary }}">
+    <meta name="twitter:description" content="{{ page.summary | escape }}">
     {% else %}
-    <meta name="twitter:description" content="{{ site.description }}">
+    <meta name="twitter:description" content="{{ site.description | escape }}">
     {% endif %}
     {% if page.image %}
     <meta name="twitter:card"  content="summary_large_image">

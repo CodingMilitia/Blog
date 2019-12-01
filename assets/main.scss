@@ -1,9 +1,9 @@
 ---
-
 ---
+
 @import "minima";
-@import url('https://fonts.googleapis.com/css?family=Ubuntu');
-@import url('https://use.fontawesome.com/releases/v5.0.8/css/all.css');
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+@import url("https://use.fontawesome.com/releases/v5.0.8/css/all.css");
 
 $title-color: #880000;
 $link-color: #777777;
@@ -11,118 +11,166 @@ $link-visited-color: #999999;
 
 // Styles
 body {
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: normal;
-    background-color: #F2F2F2;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: normal;
+  background-color: #f2f2f2;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: $title-color;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $title-color;
 }
 
-h1 a, h1 a:visited, h2 a, h2 a:visited, h3 a, h3 a:visited {
-    color: $title-color;
+h1 a,
+h1 a:visited,
+h2 a,
+h2 a:visited,
+h3 a,
+h3 a:visited {
+  color: $title-color;
 }
 
 h2 a:not(.no-anchor-icon):before {
-    content: "\f0c1";
-    font-family: "Font Awesome 5 Free";
-    display: inline-block;
-    font-weight: 600;
-    padding-right: 0.2em;
-    font-size: 24px;
+  content: "\f0c1";
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  font-weight: 600;
+  padding-right: 0.2em;
+  font-size: 24px;
 }
 
 a {
-    color: $link-color;
+  color: $link-color;
 }
 
 a:visited {
-    color: $link-visited-color;
+  color: $link-visited-color;
 }
 
 .site-title {
-    color: $title-color;
-    font-weight: bold;
+  color: $title-color;
+  font-weight: bold;
 }
 
 .site-title:visited {
-    color: $title-color;
-    font-weight: bold;
+  color: $title-color;
+  font-weight: bold;
 }
 
 .post-link {
-    color: $title-color;
+  color: $title-color;
 }
 
 .post-link:visited {
-    color: $title-color;
+  color: $title-color;
 }
 
 .archive-post-list {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .archive-post-list h4 {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .site-header {
-    border: 0px;
+  border: 0px;
 }
 
 @media screen and (max-width: 600px) {
-    .site-nav {
-        background-color: #CCCCCC;
-    }
+  .site-nav {
+    background-color: #cccccc;
+  }
 }
 
 .post-content {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .post-content h1 {
-    font-size: 32px;
+  font-size: 32px;
 }
 @media screen and (max-width: 800px) {
-    .post-content h1 {
-        font-size: 30px;
-   }
+  .post-content h1 {
+    font-size: 30px;
+  }
 }
 
 .post-content h2 {
-    font-size: 28px;
+  font-size: 28px;
 }
 @media screen and (max-width: 800px) {
-    .post-content h2 {
-        font-size: 26px;
-   }
+  .post-content h2 {
+    font-size: 26px;
+  }
 }
 .post-content h3 {
-    font-size: 22px;
+  font-size: 22px;
 }
 @media screen and (max-width: 800px) {
-    .post-content h3 {
-        font-size: 18px;
-   }
+  .post-content h3 {
+    font-size: 18px;
+  }
 }
 .post-content h4 {
-    font-size: 16px;
+  font-size: 16px;
 }
 @media screen and (max-width: 800px) {
-    .post-content h4 {
-        font-size: 14px;
-   }
+  .post-content h4 {
+    font-size: 14px;
+  }
 }
 
-.share-button, .share-button:visited {
-    padding: 0px 4px 0px 4px;
-    color: #777777;
-    .fas, .fab {
-        font-size: 25px;
-    }
+.share-button,
+.share-button:visited {
+  padding: 0px 4px 0px 4px;
+  color: #777777;
+  .fas,
+  .fab {
+    font-size: 25px;
+  }
 }
 
 blockquote {
-    font-style: normal;
+  font-style: normal;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+button {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+  border-radius: 0.25rem;
+  font-size: 16px;
+  padding: .375rem .75rem;
+}
+
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled),
+button:not(:disabled) {
+  cursor: pointer;
 }

@@ -2,7 +2,7 @@
 author: João Antunes
 date: 2019-12-10 20:00:00+00:00
 layout: post
-title: "Use POCOs to encapsulate data and logic - there's more to life than services and DTOs"
+title: "Use POCOs to group data and logic - there's more to life than services and DTOs"
 summary: "In C# land, the abuse of services and DTOs is prevalent. How about grouping data and behavior using POCOs? You know, ob)ect oriented stuff 🙂."
 image: '/assets/2019/12/10/kevlinhenney-tweet.png'
 categories:

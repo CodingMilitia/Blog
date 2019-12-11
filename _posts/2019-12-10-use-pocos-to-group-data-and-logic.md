@@ -19,7 +19,7 @@ tags:
 
 Something I see is prevalent in .NET (C#) projects is the abuse of DTOs (data transfer objects) and services.
 
-DTOs (as per definition) just keep some data and the services to all the logic, manipulating said DTOs. If a bit of logic doesn't really feel like it belongs to some service, off we go to create some helper or extension to drop said logic in.
+DTOs (as per definition) just keep some data and the services keep all the logic, manipulating said DTOs. If a bit of logic doesn't really feel like it belongs to some service, off we go to create some helper or extension to drop said logic in.
 
 This way of doing things is much more procedural than object oriented, which would be the primary programming paradigm we'd like to use in C# projects, with some sprinkles of functional and, sure, procedural.
 

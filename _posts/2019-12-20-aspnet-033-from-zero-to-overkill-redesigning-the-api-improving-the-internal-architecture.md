@@ -2,7 +2,7 @@
 author: João Antunes
 date: 2019-12-20 18:25:00+00:00
 layout: post
-title: "E033 - Redesigning the API: Improving the internal architecture - ASP:F02O"
+title: "E033 - Redesigning the API: Improving the internal architecture - ASPF02O"
 summary: "In this episode, we'll take a look at redesigning an API that has been developed in a traditional layered way, moving to a more interesting onion/hexagonal/ports and adapters architecture (which is apparently very fashionable right now in .NET land)."
 image: '/assets/2019/12/20/aspnet-core-from-zero-to-overkill-e033.jpg'
 categories:

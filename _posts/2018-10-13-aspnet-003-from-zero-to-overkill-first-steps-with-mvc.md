@@ -1,6 +1,7 @@
 ---
 author: João Antunes
 date: 2018-10-13 16:30:00+01:00
+update_date: 2019-01-14 19:30:00+01:00
 layout: post
 title: "Episode 003 - First steps with MVC - ASP.NET Core: From 0 to overkill"
 summary: "In this episode we pick up on the component started previously for group management, to start adding some ASP.NET Core MVC goodness to it."
@@ -23,9 +24,11 @@ The playlist for the whole series is [here](https://www.youtube.com/playlist?lis
 <br />
 
 ## Intro
+
 In the last episode we prepared the repository for the first component responsible for group management, as well as initialized the first application. Now we'll pick up from where we left, adding MVC to the application and adding some group read/write logic.
 
 ## Adding MVC to the mix
+
 Getting MVC working in the application requires just a couple of lines of code, both on the `Startup` class.
 
 First we add `services.AddMvc()` to the `ConfigureServices` method. This will register in the dependency injection container ASP.NET Core MVC required services. In the next post we'll add our own services to the container, but for now, that's it.
@@ -35,9 +38,20 @@ With the required services registered, we just need to add MVC to the request ha
 And that's it, now we can get started with the controllers.
 
 ## Creating the first controller
-Following the conventions, we create a `Controllers` folder in the root of the application. This way, ASP.NET Core MVC is able to discover the controllers in the folder. This can be configured, and we can put them anywhere we want - for instance, Jimmy Bogard(the developer of [AutoMapper](https://github.com/AutoMapper/AutoMapper) and [MediatR](https://github.com/jbogard/MediatR)) doesn't like the default organization, he prefers a [feature per folder](http://timgthomas.com/2013/10/feature-folders-in-asp-net-mvc/) approach. For me, it doesn't annoy me, so I'll follow it.
 
-Inside the newly created `Controllers` folder we add a new class, `GroupsController`. Just because of the name ending with `Controller`, MVC would find it and assume it as a controller, nothing else needed. However, as I want to make use of some functionality already existent, we'll make this new class inherit from the `Controller` class, as it provides several useful properties and methods for building our request handling logic.
+Following the default project organization, we create a `Controllers` folder in the root of the application.
+
+This is not mandatory though (and [many advocate against it](https://timgthomas.com/2013/10/feature-folders-in-asp-net-mvc/)), as ASP.NET Core MVC is able to discover the controllers regardless of the location in the project, as long as they fulfill one of the following requirements:
+
+- Class inherits from `Controller`
+- Class inherits from `ControllerBase`
+- Class name ends with `Controller`
+- Class is decorated with the `[Controller]` attribute
+- Class is decorated with the `[ApiController]` attribute
+
+> These are the ways I know ASP.NET Core is able to discover controllers. Maybe there are more, if you know any, drop a comment for me to add it 🙂. Also, this "magic" works for controllers in the web application project, for controllers in other projects, it needs to be explicitly done, but that's more than I want to cover in this introductory post.
+
+Inside the newly created `Controllers` folder we add a new class, `GroupsController`. Like I mentioned, just because of the name ending with `Controller`, MVC would find it and assume it as a controller, nothing else needed. However, as I want to make use of some functionality already existent, we'll make this new class inherit from the `Controller` class, as it provides several useful properties and methods for building our request handling logic.
 
 Above the `GroupsController` class we add the attribute `[Route("groups")]`, which indicates the route at which the controller will be available, in this case (in development) `http://localhost:5000/groups`.
 
@@ -53,6 +67,7 @@ Heading to the browser and typing in `http://localhost:5000/groups`, we're greet
 Now let's add a view to the mix.
 
 ## Creating the first view
+
 As we did for the controllers, we follow the conventions and create a `Views`folder, and then inside it a `Groups` folder. This will make MVC match the views inside the newly created folder to the actions of the `GroupsController`.
 
 We can create a new view file called `Index.cshtml`, again, notice the name matches the name of the action, so MVC makes the match automagically. Let's postpone worrying with valid HTML and just add some random text.
@@ -65,7 +80,9 @@ Heading back to the browser we now see the text we wrote on the view.
 Now that we've seen things starting to work together, let's add some business logic.
 
 ## Add business logic
+
 ### Models
+
 As this component we're developing is targeted at group management, it's only fitting that the first model we need is a representation of a group (yeah, mind blowing stuff! 🙃).
 
 For starters add another folder to the project called `Models` and in there create a new class `GroupViewModel` that'll represent a group, although right on in the simplest of forms, with an id and a name.
@@ -77,6 +94,7 @@ This class will be passed along from controller to view, to present and gather t
 As we're still not using databases and nothing of the sort, we'll go with an in memory collection to keep the groups.
 
 ### Homepage (list groups)
+
 For the homepage, we'll just list the user's available groups (we don't have authentication yet so... it'll be all). With that purpose, we just pass the existent groups when calling the `View` method, so the view model will be provided to the view.
 
 {% gist 8d5c57a0e2e0fae4442e52662e4d6a86 %}
@@ -96,7 +114,8 @@ Those `asp-*` are attributes for the tag helpers. Instead of hardcoding the rout
 Just to finish up this page, we have a final anchor that links to the group creation page, using exactly the same logic we just saw for the group details page links.
 
 ### Side note: importing model classes and tag helpers
-An important note on building the views, regarding the tag helpers and model classes. 
+
+An important note on building the views, regarding the tag helpers and model classes.
 
 To reference the models, we would normally need to add a `using` statement to the beginning of the file or use fully qualified class names (like we do in "normal" C# files). Something similar with tag helpers, as we need to declare that we want to use them.
 
@@ -107,6 +126,7 @@ To avoid repeating the same code in all views, as in most cases we'll want acces
 If we wanted to do specific imports just for the groups views (assuming we had more), we could create another `_ViewImports.cshtml` file in the `Views\Groups` folder.
 
 ### Group details page
+
 For the group details page we want two actions, one just to show the information and another to update it.
 
 {% gist 4d4b865f61ff35a373b570bd26b91b1a %}
@@ -134,6 +154,7 @@ Notice the method arguments. The id comes from the route, being the match done b
 As for the logic, it's pretty simple. Fetch the group, 404 if it doesn't exist, update the name if it does. In the end, `RedirectToAction` sends the user back to the homepage (following the [Post/Redirect/Get](https://en.wikipedia.org/wiki/Post/Redirect/Get) strategy to avoid repeated form submissions).
 
 ### Create group page
+
 To wrap this up, we have the page to create new groups. It is very similar to the details page, so this should be quick.
 
 Starting with the view this time around, it's basically a copy paste of the update details page.

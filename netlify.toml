@@ -10,6 +10,30 @@ from = "/youtube"
 to = "https://www.youtube.com/c/CodingMilitia"
 status = 302
 
+# twitch shortcut
+[[redirects]]
+from = "/twitch"
+to = "https://twitch.tv/joaofbantunes"
+status = 302
+
+# twitter shortcut
+[[redirects]]
+from = "/twitter"
+to = "https://twitter.com/joaofbantunes"
+status = 302
+
+# linkedin shortcut
+[[redirects]]
+from = "/twitch"
+to = "https://linkedin.com/in/joaofbantunes"
+status = 302
+
+# dev.to shortcut
+[[redirects]]
+from = "/dev.to"
+to = "https://dev.to/joaofbantunes"
+status = 302
+
 # Redirect domain aliases to primary domain
 [[redirects]]
 from = "https://www.blog.codingmilitia.com/*"

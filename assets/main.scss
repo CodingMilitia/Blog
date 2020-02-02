@@ -5,15 +5,22 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu");
 @import url("https://use.fontawesome.com/releases/v5.0.8/css/all.css");
 
-$title-color: #880000;
+//$title-color: #880000;
+$title-color: #dddddd;
 $link-color: #777777;
 $link-visited-color: #999999;
+$title-link-visited-color: #aaaaaa;
 
 // Styles
 body {
   font-family: "Ubuntu", sans-serif;
   font-weight: normal;
-  background-color: #f2f2f2;
+  background-color: #2e2e2e;
+  color: #ffffff;
+}
+
+.site-nav .page-link {
+  color: #ffffff;
 }
 
 h1,
@@ -26,12 +33,21 @@ h6 {
 }
 
 h1 a,
-h1 a:visited,
+h1 a:hover,
 h2 a,
-h2 a:visited,
+h2 a:hover,
 h3 a,
-h3 a:visited {
+h3 a:hover {
   color: $title-color;
+}
+
+h1 a:visited,
+h1 a:visited:hover,
+h2 a:visited,
+h2 a:visited:hover,
+h3 a:visited,
+h3 a:visited:hover {
+  color: $title-link-visited-color;
 }
 
 h2 a:not(.no-anchor-icon):before {
@@ -43,7 +59,9 @@ h2 a:not(.no-anchor-icon):before {
   font-size: 24px;
 }
 
-a {
+a,
+a:hover,
+a:visited:hover {
   color: $link-color;
 }
 
@@ -51,22 +69,14 @@ a:visited {
   color: $link-visited-color;
 }
 
-.site-title {
-  color: $title-color;
-  font-weight: bold;
+a.site-title, a.site-title:visited  {
+  color: #cc0000;
+  font-weight: bold; 
 }
 
-.site-title:visited {
-  color: $title-color;
-  font-weight: bold;
-}
-
-.post-link {
-  color: $title-color;
-}
-
-.post-link:visited {
-  color: $title-color;
+a.site-title:hover,
+a.site-title:visited:hover  {
+  color: #aa0000;
 }
 
 .archive-post-list {
@@ -173,4 +183,26 @@ button {
 [type="submit"]:not(:disabled),
 button:not(:disabled) {
   cursor: pointer;
+}
+.social-media-list {
+  li {
+    display: inline-block;
+    padding: 5px;
+
+    a > i {
+      font-size: x-large;
+    }
+  }  
+}
+
+.pagination {
+  float: right;
+}
+
+.honeypot-hidden {
+  display: none;
+}
+
+.post-meta {
+  color: #928282;
 }

@@ -4,27 +4,7 @@
     <div class="wrapper">
 
         <h2 class="footer-heading">{{ site.title | escape }}</h2>
-
-        <div class="footer-col-wrapper">
-            <div class="footer-col footer-col-2">
-                {% include social.html %}
-            </div>            
-            <div class="footer-col footer-col-3">
-                Blog created using <a href="https://github.com/jekyll/jekyll" target="_blank" rel="noopener">Jekkyll</a>, based on <a href="https://github.com/jekyll/minima" target="_blank" rel="noopener">Minima</a> theme (and a whole lot of googling and css hammering) and hosted using <a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a>.
-            </div>
-            <div class="footer-col footer-col-2">
-                <div>
-                    <a class="page-link" href="/archives">Archives</a>
-                </div>
-                <div>
-                    <a class="page-link" href="/privacy">Privacy Stuff</a>
-                </div>   
-                <div>
-                    <a class="page-link" href="/about">About</a>
-                </div>   
-            </div>
-        </div>
-
+        {% include social.html %}
     </div>
 
 </footer>

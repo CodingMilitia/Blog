@@ -8,7 +8,10 @@ If you can't get in touch through one of the channels listed in the footer, feel
 
 I'll try to get back to you as soon as possible.
 
-<form name="contact" method="POST" data-netlify="true">
+<form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <div class="honeypot-hidden">
+        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+    </div>
     <div class="form-group">
         <label>Your Name:</label>
         <input type="text" name="name" class="form-control" />

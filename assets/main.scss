@@ -9,6 +9,7 @@
 $title-color: #dddddd;
 $link-color: #777777;
 $link-visited-color: #999999;
+$title-link-visited-color: #aaaaaa;
 
 // Styles
 body {
@@ -32,15 +33,21 @@ h6 {
 }
 
 h1 a,
-h1 a:visited,
 h1 a:hover,
 h2 a,
-h2 a:visited,
 h2 a:hover,
 h3 a,
-h3 a:visited,
 h3 a:hover {
   color: $title-color;
+}
+
+h1 a:visited,
+h1 a:visited:hover,
+h2 a:visited,
+h2 a:visited:hover,
+h3 a:visited,
+h3 a:visited:hover {
+  color: $title-link-visited-color;
 }
 
 h2 a:not(.no-anchor-icon):before {
@@ -52,7 +59,9 @@ h2 a:not(.no-anchor-icon):before {
   font-size: 24px;
 }
 
-a {
+a,
+a:hover,
+a:visited:hover {
   color: $link-color;
 }
 
@@ -63,14 +72,6 @@ a:visited {
 .site-title, .site-title:visited  {
   color: #cc0000;
   font-weight: bold;
-}
-
-.post-link {
-  color: $title-color;
-}
-
-.post-link:visited {
-  color: $title-color;
 }
 
 .archive-post-list {

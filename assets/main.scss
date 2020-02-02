@@ -69,9 +69,14 @@ a:visited {
   color: $link-visited-color;
 }
 
-.site-title, .site-title:visited  {
+a.site-title, a.site-title:visited  {
   color: #cc0000;
-  font-weight: bold;
+  font-weight: bold; 
+}
+
+a.site-title:hover,
+a.site-title:visited:hover  {
+  color: #aa0000;
 }
 
 .archive-post-list {

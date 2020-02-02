@@ -3,19 +3,40 @@ layout: default
 ---
 
 <div class="home">
-    {% if page.title %}
-    <h1 class="page-heading">{{ page.title }}</h1>
-    {% endif %} {{ content }} {% if paginator.posts.size > 0 %}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    {% if paginator.posts.size > 0 %}
+    <div>
+        <h2 class="post-list-heading" style="display: inline-block;">{{ page.list_title | default: "Posts" }}</h2>
+        <!-- Pagination links -->
+        {% if paginator.total_pages > 1 %}
+        <span class="pagination">
+            {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+            {% endif %}
+            <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+            {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+            {% endif %}
+        </span>
+    </div>
+    {% endif %}
     <ul class="post-list">
         {% for post in paginator.posts %}
         <li>
             {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
             <span class="post-meta">{{ post.date | date: date_format }}</span>
-
             <h3>
                 <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
             </h3>
+            {% if post.summary %}
+            <p>
+                {{ post.summary | escape }}
+            </p>
+            {% endif %}
+            <p class="post-meta">
+                {% for category in post.categories %}
+                <a href="/blog/category/{{ category | slugify }}">{{ category }}</a>
+                {% endfor %}
+            </p>
         </li>
         {% endfor %}
     </ul>

@@ -26,4 +26,4 @@ I have [Disqus](https://disqus.com/) setup on the blog to allow for comments. Wh
 Besides using [GitHub](https://github.com) to host the projects I usually talk about here, I use it to host some code snippets using the provided widgets, so GitHub might also collect some info on this.
 
 ## YouTube
-I embed some [YouTube](https://youtube.com) videos, some I record and others by third parties. Again, due to using the provided widgets, Google might collect some info regarding this videos.
+I embed some [YouTube](https://youtube.com) videos, some I record and others by third parties. Again, due to using the provided widgets, Google might collect some info regarding these videos.

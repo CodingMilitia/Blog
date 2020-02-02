@@ -8,7 +8,7 @@ permalink: /about/
 
 <img src="/assets/mugs/j-circle-pic-small-150x150.png" alt="Johnny's mug" style="max-width: 150px; margin-left: auto; margin-right: auto; display: block;">
 
-My name is João Antunes (but I'll respond to Johnny or John). I work as a software engineer, mostly with .NET technologies, but I like to play around with other tech as well. My main interests are software architecture, design and development, with more focus on the backend but with a view of the whole stack.
+My name is João Antunes (but I'll respond to Johnny or John, as it's much easier for non-portuguese speakers). I work as a software engineer, mostly with .NET technologies, but I like to play around with other tech as well. My main interests are software architecture, design and development, with more focus on the backend but with a view of the whole stack.
 
 I'm also a supporter of remote work, as I believe our industry is in a privileged position to provide the best work-life balance, skipping unneeded commutes and relocations.
 

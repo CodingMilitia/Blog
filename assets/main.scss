@@ -5,17 +5,18 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu");
 @import url("https://use.fontawesome.com/releases/v5.0.8/css/all.css");
 
-//$title-color: #880000;
+$site-title-color: #cc0000;;
 $title-color: #dddddd;
 $link-color: #777777;
 $link-visited-color: #999999;
 $title-link-visited-color: #aaaaaa;
+$background-color: #2e2e2e;
 
 // Styles
 body {
   font-family: "Ubuntu", sans-serif;
   font-weight: normal;
-  background-color: #2e2e2e;
+  background-color: $background-color;
   color: #ffffff;
 }
 
@@ -70,7 +71,7 @@ a:visited {
 }
 
 a.site-title, a.site-title:visited  {
-  color: #cc0000;
+  color: $site-title-color ;
   font-weight: bold; 
 }
 
@@ -204,5 +205,13 @@ button:not(:disabled) {
 }
 
 .post-meta {
-  color: #928282;
+  color: $site-title-color;
+}
+
+.site-nav {
+  background-color: $background-color;
+  
+  .menu-icon > svg > path {
+    fill: white;
+  }
 }

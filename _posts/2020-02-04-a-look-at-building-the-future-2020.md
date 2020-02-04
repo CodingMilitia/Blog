@@ -1,6 +1,6 @@
 ---
 author: João Antunes
-date: 2020-02-04 17:30:00+00:00
+date: 2020-02-04 18:45:00+00:00
 layout: post
 title: "A look at Building the Future 2020"
 summary: "This past week I had the opportunity to attend Building the Future 2020, an event focused on digital transformation, so I thought about sharing some of the main topics that stuck with me."

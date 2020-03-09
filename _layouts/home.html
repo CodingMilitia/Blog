@@ -34,7 +34,7 @@ layout: default
             {% endif %}
             <p class="post-meta">
                 {% for category in post.categories %}
-                <a href="/blog/category/{{ category | slugify }}">{{ category }}</a>
+                <a href="/category/{{ category | slugify }}">{{ category }}</a>
                 {% endfor %}
             </p>
         </li>

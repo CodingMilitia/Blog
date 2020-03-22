@@ -3,36 +3,42 @@
 from = "/h/*"
 to = "https://www.youtube.com/watch?v=082C6EdNvus"
 status = 302
+force = true
 
 # youtube shortcut
 [[redirects]]
 from = "/youtube"
 to = "https://www.youtube.com/c/CodingMilitia"
 status = 302
+force = true
 
 # twitch shortcut
 [[redirects]]
 from = "/twitch"
 to = "https://twitch.tv/joaofbantunes"
 status = 302
+force = true
 
 # twitter shortcut
 [[redirects]]
 from = "/twitter"
 to = "https://twitter.com/joaofbantunes"
 status = 302
+force = true
 
 # linkedin shortcut
 [[redirects]]
 from = "/twitch"
 to = "https://linkedin.com/in/joaofbantunes"
 status = 302
+force = true
 
 # dev.to shortcut
 [[redirects]]
 from = "/dev.to"
 to = "https://dev.to/joaofbantunes"
 status = 302
+force = true
 
 # Redirect domain aliases to primary domain
 [[redirects]]

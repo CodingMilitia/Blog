@@ -45,7 +45,7 @@
     {{- template "_internal/opengraph.html" . -}}
     {{- template "_internal/schema.html" . -}}
     {{- template "_internal/twitter_cards.html" . -}}
-    <meta name="author" content="{{ .Params.author }}">
+    <meta name="author" content="{{if .IsPage}}{{ .Params.author }}{{ else }}{{ with .Site.Params.author }}{{ . }}{{ end }}{{ end }}">
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
 
     {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}

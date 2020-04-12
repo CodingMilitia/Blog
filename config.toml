@@ -6,6 +6,7 @@ description = "Code, headbang, grouch, repeat!"
 DisqusShortname = "codingmilitia"
 googleAnalytics = "UA-58690226-4"
 pygmentsCodeFences = true
+author = "João Antunes"
 
 [params]
   latest_posts_count = 5
@@ -13,6 +14,7 @@ pygmentsCodeFences = true
   show_reading_time = true
   images = ["assets/logo.jpg"]
   author = "João Antunes"
+  description = "Code, headbang, grouch, repeat!"
   
 
 [permalinks]
@@ -27,5 +29,9 @@ pygmentsCodeFences = true
   [markup.highlight]
     lineNos = true
 
+# allow raw html in markdown files
 [markup.goldmark.renderer]
   unsafe= true
+
+[social]
+  twitter = "joaofbantunes"

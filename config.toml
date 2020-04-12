@@ -26,3 +26,6 @@ pygmentsCodeFences = true
 [markup]
   [markup.highlight]
     lineNos = true
+
+[markup.goldmark.renderer]
+  unsafe= true

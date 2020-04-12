@@ -21,7 +21,7 @@
 
     {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" true) }}
     {{ $style := resources.Get "/styles/main.scss" | resources.ToCSS $options | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
     {{ range .Site.Params.custom_css }}
       <link rel="stylesheet" href="{{ relURL ($.Site.BaseURL) }}{{ . }}">
@@ -61,6 +61,6 @@
     {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}
     {{ block "scripts" . }}{{ partialCached "site-scripts.html" . }}{{ end }}
     {{ $js := resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
-    <script src="{{ $js.Permalink }}" async></script>
+    <script src="{{ $js.RelPermalink }}" async></script>
   </body>
 </html>

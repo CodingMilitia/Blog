@@ -10,7 +10,7 @@
         <h4>{{ (index .Pages 0).Date.Format "2006 January" }}</h4>
         <ul class="archives-list">
           {{ range .Pages }}
-            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
           {{ end }}
         </ul>
       {{ end }}

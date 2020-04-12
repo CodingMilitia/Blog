@@ -22,7 +22,7 @@
     {{ if ge $section_count (add $n_posts 1) }}
     <section class="has-text-centered">
       {{ with .Site.GetPage "section" $section_name }}
-      <a  href="{{ .Permalink }}" class="">More posts...</a>
+      <a  href="{{ .RelPermalink }}" class="">More posts...</a>
       {{ end }}
     </section>
     {{ end }}

@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <div>
+    <article>
+      <header>
+        <p >
+          {{ humanize .Section | upper  }}
+        </p>
+        <h2>
+          {{ .Title }}
+        </h2>
+      </header>
+      <div>
+        {{ .Content }}
+      </div>
+    </article>
+  </div>
+{{ end }}

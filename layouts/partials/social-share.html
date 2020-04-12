@@ -1,0 +1,20 @@
+{{ $title := .Title }}
+{{ $url := printf "%s" .Permalink | absLangURL }}
+
+{{ if not .Params.disable_share }}
+  <div>
+    Share:
+    {{ $twitter_href := printf "https://twitter.com/share?url=%s&text=%s" $url $title }}
+    {{ with .Site.Social.twitter }}
+      {{ $twitter_href = printf "%s&via=%s" $twitter_href . }}
+    {{ end }}
+    <a href="{{ $twitter_href }}" class="twitter no-underline" aria-label="share on Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+
+    {{ $linkedin_href := printf "https://www.linkedin.com/shareArticle?mini=true&url=%s&title=%s" $url $title }}
+    <a href="{{ $linkedin_href }}" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </div>
+{{ end }}

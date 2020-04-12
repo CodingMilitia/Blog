@@ -1,0 +1,10 @@
+<div>
+  <span class="meta">Categories: </span>
+  {{ range .Params.categories }}
+  <span class="tag">
+    <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">
+      {{- . -}}
+    </a>
+  </span>
+  {{ end }}
+</div>

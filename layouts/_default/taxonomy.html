@@ -1,0 +1,19 @@
+{{ define "main" }}
+<article>
+  <div>
+    <p>Posts with category/tag “{{ .Title }}”</p>
+  </div>
+</article>
+<div>
+  <section>
+    {{ range .Pages.ByDate.Reverse.GroupByDate "2006-01" }}
+        <h4>{{ (index .Pages 0).Date.Format "2006 January" }}</h4>
+        <ul class="archives-list">
+          {{ range .Pages }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+      {{ end }}
+  </section>
+</div>
+{{ end }}

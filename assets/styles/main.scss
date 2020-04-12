@@ -1,0 +1,103 @@
+$main-accent: #880000;
+$scheme-main: hsl(0, 0%, 90%);
+$scheme-main-bis: $scheme-main;
+$link: $main-accent;
+$border: #999999;
+
+@import "./bulma-0.8.0/bulma.sass";
+@import "./syntax.scss";
+
+.navbar-brand {
+    .navbar-item {
+        color: $main-accent;
+    }
+}
+
+.card {
+    margin-bottom: $block-spacing;
+}
+
+.social-media-list {
+    padding-left: 0;
+    li {
+        display: inline;
+        padding: 5px;
+        i {
+            font-size: x-large;
+        }
+    }
+}
+
+h1 {
+    @extend .title.is-1;
+}
+
+h2 {
+    @extend .title.is-2;
+}
+
+h3 {
+    @extend .title.is-3;
+}
+
+h4 {
+    @extend .title.is-4;
+}
+
+h5 {
+    @extend .title.is-5;
+}
+
+h6 {
+    @extend .title.is-6;
+}
+
+.youtube-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    max-height: 100%;
+    width: 640px;
+    height: 360px;
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        height: 100%;
+        padding-bottom: 56.25%;
+    }
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+}
+
+.meta {
+    font-weight: bold;
+}
+
+.pagination-list {
+    list-style: none;
+}
+
+.archives-list {
+    list-style: none;
+}
+
+.input {
+    background-color: white;
+}
+
+.textarea {
+    background-color: white;
+}
+
+.honeypot-hidden {
+    display: none;
+}

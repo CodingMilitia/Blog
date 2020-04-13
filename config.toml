@@ -11,7 +11,7 @@ enableRobotsTXT = true
 
 [params]
   latest_posts_count = 5
-  favicon = "assets/favicon.ico"
+  favicon = "assets/favicon.png"
   show_reading_time = true
   images = ["assets/logo.jpg"]
   author = "João Antunes"

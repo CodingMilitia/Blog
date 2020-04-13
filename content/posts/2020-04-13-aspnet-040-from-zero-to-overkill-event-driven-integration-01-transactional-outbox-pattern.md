@@ -56,7 +56,7 @@ In either case (SQL or NoSQL) , we'll have another intervenient in the process, 
 
 An illustration of this whole process would be something like:
 
-![[fail to publish event](/assets/2020/04/13/e040-outbox-pattern.png)](/assets/2020/04/13/e040-outbox-pattern.png)
+![[transactional outbox pattern](/assets/2020/04/13/e040-outbox-pattern.png)](/assets/2020/04/13/e040-outbox-pattern.png)
 
 Taking this approach, gives us the at-least-once delivery guarantee we require. It's not perfect though, not only because it's more work to do, but also because, as mentioned, it gives us at-least-once delivery guarantee, not exactly once. Not having exactly once delivery comes from the fact that the outbox publisher might fail to delete the events from the database after publishing to the bus, causing it to try again at a later time.
 

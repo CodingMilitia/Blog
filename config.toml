@@ -6,7 +6,6 @@ description = "Code, headbang, grouch, repeat!"
 DisqusShortname = "codingmilitia"
 googleAnalytics = "UA-58690226-4"
 pygmentsCodeFences = true
-author = "João Antunes"
 enableRobotsTXT = true
 
 [params]
@@ -14,8 +13,10 @@ enableRobotsTXT = true
   favicon = "assets/favicon.png"
   show_reading_time = true
   images = ["assets/logo.jpg"]
-  author = "João Antunes"
   description = "Code, headbang, grouch, repeat!"
+
+[author]
+  name = "João Antunes"
   
 
 [permalinks]

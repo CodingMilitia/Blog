@@ -43,6 +43,25 @@ to = "https://dev.to/joaofbantunes"
 status = 302
 force = true
 
+# Redirect categories and tags
+[[redirects]]
+from = "https://blog.codingmilitia.com/category/*"
+to = "https://blog.codingmilitia.com/categories/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://blog.codingmilitia.com/tag/*"
+to = "https://blog.codingmilitia.com/tags/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://codingmilitia.com/*"
+to = "https://blog.codingmilitia.com/:splat"
+status = 301
+force = true
+
 # Redirect domain aliases to primary domain
 [[redirects]]
 from = "https://www.blog.codingmilitia.com/*"

@@ -12,6 +12,7 @@ categories:
 tags:
 - dotnet
 - aspnetcore
+- efcore
 slug: aspnet-041-from-zero-to-overkill-event-driven-integration-inferring-events-from-efcore-changes
 ---
 

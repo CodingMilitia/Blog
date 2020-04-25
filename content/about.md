@@ -40,7 +40,7 @@ I'll leave a couple of examples below.
 
 ## About the blog
 
-Blog created using [Hugp](https://gohugo.io/), used [Bulma](https://bulma.io/) to try to hide my lack of design skills, code hosted on [GitHub](https://github.com/CodingMilitia/Blog) and the generated assets served by [Netlify](https://www.netlify.com/).
+Blog created using [Hugo](https://gohugo.io/), used [Bulma](https://bulma.io/) to try to hide my lack of design skills, code hosted on [GitHub](https://github.com/CodingMilitia/Blog) and the generated assets served by [Netlify](https://www.netlify.com/).
 
 ### About the name
 

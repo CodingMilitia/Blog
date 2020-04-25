@@ -40,7 +40,7 @@ I'll leave a couple of examples below.
 
 ## About the blog
 
-Blog created using [Jekyll](https://github.com/jekyll/jekyll), based on the [Minima](https://github.com/jekyll/minima) theme (and a whole lot of [Duck Duck Going](https://duckduckgo.com/) and CSS hammering), code hosted on [GitHub](https://github.com/CodingMilitia/Blog) and the generated assets served by [Netlify](https://www.netlify.com/).
+Blog created using [Hugp](https://gohugo.io/), used [Bulma](https://bulma.io/) to try to hide my lack of design skills, code hosted on [GitHub](https://github.com/CodingMilitia/Blog) and the generated assets served by [Netlify](https://www.netlify.com/).
 
 ### About the name
 

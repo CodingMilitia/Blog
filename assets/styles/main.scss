@@ -7,27 +7,6 @@ $border: #999999;
 @import "./bulma-0.8.2/bulma.sass";
 @import "./syntax.scss";
 
-.navbar-brand {
-    .navbar-item {
-        color: $main-accent;
-    }
-}
-
-.card {
-    margin-bottom: $block-spacing;
-}
-
-.social-media-list {
-    padding-left: 0;
-    li {
-        display: inline;
-        padding: 5px;
-        i {
-            font-size: x-large;
-        }
-    }
-}
-
 h1 {
     @extend .title.is-1;
 }
@@ -50,6 +29,32 @@ h5 {
 
 h6 {
     @extend .title.is-6;
+}
+
+blockquote p {
+    background: rgba($color: #ffffff, $alpha: .50);
+    padding: 5px 10px;
+}
+
+.navbar-brand {
+    .navbar-item {
+        color: $main-accent;
+    }
+}
+
+.card {
+    margin-bottom: $block-spacing;
+}
+
+.social-media-list {
+    padding-left: 0;
+    li {
+        display: inline;
+        padding: 5px;
+        i {
+            font-size: x-large;
+        }
+    }
 }
 
 .youtube-wrapper {

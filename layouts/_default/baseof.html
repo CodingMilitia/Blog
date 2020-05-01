@@ -51,6 +51,7 @@
 
     {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
       {{ template "_internal/google_analytics_async.html" . }}
+      <script async defer data-domain="blog.codingmilitia.com" src="https://plausible.io/js/plausible.js"></script>
     {{ end }}
   </head>
 

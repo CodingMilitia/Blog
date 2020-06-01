@@ -14,10 +14,10 @@ I use [Netlify](https://www.netlify.com/) to build the blog from the GitHub repo
 
 As to what concerns data by this blog's visitors, as mentioned by Netlify [here](https://www.netlify.com/gdpr/), the access logs containing the IP addresses are kept for less than 30 days.
 
-## Google Analytics
-Just to know if someone is actually visiting the site (and of course some other insights) I use [Google Analytics](https://analytics.google.com).
+## Plausible Analytics
+Just to know if someone is actually visiting the site (and of course some other insights) I use [Plausible](https://plausible.io/).
 
-The default setting for [data retention](https://support.google.com/analytics/answer/7667196) currently defaults to 26 months. I only see aggregate data (like number os visitors, visits by time, visitors countries, more stuff like that), everything else is handled by Google.
+Unlike Google Analytics, Plausible is privacy focused, so it doesn't collect personal data, targeting the minimum amount of data needed to analyse a site's traffic. More information about data policy on [Plausible's web site](https://plausible.io/data-policy).
 
 ## Disqus
 I have [Disqus](https://disqus.com/) setup on the blog to allow for comments. When using the comments Disqus will keep some data it needs to handle that, to which I have no control over, but having a Disqus account you can handle it directly with them. I only see the same public facing comments everyone else sees when visiting the blog.

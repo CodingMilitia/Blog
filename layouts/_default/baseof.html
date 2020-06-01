@@ -31,7 +31,7 @@
     {{ block "favicon" . }}
       {{ partialCached "site-favicon.html" . }}
     {{ end }}
-    <link rel="apple-touch-icon" sizes="192x192" href="{{ $.Site.BaseURL }}assets/logo-192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="{{ $.Site.BaseURL }}/assets/logo-192.png">
 
     {{ if .OutputFormats.Get "RSS" }}
     {{ with .OutputFormats.Get "RSS" }}

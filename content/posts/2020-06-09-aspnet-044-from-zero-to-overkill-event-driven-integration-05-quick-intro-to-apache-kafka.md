@@ -12,7 +12,7 @@ tags:
 - kafka
 - events
 - messaging
-- streaming
+- queues
 slug: aspnet-044-from-zero-to-overkill-event-driven-integration-05-quick-intro-to-apache-kafka
 ---
 

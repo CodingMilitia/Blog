@@ -127,9 +127,9 @@ Consumers keep track of what they already read by storing the partition offset m
 
 I've mentioned some differences between Kafka and queuing systems along the way, but I'll use this section to consolidate the core ideas that differentiate these two types of systems.
 
-Before anything else, to reiterate, Kafka **IS NOT** a queueing system. We can, however, implement some patterns traditionally used with queuing systems on top of it, but we need to be aware of the underlying differences.
+Before anything else, to reiterate, Kafka **IS NOT** a queuing system. We can, however, implement some patterns traditionally used with queuing systems on top of it, but we need to be aware of the underlying differences.
 
-As we saw, the main difference between Kafka and a queueing system, is that Kafka stores data as an append-only log, accessed with the usage of an offset, while queuing systems push messages to consumers, removing them after getting an acknowledgement of its successfully processing.
+As we saw, the main difference between Kafka and a queuing system, is that Kafka stores data as an append-only log, accessed with the usage of an offset, while queuing systems push messages to consumers, removing them after getting an acknowledgement of its successfully processing.
 
 [![message queue](/assets/2020/06/09/044-3-message-queue.png)](/assets/2020/06/09/044-3-message-queue.png)
 

@@ -184,7 +184,7 @@ Links in the post:
 - [Event Sourcing](https://martinfowler.com/eaaDev/EventSourcing.html)
 - [Event Store](https://eventstore.com/)
 - [Kafka Streams](https://kafka.apache.org/documentation/streams/)
-- [Kafka Connect][https://kafka.apache.org/documentation.html#connect]
+- [Kafka Connect](https://kafka.apache.org/documentation.html#connect)
 - [Events, Data Points, and Messages - Choosing the right Azure messaging service for your data](https://azure.microsoft.com/en-us/blog/events-data-points-and-messages-choosing-the-right-azure-messaging-service-for-your-data/)
 - [Apache ZooKeeper](https://zookeeper.apache.org/)
 - [Event-driven integration #4 - Outbox publisher (feat. IHostedService & Channels) [ASPF02O|E043]](https://blog.codingmilitia.com/2020/05/07/aspnet-043-from-zero-to-overkill-event-driven-integration-04-outbox-publisher-feat-ihostedservice-channels/)

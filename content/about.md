@@ -34,7 +34,7 @@ I'll leave a couple of examples below.
   frameborder="0"></iframe>
 
 <iframe id="twitchplayer" width="640" height="360" style="margin-left: auto; margin-right: auto; display: block; padding: 10px;"
-    src="https://player.twitch.tv/?channel=joaofbantunes&autoplay=false&muted=true"
+    src="https://player.twitch.tv/?channel=joaofbantunes&parent=blog.codingmilitia.com&autoplay=false&muted=true"
     frameborder="0">
 </iframe>
 

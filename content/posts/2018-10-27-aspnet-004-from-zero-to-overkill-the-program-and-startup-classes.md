@@ -61,11 +61,11 @@ Let's start with creating a very simple middleware that adds an header to every 
 
 As we've talking, the basic idea of middlewares is that they work like in a chain - a middleware is invoked, it can do something, then pass the request along to the next middleware and finally do something else when the next middleware is done. There can be cases where the next middleware isn't invoked, for instance in a authorization middleware, if the user isn't authenticated, it can immediately stop the request, returning a response by itself. Given this, the base of the middleware will be as follows:
 
-{% gist 5ca2d3f5dc469e96ca427051c57a2f88 %}
+{{< gist joaofbantunes 5ca2d3f5dc469e96ca427051c57a2f88 >}}
 
 With this in mind, our middleware for adding a response header will be really simple, having only logic before invoking the next middleware.
 
-{% gist d66d1ece902024d833d4ac9ab3be52fe %}
+{{< gist joaofbantunes d66d1ece902024d833d4ac9ab3be52fe >}}
 
 As you can see, the first thing the middleware does is register a callback on `context.Response.Starting()`, so the lambda passed in is executed before the response starts being delivered to the client. Next and final thing the middleware does is invoking `next()`, so the next middleware in the chain can start to do its thing (in this case, the MVC middleware).
 
@@ -80,7 +80,7 @@ Remember, the order in which the middlewares are registered is important, so giv
 
 In the end, the `Configure` method looks like this:
 
-{% gist 7c96f7b2f6bd55be83b6d7c2236e0bef %}
+{{< gist joaofbantunes 7c96f7b2f6bd55be83b6d7c2236e0bef >}}
 
 I haven't really talked about the development exception page middleware that's present in the beginning of the method (part of the project template), but by now, knowing how all of this works, you can guess what it does - if we're in development environment, a page with exception details is shown when an unhandled error occurs, when not in development, this information is not shown.
 
@@ -89,17 +89,17 @@ Taking a look at the other method present in the `Startup` class, we have `Confi
 
 In the root of the project, I'm adding a a new folder `Demo` and in there creating 2 files: `IGroupIdGenerator` and `GroupIdGenerator` - you can guess that the first will be an interface and the second a class that implements the former.
 
-{% gist 824f113de5bdd3e61a503178531d17d4 %}
+{{< gist joaofbantunes 824f113de5bdd3e61a503178531d17d4 >}}
 
 Pretty simple stuff, just to have something to inject 😛 The interface has a single method, to retrieve the next id. The implementation stores the last used id in an instance field, which is incremented in every method call.
 
 To use this id generator, we head to the `GroupsController`, remove the `currentGroupId` field we had there and inject - as in receive as a constructor argument - the newly created `IGroupIdGenerator`, storing it in an instance variable.
 
-{% gist 3a00d47b55c1a2b9d86e16673c110653 %}
+{{< gist joaofbantunes 3a00d47b55c1a2b9d86e16673c110653 >}}
 
 Now we can use the id generator on the action responsible for creating a new group, instead of the id field we had previously.
 
-{% gist fbf2988811c922a276b493ab3592d6d6 %}
+{{< gist joaofbantunes fbf2988811c922a276b493ab3592d6d6 >}}
 
 Even though if we compile and run right now, it seems to work correctly, as soon as we make a request to our groups controller, we get the following error:
 ```
@@ -118,7 +118,7 @@ The life cycle will always depend on the service we're registering. In our case,
 
 Our `ConfigureServices` end result will be as follows:
 
-{% gist be37997078286174a894793dc1f22f3e %}
+{{< gist joaofbantunes be37997078286174a894793dc1f22f3e >}}
 
 Now if we run it, it works as it was working before, just with a different way to getting the next id when creating a new group.
 

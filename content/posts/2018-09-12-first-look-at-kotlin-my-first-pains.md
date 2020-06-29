@@ -32,7 +32,7 @@ Then following the instructions on [Ktor docs for IntelliJ and Gradle](https://k
 ## The (problematic) code
 So my initial code was as follows - don't use this, it has problems! (and are all on the `build.gradle` file).
 
-{% gist 9972e7742fb05692e69ff4de060f185c %}
+{{< gist joaofbantunes 9972e7742fb05692e69ff4de060f185c >}}
 
 I had no problems when I ran the code with a right click on the `Server.kt` file, like so:
 [![right click run](/assets/2018/09/12/right-click-run.jpg)](/assets/2018/09/12/right-click-run.jpg)

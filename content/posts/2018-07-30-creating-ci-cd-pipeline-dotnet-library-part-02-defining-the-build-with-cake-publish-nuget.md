@@ -49,41 +49,41 @@ Now we can open our `build.cake` file and start defining the required tasks. I�
 
 At the start of the file I’m declaring the dependencies on plugins and tools that’ll be used. There’s also a `using NuGet;` statement, because like I mentioned earlier, this is C# and I wanted to do some shenanigans.
 
-{% gist f258b468659ff8318104e7b9f74db754 %}
+{{< gist joaofbantunes f258b468659ff8318104e7b9f74db754 >}}
 
 Next there’s a bunch of variable definitions that’ll be used when defining the tasks. Some are just hardcoded constants, like project and file paths, others are created using arguments that are passed to the build script.
 
-{% gist e70562d472399dcad5cc9617e8bff09b %}
+{{< gist joaofbantunes e70562d472399dcad5cc9617e8bff09b >}}
 
 Now let’s get into the tasks. There are seven of them: `Clean`, `Restore`, `Build`, `Test`, `UploadCoverage`, `Package` and `Publish`. Even if a bit overkill, I’ll go through each.
 
 The `Clean` task deletes the artifacts directory and creates a new empty one to put everything that'll be generated in the next steps in there. It also runs `dotnet clean` at the solution level.
 
-{% gist 78f5d67c6a8fe1ab3d0e93240a7253ea %}
+{{< gist joaofbantunes 78f5d67c6a8fe1ab3d0e93240a7253ea >}}
 
 The `Restore` task simply calls `dotnet restore` at the solution level to restore all required dependencies of the projects.
 
-{% gist 13a863de87902bb04310dbc5e6ea2961 %}
+{{< gist joaofbantunes 13a863de87902bb04310dbc5e6ea2961 >}}
 
 The `Build` task basically runs `dotnet build -c Release` at the solution level. The task also defines it’s dependent on the `Clean` and `Restore` tasks, so those are executed before this one.
 
-{% gist 70f9bf46a4c3b365863fb1ca716c9db4 %}
+{{< gist joaofbantunes 70f9bf46a4c3b365863fb1ca716c9db4 >}}
 
 The `Test` task executes the tests in the respective project but adds some other settings pertaining to the code coverage report generation - `CollectCoverage`, `CoverletOutputFormat` and `CoverletOutput`.
 
 [Coverlet](https://github.com/tonerdo/coverlet) is a tool used to generate the coverage reports in .NET Core.
 After the tests are run, the generated code coverage report is moved to the artifacts directory. This is more for organization and to avoid having loose files in the development environment, as in the CI servers a new build is initiated from a completely clean environment.
 
-{% gist 9f5981511efc922076dd0502e6ef135c %}
+{{< gist joaofbantunes 9f5981511efc922076dd0502e6ef135c >}}
 
 The `UploadCoverage` task, well… uploads the coverage report 😛<br/>
 It uses a plugin to upload to Coveralls, getting as input the coverage report file path and token to authenticate itself with the service. The token is passed as an argument to the build script, being stored as an environment variable by the CI provider - I’ll talk about in the next post, on the section about AppVeyor.
 
-{% gist 1cdc107f1798d44f6962af937702a34f %}
+{{< gist joaofbantunes 1cdc107f1798d44f6962af937702a34f >}}
 
 The `Package` task packs the library project into a pretty little NuGet package we can share on the interwebs.
 
-{% gist dbf845be7693c289738613592b34b80c %}
+{{< gist joaofbantunes dbf845be7693c289738613592b34b80c >}}
 
 The `Publish` task publishes the generated NuGet package into [nuget.org](https://www.nuget.org).
 
@@ -91,7 +91,7 @@ This is probably a questionable decision, as the usual approach would be to just
 
 It’s here the C# shenanigans come into play. To avoid trying to publish when the package version is the same - for instance when I’m just making adjustments to the build script and haven’t changed the project code - I’m importing the `Nuget.Core` NuGet package to use the API to check if this package version is already published.
 
-{% gist f6bc515548a3bf83f88577bece5074e0 %}
+{{< gist joaofbantunes f6bc515548a3bf83f88577bece5074e0 >}}
 
 To push the package to NuGet we need an API key. We can use a general key or create one for each project, which I would say it’s the ideal for security reasons. To create one you can go [over here](https://www.nuget.org/account/apikeys), hit create, give it a name, the owner of the package it pushes (for instance you may want an organization instead of yourself), set some options and the packages this key has access to.
 
@@ -103,7 +103,7 @@ The final thing in the `build.cake` file is the definition of build targets, whi
 
 To target a specific task we could add the argument `--target NAME_OF_TASK` when invoking the build script. If nothing is passed then `Default` is assumed, which does a complete build, depending on the environment/branch - the development branch goes only ‘till the `UploadCoverage` task and the master branch goes all the way to the `Publish` one.
 
-{% gist 2f651ec5dbc4425d8a1dfd04b21fd343 %}
+{{< gist joaofbantunes 2f651ec5dbc4425d8a1dfd04b21fd343 >}}
 
 # Running the build locally
 Now that we defined the Cake build script, we can run it locally, just as it is going to be run in the cloud CI providers.

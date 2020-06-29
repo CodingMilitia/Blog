@@ -22,7 +22,7 @@ One of these days, going through some code at work I noticed a colleague had mad
 
 Something like the following, just for context:
 
-{% gist 3bf6e03a764493e25ece78b5b51d35a2 %}
+{{< gist joaofbantunes 3bf6e03a764493e25ece78b5b51d35a2 >}}
 
 After seeing this I thought, yeah, he's right, we should be more careful and use the types we really need. If we're iterating on a short range of values, why not use `short` (or a even smaller type)? It may even have a (probably almost unnoticeable) gain in performance as we're saving memory right? Oh how wrong was I 😇
 
@@ -39,7 +39,7 @@ Some more link clicking took me to Stack Overflow and [this question](https://st
 
 Of course I wanted to check it out for myself and rolled a kind of stupid benchmark just for fun (using the awesome [BenchmarkDotNet](https://benchmarkdotnet.org) library).
 
-{% gist 5b87572b4a44bf711e4384795e9db611 %}
+{{< gist joaofbantunes 5b87572b4a44bf711e4384795e9db611 >}}
 
 I even added a `long` (`Int64`) to the mix just to see the result, which was:
 

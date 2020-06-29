@@ -28,7 +28,7 @@ To get started with the library we just need to add the desired NuGet package(s)
 ## The code
 The code is really simple, at least for my use case, as I don't need anything too fancy. In the project I originally used it, we just needed to read some tables from Excel files provided to us with the expected results of some business logic, and assert our implementation correctness in the tests. This sample is derived from our simple requirements.
 
-{% gist 7cdf504690182f45fae359a60d67929d %}
+{{< gist joaofbantunes 7cdf504690182f45fae359a60d67929d >}}
 
 I'd say the code is pretty simple and doesn't need much explanation. The only thing maybe worth pointing out is the `System.Text.Encoding.RegisterProvider` method call, which is related to what I mentioned previously regarding the need for the `System.Text.Encoding.CodePages` package.
 

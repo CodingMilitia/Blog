@@ -51,7 +51,7 @@ Like mentioned in the previous section, the configuration of the build could be 
 
 Considering the bulk of the work is done in Cake, the AppVeyor configuration is really simple - I’ll just insert it here and then go through it.
 
-{% gist 6ece9e908b165059539aa7b10ddf7518 %}
+{{< gist joaofbantunes 6ece9e908b165059539aa7b10ddf7518 >}}
 
 Starting with the version. I don’t use this at all, as I’m defining the version manually in the library’s `csproj` file, but the default is `1.0.{build}` and it is shown when we are looking at the latest builds, I preferred changing it to `{build}` to just map directly to the build number.
 
@@ -93,7 +93,7 @@ As you’ll see, the logic is very similar to AppVeyor, just using a different f
 
 Using the same approach, complete file, then walk through its parts.
 
-{% gist eb484907eadc0fc828e87defffa4fe4b %}
+{{< gist joaofbantunes eb484907eadc0fc828e87defffa4fe4b >}}
 
 Starting with the `language`, this basically defines some default steps.
 

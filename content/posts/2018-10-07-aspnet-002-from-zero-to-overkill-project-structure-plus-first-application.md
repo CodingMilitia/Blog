@@ -43,7 +43,7 @@ After this, I just needed to clone the repo to my computer `git clone https://gi
 
 For the repository structure, I tend to follow something similar to what David Fowler (Microsoft architect for ASP.NET Core) recommends in his gist:
 
-{% gist ed7564297c61fe9ab814 %}
+{{< gist davidfowl ed7564297c61fe9ab814 >}}
 
 (consider only the folder structure, the `.gitignore` I used has a lot more stuff)
 

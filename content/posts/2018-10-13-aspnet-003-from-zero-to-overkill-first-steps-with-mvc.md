@@ -60,7 +60,7 @@ Above the `GroupsController` class we add the attribute `[Route("groups")]`, whi
 Now for our first action, I'm adding an `Index` method that returns `IActionResult`. This is the usual type of return when we're defining MVC actions, as it allows for returning different responses and status codes with a call of the base `Controller` class method, like `NotFound` (returns a 404), `Content` (returns a 200 plus the provided content) or `View` (renders the view discovered by convention or passed as argument).
 
 Just to see the action in action (pun intended 😛), we'll implemented as following:
-{% gist 69146f63d90a6a6cfdc63883a23902b2 %}
+{{< gist joaofbantunes 69146f63d90a6a6cfdc63883a23902b2 >}}
 
 Now to see it working, we'll go to the project folder and run `dotnet watch run`, which will do the same as `dotnet run`, with the added benefit of listening to file changes and then restarts the application automatically.
 
@@ -75,7 +75,7 @@ As we did for the controllers, we follow the conventions and create a `Views`fol
 We can create a new view file called `Index.cshtml`, again, notice the name matches the name of the action, so MVC makes the match automagically. Let's postpone worrying with valid HTML and just add some random text.
 
 Next we head over to the controller and replace the `Index` implementation with the following:
-{% gist bcbaeb64fee2f01fefdab862e0d44485 %}
+{{< gist joaofbantunes bcbaeb64fee2f01fefdab862e0d44485 >}}
 
 Heading back to the browser we now see the text we wrote on the view.
 
@@ -89,7 +89,7 @@ As this component we're developing is targeted at group management, it's only fi
 
 For starters add another folder to the project called `Models` and in there create a new class `GroupViewModel` that'll represent a group, although right on in the simplest of forms, with an id and a name.
 
-{% gist 03d7406cd3dbc24ff37efe6de4fd0fc1 %}
+{{< gist joaofbantunes 03d7406cd3dbc24ff37efe6de4fd0fc1 >}}
 
 This class will be passed along from controller to view, to present and gather the needed information to/from the user - hence the suffix `ViewModel`.
 
@@ -99,11 +99,11 @@ As we're still not using databases and nothing of the sort, we'll go with an in 
 
 For the homepage, we'll just list the user's available groups (we don't have authentication yet so... it'll be all). With that purpose, we just pass the existent groups when calling the `View` method, so the view model will be provided to the view.
 
-{% gist 8d5c57a0e2e0fae4442e52662e4d6a86 %}
+{{< gist joaofbantunes 8d5c57a0e2e0fae4442e52662e4d6a86 >}}
 
 On the view side, we now get the collection of `GroupViewModel`, so we need to add that fact to the `Index.cshtml` file, as you can see in the first line of the following code.
 
-{% gist ffb7faa50f04144575beaad7eb9b2959 %}
+{{< gist joaofbantunes ffb7faa50f04144575beaad7eb9b2959 >}}
 
 Then we use Razor to present the data, which is a mix of C# and HTML (as the file extension probably gave away). So as you can see in the code we create an unordered list and then, for each group in the model we got from the controller, we create a `li` element. 
 
@@ -123,7 +123,7 @@ To reference the models, we would normally need to add a `using` statement to th
 
 To avoid repeating the same code in all views, as in most cases we'll want access to the models and tag helpers, we can create a `_ViewImports.cshtml` file on the `Views` folder root, and all views will have access to what's imported there.
 
-{% gist 6e8ceec27179e2679a896af852c9142e %}
+{{< gist joaofbantunes 6e8ceec27179e2679a896af852c9142e >}}
 
 If we wanted to do specific imports just for the groups views (assuming we had more), we could create another `_ViewImports.cshtml` file in the `Views\Groups` folder.
 
@@ -131,23 +131,23 @@ If we wanted to do specific imports just for the groups views (assuming we had m
 
 For the group details page we want two actions, one just to show the information and another to update it.
 
-{% gist 4d4b865f61ff35a373b570bd26b91b1a %}
+{{< gist joaofbantunes 4d4b865f61ff35a373b570bd26b91b1a >}}
 
 Lets begin with showing the information. Notice the `{id}` we have on the route attribute. That's what allows the map of the name `id` to the route, as we saw in the previous section, when using the tag helper `asp-route-` with the suffix `id`. The name also makes the match between the route and the argument on the action method signature. As for the implementation, we start by fetching the detail from the in memory group collection. If we can't find the requested group we return a `404` HTTP status code, by calling the `NotFound` method we inherited from `Controller`. If we had a match on the group id, then we pass it to the view to render.
 
 On the view side, like before we now have something different - a form.
 
-{% gist fac50867b146c12d1fdcb3d82f22ccca %}
+{{< gist joaofbantunes fac50867b146c12d1fdcb3d82f22ccca >}}
 
 When creating the `form,` we're using a `form` tag helper as we saw previously for the anchors, including the attributes to map the route. Then we add a `label` and an `input` to allow editing of the group name. Notice the `asp-for`. Particularly in the `input` case, will make it generate the HTML, including the input name to match the model property and the type, considering the model property's type (in this case `string`, so `text`).
 
 Taking a look at the generated HTML we can see what we expect given the previous explanations, plus something else.
 
-{% gist b149db6cb2efb8e0eb1db9a951cb9b5a %}
+{{< gist joaofbantunes b149db6cb2efb8e0eb1db9a951cb9b5a >}}
 
 There's an `input` of type `hidden` with the name `__RequestVerificationToken`. This is used to protect against CSRF attacks, and is added automatically when we create the `form` in the view using the tag helper. As we'll see, this is checked on the update action, using the attribute `ValidateAntiForgeryToken` to indicate we want to make this check.
 
-{% gist 33f199cf509e6c5c51f2a1ef883c435d %}
+{{< gist joaofbantunes 33f199cf509e6c5c51f2a1ef883c435d >}}
 
 We can see the `ValidateAntiForgeryToken` attribute mentioned previously, together with the attribute that binds the action to the post HTTP method and the route definition, that's the same as for reading the details, being the distinction between the two made by the HTTP method.
 
@@ -161,13 +161,13 @@ To wrap this up, we have the page to create new groups. It is very similar to th
 
 Starting with the view this time around, it's basically a copy paste of the update details page.
 
-{% gist 83c08f7a008dfa39e4b6a35b935dca61 %}
+{{< gist joaofbantunes 83c08f7a008dfa39e4b6a35b935dca61 >}}
 
 The only difference is really the target action and not having an id argument, as it will be generated in the backend when inserting the new group.
 
 As for the controller actions, again, very similar to the update details.
 
-{% gist a963c245f4b0c31da205f8cbb38d1a65 %}
+{{< gist joaofbantunes a963c245f4b0c31da205f8cbb38d1a65 >}}
 
 We start with an action (`Create`) that just maps to the view, to render the creation form.
 

@@ -28,7 +28,7 @@ Maybe it’s a bit of a repetition of my previous post on gRPC (and others aroun
 ### Service definition
 The first thing to do is defining the service, much like one would create a WSDL before implementing a SOAP service (I know, the usual way is to implement the service and get the generated contract afterwards, but it shouldn’t!), in gRPC we create a proto file (or more) with the service definition - its methods, input and output messages.
 
-{% highlight protobuf linenos %}
+```protobuf
 syntax = "proto3";
 
 option csharp_namespace 
@@ -45,7 +45,7 @@ message SampleRequest {
 message SampleResponse {
     int32 value = 1;
 }
-{% endhighlight %}
+```
 
 So, here I’m defining a service called `SampleService` with a method `Send` that receives a `SampleRequest` parameter and returns a `SampleResponse` - such naming imagination right?
 This is a unary method definition, simple request response. In gRPC we have some streaming options, but like I said, I'm keeping it simpler for now, next time I'll play around with streaming.
@@ -54,9 +54,9 @@ Finally, it’s rather obvious but, the `csharp_namespace` option indicates the 
 ### Code generation
 With the service definition done, we need to generate the code to use in our applications. The tooling for the code generation is installed along with the `Grpc.Tools` NuGet package. With the tooling in place, for this simple case I’m describing, it’s just a command away from getting the required client and base server code,
 
-{% highlight bash linenos %}
+```bash
 ./protoc service.proto --csharp_out ./Generated/. --grpc_out ./Generated/. --plugin=protoc-gen-grpc=grpc_csharp_plugin
-{% endhighlight %}
+```
 
 With our code generated, we can move on to using it.
 
@@ -65,7 +65,7 @@ On the client side of things I really didn’t add anything to the library as th
 
 One of the generated classes for our sample is the `SampleServiceClient`. To use it in an application, for instance a web application, we just need to configure it in the `Startup` class as following.
 
-{% highlight csharp linenos %}
+```csharp
 services.AddSingleton(_ =>
 {
     var channel = new Channel(
@@ -74,7 +74,7 @@ services.AddSingleton(_ =>
     );
     return new SampleServiceClient(channel);
 });
-{% endhighlight %}
+```
 
 Of course the hardcoded url and credentials configuration part is good only for sample purposes.
 
@@ -87,7 +87,7 @@ The service implementation is the same for the most part, as we must inherit fro
 
 So to reduce the need fiddle around with DI when we should be focusing on the service’s logic, the best way is probably to implement the service logic in another class, which in the simplest case (like this unary method case we’re using as sample) doesn’t even need to know anything about gRPC.
 
-{% highlight csharp linenos %}
+```csharp
 public class RandomSampleServiceLogic : ISampleServiceLogic
 {
     private static readonly Random RandomSource = new Random();
@@ -130,13 +130,13 @@ public class RandomSampleServiceLogic : ISampleServiceLogic
         return response;
     }
 }
-{% endhighlight %}
+```
 
 Notice the `CancellationToken` is passed as an argument to `SendAsync` method, as in this simple case it is completely oblivious of being part of a gRPC service, and if needed could be used as is as the logic provider of a REST API or any other type of API.
 
 Then the service implementation to be hosted can be something like the following.
 
-{% highlight csharp linenos %}
+```csharp
 public class AnotherSampleServiceImplementation : SampleServiceBase
 {
     private readonly IServiceScopeFactory _scopeFactory;
@@ -167,11 +167,11 @@ public class AnotherSampleServiceImplementation : SampleServiceBase
         }
     }
 }
-{% endhighlight %}
+```
 
 Alternatively I created a `IScopedExecutor` that can be used to abstract away this, but in reality there’s not that much need for it.
 
-{% highlight csharp linenos %}
+```csharp
 public class SampleServiceImplementation : SampleServiceBase
 {
     private readonly IScopedExecutor _scopedExecutor;
@@ -200,7 +200,7 @@ public class SampleServiceImplementation : SampleServiceBase
                 });
     }
 }
-{% endhighlight %}
+```
 
 ### Hosting
 
@@ -210,7 +210,7 @@ To start with, how to host the service? The simpler way is probably just to inst
 
 So with this in mind I started by implementing the `GrpcBackgroundService` class. This is a pretty simple class, receiving the `Server` instances to host in the constructor, so only one `GrpcBackgroundService` instance is needed even if we want to host multiple services in multiple `Server`s (we can also host multiple services in a single `Server`).
 
-{% highlight csharp linenos %}
+```csharp
 internal class GrpcBackgroundService : IHostedService
 {
     private readonly IEnumerable<Server> _servers;
@@ -274,11 +274,11 @@ internal class GrpcBackgroundService : IHostedService
         );
     }
 }
-{% endhighlight %}
+```
 
 Then to assist in registering the services I created some extensions methods for the `IServiceCollection` interface. Below I included only the ones I find most interesting for this scenario, as the others do little more than registering the provided `Server` to DI along with the `GrpcBackgroundService`.
 
-{% highlight csharp linenos %}
+```csharp
 //...
 
 public static IServiceCollection AddGrpcServer<TService>(
@@ -340,14 +340,14 @@ public static IServiceCollection AddGrpcServer(
 }
 
 //...
-{% endhighlight %}
+```
 
 The bulk of the implementation is in the second version of the `AddGrpcServer` method I show, so the first one is only a simplified version that uses the second as base. 
 
 Regarding the methods signature, the first one is a version that registers a single service (being it `TService`, passed as a generic argument), using the provided ports and channel options to configure the `Server`. The second version allows for the registration of multiple services in the same `Server`, getting a `Action<IGrpcServerBuilder> serverConfigurator` as argument with that goal. The `IGrpcServerBuilder` interface exposes an `AddService` method that allows for the multiple desired services to be registered.
 With all the required dependencies, an instance of the `IGrpcServerBuilder` implementation (`GrpcServerBuilder`) is created and takes care of building a `Server` to be hosted by the application.
 
-{% highlight csharp linenos %}
+```csharp
 internal class GrpcServerBuilder : IGrpcServerBuilder
 {
     private readonly IServiceCollection _serviceCollection;
@@ -484,11 +484,11 @@ internal class GrpcServerBuilder : IGrpcServerBuilder
         }
     }
 }
-{% endhighlight %}
+```
 
 The `AddService` method makes some initial validity checks, registers the services in the DI container and stores some information to use when finally building the service. The most important part of this information to use when building the `Server` is what I called the `serviceBinder`, which is used to bind the service implementation to the `ServerServiceDefinition` that is registered to the `Server`. We can see this method in the generated `SampleService` class with the name `BindService`. Initially I was passing this method as an argument to the `AddGrpcServer` methods, but then I went ahead and created an helper to fetch this for me given the service implementation class.
 
-{% highlight csharp linenos %}
+```csharp
 //Using reflection tricks and assumptions on the way 
 //the core gRPC lib works so, if Google changes this, 
 //it'll break and only be noticed at runtime :)
@@ -537,7 +537,7 @@ public static Func<TService, ServerServiceDefinition> GetServiceBinder<TService>
 
     return func;
 }
-{% endhighlight %}
+```
 
 This uses reflection to go through the class hierarchy of the service class to find the binder method. It’s probably a bit risky to count that this won’t change in future releases of the gRPC libraries, but for now it works well enough and simplifies the server configuration.
 
@@ -551,7 +551,7 @@ Everything that’s being added to DI is using the singleton scope, as we’ll o
 
 Now to configure the application, it’s just a matter of creating an `HostBuilder` and using the previously described extensions to configure the services.
 
-{% highlight csharp linenos %}
+```csharp
 class Program
 {
     static async Task Main(string[] args)
@@ -616,7 +616,7 @@ class Program
         await serverHostBuilder.RunConsoleAsync();
     }
 }
-{% endhighlight %}
+```
 
 To begin registering the services, the `ISampleServiceLogic` is added as scoped, followed by the registration of the `IScopedExecutor` I mentioned earlier. 
 

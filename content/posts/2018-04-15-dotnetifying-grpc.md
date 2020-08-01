@@ -38,7 +38,7 @@ Before talking about what I wanted to achieve, it might be better to start with 
 
 We start by creating a .proto file containing the service description.
 
-{% highlight protobuf linenos %}
+```protobuf
 syntax = "proto3";
 
 option csharp_namespace = "CodingMilitia.Grpc.GeneratedServerInterop.Generated";
@@ -54,17 +54,17 @@ message SampleRequest {
 message SampleResponse {
     int32 value = 1;
 }
-{% endhighlight %}
+```
 
 Then we use the tools that are installed with the Grpc.Tools NuGet package to generate the C# code.
 
-{% highlight bash linenos %}
+```bash
 ./protoc service.proto --csharp_out ./Generated/. --grpc_out ./Generated/. --plugin=protoc-gen-grpc=grpc_csharp_plugin
-{% endhighlight %}
+```
 
 With the generated code we can use the generated client (class `SampleServiceClient`) to invoke an already running service or inherit from the generated service base (class `SampleServiceBase`) to implement the server side.
 
-{% highlight csharp linenos %}
+```csharp
 //server
  var server = new Server
 {
@@ -72,15 +72,15 @@ With the generated code we can use the generated client (class `SampleServiceCli
     Ports = { new ServerPort("127.0.0.1", 5000, ServerCredentials.Insecure) }
 };
 server.Start();
-{% endhighlight %}
+```
 
-{% highlight csharp linenos %}
+```csharp
 //client
 var channel = new Channel("127.0.0.1:5000", ChannelCredentials.Insecure);
 var client = new Generated.SampleService.SampleServiceClient(channel);
 var request = new Generated.SampleRequest { Value = 1 };
 var response = await client.SendAsync(request);
-{% endhighlight %}
+```
 
 Like I said at the beginning, my initial goal was just to wrap this with some helper methods for DI and simplify hosting, but then, I went rogue...
 
@@ -89,7 +89,7 @@ Just to provide a glimpse of the desired outcome in terms of hosting and consumi
 
 ### Shared between client and server
 
-{% highlight csharp linenos %}
+```csharp
 [GrpcService("SampleService")]
 public interface ISampleService : IGrpcService
 {
@@ -110,13 +110,13 @@ public class SampleResponse
     [ProtoBuf.ProtoMember(1)]
     public int Value { get; set; }
 }
-{% endhighlight %}
+```
 
 The attributes above the messages are dependant on the serializer used. I’m using [protobuf-net](https://github.com/mgravell/protobuf-net) to implement the serializer, hence the attributes used.
 
 ### Server
 
-{% highlight csharp linenos %}
+```csharp
 var serverHostBuilder = new HostBuilder()
     .ConfigureServices((hostContext, services) =>
     {
@@ -124,11 +124,11 @@ var serverHostBuilder = new HostBuilder()
     });
 
 await serverHostBuilder.RunConsoleAsync(cts.Token);
-{% endhighlight %}
+```
 
 ### Client
 
-{% highlight csharp linenos %}
+```csharp
 //in a normal scenario we wouldn't instantiate the ServiceCollection, it's just for demo purposes
 var clientServices = new ServiceCollection()
     .AddGrpcClient<ISampleService>(new GrpcClientOptions { Url = "127.0.0.1", Port = 5000 })
@@ -136,7 +136,7 @@ var clientServices = new ServiceCollection()
 var client = clientServices.GetRequiredService<ISampleService>();
 var request = new SampleRequest { Value = 1 };
 var response = await client.SendAsync(request, CancellationToken.None);
-{% endhighlight %}
+```
 
 ## Implementing it
 
@@ -149,7 +149,7 @@ A gRPC service is composed of methods. There are 4 types of methods: unary, serv
 
 To create the method definitions, I built an helper class `MethodDefinitionGenerator` (my naming skills are a bit weak, sorry about that) that exposes a method `CreateMethodDefinition`, that returns a `Method<TRequest, TResponse>` - this class is part of the core gRPC library. For each service method it’s required a method type (that right now will always be `Unary`), the service and method names, as well as a serializer for the messages. The serializer is configurable because I’m using a third party library to implement it, so I thought it was best to keep it easy to change.
 
-{% highlight csharp linenos %}
+```csharp
 using System;
 using CodingMilitia.Grpc.Serializers;
 using Grpc.Core;
@@ -184,11 +184,11 @@ namespace CodingMilitia.Grpc.Shared.Internal
         }
     }
 }
-{% endhighlight %}
+```
 
 The `ISerializer` interface is the simplest thing ever (but after reading [this article](https://dev.to/scotthannen/depending-on-functions-instead-of-interfaces---why-and-how-50o6) I might change the approach). It just exposes a couple of methods to serialize and deserialize a generic type `T` to and from a `byte[]`.
 
-{% highlight csharp linenos %}
+```csharp
 namespace CodingMilitia.Grpc.Serializers
 {
     public interface ISerializer
@@ -197,11 +197,11 @@ namespace CodingMilitia.Grpc.Serializers
          T FromBytes<T>(byte[] input);
     }
 }
-{% endhighlight %}
+```
 
 Besides these, there’s also a couple of attributes to apply to the service interface and methods, right now only to configure the names that’ll be used in the method definitions.
 
-{% highlight csharp linenos %}
+```csharp
 using System;
 
 namespace CodingMilitia.Grpc.Shared.Attributes
@@ -217,9 +217,9 @@ namespace CodingMilitia.Grpc.Shared.Attributes
         }
     }
 }
-{% endhighlight %}
+```
 
-{% highlight csharp linenos %}
+```csharp
 using System;
 
 namespace CodingMilitia.Grpc.Shared.Attributes
@@ -235,12 +235,12 @@ namespace CodingMilitia.Grpc.Shared.Attributes
         }
     }
 }
-{% endhighlight %}
+```
 
 ### Server
 For the server side, I initially thought I had to implement some hosting helpers to have the service hosted in a console application in a similar way to ASP.NET Core. Then I realised this was already done in .NET Core 2.1 (that is in preview 1 at this point), which would avoid a good amount of work. So, leveraging the new hosting options, the very simple class `GrpcBackgroundService` implements `IHostedService`, and simply starts and stops a `GrpcHost` instance. Right now `GrpcHost`, is a thin abstraction on the core gRPC libraries’ `Server` class that handles the hosting of the services.
 
-{% highlight csharp linenos %}
+```csharp
 using CodingMilitia.Grpc.Shared;
 using Microsoft.Extensions.Hosting;
 using System.Threading;
@@ -268,9 +268,9 @@ namespace CodingMilitia.Grpc.Server.Internal
         }
     }
 }
-{% endhighlight %}
+```
 
-{% highlight csharp linenos %}
+```csharp
 using CodingMilitia.Grpc.Shared;
 using System.Threading.Tasks;
 using GrpcCore = Grpc.Core;
@@ -298,11 +298,11 @@ namespace CodingMilitia.Grpc.Server.Internal
         }
     }
 }
-{% endhighlight %}
+```
 
 To get the simple service implementation registration with DI we saw before on the “desired outcome” part, there’s an extension method on `IServiceCollection` that registers `GrpcBackgroundService` and the `GrpcHost` as singletons, as well as the provided service implementation as scoped, to achieve an ASP.NET MVC controller like behavior - one instance per request.
 
-{% highlight csharp linenos %}
+```csharp
 using CodingMilitia.Grpc.Serializers;
 using CodingMilitia.Grpc.Server.Internal;
 using CodingMilitia.Grpc.Shared;
@@ -331,11 +331,11 @@ namespace CodingMilitia.Grpc.Server
         }
     }
 }
-{% endhighlight %}
+```
 
 As can be seen above, besides what was already mentioned, there is also a call to a `GrpcHostFactory.Create` that’s responsible for creating the required `GrpcHost`, and here is where most of the code first magic for the server lives.
 
-{% highlight csharp linenos %}
+```csharp
 using CodingMilitia.Grpc.Serializers;
 using CodingMilitia.Grpc.Shared;
 using CodingMilitia.Grpc.Shared.Attributes;
@@ -390,7 +390,7 @@ namespace CodingMilitia.Grpc.Server.Internal
         }
     }
 }
-{% endhighlight %}
+```
 
 As you can see, this is where the shenanigans start - not that it’s super hard, but a bit trickier than usual, mainly because we get into reflection land. The beginning is straightforward, setting the options and the serializer on a `GrpcHostBuilder` instance. After that it starts iterating on all of the service interface methods, assuming they’re all unary methods and performing no validation whatsoever (yes, this really needs to be improved).
 
@@ -398,7 +398,7 @@ For each method, it creates an handler using the `MethodHandlerGenerator` class.
 
 The `GrpcHostBuilder` works with the core gRPC libraries’ `ServerServiceDefinition.Builder` to create the `Server`.
 
-{% highlight csharp linenos %}
+```csharp
 using CodingMilitia.Grpc.Serializers;
 using CodingMilitia.Grpc.Shared;
 using CodingMilitia.Grpc.Shared.Internal;
@@ -476,7 +476,7 @@ namespace CodingMilitia.Grpc.Server.Internal
         }
     }
 }
-{% endhighlight %}
+```
 
 In the builder constructor we get an `IServiceProvider` so we can fetch a service implementation per request. The SetOptions and SetSerializer methods are pretty self-explanatory, as is the Build method, that basically just creates the final `Server` instance using the provided arguments and the `ServerServiceDefinition.Builder` end product.
 
@@ -494,7 +494,7 @@ Like for the server stuff, let me start the story from the outside and gradually
 
 Just like the server side of things, I created an extension method over `IServiceCollection` to register the client as a singleton. The client is obtained with a call to `GrpcClientFactory.Create`.
 
-{% highlight csharp linenos %}
+```csharp
 using CodingMilitia.Grpc.Serializers;
 using CodingMilitia.Grpc.Shared;
 using Microsoft.Extensions.DependencyInjection;
@@ -515,11 +515,11 @@ namespace CodingMilitia.Grpc.Client
         }
     }
 }
-{% endhighlight %}
+```
 
 The factory just uses the `GrpcClientTypeBuilder` class to create the client proxy type and then returns a new instance of it.
 
-{% highlight csharp linenos %}
+```csharp
 using System;
 using System.Linq;
 using System.Reflection;
@@ -552,14 +552,14 @@ namespace CodingMilitia.Grpc.Client.Internal
         //...
     }
 }
-{% endhighlight %}
+```
 
 The `Create` method starts by creating an assembly builder and a module builder, with a GUID as the name right now, maybe in the future I come up with some useful name, but right now it isn’t really relevant. Then a `TypeBuilder` is created, and the service client type starts to be defined. The client type implements the provided service interface and inherits from `GrpcClientBase`, an abstract class with some auxiliary methods to simplify the rest of the type definition.
 After defining the base class and interface implementation, the `AddConstructor` and `AddMethods` are called, wrapping up with returning a completely runtime generated type that represents the service client. 
 
 Before getting into `AddConstructor` and `AddMethod`, let’s take a quick look into `GrpcClientBase`.
 
-{% highlight csharp linenos %}
+```csharp
 using CodingMilitia.Grpc.Serializers;
 using CodingMilitia.Grpc.Shared.Internal;
 using System.Threading;
@@ -600,14 +600,14 @@ namespace CodingMilitia.Grpc.Client.Internal
         }
     }
 }
-{% endhighlight %}
+```
 
 This class is rather simple (at least compared to what’s coming next) and simply makes use of gRPC’s core libraries to make service calls.
 The constructor receives some arguments to create the communication channel and a serializer like we saw earlier. The `CallUnaryMethodAsync` does exactly what the name says, invokes an unary method exposed by the service, making use of `MethodDefinitionGenerator.CreateMethodDefinition` to get the method definition like we also saw earlier.
 
 Now for the first IL emitting part, invoking the base class constructor.
 
-{% highlight csharp linenos %}
+```csharp
 private void AddConstructor(TypeBuilder typeBuilder, Type serviceType)
 {
     var ctorBuilder = typeBuilder.DefineConstructor(
@@ -625,7 +625,7 @@ private void AddConstructor(TypeBuilder typeBuilder, Type serviceType)
     il.Emit(OpCodes.Call, ctorToCall);//call base class constructor
     il.Emit(OpCodes.Ret);
 }
-{% endhighlight %}
+```
 
 So, just to get this out of the way, I can’t write IL by heart, so I wrote the code I expected to obtain, went for the resulting IL and used it here (used [.NET Fiddle](https://dotnetfiddle.net/) to get the IL).
 
@@ -633,7 +633,7 @@ In summary, it’s defining a public constructor that receives `GrpcClientOption
 
 Now for the `AddMethods` + `AddMethod`
 
-{% highlight csharp linenos %}
+```csharp
 private void AddMethods(TypeBuilder typeBuilder, Type serviceType)
 {
     foreach (var method in serviceType.GetMethods())
@@ -677,7 +677,7 @@ private void AddMethod(TypeBuilder typeBuilder, MethodInfo method)
 
     typeBuilder.DefineMethodOverride(methodBuilder, method);
 }
-{% endhighlight %}
+```
 
 The `AddMethods` just loops through the service interface’s methods, but the `AddMethod` is where things go crazy again.
 

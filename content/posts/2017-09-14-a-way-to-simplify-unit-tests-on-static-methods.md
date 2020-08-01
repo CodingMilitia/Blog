@@ -36,7 +36,7 @@ Let's go for an example (way too simple, but it think it's enough): I want to im
 
 So, as I mentioned, I'd start by creating a non-static class to hold the logic.
 
-{% highlight csharp linenos %}
+```csharp
 using System;
 
 namespace CodingMilitia.UnitTestingStaticsSample.Library
@@ -56,11 +56,11 @@ namespace CodingMilitia.UnitTestingStaticsSample.Library
         }
     }
 }
-{% endhighlight %}
+```
 
 Then we implement the static wrapper, that knows how to construct the `CacheableStuffCalculator` and provide its dependencies, and then forward any calls to it.
 
-{% highlight csharp linenos %}
+```csharp
 namespace CodingMilitia.UnitTestingStaticsSample.Library
 {
     public static class StaticCacheableStuffCalculatorWrapper
@@ -78,11 +78,11 @@ namespace CodingMilitia.UnitTestingStaticsSample.Library
         }
     }
 }
-{% endhighlight %}
+```
 
 With this in place, it's pretty easy to make our unit tests on `CacheableStuffCalculator` as we usually do, avoiding problems with shared state.
 
-{% highlight csharp linenos %}
+```csharp
 using System;
 using Xunit;
 using Moq;
@@ -110,7 +110,7 @@ namespace CodingMilitia.UnitTestingStaticsSample.Library.Tests
         }
     }
 }
-{% endhighlight %}
+```
 
 
 ## Wrapping up

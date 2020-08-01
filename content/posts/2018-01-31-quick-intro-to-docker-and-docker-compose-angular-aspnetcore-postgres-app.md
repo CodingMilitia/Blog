@@ -38,7 +38,7 @@ Before tying all the application components together with Docker Compose, we nee
 ### Backend
 To get it out of the way, here's the Dockerfile for the backend.
 
-{% highlight docker linenos %}
+```docker
 FROM microsoft/aspnetcore-build:2.0 AS builder
 WORKDIR /app
 
@@ -59,7 +59,7 @@ FROM microsoft/aspnetcore:2.0
 WORKDIR /app
 COPY --from=builder /app/src/CodingMilitia.AngularAspNetCoreDockerSample.WebApi/out .
 ENTRYPOINT ["dotnet", "CodingMilitia.AngularAspNetCoreDockerSample.WebApi.dll"]
-{% endhighlight %}
+```
 
 To create the image I'm taking advantage of a couple of features I hadn't tried before: [multi-stage builds](https://docs.docker.com/engine/userguide/eng-image/multistage-build/) and [layered images](https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/).
 
@@ -76,7 +76,7 @@ After the restore, and taking advantage of the layer caching, we can then copy t
 ### Frontend
 And the frontend Dockerfile.
 
-{% highlight docker linenos %}
+```docker
 #As seen on #https://medium.com/@avatsaev/create-efficient-angular-docker-images-with-multi-stage-builds-907e2be3008d
 ### STAGE 1: Build ###
 FROM node:alpine as builder
@@ -96,7 +96,7 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 RUN rm -rf /usr/share/nginx/html/*
 ## From ‘builder’ stage copy over the artifacts in dist folder to default nginx public folder
 COPY --from=builder /ng-app/dist /usr/share/nginx/html
-{% endhighlight %}
+```
 
 The exact same techniques are used here, just applying them to Node.js instead of .NET.
 
@@ -111,7 +111,7 @@ I created an image based on the original HAProxy one, but could have simply used
 ### The Docker Compose file
 The Docker Compose file (```docker-compose.yml```) is where we define all the containers we want to run as part of a complete application. For the this sample, the file is as follows.
 
-{% highlight yaml linenos %}
+```yaml
 version: "3"
 services:
     reverse-proxy:
@@ -148,7 +148,7 @@ services:
 
 networks:
   overlay:
-{% endhighlight %}
+```
 
 Besides the 3 containers already discussed, I'm also starting a PostgreSQL container to use as the database, and passing it the credentials as environment variables.
 

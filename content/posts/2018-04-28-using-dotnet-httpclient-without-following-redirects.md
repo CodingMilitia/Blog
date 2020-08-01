@@ -42,7 +42,7 @@ Blank tabs aren't very cool so we thought we could do better. After some more or
 
 To do this in .NET we're using as usual an `HttpClient`, but as its default behavior is to follow redirects, a little configuration was required.
 
-{% highlight csharp linenos %}
+```csharp
 var handler = new HttpClientHandler()
 {
     AllowAutoRedirect = false
@@ -54,13 +54,13 @@ var response = await _httpClient.GetAsync(trackingUrl, ct);
 var targetUrl = response.StatusCode == HttpStatusCode.Redirect
         ? response.Headers.Location.OriginalString
         : null;
-{% endhighlight %}
+```
 
 And that's it! If you're reading the article just to know the required configuration, this is it - so many words to end with about ten of lines of code... sorry :)
 
 Now for the complete context, we're doing this in a ASP.NET application, and by now one should be aware that we can't go around instantiating http clients everywhere or we'll end up with port exhaustion, so we ended up creating a class to abstract this.
 
-{% highlight csharp linenos %}
+```csharp
 //Usings...
 
 namespace CodingMilitia.HttpClientNotFollowingRedirectsSample.Web
@@ -90,10 +90,10 @@ namespace CodingMilitia.HttpClientNotFollowingRedirectsSample.Web
         //IDisposable stuff...
     }
 }
-{% endhighlight %}
+```
 
 And configured as singleton in the DI container.
-{% highlight csharp linenos %}
+```csharp
 //...
 public void ConfigureServices(IServiceCollection services)
 {
@@ -106,13 +106,13 @@ public void ConfigureServices(IServiceCollection services)
     ServicePointManager.DnsRefreshTimeout = (int)TimeSpan.FromMinutes(1).TotalMilliseconds;
 }
 //...
-{% endhighlight %}
+```
 
 Also doing `ServicePointManager` configurations to make sure DNS refreshes as seen [here](https://github.com/dotnet/corefx/issues/11224).
 
 Finally the controller action could simply do something like the following.
 
-{% highlight csharp linenos %}
+```csharp
 [Route("track")]
 public async Task<IActionResult> TrackAsync(string trackingUrl, CancellationToken ct)
 {
@@ -127,14 +127,14 @@ public async Task<IActionResult> TrackAsync(string trackingUrl, CancellationToke
     }
     return Ok(new {targetUrl});
 }
-{% endhighlight %}
+```
 
 
 ## Bonus round: same solution ASP.NET Core 2.1 version
 
 With ASP.NET Core 2.1 there is some new stuff to work with `HttpClient` and avoid all these shenanigans because of port exhaustion and DNS refreshes, so I added to the sample a V2 solution using the new `HttpClientFactory` features.
 
-{% highlight csharp linenos %}
+```csharp
 //Usings...
 
 namespace CodingMilitia.HttpClientNotFollowingRedirectsSample.Web
@@ -158,11 +158,11 @@ namespace CodingMilitia.HttpClientNotFollowingRedirectsSample.Web
         }
     }
 }
-{% endhighlight %}
+```
 
 And to register with the DI container:
 
-{% highlight csharp linenos %}
+```csharp
 //...
 public void ConfigureServices(IServiceCollection services)
 {
@@ -180,7 +180,7 @@ public void ConfigureServices(IServiceCollection services)
         });
 }
 //...
-{% endhighlight %}
+```
 
 ## Other reading material
 

@@ -32,7 +32,7 @@ Fortunately, there's a stupid simple solution for this problem. On our controlle
 ## Some samples
 For the samples, I'm making something simpler then the autocomplete scenario I talked above, but I think it's more than enough to take the point across.
 
-{% highlight csharp linenos %}
+```csharp
 [Route("thing")]
 public async Task<IActionResult> GetAThingAsync(CancellationToken ct)
 {
@@ -48,7 +48,7 @@ public async Task<IActionResult> GetAThingAsync(CancellationToken ct)
     }
     return NoContent();
 }
-{% endhighlight %}
+```
 
 So here we have a stupid simple action, that has no client supplied arguments, only a `CancellationToken`. This `CancellationToken` is injected by the framework and will be signaled for cancellation by the framework. A case in which it is signaled - when the client cancels the request. In the demo code I'm just invoking an external endpoint that will take 5 seconds to complete, passing the token to the `GetAsync` method. I'm wrapping it all up in try catch and expecting a `TaskCanceledException`, as it's the one thrown when the operation is canceled due to cancellation token being signaled.
 
@@ -57,7 +57,7 @@ Below I added a gif with a quick show of a request being canceled.
 [![Cancellation tokens in action](/assets/2018/04/21/2018-04-21-aspnet-ct-demo.gif)](/assets/2018/04/21/2018-04-21-aspnet-ct-demo.gif)
 
 Here's another quick sample:
-{% highlight csharp linenos %}
+```csharp
 [Route("anotherthing")]
 public async Task<IActionResult> GetAnotherThingAsync(CancellationToken ct)
 {
@@ -78,7 +78,7 @@ public async Task<IActionResult> GetAnotherThingAsync(CancellationToken ct)
     }
     return NoContent();
 }
-{% endhighlight %}
+```
 
 In this case, besides passing the `CancellationToken` along to other asynchronous methods - in this case a `Task.Delay` but the result of the cancellation is similar to the `HttpClient.GetAsync` - I'm checking the token to see if it was signaled for cancellation. So, imagine the `Task.Delay` method didn't accept a `CancellationToken` as an argument, on the next loop iteration the code would check for a cancellation request and would throw an exception (in this case an `OperationCanceledException`).
 

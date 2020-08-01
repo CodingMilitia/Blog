@@ -29,7 +29,7 @@ Using Polly in general is really straightforward. We can express retry policies 
 (All the boomerang references are from my sample)
 
 For instance, if we want to express a policy to retry an operation two times:
-{% highlight csharp linenos %}
+```csharp
 var retryTwoTimesPolicy = 
 	Policy
 		.Handle<DivideByZeroException>()
@@ -39,20 +39,20 @@ var retryTwoTimesPolicy =
 		 Console.WriteLine("Error was {0}", ex.GetType().Name);
 		}
 		);
-{% endhighlight %}
+```
 Then, to actually execute the code to which this policy should be enforced.
-{% highlight csharp linenos %}
+```csharp
 retryTwoTimesPolicy.ExecuteAsync(async () =>
                 {
                     await SomeOperation();
                 });
-{% endhighlight %}
+```
 I think the code is pretty clear on what's going on, no need for much explanations. We're handling `DivideByZeroException` and telling it to retry two times. When an error occurs, the lambda passed to `RetryAsync` is called (there are some overloads, receiving different arguments). After the configured retry attempts the exception is propagated, like it would normally happen if the retry logic wasn't in place.
 
 Retry forever is basically the same, without specifying the number of times to retry. Wait and retry may be configured directly with a collection of `TimeSpans` or a provider that may contain some logic for the creation of the `TimeSpans`.
 
 Using wait and retry with the `TimeSpan` collection.
-{% highlight csharp linenos %}
+```csharp
 var retryAndWaitPolicy = Policy
                .Handle<DivideByZeroException>()
                .WaitAndRetryAsync(
@@ -63,11 +63,11 @@ var retryAndWaitPolicy = Policy
                        Console.WriteLine("Error was {0}", ex.GetType().Name);
                    }
                );
-{% endhighlight %}
+```
 The amount of retries in this case depends on the length of the `TimeSpan` array.
 
 Using wait and retry with the `TimeSpan` provider.
-{% highlight csharp linenos %}
+```csharp
 var retryTimeSpanMap = new TimeSpan?[] { null, TimeSpan.FromSeconds(4), TimeSpan.FromSeconds(3), TimeSpan.FromSeconds(2) };
             var retryAndWaitUsingTimeSpanProviderPolicy = Policy
                .Handle<DivideByZeroException>()
@@ -80,7 +80,7 @@ var retryTimeSpanMap = new TimeSpan?[] { null, TimeSpan.FromSeconds(4), TimeSpan
                        Console.WriteLine("Error was {0}", ex.GetType().Name);
                    }
                );
-{% endhighlight %}
+```
 The first lambda passed on to `WaitAndRetryAsync` is the `TimeSpan` provider. This isn't the best logic for the provider (I'm basically replicating the array logic) but it's just an example :)
 
 
@@ -91,7 +91,7 @@ The [circuit breaker pattern](https://msdn.microsoft.com/en-us/library/dn589784.
 Polly provides two policies to use this pattern: `CircuitBreaker` and `AdvancedCircuitBreaker`. When a circuit is broken, and until the circuit is closed again, an exception is thrown (`CircuitBrokenException`) whenever the target operation is invoked.
 
 Circuit breaker is (as expected) simpler than the advanced circuit breaker. 
-{% highlight csharp linenos %}
+```csharp
 var breakCircuitAfterTwoFailuresPolicy = Policy
               .Handle<DivideByZeroException>()
               .CircuitBreakerAsync(
@@ -104,11 +104,11 @@ var breakCircuitAfterTwoFailuresPolicy = Policy
                     },
                     () => Console.WriteLine("First execution after circuit break succeeded, circuit is reset.")
                    );
-{% endhighlight %}
+```
 In this case, I configured the number of times the operation can fail before the circuit is open, the amount of time the circuit should remain open before allowing more attempts, a lambda to be invoked when an error occurs and a lambda that's invoked when the circuit is reset. As usual, there are overloads.
 
 The advanced circuit breaker allows for a more (as the name gives away) advanced usage. Instead of just saying that after n errors the circuit should break, we can say something like "break the circuit if during 1 second, 75% of the operations fail, with a minimum throughput of 5 operations". You can see below how this is expressed with Polly.
-{% highlight csharp linenos %}
+```csharp
 var breakCircuitWhen75PercentFailuresIn5ExecutionsFailuresPolicy = Policy
                 .Handle<DivideByZeroException>()
                 .AdvancedCircuitBreakerAsync(0.75,
@@ -123,7 +123,7 @@ var breakCircuitWhen75PercentFailuresIn5ExecutionsFailuresPolicy = Policy
                     () => Console.WriteLine("First execution after circuit break succeeded, circuit is reset."),
                     () => Console.WriteLine("Half open state, transitioning from open.")
                    );
-{% endhighlight %}
+```
 Besides the initial arguments whose usage you can infer from the description above, in this case I provided one more lambda that is invoked when the circuit breaker transitions to half-open state (when transitioning from open to closed, there's a moment when, if another error occurs, the circuit is broken again without taking the other configured rules into account).
 
 

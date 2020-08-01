@@ -17,13 +17,13 @@ tags:
 
 So, how do you use the HttpClient (.NET)? Like this?
 
-{% highlight csharp linenos %}
+```csharp
 using (var client = new HttpClient())
 {
     var result = await client.GetAsync("http://xpto.com/api/stuff");
     //...
 }
-{% endhighlight %}
+```
 
 Well, so do I. And it's **wrong**.
 

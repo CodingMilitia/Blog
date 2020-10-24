@@ -1,6 +1,6 @@
 ---
 author: João Antunes
-date: 2020-10-24 17:30:00+01:00
+date: 2020-10-24 19:00:00+01:00
 layout: post
 title: "Setting up a build with NUKE"
 summary: 'Let''s take a look at NUKE, a cross-platform build automation system with C# DSL. We''ll use it to define the build for a new library that will eventually make its way to NuGet.'
@@ -17,7 +17,7 @@ slug: 2020-10-24-setting-up-a-build-with-nuke
 
 ## Intro
 
-One thing I've been putting off for a while now, is to extract some of the generic helpers I created in the context of the ["ASP.NET Core: From 0 to overkill"](https://blog.codingmilitia.com/categories/fromzerotooverkill/) series, as well as other things that regularly come to mind.
+One thing I've been putting off for a while now, is to extract some of the generic helpers I created in the context of the ["ASP.NET Core: From 0 to overkill"](https://blog.codingmilitia.com/categories/fromzerotooverkill/) series, as well as other things that regularly come to mind, and putting them in some NuGet packages to reuse across projects.
 
 Creating these NuGet packages provides an opportunity to mess around with some interesting CI/CD tooling I haven't had the time to try before.
 
@@ -55,8 +55,8 @@ Going through the choices I made:
 - Used the suggested build project name and location
 - Used the latest stable release
 - Use the only available solution as the default one
-- Accepted the help to get things started 😛
-- Use dotnet CLI to implement the build definition (the alterative was MSBuild/Mono)
+- Accepted the help to get things started
+- Use .NET CLI to implement the build definition (the alterative was MSBuild/Mono)
 - Selected the locations of key components
     - `src` for the projects
     - `artifacts` for the output of the build (e.g. `NuGet` packages)
@@ -136,15 +136,15 @@ class Build : NukeBuild
 
 The class inherits from `NukeBuild`, which will provide it with some helper properties and methods.
 
-Then, we have the `Main` method, the build's entry point, which invokes `Execute` with the default step `Compile` defined later on.
+Then, we have the `Main` method, the build's entry point, which invokes `Execute` with the default step `Compile`, defined later on.
 
 Before the various steps, we have some fields and properties we can use later. Some of the values defined there will be familiar, as we chose them in the initial setup.
 
-Finally, we have the build steps themselves, `Clean`, `Restore` and `Compile`. NUKE provides us with a DSL to configure the build steps using code, so we can certainly recognize many of the terms used here from the .NET CLI.
+Finally, we have the build steps themselves, `Clean`, `Restore` and `Compile`. NUKE provides us with a DSL to configure the build steps using C# code, so we can certainly recognize many of the terms used here from the .NET CLI.
 
 As we can see, `Compile` `DependsOn` `Restore`, so even though the `Main` method targets `Compile`, `Restore` is also executed (as we saw previously).
 
-If we want to target a specific step, we simply pass its name when invoking the build.
+If we want to target a specific step, we simply pass its name when running the build script.
 
 [![/assets/2020/10/24/04-running-a-build-targeting-a-specific-step.png](/assets/2020/10/24/04-running-a-build-targeting-a-specific-step.png)](/assets/2020/10/24/04-running-a-build-targeting-a-specific-step.png)
 
@@ -152,7 +152,7 @@ If we want to target a specific step, we simply pass its name when invoking the 
 
 Having these steps defined out of the box is great, but what we really want is to add more stuff.
 
-In this case, creating a new library, what I want is to run the tests, ensuring all is well, package the library into a NuGet and push it to a package repository. This last step is going to be done in a later post, but the test and packaging we can do now.
+In this case, creating a new library, what I want is to run the tests, ensuring all is well, package the library into a NuGet and push it to a package repository. This last step is going to be done in a later post, but the tests and packaging we can handle now.
 
 At the end of the `Build` class, we'll add two new steps, `Test` and `Pack`.
 

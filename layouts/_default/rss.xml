@@ -35,7 +35,7 @@
       {{ range .Params.tags }}
         <category>{{ . }}</category>        
       {{ end }}
-      <description>{{ .Summary | html }}</description>
+      <description>{{ .Content | html }}</description>
       {{ with .Params.images }}
       {{ $image := index . 0 | absURL}}
         <media:thumbnail url="{{ $image }}" xmlns:media="http://search.yahoo.com/mrss/" />

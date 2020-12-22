@@ -9,7 +9,7 @@ images:
 categories:
 - dotnet
 tags:
-- nuke
+- 'github actions'
 - 'ci-cd'
 - 'continuous integration - continuous delivery'
 slug: getting-started-with-github-actions

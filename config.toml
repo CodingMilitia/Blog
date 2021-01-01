@@ -3,8 +3,6 @@ languageCode = "en-us"
 title = "Coding Militia"
 description = "Code, headbang, grouch, repeat!"
 # theme = "ananke"
-DisqusShortname = "codingmilitia"
-#googleAnalytics = "UA-58690226-4"
 pygmentsCodeFences = true
 enableRobotsTXT = true
 

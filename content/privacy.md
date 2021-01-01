@@ -19,9 +19,6 @@ Just to know if someone is actually visiting the site (and of course some other 
 
 Unlike Google Analytics, Plausible is privacy focused, so it doesn't collect personal data, targeting the minimum amount of data needed to analyse a site's traffic. More information about data policy on [Plausible's web site](https://plausible.io/data-policy).
 
-## Disqus
-I have [Disqus](https://disqus.com/) setup on the blog to allow for comments. When using the comments Disqus will keep some data it needs to handle that, to which I have no control over, but having a Disqus account you can handle it directly with them. I only see the same public facing comments everyone else sees when visiting the blog.
-
 ## GitHub
 Besides using [GitHub](https://github.com) to host the projects I usually talk about here, I use it to host some code snippets using the provided widgets, so GitHub might also collect some info on this.
 

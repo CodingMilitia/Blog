@@ -26,7 +26,7 @@ I've come across [MinVer](https://github.com/adamralph/minver), which looks like
 
 ## Quick refresher on Semantic Versioning (aka SemVer)
 
-Before getting into practice, thought about starting with a quick refresher on [Semantic Versioning,](https://semver.org/) since it will be used by the package we're developing.
+Before getting into practice, thought about starting with a quick refresher on [Semantic Versioning](https://semver.org/), since it will be used by the package we're developing.
 
 For complete details visit the [SemVer website](https://semver.org/), but very briefly, our package version will be comprised of three main parts, X.Y.Z, where:
 

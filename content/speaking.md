@@ -4,7 +4,7 @@ title: Speaking
 permalink: /speaking/
 ---
 
-Some public presentations I've had the opportunity of doing:
+Some public presentations I've had the opportunity of doing over the years.
 
 {{% speaking-entry
     title="OOPs, I did it again"

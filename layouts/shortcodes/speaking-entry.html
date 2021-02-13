@@ -1,0 +1,18 @@
+{{- $title := .Get "title" -}}
+{{- $imageUrl := .Get "imageUrl" | default "/assets/speaking/megaphone-placeholder.png" -}}
+{{- $link := .Get "link" -}}
+<article class="card">
+    <div class="card-content columns">
+        <div class="column is-one-third">
+            <figure class="image presentation-image">
+                <a href="{{ $link }}">
+                    <img src="{{ $imageUrl }}" alt="Placeholder image">
+                </a>
+            </figure>
+        </div>
+        <div class="column">
+            <p class="title is-4"><a href="{{ $link }}">{{ $title }}</a></p>
+            <p class="content">{{ .Inner }}</p>
+        </div>
+    </div>
+</article>

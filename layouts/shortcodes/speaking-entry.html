@@ -1,4 +1,5 @@
 {{- $title := .Get "title" -}}
+{{- $date := .Get "date" -}}
 {{- $imageUrl := .Get "imageUrl" | default "/assets/speaking/megaphone-placeholder.png" -}}
 {{- $link := .Get "link" -}}
 <article class="card">
@@ -13,6 +14,10 @@
         <div class="column">
             <p class="title is-4"><a href="{{ $link }}">{{ $title }}</a></p>
             <p class="content">{{ .Inner }}</p>
+            <p class="content tags">
+                <span class="tag">{{ $date }}</span>
+                <span class="tag"><a href="{{ $link }}">link</a></span>
+            </p>
         </div>
     </div>
 </article>

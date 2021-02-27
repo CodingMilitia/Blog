@@ -8,11 +8,18 @@ Some public presentations I've had the opportunity of doing over the years.
 
 2021
 --
+{{% speaking-entry
+    title="OOPs, I did it again"
+    date="2021/02/27"
+    imageUrl="/assets/speaking/2021-02-21-netcoreconf-2021.jpg"
+    link="https://netcoreconf.com/" %}}
+    Had the opportunity to present at Virtual Netcoreconf 2021, where I did my usual rant about how we're misusing primarily object-oriented programming languages, providing some ideas to try to improve our code.
+    {{% /speaking-entry %}}
 
 {{% speaking-entry
     title="OOPs, I did it again"
     date="2021/02/11"
-    imageUrl="/assets/speaking/2021-02-11-jetbrains-webinar.jpg"    
+    imageUrl="/assets/speaking/2021-02-11-jetbrains-webinar.jpg"
     link="https://blog.jetbrains.com/dotnet/2021/02/12/oops-i-did-it-again-webinar-recording/" %}}
     Had the opportunity to present at a JetBrains organized webinar, where I did my usual rant about how we're misusing primarily object-oriented programming languages, providing some ideas to try to improve our code.
     {{% /speaking-entry %}}

@@ -5,7 +5,7 @@ layout: post
 title: "Streamlining package versioning with MinVer"
 summary: "In the past two posts on the path to publish a NuGet package, we started by setting up the build with NUKE and running it with GitHub Actions. Before we get to the actual publishing part, there's one more thing we need, which is to handle versioning."
 images:
-- '/assets/2021/01/24/streamlining-package-versioning-with-minver.jpg'
+- '/assets/2021/01/24/streamlining-package-versioning-with-minver.png'
 categories:
 - dotnet
 tags:

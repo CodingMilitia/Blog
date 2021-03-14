@@ -3,7 +3,7 @@ author: João Antunes
 date: 2021-03-14 16:00:00+01:00
 layout: post
 title: "Setting up demos in Azure - Part 2: GitHub Actions"
-summary: "Building on the work from the previous post, in this one we make use of GitHub Actions to setup workflows for easy setup and teardown of a demo environment in Azure."
+summary: "Building on the work from the previous post, in this one we make use of GitHub Actions to setup workflows for easy setup and tear down of a demo environment in Azure."
 images:
 - '/assets/2021/03/14/setting-up-demos-in-azure-part-2-github-actions.png'
 categories:
@@ -18,7 +18,7 @@ slug: setting-up-demos-in-azure-part-2-github-actions
 
 ## Intro
 
-[In the previous post](https://blog.codingmilitia.com/2021/03/07/setting-up-demos-in-azure-part-1-arm-templates/). we prepared an [ARM template](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/overview) so we could setup (and teardown) a demo environment with a couple of commands.
+[In the previous post](https://blog.codingmilitia.com/2021/03/07/setting-up-demos-in-azure-part-1-arm-templates/). we prepared an [ARM template](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/overview) so we could setup (and tear down) a demo environment with a couple of commands.
 
 It's already much better than doing it manually through the portal, but we can make our life even easier!
 
@@ -144,7 +144,7 @@ We've seen this [in a previous post](https://blog.codingmilitia.com/2020/12/22/g
 
 This final step uses the [Azure WebApp GitHub Action](https://github.com/marketplace/actions/azure-webapp) to deploy the produced binaries to App Service. Notice that we're using the output of the `deploy-arm` step to get the value for the  `app-name` parameter.
 
-## Teardown workflow
+## Tear down workflow
 
 Just as we can create a workflow to set things up, we can also create one to tear them down.
 
@@ -231,7 +231,7 @@ The other secret we require is the SQL administrator password, so we can follow 
 
 ## Deploying things
 
-With everything in place, we can finally deploy (and teardown) things.
+With everything in place, we can finally deploy (and tear down) things.
 
 Click on the "Actions" entry in the repository top menu, select the workflow to run, click "Run workflow", select the branch and again "Run workflow" on the modal that popped up.
 
@@ -254,7 +254,7 @@ Like in the previous post, I'm pretty sure there's tons more stuff to learn on t
 Throughout this post, we looked at:
 
 - Setting up a workflow to create a resource group, deploy an ARM template and a web application
-- Setting up a workflow to easily teardown the whole demo environment
+- Setting up a workflow to easily tear down the whole demo environment
 - Credentials and secret management on GitHub
 - Triggering the workflows
 

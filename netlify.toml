@@ -80,3 +80,8 @@ from = "https://www.codingmilitia.com/*"
 to = "https://blog.codingmilitia.com/:splat"
 status = 301
 force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Permissions-Policy = "interest-cohort=()"

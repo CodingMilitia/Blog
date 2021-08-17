@@ -30,7 +30,7 @@ Here come a bunch of related links:
     - [Kotlin](https://github.com/dragneelfps/realworld-kotlin-ktor)
     - [Go](https://github.com/gothinkster/golang-gin-realworld-example-app)
 - [Carter library taking advantage of the new APIs](https://twitter.com/CarterLibs/status/1425782378530803715)
-- [Branchy repo adding nested routing supported on top of Minimal APIs](https://github.com/khalidabuhakmeh/Branchy)
+- [Branchy repo adding nested routing support on top of Minimal APIs](https://github.com/khalidabuhakmeh/Branchy)
 - [David Fowler rememebering us these new APIs work in tandem with everything that already existed](https://twitter.com/davidfowl/status/1425637687965356033)
 - [Site aggregating the main themes that are tackled in each .NET release](https://themesof.net/)
     - [A theme regarding getting .NET recognized as a compelling framework for cloud native applications](https://github.com/dotnet/core/issues/5397)

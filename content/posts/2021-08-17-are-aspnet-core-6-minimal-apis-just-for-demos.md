@@ -33,7 +33,7 @@ Here come a bunch of related links:
 - [Branchy repo adding nested routing supported on top of Minimal APIs](https://github.com/khalidabuhakmeh/Branchy)
 - [David Fowler rememebering us these new APIs work in tandem with everything that already existed](https://twitter.com/davidfowl/status/1425637687965356033)
 - [Site aggregating the main themes that are tackled in each .NET release](https://themesof.net/)
-    - [A theme regarding get .NET recognized as a compelling framework for cloud native applications](https://github.com/dotnet/core/issues/5397)
+    - [A theme regarding getting .NET recognized as a compelling framework for cloud native applications](https://github.com/dotnet/core/issues/5397)
 - [Video - Explore Minimal APIs with Maria Naggaga](https://www.youtube.com/watch?v=mia4ds3JhKs)
 - [Video - ASP.NET Community Standup - Minimal APIs](https://www.youtube.com/watch?v=enAskgcF0c0)
 - [Video - ASP.NET Community Standup - Simplifying web apps with new minimal APIs in ASP.NET Core 6](https://www.youtube.com/watch?v=aMrKGC7CnEk)

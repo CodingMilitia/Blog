@@ -9,6 +9,14 @@ Some public presentations I've had the opportunity of doing over the years.
 2021
 --
 {{% speaking-entry
+    title="Event-driven through cloudy skies"
+    date="2021/04/22"
+    imageUrl="/assets/speaking/2021-04-22-boldx-event-driven-through-cloudy-skies.jpg"
+    link="https://www.youtube.com/watch?v=5JfiFR7ZwEs" %}}
+    In the context of BOLD-X Digital Routes event, had the chance to talk about event-driven systems and common pitfalls when implementing them.
+    {{% /speaking-entry %}}
+
+{{% speaking-entry
     title="OOPs, I did it again"
     date="2021/02/27"
     imageUrl="/assets/speaking/2021-02-21-netcoreconf-2021.jpg"

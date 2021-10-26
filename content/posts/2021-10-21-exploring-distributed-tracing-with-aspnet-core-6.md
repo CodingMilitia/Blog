@@ -11,6 +11,9 @@ categories:
 - dotnet
 tags:
 - aspnetcore
+- opentelemetry
+- "distrbiuted tracing"
+- tracing
 slug: exploring-distributed-tracing-with-aspnet-core-6
 ---
 

@@ -36,6 +36,6 @@ Here come a bunch of related links:
 - [Jaeger](https://www.jaegertracing.io/)
 - [Zipkin](https://zipkin.io/)
 
-Hope this video/post helps in understanding how these things work and why they're useful, as well as how they integrate with our .NET and ASP.NET Core.
+Hope this video/post helps in understanding how these things work and why they're useful, as well as how they integrate with our .NET and ASP.NET Core projects.
 
 Thanks for stopping by, cyaz!

@@ -3,6 +3,7 @@
 <article>
   <header>
     {{ partial "social-share.html" . }}
+    {{- partial "hero-image.html" . -}}
     <h2>
       {{- .Title -}}
     </h2>
@@ -33,7 +34,7 @@
     <span> - {{ .WordCount}} words</span>
     {{ end }}
   </header>
-  <div>
+  <div>    
     {{- .Content -}}
     {{- partial "categories.html" . -}}
     {{- partial "tags.html" . -}}

@@ -1,0 +1,13 @@
+<section class="hero">
+  {{ $has_images := (isset .Params.images 0) }}
+  {{ if $has_images }}
+  {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
+  {{ $featured_image := (trim (index .Params.images 0) "/") | absURL }}
+  <img
+    alt="image from {{ .Title }}"
+    class="hero-background is-transparent"
+    src="{{ $featured_image }}"
+    loading="lazy"
+  />
+  {{ end }}
+</section>

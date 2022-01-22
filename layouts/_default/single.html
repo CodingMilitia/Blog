@@ -19,6 +19,7 @@
     </p>
     {{ end }}
     {{/* Hugo uses Go's date formatting is set by example. Here are two formats */}}
+    <i class="far fa-calendar"></i>
     <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
       {{- .Date.Format "January 2, 2006" -}}
     </time>
@@ -30,8 +31,8 @@
           3) A page front matter value is set `show_reading_time = true`
         */}}
     {{ if (or (eq (.Param "show_reading_time") true) (eq $section.Params.show_reading_time true) )}}
-    <span> - {{ .ReadingTime}} minutes read</span>
-    <span> - {{ .WordCount}} words</span>
+    <span> - <i class="fas fa-stopwatch"></i> {{ .ReadingTime}} minutes read</span>
+    <span> - <i class="fas fa-font"></i> {{ .WordCount}} words</span>
     {{ end }}
   </header>
   <div>    

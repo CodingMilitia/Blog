@@ -13,20 +13,22 @@
   <div class="">
     {{ $n_posts := $.Param "latest_posts_count" | default 3 }}
     
-    <section class="">
-      {{ range (first $n_posts $section) }}
-      {{ partial "summary.html" . }}
-      {{ end }}
+    <section class="columns is-multiline">
+        {{ range (first $n_posts $section) }}
+        <div class="column is-half">
+        {{ partial "card.html" . }}
+        </div>
+        {{ end }}
     </section>
 
     {{ if ge $section_count (add $n_posts 1) }}
     <section class="has-text-centered">
       {{ with .Site.GetPage "section" $section_name }}
-      <a  href="{{ .RelPermalink }}" class="">More posts...</a>
+      <a  href="{{ .RelPermalink }}/page/2" class="">More posts...</a>
       {{ end }}
     </section>
     {{ end }}
   </div>
-  {{ end }}
+  {{ end }}  
 </article>
 {{ end }}

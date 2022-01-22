@@ -4,11 +4,11 @@
     <section>
       {{- .Content -}}
     </section>
-    <section>
+    <section class="columns is-multiline">
       {{ range .Paginator.Pages }}
-        <div>
-          {{- partial "summary.html" . -}}
-        </div>
+      <div class="column is-half">
+      {{ partial "card.html" . }}
+      </div>
       {{ end }}
     </section>
     {{ partial "pagination.html" .Paginator }}

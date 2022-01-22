@@ -7,7 +7,7 @@ pygmentsCodeFences = true
 enableRobotsTXT = true
 
 [params]
-  latest_posts_count = 5
+  latest_posts_count = 10
   favicon = "assets/favicon.png"
   show_reading_time = true
   images = ["assets/logo.jpg"]

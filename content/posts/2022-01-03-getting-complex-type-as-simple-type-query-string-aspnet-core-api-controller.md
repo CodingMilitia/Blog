@@ -5,7 +5,7 @@ layout: post
 title: "Getting a complex type as a simple type from the query string in a ASP.NET Core API controller"
 summary: "This is a tale of a good amount of hours of wasted time, so I’m going to document it so I remember it in the future. The idea is simple: when building an API, how can we treat a complex type as a simple type, to avoid things like primitive obsession, implement strongly typed ids and other related patterns? Let's find out! 🙂"
 images:
-- '/assets/2022/01/03/complex-type-as-simple-type-aspnetcore.jpg'
+- '/assets/2022/01/03/complex-type-as-simple-type-aspnetcore.png'
 categories:
 - csharp
 - dotnet

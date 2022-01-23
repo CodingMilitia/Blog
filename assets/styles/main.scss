@@ -16,7 +16,7 @@ body {
 .container {
   max-width: $desktop;
   @media screen and (max-width: $desktop) {
-    margin: 10px;
+    margin: 0 10px;
   }
 }
 
@@ -164,11 +164,22 @@ p > a > img {
 }
 
 .navbar-brand a.navbar-item:hover {
-    color: $main-accent;
-    background-color: $scheme-main;
+  color: $main-accent;
+  background-color: $scheme-main;
 }
 
 .navbar-burger:hover {
   color: $main-accent;
   background-color: $scheme-main;
+}
+
+.footer {
+  background-color: $main-accent;
+  h2 {
+    font-weight: 700;
+    font-size: xx-large;
+  }
+  h2, span, a {
+    color: $scheme-main;
+  }
 }

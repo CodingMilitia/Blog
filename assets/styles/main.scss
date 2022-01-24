@@ -126,20 +126,6 @@ p > a > img {
   height: auto;
 }
 
-.hero {
-  padding: 10px 0;
-
-  > img {
-    max-width: 75%;
-    margin: auto;
-    display: block;
-
-    @media screen and (max-width: 768px) {
-      width: 100%;
-    }
-  }
-}
-
 .site-header {
   background-color: $main-accent;
 }

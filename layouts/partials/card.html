@@ -1,7 +1,17 @@
 {{ $has_images := (isset .Params.images 0) }}
 <article class="card">
   {{ if $has_images }}
-  {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
+  {{ $image_resource := resources.Get (index .Params.images 0) }}
+  {{ if $image_resource }}
+  {{ $featured_image :=  $image_resource.Fit "500x300" }}
+  <div class="card-image">
+    <a href="{{.RelPermalink}}">
+      <figure class="image">
+        <img src="{{ $featured_image.RelPermalink }}" alt="image from {{ .Title }}" loading="lazy" />
+      </figure>
+    </a>
+  </div>
+  {{ else }}
   {{ $featured_image :=  (trim (index .Params.images 0) "/") | absURL }}
   <div class="card-image">
     <a href="{{.RelPermalink}}">
@@ -10,6 +20,7 @@
       </figure>
     </a>
   </div>
+  {{ end }}
   {{ end }}
   <div class="card-header">
     <h3 class="card-header-title">

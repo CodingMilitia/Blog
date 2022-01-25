@@ -5,6 +5,18 @@
 {{ $image_resource := resources.Get $path }}
 {{/* the 20480 is just because Fit expects a value, but what's important is the width */}}
 {{ $resized :=  $image_resource.Fit (print $width "x20480") }}
+{{ if (eq $width "1024")}}
+{{ $resized_half :=  $image_resource.Fit "512x20480" }}
+<a href="{{ ($target_url | default $image_resource.RelPermalink) }}" target="_blank" rel="noopener">
+    <img
+        srcset="
+        {{ $resized.RelPermalink }} 1024w,
+        {{ $resized_half.RelPermalink }} 512w" 
+        src="{{ $resized.RelPermalink }}"
+        alt="{{ $alt }}">
+</a>
+{{ else }}
 <a href="{{ ($target_url | default $image_resource.RelPermalink) }}" target="_blank" rel="noopener">
     <img src="{{ $resized.RelPermalink }}" alt="{{ $alt }}">
 </a>
+{{ end }}

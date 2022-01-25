@@ -66,9 +66,9 @@ sudo docker run -it --rm -p 443:443 -p 80:80 --name certbot \
 
 And answered the questions the tool asked.
 
-[![Certbot - Standalone Server](/assets/2016/10/18/08-certbot-docker-standaloneserver.jpg)](/assets/2016/10/18/08-certbot-docker-standaloneserver.jpg)
+{{< embedded-image "/images/2016/10/18/08-certbot-docker-standaloneserver.jpg" "Certbot - Standalone Server" >}}
 
-[![Certbot - Choose Domains](/assets/2016/10/18/09-certbot-docker-choose-domains.jpg)](/assets/2016/10/18/09-certbot-docker-choose-domains.jpg)
+{{< embedded-image "/images/2016/10/18/09-certbot-docker-choose-domains.jpg" "Certbot - Choose Domains" >}}
 
 If all went well, the certificates were created in `/etc/letsencrypt/archive/yourdomain.com`, but also take a look in `/etc/letsencrypt/live/yourdomain.com` where it creates a bunch of symbolic links (which unfortunately don't work well when within a container).
 

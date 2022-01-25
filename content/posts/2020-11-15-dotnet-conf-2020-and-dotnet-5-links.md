@@ -5,7 +5,7 @@ layout: post
 title: ".NET Conf 2020 and .NET 5 links"
 summary: '.NET Conf 2020 is done and .NET 5 is finally here! Information about this release is spread across a bunch of blogs, videos and whatnot, so I thought of grabbing a bunch of links and put them in a post for quick reference.'
 images:
-- '/assets/2020/11/15/dotnet-conf-2020-and-dotnet-5-links.jpg'
+- '/images/2020/11/15/dotnet-conf-2020-and-dotnet-5-links.jpg'
 categories:
 - dotnet
 tags:

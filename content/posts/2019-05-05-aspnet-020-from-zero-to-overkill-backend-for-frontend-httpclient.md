@@ -5,7 +5,7 @@ layout: post
 title: "Episode 020 - The backend for frontend and the HttpClient - ASP.NET Core: From 0 to overkill"
 summary: "In this episode, we'll start building our backend for frontend, which will bridge the interaction between the Vue.js frontend application and the backend APIs we'll develop. For now this will be mostly an excuse for playing with the HttpClient in ASP.NET Core, as we'll improve the BFF in the future, with some proxying capabilities for requests that don't need additional logic."
 images:
-- '/assets/2019/05/05/aspnet-core-from-zero-to-overkill-e020.jpg'
+- '/images/2019/05/05/aspnet-core-from-zero-to-overkill-e020.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

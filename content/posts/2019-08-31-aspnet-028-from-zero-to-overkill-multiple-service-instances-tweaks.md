@@ -5,7 +5,7 @@ layout: post
 title: "Episode 028 - Multiple service instances tweaks - ASP.NET Core: From 0 to overkill"
 summary: "In this episode, we'll take a look at some things we need to keep in mind when we want to run multiple instances of an ASP.NET Core application, namely data protection configuration and how it impacts our application even without us using it directly."
 images:
-- '/assets/2019/08/31/aspnet-core-from-zero-to-overkill-e028.jpg'
+- '/images/2019/08/31/aspnet-core-from-zero-to-overkill-e028.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

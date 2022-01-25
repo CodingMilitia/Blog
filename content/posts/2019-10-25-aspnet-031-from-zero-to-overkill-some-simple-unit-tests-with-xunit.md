@@ -5,7 +5,7 @@ layout: post
 title: "Episode 031 - Some simple unit tests with xUnit - ASP.NET Core: From 0 to overkill"
 summary: "In this episode, we'll take a little break from the explorations we've been doing in the latest episodes, getting back to fundamentals and writing some really simple unit tests with xUnit."
 images:
-- '/assets/2019/10/25/aspnet-core-from-zero-to-overkill-e031.jpg'
+- '/images/2019/10/25/aspnet-core-from-zero-to-overkill-e031.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

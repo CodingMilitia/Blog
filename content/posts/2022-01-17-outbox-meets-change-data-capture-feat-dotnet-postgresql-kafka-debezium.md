@@ -5,7 +5,7 @@ layout: post
 title: "[Video] Outbox meets change data capture (feat. .NET, PostgreSQL, Kafka and Debezium)"
 summary: "Quick video with an interesting approach to implement the publisher part of the outbox pattern. Using change data capture (often referred to as CDC), we hook up something to the database transaction log, forwarding incoming entries to the outbox table. In this example, we'll make use of Debezium, hooked up into a PostgreSQL database, forwarding messages to Kafka."
 images:
-- '/assets/2022/01/17/outbox-meets-change-data-capture-feat-dotnet-postgresql-kafka-debezium.png'
+- '/images/2022/01/17/outbox-meets-change-data-capture-feat-dotnet-postgresql-kafka-debezium.png'
 categories:
 - csharp
 - dotnet

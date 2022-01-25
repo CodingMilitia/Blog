@@ -1,9 +1,10 @@
 {{- $path := .Get "path" | default (.Get 0) -}}
 {{- $alt := .Get "alt" | default (.Get 1) -}}
 {{- $width := .Get "width" | default "1024" -}}
+{{- $target_url := .Get "target_url" | default nil -}}
 {{ $image_resource := resources.Get $path }}
 {{/* the 20480 is just because Fit expects a value, but what's important is the width */}}
 {{ $resized :=  $image_resource.Fit (print $width "x20480") }}
-<a href="{{ $image_resource.RelPermalink }}" target="_blank" rel="noopener">
+<a href="{{ ($target_url | default $image_resource.RelPermalink) }}" target="_blank" rel="noopener">
     <img src="{{ $resized.RelPermalink }}" alt="{{ $alt }}">
 </a>

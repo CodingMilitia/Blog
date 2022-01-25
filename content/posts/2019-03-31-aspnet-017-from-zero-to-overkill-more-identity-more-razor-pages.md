@@ -5,7 +5,7 @@ layout: post
 title: "Episode 017 - More Identity, more Razor Pages - ASP.NET Core: From 0 to overkill"
 summary: "In this episode, we continue exploring ASP.NET Core Identity and Razor Pages as we continue development of our authentication service."
 images:
-- '/assets/2019/03/31/aspnet-core-from-zero-to-overkill-e017.jpg'
+- '/images/2019/03/31/aspnet-core-from-zero-to-overkill-e017.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

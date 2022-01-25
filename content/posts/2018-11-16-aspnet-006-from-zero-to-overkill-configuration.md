@@ -5,7 +5,7 @@ layout: post
 title: "Episode 006 - Configuration - ASP.NET Core: From 0 to overkill"
 summary: "In this episode we take a look at configuration in ASP.NET Core, the possible sources, how to read from them, the options pattern, wrapping up with development time secrets."
 images:
-- '/assets/2018/11/16/aspnet-core-from-zero-to-overkill-e006.jpg'
+- '/images/2018/11/16/aspnet-core-from-zero-to-overkill-e006.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

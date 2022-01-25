@@ -5,7 +5,7 @@ layout: post
 title: "Episode 008 - Middlewares - ASP.NET Core: From 0 to overkill"
 summary: "In this episode we take a look at ASP.NET Core's middlewares, how to create them and use them in the request handling pipeline."
 images:
-- '/assets/2018/12/05/aspnet-core-from-zero-to-overkill-e008.jpg'
+- '/images/2018/12/05/aspnet-core-from-zero-to-overkill-e008.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

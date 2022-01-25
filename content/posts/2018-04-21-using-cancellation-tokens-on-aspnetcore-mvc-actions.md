@@ -5,7 +5,7 @@ layout: post
 title: 'Using cancellation tokens on ASP.NET Core MVC actions'
 summary: 'Cancellation tokens are really useful when working with async stuff, and this is the simplest way of getting some nice free benefits in ASP.NET applications using them.'
 images:
-- '/assets/2018/04/21/2018-04-21-aspnet-ct-cover.jpg'
+- '/images/2018/04/21/2018-04-21-aspnet-ct-cover.jpg'
 categories:
 - dotnet
 - video
@@ -17,7 +17,7 @@ tags:
 slug: using-cancellation-tokens-on-aspnetcore-mvc-actions
 ---
 
-[![Using cancellation tokens on ASP.NET Core MVC actions](/assets/2018/04/21/2018-04-21-aspnet-ct-cover.jpg)](/assets/2018/04/21/2018-04-21-aspnet-ct-cover.jpg)
+{{< embedded-image "/images/2018/04/21/2018-04-21-aspnet-ct-cover.jpg" "Using cancellation tokens on ASP.NET Core MVC actions" >}}
 
 Today I'm back for a smaller post, on a topic that has already some amount of posts about, but I think is not spread enough and it's not being used as much as it could, and probably should - using cancellation tokens with ASP.NET Core MVC actions ([video walk-through at the end of the post](#video-walk-through)).
 
@@ -54,7 +54,7 @@ So here we have a stupid simple action, that has no client supplied arguments, o
 
 Below I added a gif with a quick show of a request being canceled.
 
-[![Cancellation tokens in action](/assets/2018/04/21/2018-04-21-aspnet-ct-demo.gif)](/assets/2018/04/21/2018-04-21-aspnet-ct-demo.gif)
+{{< embedded-image "/images/2018/04/21/2018-04-21-aspnet-ct-demo.gif" "Cancellation tokens in action" >}}
 
 Here's another quick sample:
 ```csharp

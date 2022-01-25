@@ -5,7 +5,7 @@ layout: post
 title: "A look at Building the Future 2020"
 summary: "This past week I had the opportunity to attend Building the Future 2020, an event focused on digital transformation, so I thought about sharing some of the main topics that stuck with me."
 images:
-- '/assets/2020/02/04/btf2020.jpg'
+- '/images/2020/02/04/btf2020.jpg'
 categories:
 - smalltalk
 tags:
@@ -13,7 +13,7 @@ tags:
 slug: a-look-at-building-the-future-2020
 ---
 
-[![Building the Future 2020 Stage](/assets/2020/02/04/btf2020.jpg)](https://buildingthefuture.pt/)
+{{< embedded-image path="/images/2020/02/04/btf2020.jpg" alt="Building the Future 2020 Stage" target_url="https://buildingthefuture.pt/" >}}
 
 ## Intro
 

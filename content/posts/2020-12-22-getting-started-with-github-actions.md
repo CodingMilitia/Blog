@@ -5,7 +5,7 @@ layout: post
 title: "Getting started with GitHub Actions"
 summary: "In a previous post, we started to prepare the build pipeline for a new library, using NUKE. In this post, we're going to continue that work, setting up continuous integration, running the build with GitHub Actions when changes arrive."
 images:
-- '/assets/2020/12/22/getting-started-with-github-actions.jpg'
+- '/images/2020/12/22/getting-started-with-github-actions.jpg'
 categories:
 - dotnet
 tags:
@@ -150,19 +150,19 @@ With everything in place, as soon as we commit and push, we'll see things pop-up
 
 When we first click the Actions tab, we get an overview of past and current running workflows:
 
-[![GitHub Actions summary](/assets/2020/12/22/01-github-actions-summary.png)](/assets/2020/12/22/01-github-actions-summary.png)
+{{< embedded-image "/images/2020/12/22/01-github-actions-summary.png" "GitHub Actions summary" >}}
 
 If we click a specific workflow, in this case the one we created, named CI, we see the option to manually run it.
 
-[![GitHub Actions manually start workflow](/assets/2020/12/22/02-github-actions-manually-start-workflow.png)](/assets/2020/12/22/02-github-actions-manually-start-workflow.png)
+{{< embedded-image "/images/2020/12/22/02-github-actions-manually-start-workflow.png" "GitHub Actions manually start workflow" >}}
 
 Click on an instance of a workflow run, we see its summary, including its jobs.
 
-[![GitHub Actions workflow run summary](/assets/2020/12/22/03-github-actions-workflow-run-summary.png)](/assets/2020/12/22/03-github-actions-workflow-run-summary.png)
+{{< embedded-image "/images/2020/12/22/03-github-actions-workflow-run-summary.png" "GitHub Actions workflow run summary" >}}
 
 And clicking on a job will show us more details on it and its steps.
 
-[![GitHub Actions workflow job details](/assets/2020/12/22/04-github-actions-workflow-job-details.png)](/assets/2020/12/22/04-github-actions-workflow-job-details.png)
+{{< embedded-image "/images/2020/12/22/04-github-actions-workflow-job-details.png" "GitHub Actions workflow job details" >}}
 
 ## Outro
 

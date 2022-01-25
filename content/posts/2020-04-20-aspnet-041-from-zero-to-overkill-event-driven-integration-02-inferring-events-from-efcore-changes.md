@@ -5,7 +5,7 @@ layout: post
 title: "Event-driven integration #2 - Inferring events from EF Core changes [ASPF02O|E041]"
 summary: "In this first step implementing event-driven integration between services, we'll hook-up into EF Core's infrastructure, namely when saving changes, to infer if any event should be raised based on the information provided by the change tracker."
 images:
-- '/assets/2020/04/20/aspnet-core-from-zero-to-overkill-e041.jpg'
+- '/images/2020/04/20/aspnet-core-from-zero-to-overkill-e041.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

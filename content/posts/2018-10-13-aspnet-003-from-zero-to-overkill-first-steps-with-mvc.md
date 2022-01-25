@@ -6,7 +6,7 @@ layout: post
 title: "Episode 003 - First steps with MVC - ASP.NET Core: From 0 to overkill"
 summary: "In this episode we pick up on the component started previously for group management, to start adding some ASP.NET Core MVC goodness to it."
 images:
-- '/assets/2018/10/13/aspnet-core-from-zero-to-overkill-e003.jpg'
+- '/images/2018/10/13/aspnet-core-from-zero-to-overkill-e003.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

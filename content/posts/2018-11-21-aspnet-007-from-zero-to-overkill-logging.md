@@ -5,7 +5,7 @@ layout: post
 title: "Episode 007 - Logging - ASP.NET Core: From 0 to overkill"
 summary: "In this episode we take a look at logging in ASP.NET Core, the builtin support and providers, as well as using third party implementations, namely NLog."
 images:
-- '/assets/2018/11/21/aspnet-core-from-zero-to-overkill-e007.jpg'
+- '/images/2018/11/21/aspnet-core-from-zero-to-overkill-e007.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

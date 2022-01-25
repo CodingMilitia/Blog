@@ -5,7 +5,7 @@ layout: post
 title: "Episode 004 - The Program and Startup classes - ASP.NET Core: From 0 to overkill"
 summary: "In this episode we take a step back to look at some important infrastructure parts of an ASP.NET Core application - the Program and the Startup classes."
 images:
-- '/assets/2018/10/27/aspnet-core-from-zero-to-overkill-e004.jpg'
+- '/images/2018/10/27/aspnet-core-from-zero-to-overkill-e004.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

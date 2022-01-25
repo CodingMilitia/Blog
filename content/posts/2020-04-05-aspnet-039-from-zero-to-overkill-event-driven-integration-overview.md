@@ -5,7 +5,7 @@ layout: post
 title: "Event-driven integration - Overview [ASPF02O|E039]"
 summary: "In this episode, we take a look at the integration problem we have between services right now, go through some options to avoid or fix it, then have a quick overview of the solution we'll be implementing in the coming episodes."
 images:
-- '/assets/2020/04/05/aspnet-core-from-zero-to-overkill-e039.jpg'
+- '/images/2020/04/05/aspnet-core-from-zero-to-overkill-e039.jpg'
 categories:
 - fromzerotooverkill
 - dotnet
@@ -34,7 +34,7 @@ In this episode we'll see some possibilities to tackle this problem, finishing u
 
 As introduced, the problem we have right now is that the group management service keeps a view of the users' information, with some fields that come from the auth service. However, there's no integration going on between the services, so when a new user is registered, the group management service knows nothing about it, and when the user does some action on its API, it'll fail.
 
-[![no integration](/assets/2020/04/05/e039-user-sync-with-original-issue.png)](/assets/2020/04/05/e039-user-sync-with-original-issue.png)
+{{< embedded-image "/images/2020/04/05/e039-user-sync-with-original-issue.png" "no integration" >}}
 
 We have some options to avoid or fix this problem, so let's quickly list them and then detail a bit:
 
@@ -58,7 +58,7 @@ As for the final approach we'll go trough, being the one we'll implement, it war
 
 As it's clear from the post title, the approach we'll be taking is integration through events. Recovering the initial diagram, we'll add the event bus as a new component to our overall architecture:
 
-[![event-driven integration](/assets/2020/04/05/e039-user-sync-event-driven.png)](/assets/2020/04/05/e039-user-sync-event-driven.png)
+{{< embedded-image "/images/2020/04/05/e039-user-sync-event-driven.png" "event-driven integration" >}}
 
 In a nutshell, we'll use the event bus to publish significant events that happen inside a service and might be of interest to other services. In this case we'll start with user account events - user registered, user updated and user deleted - but in the future, we can continue building on this, publishing more and more events from various services, informing others of relevant happenings.
 

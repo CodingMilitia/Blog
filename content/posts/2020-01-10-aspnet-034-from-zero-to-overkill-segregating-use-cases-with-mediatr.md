@@ -5,7 +5,7 @@ layout: post
 title: "E034 - Segregating use cases with MediatR - ASPF02O"
 summary: "In this episode, we'll take a look at segregating our application use cases in dedicated classes instead of shoving everything into the same service class."
 images:
-- '/assets/2020/01/10/aspnet-core-from-zero-to-overkill-e034.jpg'
+- '/images/2020/01/10/aspnet-core-from-zero-to-overkill-e034.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

@@ -5,7 +5,7 @@ layout: post
 title: "Episode 002 - Project structure plus first application - ASP.NET Core: From 0 to overkill"
 summary: "In this post we finally see some code, although not much 😛 We start by checking out the project structure that'll be used in .NET repositories and then find our way through the command line to create the solution and C# project for the group management component."
 images:
-- '/assets/2018/10/07/aspnet-core-from-zero-to-overkill-e002.jpg'
+- '/images/2018/10/07/aspnet-core-from-zero-to-overkill-e002.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

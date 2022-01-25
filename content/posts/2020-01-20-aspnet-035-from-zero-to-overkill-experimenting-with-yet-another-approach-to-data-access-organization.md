@@ -5,7 +5,7 @@ layout: post
 title: "E035 - Experimenting with (yet) another approach to data access organization - ASPF02O"
 summary: "In this episode, we'll take a look at (yet) another approach to organizing data access code, very likely overkill."
 images:
-- '/assets/2020/01/20/aspnet-core-from-zero-to-overkill-e035.jpg'
+- '/images/2020/01/20/aspnet-core-from-zero-to-overkill-e035.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

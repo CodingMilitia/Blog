@@ -5,7 +5,7 @@ layout: post
 title: "Use POCOs to group data and logic - there's more to life than services and DTOs"
 summary: "In C# land, the abuse of services and DTOs is prevalent. How about grouping data and behavior using POCOs? You know, ob)ect oriented stuff 🙂."
 images:
-- '/assets/2019/12/10/kevlinhenney-tweet.png'
+- '/images/2019/12/10/kevlinhenney-tweet.png'
 categories:
 - dotnet
 tags:
@@ -31,7 +31,7 @@ To start with, POCO means **P**lain **O**ld **C**lr **O**bject (being the origin
 
 For a quick definition, I refer to Kevlin Henney's [tweet](https://twitter.com/KevlinHenney/status/1021670992152866817).
 
-[![kevlin-henney-tweet](/assets/2019/12/10/kevlinhenney-tweet.png)](https://twitter.com/KevlinHenney/status/1021670992152866817)
+{{< embedded-image path="/images/2019/12/10/kevlinhenney-tweet.png" alt="Kevlin Henney tweet" target_url="https://twitter.com/KevlinHenney/status/1021670992152866817" >}}
 
 > "Once more, with feeling:<br/>
 • POJO does not mean DTO.<br/>

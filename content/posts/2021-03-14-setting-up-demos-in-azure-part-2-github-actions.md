@@ -5,7 +5,7 @@ layout: post
 title: "Setting up demos in Azure - Part 2: GitHub Actions"
 summary: "Building on the work from the previous post, in this one we make use of GitHub Actions to setup workflows for easy setup and tear down of a demo environment in Azure."
 images:
-- '/assets/2021/03/14/setting-up-demos-in-azure-part-2-github-actions.png'
+- '/images/2021/03/14/setting-up-demos-in-azure-part-2-github-actions.png'
 categories:
 - azure
 - dotnet
@@ -217,13 +217,13 @@ This is what our workflow needs to login (the `AZURE_CREDENTIALS` we saw earlier
 
 We head to the repository settings, then on the left menu, we have a "Secrets" entry.
 
-[![GitHub Actions secrets](/assets/2021/03/14/01-github-actions-secrets.png)](/assets/2021/03/14/01-github-actions-secrets.png)
+{{< embedded-image "/images/2021/03/14/01-github-actions-secrets.png" "GitHub Actions secrets" >}}
 
 After we click it we can see the existing secrets (we can already see the ones used in the workflows). We also have a button at the top to create a new secret.
 
 Clicking to create a new secret takes us to the following page:
 
-[![GitHub Actions add new secret](/assets/2021/03/14/02-github-actions-add-new-secret.png)](/assets/2021/03/14/02-github-actions-add-new-secret.png)
+{{< embedded-image "/images/2021/03/14/02-github-actions-add-new-secret.png" "GitHub Actions add new secret" >}}
 
 In the secret name field, we type the name we want to use in the workflow. In the value field, we put the actual secret. For the Azure credentials, we put the whole JSON object we got from the service principal creation command.
 
@@ -235,17 +235,17 @@ With everything in place, we can finally deploy (and tear down) things.
 
 Click on the "Actions" entry in the repository top menu, select the workflow to run, click "Run workflow", select the branch and again "Run workflow" on the modal that popped up.
 
-[![GitHub Actions trigger workflow manually](/assets/2021/03/14/03-github-actions-trigger-workflow-manually.png)](/assets/2021/03/14/03-github-actions-trigger-workflow-manually.png)
+{{< embedded-image "/images/2021/03/14/03-github-actions-trigger-workflow-manually.png" "GitHub Actions trigger workflow manually" >}}
 
 It'll take a bit, but eventually everything will be up and running.
 
-[![GitHub Actions workflow result](/assets/2021/03/14/04-github-actions-workflow-result.png)](/assets/2021/03/14/04-github-actions-workflow-result.png)
+{{< embedded-image "/images/2021/03/14/04-github-actions-workflow-result.png" "GitHub Actions workflow result" >}}
 
 And at this point we can make a couple of requests to our sample application.
 
-[![Test the API with a POST](/assets/2021/03/14/05-test-the-api-with-a-post.png)](/assets/2021/03/14/05-test-the-api-with-a-post.png)
+{{< embedded-image "/images/2021/03/14/05-test-the-api-with-a-post.png" "Test the API with a POST" >}}
 
-[![Test the API with a GET](/assets/2021/03/14/06-test-the-api-with-a-get.png)](/assets/2021/03/14/06-test-the-api-with-a-get.png)
+{{< embedded-image "/images/2021/03/14/06-test-the-api-with-a-get.png" "Test the API with a GET" >}}
 
 ## Outro
 

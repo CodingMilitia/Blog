@@ -5,7 +5,7 @@ layout: post
 title: "Better use of types - avoiding nulls with an Optional type [ASPF02O|E037]"
 summary: "In this post, we'll make use of a concept most commonly associated with functional programming, the Optional type (aka Option or Maybe), in order to make our code safer and more explicit when expressing a lack of value, instead of leaning on the null reference, something that I'm sure has burned us many times in the past."
 images:
-- '/assets/2020/02/17/e037.jpg'
+- '/images/2020/02/17/e037.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

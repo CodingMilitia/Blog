@@ -5,7 +5,7 @@ layout: post
 title: "Episode 012 - Move to a Web API - ASP.NET Core: From 0 to overkill"
 summary: "In this episode, we start transforming the current application into a Web API, so it can be used in the single page application we'll be developing."
 images:
-- '/assets/2019/01/26/aspnet-core-from-zero-to-overkill-e012.jpg'
+- '/images/2019/01/26/aspnet-core-from-zero-to-overkill-e012.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

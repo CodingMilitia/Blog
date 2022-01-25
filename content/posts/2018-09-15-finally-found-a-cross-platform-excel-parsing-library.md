@@ -5,7 +5,7 @@ layout: post
 title: 'Finally found a cross-platform Excel parsing library'
 summary: "I have surely been living under a rock, not knowing about the ExcelDataReader library, but now I do!"
 images:
-- '/assets/2018/09/15/exceldatareader-post-image.jpg'
+- '/images/2018/09/15/exceldatareader-post-image.jpg'
 categories:
 - dotnet
 tags:
@@ -14,7 +14,7 @@ tags:
 slug: finally-found-a-cross-platform-excel-parsing-library
 ---
 
-[![Excel](/assets/2018/09/15/exceldatareader-post-image.jpg)](/assets/2018/09/15/exceldatareader-post-image.jpg)
+{{< embedded-image "/images/2018/09/15/exceldatareader-post-image.jpg" "Excel" >}}
 
 ## Intro
 I know, I know, I've been living under a rock! The [ExcelDataReader](https://github.com/ExcelDataReader/ExcelDataReader) library has been there forever, but only recently I've came across it. What sets it apart from the others I've found along the way is being cross-platform and not being required to install some weird external dependencies. 

@@ -5,7 +5,7 @@ layout: post
 title: "Episode 032 - Upgrading to ASP.NET Core 3.0 - ASP.NET Core: From 0 to overkill"
 summary: "In this episode, we'll go through the main changes required to upgrade our currently ASP.NET Core 2.2 applications to ASP.NET Core 3.0."
 images:
-- '/assets/2019/11/21/aspnet-core-from-zero-to-overkill-e032.jpg'
+- '/images/2019/11/21/aspnet-core-from-zero-to-overkill-e032.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

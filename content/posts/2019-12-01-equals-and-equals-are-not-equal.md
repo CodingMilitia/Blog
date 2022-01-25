@@ -5,7 +5,7 @@ layout: post
 title: "\"Equals\" and \"==\" are not... equal"
 summary: "\"Equals\" vs \"==\" is an old topic, but as it's often times forgotten, there's probably no harm in talking about it again."
 images:
-- '/assets/2019/12/01/equals-and-equals-are-not-equal.jpg'
+- '/images/2019/12/01/equals-and-equals-are-not-equal.jpg'
 categories:
 - dotnet
 tags:

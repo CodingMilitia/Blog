@@ -5,7 +5,7 @@ layout: post
 title: "Microservices and correctly built distributed systems"
 summary: "Microservices are all the rage for some time now, but are we using the right foundations to create them? In this post, we'll look into a common design issue in distributed systems."
 images:
-- '/assets/2020/07/15/microservices-and-correctly-built-distributed-systems.jpg'
+- '/images/2020/07/15/microservices-and-correctly-built-distributed-systems.jpg'
 categories:
 - smalltalk
 tags:

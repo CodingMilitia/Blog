@@ -5,7 +5,7 @@ layout: post
 title: "Using .NET's HttpClient without following redirects"
 summary: "It's likely not a common scenario, but here's how one can use .NET's HttpClient without following redirects."
 images:
-- '/assets/2018/04/28/2018-04-28-httpclient-no-redirect-cover.jpg'
+- '/images/2018/04/28/2018-04-28-httpclient-no-redirect-cover.jpg'
 categories:
 - dotnet
 tags:
@@ -16,7 +16,7 @@ tags:
 slug: using-dotnet-httpclient-without-following-redirects
 ---
 
-[![Using .NET's HttpClient without following redirects](/assets/2018/04/28/2018-04-28-httpclient-no-redirect-cover.jpg)](/assets/2018/04/228/2018-04-28-httpclient-no-redirect-cover.jpg)
+{{< embedded-image "/images/2018/04/28/2018-04-28-httpclient-no-redirect-cover.jpg" "Using .NET's HttpClient without following redirects" >}}
 
 I'm pretty sure (or maybe I'm wrong) that we seldom need to avoid following redirects, but I came across such a need one or two times, so I might as well write about it :)
 

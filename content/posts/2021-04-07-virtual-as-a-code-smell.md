@@ -5,7 +5,7 @@ layout: post
 title: "Virtual as a code smell*"
 summary: "Lately I noticed I'm essentially treating virtual methods as a code smell, so thought it could result in an interesting blog post."
 images:
-- '/assets/2021/04/07/virtual-as-a-code-smell.png'
+- '/images/2021/04/07/virtual-as-a-code-smell.png'
 categories:
 - csharp
 - dotnet

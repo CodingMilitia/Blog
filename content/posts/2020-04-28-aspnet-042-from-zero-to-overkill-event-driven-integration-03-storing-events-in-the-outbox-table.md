@@ -5,7 +5,7 @@ layout: post
 title: "Event-driven integration #3 - Storing events in the outbox table [ASPF02O|E042]"
 summary: "On the footsteps of the last episode, in this one we store the inferred events in the outbox table, doing so transactionally, so we have guarantees that any change will eventually result in a published event."
 images:
-- '/assets/2020/04/28/aspnet-core-from-zero-to-overkill-e042.jpg'
+- '/images/2020/04/28/aspnet-core-from-zero-to-overkill-e042.jpg'
 categories:
 - fromzerotooverkill
 - dotnet
@@ -31,7 +31,7 @@ In the [previous episode](https://blog.codingmilitia.com/2020/04/20/aspnet-041-f
 
 To situate ourselves, we can take a look at the diagram introduced in episode 40:
 
-[![situating ourselves](/assets/2020/04/28/e042-outbox-pattern-storage.png)](/assets/2020/04/28/e042-outbox-pattern-storage.png)
+{{< embedded-image "/images/2020/04/28/e042-outbox-pattern-storage.png" "situating ourselves" >}}
 
 ## The outbox table
 

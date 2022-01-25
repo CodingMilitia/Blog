@@ -5,7 +5,7 @@ layout: post
 title: '[Video] Creating a CI/CD pipeline for a .NET library'
 summary: "Video series on setting up a complete CI/CD pipeline for a .NET library, from building and testing in different platforms, visualizing code coverage and publishing the binaries to NuGet.'"
 images:
-- '/assets/2018/07/30/ci-post-image.jpg'
+- '/images/2018/07/30/ci-post-image.jpg'
 categories:
 - dotnet
 tags:

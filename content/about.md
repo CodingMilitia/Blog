@@ -31,18 +31,11 @@ In 2019, I was awarded as a Microsoft MVP, in the developer technologies categor
 
 ## Other content
 
-Besides this blog, I also use a couple of other mediums where I publish content: a [YouTube channel](https://www.youtube.com/CodingMilitia) and a [Twitch channel](https://twitch.tv/joaofbantunes).
-
-I'll leave a couple of examples below.
+Besides this blog, I also use a couple of other mediums where I publish content, namely a [YouTube channel](https://www.youtube.com/CodingMilitia), for which I'll leave an example playlist below.
 
 <iframe id="ytplayer" type="text/html" width="640" height="360" style="margin-left: auto; margin-right: auto; display: block; padding: 10px;"
   src="https://www.youtube.com/embed/4FXUrEY9PIQ?autoplay=0&origin=http://blog.codingmilitia.com"
   frameborder="0"></iframe>
-
-<iframe id="twitchplayer" width="640" height="360" style="margin-left: auto; margin-right: auto; display: block; padding: 10px;"
-    src="https://player.twitch.tv/?channel=joaofbantunes&parent=blog.codingmilitia.com&autoplay=false&muted=true"
-    frameborder="0">
-</iframe>
 
 ## About the blog
 
@@ -55,6 +48,7 @@ As widely known in the software development business, naming is hard! 😀
 Due to this indisputable fact, when I was trying to come up with a name for the blog, something more easily remembered than my name, particularly for non-portuguese speakers, I turned to one of my favorite things: heavy metal music. I jotted down some names from songs and albums, to try and think if I could adapt to the context of coding. One of the names that came up was [Metal Militia](https://youtu.be/sdGrxMKKHbo), a song by [Metallica](https://www.metallica.com/), and that's where Coding Militia came from 🙂🤘.
 
 {{< yt sdGrxMKKHbo >}}
+
 <br/>
 
 And the logo that you'll see in some places, like the [YouTube channel](https://www.youtube.com/CodingMilitia), is also Metallica inspired.

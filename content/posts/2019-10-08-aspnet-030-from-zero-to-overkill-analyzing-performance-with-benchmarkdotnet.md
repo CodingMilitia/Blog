@@ -5,7 +5,7 @@ layout: post
 title: "Episode 030 - Analyzing performance with BenchmarkDotNet - ASP.NET Core: From 0 to overkill"
 summary: "In this episode, we'll take a look at BenchmarkDotNet, to explore the performance characteristics of our code and help us make better decisions when trying to optimize it."
 images:
-- '/assets/2019/10/08/aspnet-core-from-zero-to-overkill-e030.jpg'
+- '/images/2019/10/08/aspnet-core-from-zero-to-overkill-e030.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

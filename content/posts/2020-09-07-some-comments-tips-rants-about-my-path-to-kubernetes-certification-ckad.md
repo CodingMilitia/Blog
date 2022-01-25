@@ -5,7 +5,7 @@ layout: post
 title: "Some comments, tips and rants about my path to Kubernetes certification"
 summary: "Sharing my experience about my path to learn about Kubernetes and prepare for the Certified Kubernetes Application Developer (CKAD) exam."
 images:
-- '/assets/2020/09/07/path-to-ckad.jpg'
+- '/images/2020/09/07/path-to-ckad.jpg'
 categories:
 - smalltalk
 tags:
@@ -64,7 +64,7 @@ Finishing up on the learning material, it was time to start practicing. The exam
 
 I had no real clue how to prepare, so I started by taking one of the many sample applications I have on my GitHub, to get it working in Kubernetes. I even posted a screenshot to social media as I was messing with things.
 
-[![messing with Kubernetes and ASP.NET Core](/assets/2020/09/07/messing-with-kubernetes-and-aspnet-core.jpg)](/assets/2020/09/07/messing-with-kubernetes-and-aspnet-core.jpg)
+{{< embedded-image "/images/2020/09/07/messing-with-kubernetes-and-aspnet-core.jpg" "messing with Kubernetes and ASP.NET Core" >}}
 
 Doing this allowed me to practice and better understand most of the concepts I learned, applying it to a project I knew well the inner workings.
 

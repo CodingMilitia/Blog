@@ -5,7 +5,7 @@ layout: post
 title: "A year remote"
 summary: "It has recently been a year since I started working remotely, so I thought it could be interesting to share my experience, along with some particularities of my remote setting."
 images:
-- '/assets/2019/11/03/a-year-remote.jpg'
+- '/images/2019/11/03/a-year-remote.jpg'
 categories:
 - smalltalk
 tags:

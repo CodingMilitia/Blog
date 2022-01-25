@@ -5,7 +5,7 @@ layout: post
 title: "[Video] High-performance and compile-time logging source generation in .NET 6"
 summary: "Quick little video about an interesting new logging related feature coming in .NET 6, compile-time logging source generation, as well as related high-performance logging features, which were already present but probably not very well known."
 images:
-- '/assets/2021/11/21/high-performance-and-compile-time-source-generation-dotnet-6.jpg'
+- '/images/2021/11/21/high-performance-and-compile-time-source-generation-dotnet-6.jpg'
 categories:
 - csharp
 - dotnet

@@ -5,7 +5,7 @@ layout: post
 title: 'Creating a CI/CD pipeline for a .NET library: Part 1 - Intro'
 summary: 'Setting up a complete CI/CD pipeline for a .NET library, from building and testing in different platforms, visualizing code coverage and publishing the binaries to NuGet.'
 images:
-- '/assets/2018/07/30/ci-post-image.jpg'
+- '/images/2018/07/30/ci-post-image.jpg'
 categories:
 - dotnet
 tags:
@@ -20,7 +20,7 @@ tags:
 slug: creating-ci-cd-pipeline-dotnet-library-part-01-intro
 ---
 
-[![CI/CD](/assets/2018/07/30/ci-post-image.jpg)](/assets/2018/07/30/ci-post-image.jpg)
+{{< embedded-image "/images/2018/07/30/ci-post-image.jpg" "CI/CD" >}}
 
 In this series of posts I want to talk about creating a CI/CD (continuous integration/continuous delivery) pipeline for a .NET library that’s distributed as a NuGet package. As reference, I’ll use the [GrpcExtensions](https://github.com/CodingMilitia/GrpcExtensions) library that I talked about in a previous [post]({% post_url 2018-05-19-dotnetifying-grpc-sane-edition %}).
 

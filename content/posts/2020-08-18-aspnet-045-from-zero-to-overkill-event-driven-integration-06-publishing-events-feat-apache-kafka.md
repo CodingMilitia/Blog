@@ -5,7 +5,7 @@ layout: post
 title: "Event-driven integration #6 - Publishing events (feat. Apache Kafka) [ASPF02O|E045]"
 summary: "In this episode, we implement event publishing to Apache Kafka from the auth service, making use of Confluent's .NET client package."
 images:
-- '/assets/2020/08/18/aspnet-core-from-zero-to-overkill-e045.jpg'
+- '/images/2020/08/18/aspnet-core-from-zero-to-overkill-e045.jpg'
 categories:
 - fromzerotooverkill
 tags:
@@ -34,7 +34,7 @@ For the Kafka publisher implementation, we'll use [Confluent's .NET Client](http
 
 Before getting on with business, to situate ourselves in the event-driven integration path, we can take a look at the diagram introduced in [episode 40](https://blog.codingmilitia.com/2020/04/13/aspnet-040-from-zero-to-overkill-event-driven-integration-transactional-outbox-pattern/):
 
-[![situating ourselves](/assets/2020/08/18/e045-outbox-pattern-event-bus.png)](/assets/2020/08/18/e045-outbox-pattern-event-bus.png)
+{{< embedded-image "/images/2020/08/18/e045-outbox-pattern-event-bus.png" "situating ourselves" >}}
 
 ## Event publisher interface
 
@@ -361,11 +361,11 @@ That `ToBusEvent` method maps the database event type to a type contained in a s
 
 Now we can run the application to see things in action. In the application we can do some action that causes an event (e.g. register a new user) then head to the Confluent Control Center, look at the topics and see what we can find there.
 
-[![control center topic contents](/assets/2020/08/18/e045-control-center-1.png)](/assets/2020/08/18/e045-control-center-1.png)
+{{< embedded-image "/images/2020/08/18/e045-control-center-1.png" "control center topic contents" >}}
 
 We can see we have a message there. If we scroll to the right, we can see the contents of the message.
 
-[![control center topic contents scrolled](/assets/2020/08/18/e045-control-center-2.png)](/assets/2020/08/18/e045-control-center-2.png)
+{{< embedded-image "/images/2020/08/18/e045-control-center-2.png" "control center topic contents scrolled" >}}
 
 Looking at it, we also notice that the record key matches the user id in the event, as we set things up like that to ensure the events for the same user go to the same partition.
 

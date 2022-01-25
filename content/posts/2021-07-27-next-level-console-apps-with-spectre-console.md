@@ -5,7 +5,7 @@ layout: post
 title: "Next level console apps with Spectre.Console"
 summary: "Don't know about you, but when I build console applications, pretty is not a word I use to describe them. Let's see how Spectre.Console can help us with that!"
 images:
-- '/assets/2021/07/27/next-level-console-apps-with-spectre-console.png'
+- '/images/2021/07/27/next-level-console-apps-with-spectre-console.png'
 categories:
 - csharp
 - dotnet
@@ -139,7 +139,7 @@ None of the options is required, nor am I adding validation (which I could, by o
 
 As for those description attributes, they're used if we use the help option:
 
-[![Help command](/assets/2021/07/27/01-help.png)](/assets/2021/07/27/01-help.png)
+{{< embedded-image "/images/2021/07/27/01-help.png" "Help command" >}}
 
 ## Prompting user for information
 
@@ -199,11 +199,11 @@ As we'll see through the rest of the post, `AnsiConsole` is the entry point for 
 
 For username and password, we're calling `AnsiConsole.Prompt` and passing in a `TextPromp`, where we provide the text to show the user and expect a `string` in return. We can define a validation function, so if the user enters incorrect information, it'll be refused (as you can see in the video at the top of the post). For the password, we also call the `Secret` extension method, so this prompt is treated as such, not showing the value on the screen.
 
-[![Pasword prompt](/assets/2021/07/27/02-password-prompt.gif)](/assets/2021/07/27/02-password-prompt.gif)
+{{< embedded-image "/images/2021/07/27/02-password-prompt.gif" "Pasword prompt" >}}
 
 For the environment, as we have an enum, instead of having the user type the value, we can use a `SelectionPrompt`, so the user needs only to move through the options and select the desired one.
 
-[![Environment selection](/assets/2021/07/27/03-environment-selection.gif)](/assets/2021/07/27/03-environment-selection.gif)
+{{< embedded-image "/images/2021/07/27/03-environment-selection.gif" "Environment selection" >}}
 
 ## Presenting information and reporting progress
 
@@ -236,7 +236,7 @@ static string GetEnvironmentColor(Environment environment)
 
 Then, we can ask the user for confirmation (resorting again to a selection prompt) and get on with it.
 
-[![Confirmation prompt](/assets/2021/07/27/04-confirmation-prompt.gif)](/assets/2021/07/27/04-confirmation-prompt.gif)
+{{< embedded-image "/images/2021/07/27/04-confirmation-prompt.gif" "Confirmation prompt" >}}
 
 With all info in hand, it's time to begin performing the migration steps, using the previously introduced `SampleMigrator` class.
 
@@ -262,7 +262,7 @@ await AnsiConsole
     .StartAsync("Disconnecting...", _ => migrator.DisposeAsync().AsTask());
 ```
 
-[![Connect and gather info with spinner](/assets/2021/07/27/05-connect-and-gather-info.gif)](/assets/2021/07/27/05-connect-and-gather-info.gif)
+{{< embedded-image "/images/2021/07/27/05-connect-and-gather-info.gif" "Connect and gather info with spinner" >}}
 
 Nice and easy! But it gets better 🙂. Spinners are an improvement over no feedback at all, but even better is to actually have an idea of the amount of work done and the amount remaining. As we know the amount of... "things" to migrate (returned by `GatherMigrationInformationAsync`) and `MigrateAsync` returns an `IAsyncEnumerable` with information about each migrated item, we can make use of the `Progress` component as follows.
 
@@ -304,7 +304,7 @@ AnsiConsole.Render(
         .AddItem("Failed", migrationResults.failures, Color.Red));
 ```
 
-[![Migrate and present results with progress bar and bar chart](/assets/2021/07/27/06-migrate-and-present-results.gif)](/assets/2021/07/27/06-migrate-and-present-results.gif)
+{{< embedded-image "/images/2021/07/27/06-migrate-and-present-results.gif" "Migrate and present results with progress bar and bar chart" >}}
 
 ## Outro
 

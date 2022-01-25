@@ -5,7 +5,7 @@ layout: post
 title: 'Creating a CI/CD pipeline for a .NET library: Part 4 - Code coverage on Coveralls, badges and wrap up'
 summary: "In this fourth post, we'll add the final touches to the pipeline, publishing the code coverage report and adding some badges to GitHub."
 images:
-- '/assets/2018/07/30/ci-post-image.jpg'
+- '/images/2018/07/30/ci-post-image.jpg'
 categories:
 - dotnet
 tags:
@@ -20,7 +20,7 @@ tags:
 slug: creating-ci-cd-pipeline-dotnet-library-part-04-coverage-coveralls-badges-wrap-up
 ---
 
-[![CI/CD](/assets/2018/07/30/ci-post-image.jpg)](/assets/2018/07/30/ci-post-image.jpg)
+{{< embedded-image "/images/2018/07/30/ci-post-image.jpg" "CI/CD" >}}
 
 # Intro
 In the previous posts I went through the bulk of the work required for a reasonably simple CI/CD pipeline for a .NET library, from defining the build using [Cake](https://cakebuild.net/), running it in the cloud using [AppVeyor](https://www.appveyor.com/) and [Travis CI](https://travis-ci.org/).
@@ -36,42 +36,42 @@ Given the coverage report generation and publish was already discussed on the po
 
 In the homepage, among other things, we can add a new repository. My homepage has already a reference to the project as I’ve added it previously.
 
-[![Coveralls Home](/assets/2018/07/30/coveralls-home.jpg)](/assets/2018/07/30/coveralls-home.jpg)
+{{< embedded-image "/images/2018/07/30/coveralls-home.jpg" "Coveralls Home" >}}
 
 Adding a repository is really as simple as toggling an on/off switch, given I’ve signed up using my GitHub account, all my projects are already available to add.
 
-[![Coveralls New Project](/assets/2018/07/30/coveralls-new-project.jpg)](/assets/2018/07/30/coveralls-new-project.jpg)
+{{< embedded-image "/images/2018/07/30/coveralls-new-project.jpg" "Coveralls New Project" >}}
 
 When we have results published they’ll show up in the specific project’s page.
 
-[![Coveralls Project Page](/assets/2018/07/30/coveralls-project-page.jpg)](/assets/2018/07/30/coveralls-project-page.jpg)
+{{< embedded-image "/images/2018/07/30/coveralls-project-page.jpg" "Coveralls Project Page" >}}
 
 Then we can drill down on the project’s files to see the coverage.
 
-[![Coveralls Project Files Drill Down](/assets/2018/07/30/coveralls-project-files-drill-down.jpg)](/assets/2018/07/30/coveralls-project-files-drill-down.jpg)
+{{< embedded-image "/images/2018/07/30/coveralls-project-files-drill-down.jpg" "Coveralls Project Files Drill Down" >}}
 
 And then click a specific file and see the coverage details for it.
 
-[![Coveralls File Details](/assets/2018/07/30/coveralls-file-details.jpg)](/assets/2018/07/30/coveralls-file-details.jpg)
+{{< embedded-image "/images/2018/07/30/coveralls-file-details.jpg" "Coveralls File Details" >}}
 
 And with the glimpse of my failure to thoroughly test the exceptions, we have Coveralls working 😀
 
 # Bonus: CI status badges
 Now that we have everything working, we might as well make it all visible in the GitHub project page by showing CI status badges.
 
-[![GitHub Badges](/assets/2018/07/30/github-badges.jpg)](/assets/2018/07/30/github-badges.jpg)
+{{< embedded-image "/images/2018/07/30/github-badges.jpg" "GitHub Badges" >}}
 
 For AppVeyor's badges, on the project settings there’s a section “Badges” that has the details one might need, with a sample for the master branch.
 
-[![AppVeyor Badges](/assets/2018/07/30/appveyor-badges.jpg)](/assets/2018/07/30/appveyor-badges.jpg)
+{{< embedded-image "/images/2018/07/30/appveyor-badges.jpg" "AppVeyor Badges" >}}
 
 For Travis CI we could just copy the image address of the status image that shows up at the top of the project page (didn't really find a specific section for this in their docs, if you do please comment).
 
-[![Travis CI Badges](/assets/2018/07/30/travis-badges.jpg)](/assets/2018/07/30/travis-badges.jpg)
+{{< embedded-image "/images/2018/07/30/travis-badges.jpg" "Travis CI Badges" >}}
 
 For Coveralls, on the project page there’s also a badge with a useful embed option.
 
-[![Coveralls Badges](/assets/2018/07/30/coveralls-badges.jpg)](/assets/2018/07/30/coveralls-badges.jpg)
+{{< embedded-image "/images/2018/07/30/coveralls-badges.jpg" "Coveralls Badges" >}}
 
 Now we just have to put together a couple of tables in markdown with the badges for all the services and we're good to go.
 

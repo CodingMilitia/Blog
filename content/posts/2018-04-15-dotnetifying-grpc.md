@@ -5,7 +5,7 @@ layout: post
 title: 'Dotnetifying gRPC'
 summary: 'Very likely over-engineered PoC on making development of gRPC service development more dotnetish.'
 images:
-- '/assets/2018/04/15/csharp-grpc.jpg'
+- '/images/2018/04/15/csharp-grpc.jpg'
 categories:
 - dotnet
 tags:
@@ -15,7 +15,7 @@ tags:
 slug: dotnetifying-grpc
 ---
 
-[![C# + gRPC](/assets/2018/04/15/csharp-grpc.jpg)](/assets/2018/04/15/csharp-grpc.jpg)
+{{< embedded-image "/images/2018/04/15/csharp-grpc.jpg" "C# + gRPC" >}}
 
 I started this little proof of concept with the simple goal of creating some helper functions to aid in hosting gRPC services in .NET in a way similar to ASP.NET applications. However, while scouring the web, reading some articles to try and find the best way to do that, I came across this [article](http://bartoszsypytkowski.com/c-using-grpc-with-custom-serializers/) and realized I could get a little more creative - maybe I ended up being too much, but at least I had fun along the way :).
 

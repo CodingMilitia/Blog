@@ -5,7 +5,7 @@ layout: post
 title: "Episode 014 - Centralizing frontend state with Vuex - ASP.NET Core: From 0 to overkill"
 summary: "In this episode, we continue playing around in the frontend, by centralizing all state using Vuex, making use of the patterns that are probably more popular lately due to their use with React and Redux."
 images:
-- '/assets/2019/02/07/aspnet-core-from-zero-to-overkill-e014.jpg'
+- '/images/2019/02/07/aspnet-core-from-zero-to-overkill-e014.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

@@ -6,7 +6,7 @@ title: "Episode 016 - Authentication with Identity and Razor Pages - ASP.NET Cor
 summary: "In this episode, we start building the authentication service, using ASP.NET Core Identity and Razor Pages.
 It will be a standalone application centralizing all the required user authentication logic."
 images:
-- '/assets/2019/02/24/aspnet-core-from-zero-to-overkill-e016.jpg'
+- '/images/2019/02/24/aspnet-core-from-zero-to-overkill-e016.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

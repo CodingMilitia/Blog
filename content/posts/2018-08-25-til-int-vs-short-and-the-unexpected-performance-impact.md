@@ -5,7 +5,7 @@ layout: post
 title: '[TIL] int vs short and the (unexpected) performance impact'
 summary: 'Quick little post on a probably unexpected performance difference when using an int instead of a short in C#'
 images:
-- '/assets/2018/08/25/int-vs-short-post-image.jpg'
+- '/images/2018/08/25/int-vs-short-post-image.jpg'
 categories:
 - dotnet
 - til
@@ -16,7 +16,7 @@ tags:
 slug: til-int-vs-short-and-the-unexpected-performance-impact
 ---
 
-[![int vs short](/assets/2018/08/25/int-vs-short-post-image.jpg)](/assets/2018/08/25/int-vs-short-post-image.jpg)
+{{< embedded-image "/images/2018/08/25/int-vs-short-post-image.jpg" "int vs short" >}}
 
 One of these days, going through some code at work I noticed a colleague had made a for loop explicitly defining the iteration variable as a `short` (which is an `Int16`) instead of an `int` (or `Int32`) as usual (or in my case `var`, which ends up being an `int` anyway).
 

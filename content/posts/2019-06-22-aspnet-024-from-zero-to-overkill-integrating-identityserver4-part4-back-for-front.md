@@ -5,7 +5,7 @@ layout: post
 title: "Episode 024 - Integrating IdentityServer4 - Part 4 - Back for Front - ASP.NET Core: From 0 to overkill"
 summary: "In this episode, we look at the backend for frontend, and the changes required for it to handle the users authentication, redirection to the identity provider (the IdentityServer4 powered auth service), the inclusion of an access token when making API calls, the refresh of said token and handling CSRF tokens."
 images:
-- '/assets/2019/06/22/aspnet-core-from-zero-to-overkill-e024.jpg'
+- '/images/2019/06/22/aspnet-core-from-zero-to-overkill-e024.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

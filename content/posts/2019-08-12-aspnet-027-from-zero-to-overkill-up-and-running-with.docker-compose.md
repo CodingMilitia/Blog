@@ -5,7 +5,7 @@ layout: post
 title: "Episode 027 - Up and running with Docker Compose - ASP.NET Core: From 0 to overkill"
 summary: "In this episode, we'll take the Docker containers we prepared previously and use Docker Compose to get the complete PlayBall application running."
 images:
-- '/assets/2019/08/12/aspnet-core-from-zero-to-overkill-e027.jpg'
+- '/images/2019/08/12/aspnet-core-from-zero-to-overkill-e027.jpg'
 categories:
 - fromzerotooverkill
 - dotnet
@@ -96,7 +96,7 @@ To front the interactions with the users, we'll use a reverse proxy that will ac
 
 Just as a reminder, the architecture we're going for right now, is something like this (as seen in [episode 021](https://blog.codingmilitia.com/2019/05/29/aspnet-021-from-zero-to-overkill-integrating-identityserver4-part1-overview)):
 
-[![architecture diagram](/assets/2019/05/29/e021-architecture-overview.jpg)](/assets/2019/05/29/e021-architecture-overview.jpg)
+{{< embedded-image "/images/2019/05/29/e021-architecture-overview.jpg" "architecture diagram" >}}
 
 We'll use [HAProxy](http://www.haproxy.org/) for our reverse proxy, but we could also go with [Nginx](https://www.nginx.com/) or another server. HAProxy is specifically tailored to be used as a reverse proxy, not a full blown web server, so it seemed to me a good choice.
 
@@ -217,7 +217,7 @@ To wrap up HAProxy's configuration, we're configuring a HAProxy provided statist
 
 `HAProxy statistics page`
 
-[![HAProxy statistics page](/assets/2019/08/12/haproxy-stats-page.png)](/assets/2019/08/12/haproxy-stats-page.png)
+{{< embedded-image "/images/2019/08/12/haproxy-stats-page.png" "HAProxy statistics page" >}}
 
 ### Creating the Docker container image
 We now have the configuration ready, so we can use it to create a new Docker container image, which in turn will be used as part of the Docker Compose deployment.

@@ -5,7 +5,7 @@ layout: post
 title: "Mistaking software for a finished product"
 summary: "As much as it would be simpler, software isn't something we can ship and forget about, or even just keep adding features without revisiting architecture and design."
 images:
-- '/assets/2021/05/10/mistaking-software-for-a-finished-product.png'
+- '/images/2021/05/10/mistaking-software-for-a-finished-product.png'
 categories:
 - smalltalk
 tags:

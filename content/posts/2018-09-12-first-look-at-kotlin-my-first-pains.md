@@ -5,7 +5,7 @@ layout: post
 title: 'First look at Kotlin - my first pains'
 summary: "A quick walk-through of a couple of problems I ran into when first trying to build a web api with Kotlin"
 images:
-- '/assets/2018/09/12/first-look-at-kotlin-post-image.jpg'
+- '/images/2018/09/12/first-look-at-kotlin-post-image.jpg'
 categories:
 - kotlin
 tags:
@@ -15,7 +15,7 @@ tags:
 slug: first-look-at-kotlin-my-first-pains
 ---
 
-[![Kotlin](/assets/2018/09/12/first-look-at-kotlin-post-image.jpg)](/assets/2018/09/12/first-look-at-kotlin-post-image.jpg)
+{{< embedded-image "/images/2018/09/12/first-look-at-kotlin-post-image.jpg" "Kotlin" >}}
 
 ## Intro
 I've been wanting to take a look at Kotlin for a while and have been delaying, but this past weekend I had a couple of hours I had no good idea how to use them so... I finally wrote some Kotlin code (granted the result is about 30 lines long and most of them I've seen on tutorials, but still, I typed it and saw it running on my computer!).
@@ -35,7 +35,7 @@ So my initial code was as follows - don't use this, it has problems! (and are al
 {{< gist joaofbantunes 9972e7742fb05692e69ff4de060f185c >}}
 
 I had no problems when I ran the code with a right click on the `Server.kt` file, like so:
-[![right click run](/assets/2018/09/12/right-click-run.jpg)](/assets/2018/09/12/right-click-run.jpg)
+{{< embedded-image "/images/2018/09/12/right-click-run.jpg" "right click run" >}}
 
 But as soon as I ran it using Gradle, it failed with strange errors.
 

@@ -5,7 +5,7 @@ layout: post
 title: "Event-driven integration #5 - Quick intro to Apache Kafka [ASPF02O|E044]"
 summary: "In this episode, we briefly introduce Apache Kafka, as we'll use it to implement our event bus. We'll focus on our specific use case, as Kafka can be used in a variety of scenarios. We'll keep it in a developer's perspective, not going much into more infrastructural subjects."
 images:
-- '/assets/2020/06/09/aspnet-core-from-zero-to-overkill-e044.jpg'
+- '/images/2020/06/09/aspnet-core-from-zero-to-overkill-e044.jpg'
 categories:
 - fromzerotooverkill
 tags:
@@ -87,7 +87,7 @@ A topic is the logical representation of a stream of related records. Taking our
 
 Topics are composed of one or more partitions, where the records are stored. A partition behaves like a append-only log, inserting new records at the end. This means each partition is an ordered, immutable sequence of records. When added to the partition, the records can be identified by an offset.
 
-[![topics and partitions](/assets/2020/06/09/044-0-topics-and-partitions.png)](/assets/2020/06/09/044-0-topics-and-partitions.png)
+{{< embedded-image "/images/2020/06/09/044-0-topics-and-partitions.png" "topics and partitions" >}}
 
 We'll revisit this part, but I'd say it's this log like behavior that really differentiates Kafka from queuing systems. Records are kept in the partitions according to a retention policy, which in the extreme case can be forever. Unlike queuing systems, records are not removed after being read.
 
@@ -115,11 +115,11 @@ Mapping this to our usual example, our group management service could label its 
 
 **Side note:** hope using the word "group" in regards to the group management service and Kafka consumer groups doesn't make the example too confusing 😐.
 
-[![topics and consumer groups](/assets/2020/06/09/044-1-topics-and-consumer-groups.png)](/assets/2020/06/09/044-1-topics-and-consumer-groups.png)
+{{< embedded-image "/images/2020/06/09/044-1-topics-and-consumer-groups.png" "topics and consumer groups" >}}
 
 Within a consumer group, each consumer is exclusively responsible for one or more partitions, so records from one partition always go to the same consumer instance. This is nice to take advantage of the record order mentioned earlier, as we won't have consumers concurrently handling related records (as long as we used a strategy to ensure the related records are put in the same partition).
 
-[![partitions and consumer groups](/assets/2020/06/09/044-2-partitions-and-consumer-groups.png)](/assets/2020/06/09/044-2-partitions-and-consumer-groups.png)
+{{< embedded-image "/images/2020/06/09/044-2-partitions-and-consumer-groups.png" "partitions and consumer groups" >}}
 
 Consumers keep track of what they already read by storing the partition offset mentioned earlier. The consumers keep this information in memory while processing records, but should also commit it back to Kafka from time to time, so if the consumer instance goes down, itself when coming back up, or another instance of the same consumer group (after a partition rebalancing), can pickup where it left of.
 
@@ -131,7 +131,7 @@ Before anything else, to reiterate, Kafka **IS NOT** a queuing system. We can, h
 
 As we saw, the main difference between Kafka and a queuing system, is that Kafka stores data as an append-only log, accessed with the usage of an offset, while queuing systems push messages to consumers, removing them after getting an acknowledgement of its successfully processing.
 
-[![message queue](/assets/2020/06/09/044-3-message-queue.png)](/assets/2020/06/09/044-3-message-queue.png)
+{{< embedded-image "/images/2020/06/09/044-3-message-queue.png" "message queue" >}}
 
 ### Use cases
 

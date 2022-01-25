@@ -5,7 +5,7 @@ layout: post
 title: "Shaking things up a bit - ASPF02O Outro"
 summary: 'Almost two years have passed since I started the "ASP.NET Core: From 0 to Overkill" series. It''s time to shake things up a bit 🙂.'
 images:
-- '/assets/2020/09/21/aspf02o.jpg'
+- '/images/2020/09/21/aspf02o.jpg'
 categories:
 - smalltalk
 - fromzerotooverkill

@@ -5,7 +5,7 @@ layout: post
 title: 'Creating a CI/CD pipeline for a .NET library: Part 2 - Defining the build with Cake and publishing to NuGet'
 summary: 'In this second post we get started with the CI/CD pipeline, defining the build steps in C# using Cake.'
 images:
-- '/assets/2018/07/30/ci-post-image.jpg'
+- '/images/2018/07/30/ci-post-image.jpg'
 categories:
 - dotnet
 tags:
@@ -20,7 +20,7 @@ tags:
 slug: creating-ci-cd-pipeline-dotnet-library-part-02-defining-the-build-with-cake-publish-nuget
 ---
 
-[![CI/CD](/assets/2018/07/30/ci-post-image.jpg)](/assets/2018/07/30/ci-post-image.jpg)
+{{< embedded-image "/images/2018/07/30/ci-post-image.jpg" "CI/CD" >}}
 
 # Intro
 In this post I'll talk about defining the build steps using [Cake](https://cakebuild.net/) and publishing the result to [NuGet](https://www.nuget.org). From the official site: "Cake (C# Make) is a cross-platform build automation system with a C# DSL for tasks such as compiling code, copying files and folders, running unit tests, compressing files and building NuGet packages."
@@ -95,7 +95,7 @@ It’s here the C# shenanigans come into play. To avoid trying to publish when t
 
 To push the package to NuGet we need an API key. We can use a general key or create one for each project, which I would say it’s the ideal for security reasons. To create one you can go [over here](https://www.nuget.org/account/apikeys), hit create, give it a name, the owner of the package it pushes (for instance you may want an organization instead of yourself), set some options and the packages this key has access to.
 
-[![Create NuGet API Key](/assets/2018/07/30/nuget-api-key-creation.jpg)](/assets/2018/07/30/nuget-api-key-creation.jpg)
+{{< embedded-image "/images/2018/07/30/nuget-api-key-creation.jpg" "Create NuGet API Key" >}}
 
 # Defining build targets
 
@@ -120,7 +120,7 @@ Like I mentioned in the previous section, not passing a target, `Default` is use
 
 **Note**: while running on MacOS, the Coveralls publication fails with a weird error: 
 
-[![MacOS Coverage Upload Error](/assets/2018/07/30/coverage-upload-error-mac.jpg)](/assets/2018/07/30/coverage-upload-error-mac.jpg)
+{{< embedded-image "/images/2018/07/30/coverage-upload-error-mac.jpg" "MacOS Coverage Upload Error" >}}
 
 As I only want the coverage to be published from one environment and I’m using AppVeyor as the primary one, it doesn’t annoy me too much and haven’t wasted time investigating the issue, but I’ll leave the note for future reference.
 

@@ -5,7 +5,7 @@ layout: post
 title: "Episode 018 - Internationalization - ASP.NET Core: From 0 to overkill"
 summary: "In this episode, we'll use ASP.NET Core internationalization support to make our authentication service available in multiple languages."
 images:
-- '/assets/2019/04/24/aspnet-core-from-zero-to-overkill-e018.jpg'
+- '/images/2019/04/24/aspnet-core-from-zero-to-overkill-e018.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

@@ -5,7 +5,7 @@ layout: post
 title: "Getting a complex type as a simple type from the query string in a ASP.NET Core API controller"
 summary: "This is a tale of a good amount of hours of wasted time, so I’m going to document it so I remember it in the future. The idea is simple: when building an API, how can we treat a complex type as a simple type, to avoid things like primitive obsession, implement strongly typed ids and other related patterns? Let's find out! 🙂"
 images:
-- '/assets/2022/01/03/complex-type-as-simple-type-aspnetcore.png'
+- '/images/2022/01/03/complex-type-as-simple-type-aspnetcore.png'
 categories:
 - csharp
 - dotnet
@@ -143,7 +143,7 @@ public IActionResult GetWithNoCustomization(SomeWrapperType wrapper)
 
 If we run this now, what do we get?
 
-[![Swagger view with only model binder configured](/assets/2022/01/03/01-only-mode-binder-configured.png)](/assets/2022/01/03/01-only-mode-binder-configured.png)
+{{< embedded-image "/images/2022/01/03/01-only-mode-binder-configured.png" "Swagger view with only model binder configured" >}}
 
 So... something’s not great... not only is it not being treated as a simple type, but it’s showing up as part of the body, which in a GET request, is unexpected at best.
 
@@ -151,7 +151,7 @@ Part of it makes sense, as I added a model binder, but as we’re finding out, t
 
 If we look at the available schemas, we see `SomeWrapperType` in there, further showing that it’s being treated as a complex type.
 
-[![Type shown as complex in Swagger schema](/assets/2022/01/03/02-type-shown-as-complex-in-swagger-schema.png)](/assets/2022/01/03/02-type-shown-as-complex-in-swagger-schema.png)
+{{< embedded-image "/images/2022/01/03/02-type-shown-as-complex-in-swagger-schema.png" "Type shown as complex in Swagger schema" >}}
 
 ## Add type specific Swagger configuration
 
@@ -169,7 +169,7 @@ builder.Services.AddSwaggerGen(options =>
 
 With this in place, `SomeWrapperType` should be treated as a simple type, in this case, like a regular `string`. Let’s see what happened in the Swagger UI:
 
-[![Type shown as simple in Swagger](/assets/2022/01/03/03-type-shown-as-simple-in-swagger.png)](/assets/2022/01/03/03-type-shown-as-simple-in-swagger.png)
+{{< embedded-image "/images/2022/01/03/03-type-shown-as-simple-in-swagger.png" "Type shown as simple in Swagger" >}}
 
 So, we have improvements, as now the type is being shown as `string` (and no longer shows up in the schemas section), but it’s still showing up in the request body.
 
@@ -183,7 +183,7 @@ public IActionResult GetWithFromQuery([FromQuery]SomeWrapperType wrapper)
     => Ok(wrapper.Value);
 ```
 
-[![Type shown as simple in Swagger](/assets/2022/01/03/04-type-show-as-in-swagger.png)](/assets/2022/01/03/04-type-show-as-in-swagger.png)
+{{< embedded-image "/images/2022/01/03/04-type-show-as-in-swagger.png" "Type shown as simple in Swagger" >}}
 
 Almost, but we’re still not there!
 
@@ -240,7 +240,7 @@ We can delete the model binder we created earlier, as it won’t be relevant whe
 
 Going back to Swagger UI...
 
-[![Type shown as simple string in query string in Swagger](/assets/2022/01/03/05-type-shown-as-string-in-query-string.png)](/assets/2022/01/03/05-type-shown-as-string-in-query-string.png)
+{{< embedded-image "/images/2022/01/03/05-type-shown-as-string-in-query-string.png" "Type shown as simple string in query string in Swagger" >}}
 
 ... and it finally works as desired (and the `FromQuery` attribute isn’t needed).
 
@@ -258,7 +258,7 @@ app.MapGet(
     (SomeWrapperType wrapper) => Results.Ok(wrapper.Value));
 ```
 
-[![All good with minimal APIs](/assets/2022/01/03/06-all-good-with-minimal-apis.png)](/assets/2022/01/03/06-all-good-with-minimal-apis.png)
+{{< embedded-image "/images/2022/01/03/06-all-good-with-minimal-apis.png" "All good with minimal APIs" >}}
 
 ## Outro
 

@@ -5,7 +5,7 @@ layout: post
 title: "[Video] Exploring distributed tracing with ASP NET Core 6"
 summary: "Distributed tracing isn't a new subject by any means, but there are some more recent developments, namely in terms of standards like W3C Trace Context and OpenTelemetry, that are worth a look."
 images:
-- '/assets/2021/10/26/exploring-distributed-tracing-with-aspnet-core-6.jpg'
+- '/images/2021/10/26/exploring-distributed-tracing-with-aspnet-core-6.jpg'
 categories:
 - csharp
 - dotnet

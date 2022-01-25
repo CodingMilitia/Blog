@@ -5,7 +5,7 @@ layout: post
 title: "Episode 019 - Roles, claims and policies - ASP.NET Core: From 0 to overkill"
 summary: "In this episode, we get back to the authorization topic, playing a bit with roles, claims and policies in ASP.NET Core, learning how we can use these to restrict access to certain areas of our application."
 images:
-- '/assets/2019/04/29/aspnet-core-from-zero-to-overkill-e019.jpg'
+- '/images/2019/04/29/aspnet-core-from-zero-to-overkill-e019.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

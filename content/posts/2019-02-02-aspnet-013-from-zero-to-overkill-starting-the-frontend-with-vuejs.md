@@ -5,7 +5,7 @@ layout: post
 title: "Episode 013 - Starting the frontend with Vue.js - ASP.NET Core: From 0 to overkill"
 summary: "In this episode, we start the frontend development with Vue.js. One can say this isn't ASP.NET Core, but we do need a frontend and single page applications are all the rage these days, so we're going with the flow 😛"
 images:
-- '/assets/2019/02/02/aspnet-core-from-zero-to-overkill-e013.jpg'
+- '/images/2019/02/02/aspnet-core-from-zero-to-overkill-e013.jpg'
 categories:
 - fromzerotooverkill
 - dotnet
@@ -56,11 +56,11 @@ With the CLI installed, we can create our project. The CLI provides a `create` c
 
 As soon as the project setup process starts, the first option we're greeted with is if we want to use the default settings or manually go through the options. I chose the latter as I want to use TypeScript (I like me some types please, I'm a C# guy right?! 😅).
 
-[![Vue.js setup screen 1](/assets/2019/02/02/vue-cli-create-options-1.jpg)](/assets/2019/02/02/vue-cli-create-options-1.jpg)
+{{< embedded-image "/images/2019/02/02/vue-cli-create-options-1.jpg" "Vue.js setup screen 1" >}}
 
 After this first choice of going through the manual process, we're given a bunch more things to choose.
 
-[![Vue.js setup screen 2](/assets/2019/02/02/vue-cli-create-options-2.jpg)](/assets/2019/02/02/vue-cli-create-options-2.jpg)
+{{< embedded-image "/images/2019/02/02/vue-cli-create-options-2.jpg" "Vue.js setup screen 2" >}}
 
 Above you can see the choices I've made. Deselected Babel and instead chose TypeScript. Also enabled the things I'm expecting to use, like the [Router](https://router.vuejs.org/) to manage the navigation inside the application, [Vuex](https://vuex.vuejs.org/) to centralize the application state, CSS pre-processors (like SCSS or LESS), the linter/formatter and unit testing.
 
@@ -68,7 +68,7 @@ I didn't select PWA support, because I'm not expecting to use it in foreseeable 
 
 Hitting enter takes us to a final batch of options, which take into account the prior selections we made.
 
-[![Vue.js setup screen 3](/assets/2019/02/02/vue-cli-create-options-3.jpg)](/assets/2019/02/02/vue-cli-create-options-3.jpg)
+{{< embedded-image "/images/2019/02/02/vue-cli-create-options-3.jpg" "Vue.js setup screen 3" >}}
 
 Going through the options I took:
 - Using class style syntax - again, C# guy here!

@@ -5,7 +5,7 @@ layout: post
 title: "Event-driven integration #4 - Outbox publisher (feat. IHostedService & Channels) [ASPF02O|E043]"
 summary: "In this episode, we'll implement the outbox publisher, or better yet, two versions of it, one better suited for lower latency and another for reliability. As we continue our event-driven path, this will be a good opportunity to introduce a couple of interesting .NET Core features: IHostedService (and BackgroundService) and System.Threading.Channels."
 images:
-- '/assets/2020/05/07/aspnet-core-from-zero-to-overkill-e043.jpg'
+- '/images/2020/05/07/aspnet-core-from-zero-to-overkill-e043.jpg'
 categories:
 - fromzerotooverkill
 - dotnet
@@ -39,7 +39,7 @@ Another .NET Core feature we'll use in this episode is running [tasks in the bac
 
 Before getting on with business, to situate ourselves in the event-driven integration path, we can take a look at the diagram introduced in [episode 40](https://blog.codingmilitia.com/2020/04/13/aspnet-040-from-zero-to-overkill-event-driven-integration-transactional-outbox-pattern/):
 
-[![situating ourselves](/assets/2020/05/07/e043-outbox-pattern-publisher.png)](/assets/2020/05/07/e043-outbox-pattern-publisher.png)
+{{< embedded-image "/images/2020/05/07/e043-outbox-pattern-publisher.png" "situating ourselves" >}}
 
 ## Outbox publisher
 

@@ -5,7 +5,7 @@ layout: post
 title: "Episode 010 - Async all the things - ASP.NET Core: From 0 to overkill"
 summary: "In this episode, we take a look at using async await in ASP.NET Core, why it's important, the happy path and some sad paths, along with some interesting bits."
 images:
-- '/assets/2018/12/17/aspnet-core-from-zero-to-overkill-e010.jpg'
+- '/images/2018/12/17/aspnet-core-from-zero-to-overkill-e010.jpg'
 categories:
 - fromzerotooverkill
 - dotnet
@@ -40,12 +40,12 @@ I'll drop here a couple of diagrams for a very high level overview of the reques
 
 **Without using async/await (or similar approaches)**
 
-[![pre-async](/assets/2018/12/17/pre-async.jpg)](/assets/2018/12/17/pre-async.jpg)
+{{< embedded-image "/images/2018/12/17/pre-async.jpg" "pre-async" >}}
 
 
 **Using async/await (or similar approaches)**
 
-[![async](/assets/2018/12/17/async.jpg)](/assets/2018/12/17/async.jpg)
+{{< embedded-image "/images/2018/12/17/async.jpg" "async" >}}
 
 In summary, using async/await in ASP.NET Core allows us to simplify the writing of more scalable code, particularly in regards to IO, by freeing resources to handle other tasks while, for instance, a database access or external service call is being done.
 

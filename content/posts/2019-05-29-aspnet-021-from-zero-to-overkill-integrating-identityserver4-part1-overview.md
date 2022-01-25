@@ -5,7 +5,7 @@ layout: post
 title: "Episode 021 - Integrating IdentityServer4 - Part 1 - Overview - ASP.NET Core: From 0 to overkill"
 summary: "In this episode, we start with an overview of the current application's architecture and how we'll start integrating IdentityServer4 into it."
 images:
-- '/assets/2019/05/29/aspnet-core-from-zero-to-overkill-e021.jpg'
+- '/images/2019/05/29/aspnet-core-from-zero-to-overkill-e021.jpg'
 categories:
 - fromzerotooverkill
 - dotnet
@@ -39,7 +39,7 @@ Let's start by taking a look at the desired architecture, consisting of the comp
 
 `Architecture diagram`
 
-[![architecture diagram](/assets/2019/05/29/e021-architecture-overview.jpg)](/assets/2019/05/29/e021-architecture-overview.jpg)
+{{< embedded-image "/images/2019/05/29/e021-architecture-overview.jpg" "architecture diagram" >}}
 
 The diagram above provides a quick look at what we're aiming for. All the components that can be accessed over the internet, won't be available directly, having a reverse proxy as the only component publicly exposed. Some services won't even be accessible via reverse proxy, as is the case of the group management service, which will be used through the BFF.
 
@@ -56,7 +56,7 @@ In the next diagram, we can take a look at the complete flow from the moment the
 
 `Authentication flow diagram`
 
-[![Authentication flow diagram](/assets/2019/05/29/e021-oidc-code-flow.jpg)](/assets/2019/05/29/e021-oidc-code-flow.jpg)
+{{< embedded-image "/images/2019/05/29/e021-oidc-code-flow.jpg" "Authentication flow diagram" >}}
 
 Part of this flow is dependent on the authentication/authorization methods we chose, in this case OpenId Connect and OAuth 2. Even after this initial choice, there are more to make, as OpenId Connect provides us with a bunch more options to choose from. In this case we're using the [authorization code flow](https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth) (we'll briefly talk about this in the next section).
 

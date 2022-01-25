@@ -5,7 +5,7 @@ layout: post
 title: "E036 - Making things more object oriented with rich domain entities - ASPF02O"
 summary: "In this episode, we'll make things more object oriented, by moving some logic that's present in the request handlers, which in fact should be present in the domain entities, that currently are just bags of data with public getters and setters."
 images:
-- '/assets/2020/02/06/aspnet-core-from-zero-to-overkill-e036.jpg'
+- '/images/2020/02/06/aspnet-core-from-zero-to-overkill-e036.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

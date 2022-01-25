@@ -5,7 +5,7 @@ layout: post
 title: "Episode 015 - Calling the Web API from the frontend - ASP.NET Core: From 0 to overkill"
 summary: "Wrapping up this first look at the frontend application built with Vue.js, in this episode we make it work with the group management Web API we developed so far."
 images:
-- '/assets/2019/02/12/aspnet-core-from-zero-to-overkill-e015.jpg'
+- '/images/2019/02/12/aspnet-core-from-zero-to-overkill-e015.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

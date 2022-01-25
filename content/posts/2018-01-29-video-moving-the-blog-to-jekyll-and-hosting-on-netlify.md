@@ -19,6 +19,6 @@ Just added a new video, talking about the blog's move from WordPress (and all th
 A side note that I forgot to mention in the video: when using Jekyll, we need to set the environment variable ```JEKYLL_ENV``` to ```production```, or stuff like Google Analytics and Disqus comments won't work, as it's disabled by default unless we're in production. Next you can see a screenshot of the Netlify screen where we can set environment variables.
 <br/>
 <br/>
-[![Setting environment variables on Netlify](/assets/2018/01/29/00-netlify-environment-variables.jpg)](/assets/2018/01/29/00-netlify-environment-variables.jpg)
+{{< embedded-image "/images/2018/01/29/00-netlify-environment-variables.jpg" "Setting environment variables on Netlify" >}}
 
 Thanks for stopping by, cyaz

@@ -5,7 +5,7 @@ layout: post
 title: "The Uri composition mystery"
 summary: "A quick tale of an idiot wasting hours by not checking the docs earlier."
 images:
-- '/assets/2019/05/22/the-uri-composition-mystery.png'
+- '/images/2019/05/22/the-uri-composition-mystery.png'
 categories:
 - dotnet
 tags:

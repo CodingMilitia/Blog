@@ -5,7 +5,7 @@ layout: post
 title: "Episode 009 - MVC filters - ASP.NET Core: From 0 to overkill"
 summary: "Following up on the previous episode on ASP.NET Core middlewares, in this episode we take a look at MVC's filters, an MVC specific way to add behaviors to our request handling pipeline, and how we can use them to implement cross-cutting concerns in our web applications."
 images:
-- '/assets/2018/12/10/aspnet-core-from-zero-to-overkill-e009.jpg'
+- '/images/2018/12/10/aspnet-core-from-zero-to-overkill-e009.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

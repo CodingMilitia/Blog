@@ -5,7 +5,7 @@ layout: post
 title: "[Video] Are ASP.NET Core Minimal APIs just for demos?"
 summary: 'The upcoming release of ASP.NET Core 6 brings a pretty interesting feature set referred to as "Minimal APIs". While they seem pretty interesting to me and many others, some folks are not fans and can be quite vocal about it, so I thought about taking quick look, put things in perspective, as well as compare with other tech stacks.'
 images:
-- '/assets/2021/08/17/are-aspnet-core-6-minimal-apis-just-for-demos.jpg'
+- '/images/2021/08/17/are-aspnet-core-6-minimal-apis-just-for-demos.jpg'
 categories:
 - csharp
 - dotnet

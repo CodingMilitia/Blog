@@ -5,7 +5,7 @@ layout: post
 title: 'ASP.NET Core: From 0 to overkill - Intro'
 summary: "This post serves as an introduction to a new series of videos (and I'll try to accompany them with posts) on creating a complex application using on ASP.NET Core."
 images:
-- '/assets/2018/10/02/aspnet-core-from-zero-to-overkill-post-image.jpg'
+- '/images/2018/10/02/aspnet-core-from-zero-to-overkill-post-image.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

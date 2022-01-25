@@ -5,7 +5,7 @@ layout: post
 title: "Setting up demos in Azure - Part 1: ARM templates"
 summary: "As I'm preparing some demos using Azure services, wanted to have things in place so I can easily setup the whole environment. In this first part, we look at using Azure Resource Manager (ARM) templates to get all those services up and running."
 images:
-- '/assets/2021/03/07/setting-up-demos-in-azure-part-1-arm-templates.png'
+- '/images/2021/03/07/setting-up-demos-in-azure-part-1-arm-templates.png'
 categories:
 - azure
 - dotnet
@@ -84,15 +84,15 @@ A possible way to do things is to use the portal, download the ARM template it p
 
 In this screenshot, we're at the final step of creating a new web app through the portal. In this final page, at the bottom, we have the option to download the template.
 
-[![download ARM template from portal while creating service](/assets/2021/03/07/01-download-arm-template-from-portal-while-creating-service.png)](/assets/2021/03/07/01-download-arm-template-from-portal-while-creating-service.png)
+{{< embedded-image "/images/2021/03/07/01-download-arm-template-from-portal-while-creating-service.png" "download ARM template from portal while creating service" >}}
 
 Clicking the download link takes us to this page where we can see the template and change some things before we download it.
 
-[![tweaks before downloading ARM template from portal](/assets/2021/03/07/02-tweaks-before-download-arm-template-from-portal.png)](/assets/2021/03/07/02-tweaks-before-download-arm-template-from-portal.png)
+{{< embedded-image "/images/2021/03/07/02-tweaks-before-download-arm-template-from-portal.png" "tweaks before downloading ARM template from portal" >}}
 
 If you have an existing resource, you can also find the option to download the associated template. Below is an example using an existing web app.
 
-[![download ARM template from portal from already existing service](/assets/2021/03/07/03-download-arm-template-from-portal-from-already-existing-service.png)](/assets/2020/12/22//assets/2021/03/07/03-download-arm-template-from-portal-from-already-existing-service.png)
+{{< embedded-image "/images/2021/03/07/03-download-arm-template-from-portal-from-already-existing-service.png" "download ARM template from portal from already existing service" >}}
 
 ### Find what you need in the Azure Quickstart Templates page
 

@@ -5,7 +5,7 @@ layout: post
 title: "Episode 025 - Integrating IdentityServer4 - Part 5 - Frontend - ASP.NET Core: From 0 to overkill"
 summary: "In this episode, we take a look at our frontend single page application, and the changes made to handle user authentication. We also take a look at a way to handle the CSRF token in the requests made to the BFF."
 images:
-- '/assets/2019/07/13/aspnet-core-from-zero-to-overkill-e025.jpg'
+- '/images/2019/07/13/aspnet-core-from-zero-to-overkill-e025.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

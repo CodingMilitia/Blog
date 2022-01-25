@@ -5,7 +5,7 @@ layout: post
 title: "More explicit domain error handling and fewer exceptions with Either and Error types [ASPF02O|E038]"
 summary: "Following up on the last episode about the Optional type, we continue taking inspiration from functional languages and introduce Either and Error types, as a way to make the possible business logic outcomes more explicit and minimize using exceptions in non-exceptional situations."
 images:
-- '/assets/2020/03/02/e038.jpg'
+- '/images/2020/03/02/e038.jpg'
 categories:
 - fromzerotooverkill
 - dotnet
@@ -229,13 +229,13 @@ Now the advantage of having implemented all of this the way that we did, is that
 
 Imagine we want to add a new type of error, for instance `Unexpected`. If we just copy-paste one of the other ones and correct the name, we're greeted with an error in the `Accept` implementation.
 
-[![missing overload](/assets/2020/03/02/new-error-type-missing-overload.jpg)](/assets/2020/03/02/new-error-type-missing-overload.jpg)
+{{< embedded-image "/images/2020/03/02/new-error-type-missing-overload.jpg" "missing overload" >}}
 
 This means we're missing a `Visit` method overload in the `IErrorVisitor` interface to cover for the newly added error type, so we go there and add it.
 
 As we do this, now we get an error in our `ErrorMappingVisitor` struct, because it's not implementing all of the methods of the `IErrorVisitor` interface.
 
-[![incomplete interface implementation](/assets/2020/03/02/new-error-type-incomplete-interface-implementation.jpg)](/assets/2020/03/02/new-error-type-incomplete-interface-implementation.jpg)
+{{< embedded-image "/images/2020/03/02/new-error-type-incomplete-interface-implementation.jpg" "incomplete interface implementation" >}}
 
 So now we need to also implement the remainder of the interface, for the project to even compile, ensuring that we always handle all types of errors.
 

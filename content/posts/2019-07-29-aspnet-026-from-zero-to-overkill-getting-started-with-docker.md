@@ -5,7 +5,7 @@ layout: post
 title: "Episode 026 - Getting started with Docker - ASP.NET Core: From 0 to overkill"
 summary: "In this episode, we'll be creating Docker containers for our applications, with the goal of making it easier to get them all running as a whole."
 images:
-- '/assets/2019/07/29/aspnet-core-from-zero-to-overkill-e026.jpg'
+- '/images/2019/07/29/aspnet-core-from-zero-to-overkill-e026.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

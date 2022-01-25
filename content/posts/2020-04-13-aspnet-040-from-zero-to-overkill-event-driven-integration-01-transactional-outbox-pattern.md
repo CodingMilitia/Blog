@@ -5,7 +5,7 @@ layout: post
 title: "Event-driven integration #1 - Intro to the transactional outbox pattern [ASPF02O|E040]"
 summary: "As we start implementing event-driven integration, the first thing we need to do is publish the events. Although it might seem straightforward, there are some important things to consider in order to make it work reliably. In this episode, we discuss the challenges and introduce the transactional outbox pattern to help us facing these challenges."
 images:
-- '/assets/2020/04/13/aspnet-core-from-zero-to-overkill-e040.jpg'
+- '/images/2020/04/13/aspnet-core-from-zero-to-overkill-e040.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

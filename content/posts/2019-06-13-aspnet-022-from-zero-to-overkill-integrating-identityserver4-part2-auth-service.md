@@ -5,7 +5,7 @@ layout: post
 title: "Episode 022 - Integrating IdentityServer4 - Part 2 - Auth Service - ASP.NET Core: From 0 to overkill"
 summary: "In this episode, we start looking at the code needed to integrate IdentityServer4 in our application, namely with the authentication service we developed previously."
 images:
-- '/assets/2019/06/13/aspnet-core-from-zero-to-overkill-e022.jpg'
+- '/images/2019/06/13/aspnet-core-from-zero-to-overkill-e022.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

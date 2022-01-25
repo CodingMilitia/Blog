@@ -5,7 +5,7 @@ layout: post
 title: 'Creating a CI/CD pipeline for a .NET library: Part 3 - Building on AppVeyor and Travis CI'
 summary: "In this third post we get our build running in the cloud, compiling and testing in Windows, Linux and MacOS."
 images:
-- '/assets/2018/07/30/ci-post-image.jpg'
+- '/images/2018/07/30/ci-post-image.jpg'
 categories:
 - dotnet
 tags:
@@ -20,7 +20,7 @@ tags:
 slug: creating-ci-cd-pipeline-dotnet-library-part-03-building-on-appveyor-and-travis-ci
 ---
 
-[![CI/CD](/assets/2018/07/30/ci-post-image.jpg)](/assets/2018/07/30/ci-post-image.jpg)
+{{< embedded-image "/images/2018/07/30/ci-post-image.jpg" "CI/CD" >}}
 
 # Intro
 On the last post, we defined the build using [Cake](https://cakebuild.net/), including publishing the resulting artifacts to [NuGet](https://www.nuget.org/) and [Coveralls](https://coveralls.io/) (although we'll see more detail on Coveralls later). In this post we'll use [AppVeyor](https://www.appveyor.com/) and [Travis CI](https://travis-ci.org/), which provide free continuous integration hosting for open source projects.
@@ -33,15 +33,15 @@ After creating an account, adding a project is really simple.
 
 On the home page, create new project:
 
-[![AppVeyor Home](/assets/2018/07/30/appveyor-home.jpg)](/assets/2018/07/30/appveyor-home.jpg)
+{{< embedded-image "/images/2018/07/30/appveyor-home.jpg" "AppVeyor Home" >}}
 
 Then choose a source. In my case GitHub, making sure to authorize AppVeyor to access the GitHub repositories:
 
-[![AppVeyor New Project](/assets/2018/07/30/appveyor-new-project.jpg)](/assets/2018/07/30/appveyor-new-project.jpg)
+{{< embedded-image "/images/2018/07/30/appveyor-new-project.jpg" "AppVeyor New Project" >}}
 
 The next screen will be empty, in my case there’s already some information on previous builds (including the logs):
 
-[![AppVeyor Latest Build](/assets/2018/07/30/appveyor-latest-build.jpg)](/assets/2018/07/30/appveyor-latest-build.jpg)
+{{< embedded-image "/images/2018/07/30/appveyor-latest-build.jpg" "AppVeyor Latest Build" >}}
 
 The next step would be to go into the settings section and set everything up, but I didn’t change anything because I’m using the Cake build script and an `appveyor.yml` configuration file in the project repository to configure everything.
 
@@ -61,9 +61,9 @@ The `branches` configuration part is where we can define the branches we want to
 
 Then, in the `environment` section we can define required environment variables. The first two are just to skip some .NET unneeded steps, to minimize build time. The latter two are the API keys for publishing the package to NuGet and to publish the code coverage report to Coveralls. Notice the API keys are not in plain text - that wouldn’t end well - they’re encrypted using a tool provided by AppVeyor ([over here](https://ci.appveyor.com/tools/encrypt)) so they can be safely stored in source control.
 
-[![AppVeyor Encrypt Data Menu](/assets/2018/07/30/appveyor-encrypt-data-menu.jpg)](/assets/2018/07/30/appveyor-encrypt-data-menu.jpg)
+{{< embedded-image "/images/2018/07/30/appveyor-encrypt-data-menu.jpg" "AppVeyor Encrypt Data Menu" >}}
 
-[![AppVeyor Encrypt Data](/assets/2018/07/30/appveyor-encrypt-data.jpg)](/assets/2018/07/30/appveyor-encrypt-data.jpg)
+{{< embedded-image "/images/2018/07/30/appveyor-encrypt-data.jpg" "AppVeyor Encrypt Data" >}}
 
 Finally we have the build “definition” in `build_script`, that’s just calling the Cake build script, providing it with the required arguments. As AppVeyor is already very .NET focused, it has some default behaviors that we don’t need as they’re being taken care of by the Cake script, so we must disable the `test` and `deploy` stages.
 
@@ -77,11 +77,11 @@ The setup for Travis is similar to AppVeyor.
 ## Setting up the project on the Travis CI site
 On the initial page we can click to create a new project, and also see the other existing projects and information about them.
 
-[![Travis CI Home](/assets/2018/07/30/travis-home.jpg)](/assets/2018/07/30/travis-home.jpg)
+{{< embedded-image "/images/2018/07/30/travis-home.jpg" "Travis CI Home" >}}
 
 When creating a new project, the GitHub projects appear front and center to choose from.
 
-[![Travis CI New Project](/assets/2018/07/30/travis-new-project.jpg)](/assets/2018/07/30/travis-new-project.jpg)
+{{< embedded-image "/images/2018/07/30/travis-new-project.jpg" "Travis CI New Project" >}}
 
 On the project page we can see the information about the project, like previous build results and logs, project settings and other things. This is the same page as the initial one, just focused on the selected project.
 

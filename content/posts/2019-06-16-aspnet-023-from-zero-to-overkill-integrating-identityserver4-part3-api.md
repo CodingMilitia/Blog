@@ -5,7 +5,7 @@ layout: post
 title: "Episode 023 - Integrating IdentityServer4 - Part 3 - API - ASP.NET Core: From 0 to overkill"
 summary: "In this episode, we look at the group management service, and the changes required for it to enforce the requests authentication using an access token (JWT)."
 images:
-- '/assets/2019/06/16/aspnet-core-from-zero-to-overkill-e023.jpg'
+- '/images/2019/06/16/aspnet-core-from-zero-to-overkill-e023.jpg'
 categories:
 - fromzerotooverkill
 - dotnet

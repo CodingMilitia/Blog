@@ -3,7 +3,7 @@
   {{ if $has_images }}
   {{ $image_resource := resources.Get (index .Params.images 0) }}
   {{ if $image_resource }}
-  {{ $featured_image :=  $image_resource.Fit "500x300" }}
+  {{ $featured_image :=  $image_resource.Fit "500x300 webp q85" }}
   <div class="card-image">
     <a href="{{.RelPermalink}}">
       <figure class="image">
@@ -23,9 +23,9 @@
   {{ end }}
   {{ end }}
   <div class="card-header">
-    <h3 class="card-header-title">
+    <h2 class="card-header-title">
       <a href="{{ .RelPermalink }}"> {{ .Title }} </a>
-    </h3>
+    </h2>
   </div>
   <div class="card-content">
     {{ .Summary }}

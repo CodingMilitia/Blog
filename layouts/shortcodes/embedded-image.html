@@ -4,19 +4,20 @@
 {{- $target_url := .Get "target_url" | default nil -}}
 {{ $image_resource := resources.Get $path }}
 {{/* the 20480 is just because Fit expects a value, but what's important is the width */}}
-{{ $resized :=  $image_resource.Fit (print $width "x20480") }}
+{{ $resized :=  $image_resource.Fit (print $width "x20480 webp q90") }}
 {{ if (eq $width "1024")}}
-{{ $resized_half :=  $image_resource.Fit "512x20480" }}
+{{ $resized_half :=  $image_resource.Fit "512x20480 webp q90" }}
 <a href="{{ ($target_url | default $image_resource.RelPermalink) }}" target="_blank" rel="noopener">
     <img
         srcset="
         {{ $resized.RelPermalink }} 1024w,
         {{ $resized_half.RelPermalink }} 512w" 
         src="{{ $resized.RelPermalink }}"
-        alt="{{ $alt }}">
+        alt="{{ $alt }}"
+        loading="lazy">
 </a>
 {{ else }}
 <a href="{{ ($target_url | default $image_resource.RelPermalink) }}" target="_blank" rel="noopener">
-    <img src="{{ $resized.RelPermalink }}" alt="{{ $alt }}">
+    <img src="{{ $resized.RelPermalink }}" alt="{{ $alt }}" loading="lazy">
 </a>
 {{ end }}

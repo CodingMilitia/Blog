@@ -16,7 +16,7 @@ I love to explore new technologies, dig up some fringe topics and dive into over
 
 I'm also a supporter of remote work, as I believe our industry is in a privileged position to provide the best work-life balance, skipping unneeded commutes and relocations.
 
-Currently working at [BOLD by Devoteam](https://boldint.com/).
+Currently working at [Devoteam Portugal](https://pt.devoteam.com/).
 
 Outside the programming world, I'm a bit of gadget addict, headbanger (didn't you notice something familiar about the site title?) and am found regularly ranting about something 🙂
 

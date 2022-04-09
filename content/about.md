@@ -14,7 +14,7 @@ My main interests are software architecture, design and development, with more f
 
 I love to explore new technologies, dig up some fringe topics and dive into over-engineering sessions, but always trying not to forget the basics and how they're essential to everything else.
 
-On the job, besides the typical software architecture and engineering role responsibilities, I also often get involved in helping with recruitment processes, learning paths, promote technical discussions and knowledge sharing, as well as advocate for overall company improvements.
+On the job, besides the typical software architecture and engineering role responsibilities, I also often get involved in helping with recruitment processes, learning paths, training, promoting technical discussions and knowledge sharing, as well as advocate for overall company improvements.
 
 I’m a big supporter of remote work, as I believe the tech industry is in a privileged position to provide the best work-life balance, skipping unneeded commutes and relocations, while also serving as an example to other industries.
 

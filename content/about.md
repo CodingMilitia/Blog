@@ -8,22 +8,24 @@ permalink: /about/
 
 <img src="/assets/mugs/j-circle-pic-small-150x150.png" alt="Johnny's mug" style="max-width: 150px; margin-left: auto; margin-right: auto; display: block;">
 
-Hey folks! My name is João Antunes and I work as a software engineer, mostly with .NET technologies, but I like to play around with other tech as well.
+Hey folks!
 
-My main interests are software architecture, design and development, with more focus on the backend but with a view of the whole stack.
+My name is João Antunes and I'm a tech professional who's always trying to push things forward. Software engineer at the core, interested in everything related to the software development process, including the development itself, solutions architecture and technical leadership, as well as more adjacent activities, like promoting technical discussions and knowledge sharing, helping colleagues level up through trainings and learning paths.
 
-I love to explore new technologies, dig up some fringe topics and dive into over-engineering sessions, but always trying not to forget the basics and how they're essential to everything else.
+I've worked across different projects and industries, developing (micro)services, web applications, IPTV applications and a bunch of other stuff. When developing, I've mainly focused on backend systems but always keeping an eye on what's going on in the frontend.
 
-On the job, besides the typical software architecture and engineering role responsibilities, I also often get involved in helping with recruitment processes, learning paths, training, promoting technical discussions and knowledge sharing, as well as advocate for overall company improvements.
+In terms of tech stack, my main focus over the years has been .NET and C#, but I've worked with other technologies and enjoy trying and learning new things as much as possible.
 
-I’m a big supporter of remote work, as I believe the tech industry is in a privileged position to provide the best work-life balance, skipping unneeded commutes and relocations, while also serving as an example to other industries.
+I have a blog (where you're at) and a YouTube channel (linked below) where I talk about all the subjects around software development. I also do some presentations on meetups, conferences and related events.
+
+Big remote work supporter, as I believe the tech industry is in a privileged position to provide the best work-life balance, skipping unneeded commutes and relocations, while also being an example to the other industries.
 
 Currently working at [Devoteam Portugal](https://pt.devoteam.com/).
 
 Outside the programming world, I'm a bit of gadget addict, headbanger (didn't you notice something familiar about the site title?) and am found regularly ranting about something 🙂
 
 Feel free to drop a comment, hit me up on [Twitter](https://twitter.com/joaofbantunes) or if you prefer [LinkedIn](https://www.linkedin.com/in/joaofbantunes), I'm always open for a chat.
-If you're a younger/less experienced developer, and would like some advice, mentoring or just think I can help you out with something, reach out, I'll do my best to assist.
+If you're a young developer (or even if you're a more experienced one) feel free to reach out if you'd like some advice, discuss a topic I know about, need to be introduced to someone I know, or just think I can help you out with something, I'll do my best.
 
 In 2019, I was awarded as a Microsoft MVP, in the developer technologies category.
 

@@ -10,7 +10,7 @@ permalink: /about/
 
 Hey folks!
 
-My name is João Antunes and I'm a tech professional who's always trying to push things forward. Software engineer at the core, interested in everything related to the software development process, including the development itself, solutions architecture and technical leadership, as well as more adjacent activities, like promoting technical discussions and knowledge sharing, helping colleagues level up through trainings and learning paths.
+My name is João Antunes and I'm a tech professional who's always trying to push things forward. Software engineer, interested in everything related to the software development process, including the development itself, solutions architecture and technical leadership, as well as more adjacent activities, like promoting technical discussions and knowledge sharing, helping colleagues level up through trainings and learning paths.
 
 I've worked across different projects and industries, developing (micro)services, web applications, IPTV applications and a bunch of other stuff. When developing, I've mainly focused on backend systems but always keeping an eye on what's going on in the frontend.
 

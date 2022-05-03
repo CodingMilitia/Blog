@@ -11,6 +11,7 @@ categories:
 - dotnet
 tags:
 - aspnetcore
+- video
 slug: are-aspnet-core-6-minimal-apis-just-for-demos
 ---
 

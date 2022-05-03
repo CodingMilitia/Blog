@@ -12,6 +12,7 @@ categories:
 tags:
 - serialization
 - json
+- video
 slug: polymorphic-json-serialization-feat-dotnet-system-text-json
 ---
 

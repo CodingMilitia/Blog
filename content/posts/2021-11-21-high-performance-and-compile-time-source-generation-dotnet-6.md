@@ -12,6 +12,7 @@ categories:
 tags:
 - aspnetcore
 - logging
+- video
 slug: high-performance-and-compile-time-source-generation-dotnet-6
 ---
 

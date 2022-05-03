@@ -15,6 +15,7 @@ tags:
 - postgresql
 - kafka
 - debezium
+- video
 slug: outbox-meets-change-data-capture-feat-dotnet-postgresql-kafka-debezium
 ---
 

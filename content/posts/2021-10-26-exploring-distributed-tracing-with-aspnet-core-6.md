@@ -14,6 +14,7 @@ tags:
 - opentelemetry
 - "distributed tracing"
 - tracing
+- video
 slug: exploring-distributed-tracing-with-aspnet-core-6
 ---
 

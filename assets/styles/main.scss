@@ -174,3 +174,8 @@ h2.card-header-title {
     color: $scheme-main;
   }
 }
+
+.highlight div,
+.highlight pre {
+  overflow-x: auto;
+}

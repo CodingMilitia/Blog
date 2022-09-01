@@ -6,7 +6,7 @@ permalink: /about/
 
 ## About me
 
-<img src="/assets/mugs/j-circle-pic-small-150x150.png" alt="Johnny's mug" style="max-width: 150px; margin-left: auto; margin-right: auto; display: block;">
+<img src="/assets/mugs/j-pic-small.jpg" alt="Johnny's mug" style="max-width: 200px; margin-left: auto; margin-right: auto; display: block;">
 
 Hey folks!
 
@@ -49,9 +49,9 @@ Blog created using [Hugo](https://gohugo.io/), used [Bulma](https://bulma.io/) t
 
 As widely known in the software development business, naming is hard! 😀
 
-Due to this indisputable fact, when I was trying to come up with a name for the blog, something more easily remembered than my name, particularly for non-portuguese speakers, I turned to one of my favorite things: heavy metal music. I jotted down some names from songs and albums, to try and think if I could adapt to the context of coding. One of the names that came up was [Metal Militia](https://youtu.be/sdGrxMKKHbo), a song by [Metallica](https://www.metallica.com/), and that's where Coding Militia came from 🙂🤘.
+Due to this indisputable fact, when I was trying to come up with a name for the blog, something more easily remembered than my name, particularly for non-portuguese speakers, I turned to one of my favorite things: heavy metal music. I jotted down some names from songs and albums, to try and think if I could adapt to the context of coding. One of the names that came up was [Metal Militia](https://youtu.be/Tche1TWh0mQ), a song by [Metallica](https://www.metallica.com/), and that's where Coding Militia came from 🙂🤘.
 
-{{< yt sdGrxMKKHbo >}}
+{{< yt Tche1TWh0mQ >}}
 
 <br/>
 

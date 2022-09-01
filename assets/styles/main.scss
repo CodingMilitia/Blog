@@ -7,7 +7,6 @@ $navbar-item-color: $scheme-main;
 $navbar-background-color: $main-accent;
 
 @import "./bulma-0.8.2/bulma.sass";
-@import "./syntax.scss";
 
 body {
   margin: 0;
@@ -173,9 +172,4 @@ h2.card-header-title {
   h2, span, a {
     color: $scheme-main;
   }
-}
-
-.highlight div,
-.highlight pre {
-  overflow-x: auto;
 }

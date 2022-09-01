@@ -27,7 +27,20 @@ enableRobotsTXT = true
 
 [markup]
   [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    hl_inline = false
+    lineAnchors = ''
+    lineNoStart = 1
     lineNos = true
+    # this needs to be false, otherwise horizontal scroll doesn't work with line numbers enabled
+    lineNumbersInTable = false
+    noClasses = true
+    noHl = false
+    style = 'monokai'
+    tabWidth = 4
 
 # allow raw html in markdown files
 [markup.goldmark.renderer]

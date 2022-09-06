@@ -24,7 +24,7 @@ Hey folks! 👋
 
 Another video on using change data capture (often referred to as CDC), to hook up into the database transaction log, forwarding incoming entries to the outbox table.
 
-Previously, we used Debezium for this, but I was left wondering, what if I want to implement something similar with .NET? Turns out it's not super hard, with the help of Npgsql, which provides us with a APIs to hook into PostgreSQL Write Ahead Log, so we can read the incoming outbox messages and forward them to Kafka.
+Previously, we used Debezium for this, but I was left wondering, what if I want to implement something similar with .NET? Turns out it's not super hard, with the help of Npgsql, which provides us with APIs to hook into PostgreSQL Write Ahead Log, so we can read the incoming outbox messages and forward them to Kafka.
 
 {{< yt 4rnSzEd9jPI >}}
 

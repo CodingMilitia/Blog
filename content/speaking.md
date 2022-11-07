@@ -6,6 +6,16 @@ permalink: /speaking/
 
 Some public presentations I've had the opportunity of doing over the years.
 
+2022
+--
+{{% speaking-entry
+    title="Next-Level Console Apps With Spectre.Console"
+    date="2022/10/25"
+    imageUrl="/assets/speaking/2022-10-25-jetbrains-next-level-console-apps-with-spectreconsole.jpg"
+    link="https://www.youtube.com/watch?v=Bwo0Zr9MYXc" %}}
+    Got the opportunity to talk about the awesome Spectre.Console library at JetBrains .NET Days Online 2022 conference.
+    {{% /speaking-entry %}}
+
 2021
 --
 {{% speaking-entry

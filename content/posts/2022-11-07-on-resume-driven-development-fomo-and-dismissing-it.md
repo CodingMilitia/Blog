@@ -5,7 +5,7 @@ layout: post
 title: "On résumé-driven development, FOMO and dismissing it"
 summary: "I've had some of thoughts not exactly résumé-driven development, but more importantly, how engineers, can remain up to date and relevant in the job market, and a recent discussion on LinkedIn reminded me about it."
 images:
-- '/images/2022/11/07/on-resume-driven-development-fomo-and-ignoring-it.webp'
+- '/images/2022/11/07/on-resume-driven-development-fomo-and-ignoring-it.jpg'
 categories:
 - career
 tags:

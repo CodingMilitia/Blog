@@ -10,7 +10,7 @@ categories:
 - career
 tags:
 - smalltalk
-slug: 2023-01-19-the-insert-specific-tech-here-developer-yay-or-nay
+slug: the-insert-specific-tech-here-developer-yay-or-nay
 ---
 
 ## Intro

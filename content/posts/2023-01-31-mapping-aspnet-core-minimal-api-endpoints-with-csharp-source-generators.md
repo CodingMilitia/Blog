@@ -244,13 +244,13 @@ public static partial class EndpointRegistrationExtensions
 {
     public static partial IEndpointRouteBuilder RegisterEndpoints(this IEndpointRouteBuilder endpoints)
     { 
-				{{endpointRegistrations}}
+        {{endpointRegistrations}}
         return endpoints;
     }
 }
 """";
 
-				context.AddSource(
+        context.AddSource(
             $"{nameof(EndpointRegisterExtensionsGenerator)}.generated.cs", 
             SourceText.From(source, Encoding.UTF8));
     }

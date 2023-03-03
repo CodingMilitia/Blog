@@ -19,7 +19,7 @@ In this post/video we take a step back to look at some important infrastructure 
 
 For the walk-through you can check the next video, but if you prefer a quick read, skip to the written synthesis.
 
-{{< yt kc4PzBHK2fA >}}
+{{< youtube kc4PzBHK2fA >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

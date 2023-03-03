@@ -28,10 +28,10 @@ By now most of us have some idea of what serverless is, but this is a more compr
 ## ["What's new in Web Development with ASP.NET Core 2.1 : Build 2018"](https://youtu.be/SEgyZRau0rU)
 Overview with a few demos on the new features in ASP.NET Core 2.1
 
-{{< yt SEgyZRau0rU >}}
+{{< youtube SEgyZRau0rU >}}
 <br/>
 ## ["MICROSERVICE WEBSITES"](https://youtu.be/4KVOuQDIfmw)
 
-{{< yt 4KVOuQDIfmw >}}
+{{< youtube 4KVOuQDIfmw >}}
 <br/>
 Cyaz!

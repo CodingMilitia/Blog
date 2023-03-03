@@ -32,11 +32,11 @@ Quick walk-through on creating an application using Orleans 2.0 with .NET Core (
 ## ["Diagnosing issues in ASP.NET Core Applications - David Fowler & Damian Edwards"](https://youtu.be/RYI0DHoIVaA)
 Some common issues one can come across in ASP.NET Core applications.
 
-{{< yt RYI0DHoIVaA >}}
+{{< youtube RYI0DHoIVaA >}}
 <br/>
 ## ["How to Write Very Fast C# Code"](https://youtu.be/-H5oEgOdO6U)
 Continuing the trend of past magazines, some more performance tips on C# code.
 
-{{< yt -H5oEgOdO6U >}}
+{{< youtube -H5oEgOdO6U >}}
 <br/>
 Cya later!

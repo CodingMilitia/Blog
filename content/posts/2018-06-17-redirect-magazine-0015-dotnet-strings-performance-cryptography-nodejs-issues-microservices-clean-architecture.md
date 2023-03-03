@@ -30,13 +30,13 @@ Using cryptography correctly ain’t a walk in a park. I don't usually read much
 ## ["10 Things I Regret About Node.js - Ryan Dahl - JSConf EU 2018"](https://youtu.be/M3BM9TB-8yA)
 Interesting talk from the creator of Node.js on what he regrets on the platform and how he feels it could be improved.
 
-{{< yt M3BM9TB-8yA >}}
+{{< youtube M3BM9TB-8yA >}}
 
 <br/>
 ## ["Why you should never build Microservices - and why we do it anyway - Martin Larsen"](https://youtu.be/XjMTDb20O7M)
 The talk is a bit too slow paced, but it has some good reminders of the problems going with microservices may bring. It’s always good to remember it’s not just rainbows and butterflies.
 
-{{< yt XjMTDb20O7M >}}
+{{< youtube XjMTDb20O7M >}}
 
 <br/>
 # Podcasts

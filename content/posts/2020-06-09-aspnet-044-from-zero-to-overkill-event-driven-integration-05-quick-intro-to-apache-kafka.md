@@ -20,7 +20,7 @@ In this episode, we briefly introduce Apache Kafka, as we'll use it to implement
 
 **Note:** depending on your preference, you can check out the following video, otherwise, skip to the written version below.
 
-{{< yt tUzCxZdKEr4 >}}
+{{< youtube tUzCxZdKEr4 >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

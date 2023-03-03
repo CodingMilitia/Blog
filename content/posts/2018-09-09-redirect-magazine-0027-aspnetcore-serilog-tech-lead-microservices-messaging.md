@@ -31,12 +31,12 @@ Interesting article on some mistakes one might make when transitioning from a te
 ## ["GOTO 2018 • Pragmatic Event-Driven Microservices • Allard Buijze"](https://youtu.be/vSd_0zGxsIU)
 Another talk on microservices and communication patterns between them (I sure watch a lot of these don't I?! 😛)
 
-{{< yt vSd_0zGxsIU >}}
+{{< youtube vSd_0zGxsIU >}}
 <br/>
 ## ["Spotify's Reliable Event Delivery System"](https://youtu.be/XtzCDvoB82o)
 Nice talk on the event delivery system developed at Spotify. Interesting to know the challenges faced not only while building it, but also some that were discovered while operating it in production.
 
-{{< yt XtzCDvoB82o >}}
+{{< youtube XtzCDvoB82o >}}
 <br/>
 
 

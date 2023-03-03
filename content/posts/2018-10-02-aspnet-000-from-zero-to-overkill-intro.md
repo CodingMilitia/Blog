@@ -19,7 +19,7 @@ This post serves as an introduction to a new series of videos (and I'll try to a
 
 You can go through the intro video here, or scroll past it and read the written synthesis.
 
-{{< yt 4FXUrEY9PIQ >}}
+{{< youtube 4FXUrEY9PIQ >}}
 <br />
 ## Intro
 

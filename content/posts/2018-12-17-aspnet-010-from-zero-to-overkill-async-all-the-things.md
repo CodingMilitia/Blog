@@ -20,10 +20,10 @@ In this episode, we take a look at using async await in ASP.NET Core, why it's i
 For the walk-through you can check the next couple of videos, but if you prefer a quick read, skip to the written synthesis.
 
 Main video:
-{{< yt CGi1bQgaqwg >}}
+{{< youtube CGi1bQgaqwg >}}
 
 A short addendum added later:
-{{< yt bWyB0VFKeKA >}}
+{{< youtube bWyB0VFKeKA >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

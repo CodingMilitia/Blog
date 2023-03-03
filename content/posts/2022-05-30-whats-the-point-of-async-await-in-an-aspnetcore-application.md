@@ -23,7 +23,7 @@ I've been noticing in recent chats that folks have difficulty explaining why do 
 
 I hope that this video, very high-level and narrowly focused by design, can help in increasing the understanding of the importance of using these features.
 
-{{< yt COeg6UoPe_Q >}}
+{{< youtube COeg6UoPe_Q >}}
 
 Here are a couple of related links:
 

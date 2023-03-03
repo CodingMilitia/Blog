@@ -20,7 +20,7 @@ On the footsteps of the last episode, in this one we store the inferred events i
 
 **Note:** depending on your preference, you can check out the following video, otherwise, skip to the written version below.
 
-{{< yt G187r-rzzkk >}}
+{{< youtube G187r-rzzkk >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

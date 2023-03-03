@@ -24,19 +24,19 @@ Knowing I could do this would have been useful in the past... at least I know no
 ## ["Why I’m Not Leaving .NET - Mark Rendle"](https://youtu.be/qugNNPXQfCs)
 A tour on some features that make it working with .NET right now one of the best times it has ever been.
 
-{{< yt qugNNPXQfCs >}}
+{{< youtube qugNNPXQfCs >}}
 
 <br/>
 ## ["Microservices: How To Build Systems That Survive"](https://youtu.be/rNQR1HqfEl0)
 Some ideas on using microservices (or small components as it's referred to by the speaker) to build systems that aren't completely rebuilt every now and then, but rather replacing components as needed (eventually leading to a completely rewritten system code anyway).
 
-{{< yt rNQR1HqfEl0 >}}
+{{< youtube rNQR1HqfEl0 >}}
 
 <br/>
 ## ["GOTO 2018 • Old Is the New New • Kevlin Henney"](https://youtu.be/AbgsfeGvg3E)
 Kevlin Henney with another tour on our "new" software development ideas and paradigms, and where they came from.
 
-{{< yt AbgsfeGvg3E >}}
+{{< youtube AbgsfeGvg3E >}}
 
 <br/>
 Cyaz!

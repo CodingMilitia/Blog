@@ -28,7 +28,7 @@ Can't add much on this article, the title is self explanatory and the article is
 ## ["Data magic with the Elastic stack! - Aleksander Stensby"](https://youtu.be/t4BC2IQLL_0)
 Cool talk on some interesting capabilities of Elastic Search and Kibana.
 
-{{< yt t4BC2IQLL_0 >}}
+{{< youtube t4BC2IQLL_0 >}}
 <br/>
 
 

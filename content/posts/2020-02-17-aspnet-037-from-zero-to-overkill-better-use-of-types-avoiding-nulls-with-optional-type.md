@@ -19,7 +19,7 @@ In this post, we'll make use of a concept most commonly associated with function
 
 **Note:** depending on your preference, you can check out the following video, otherwise, skip to the written version below.
 
-{{< yt y-VmliKd2Ig >}}
+{{< youtube y-VmliKd2Ig >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

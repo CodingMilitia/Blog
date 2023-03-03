@@ -24,7 +24,7 @@ In this video, let's take a look at distributed tracing and how to get it workin
 
 Distributed tracing isn't a new subject by any means, but there are some more recent developments, namely in terms of standards like W3C Trace Context and OpenTelemetry, that are worth a look.
 
-{{< yt l1_i8p2hVlE >}}
+{{< youtube l1_i8p2hVlE >}}
 
 Here come a bunch of related links:
 

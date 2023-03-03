@@ -31,7 +31,7 @@ Nice point on learning different things in order to better grasp your main focus
 ## ["GOTO 2017 • Building Evolutionary Architectures • Patrick Kua"](https://youtu.be/8bEsNT7jdC4)
 Interesting talk on architect a project for change, some anti patterns when doing it, and when does it make sense to do it versus a simpler approach.
 
-{{< yt 8bEsNT7jdC4 >}}
+{{< youtube 8bEsNT7jdC4 >}}
 
 <br/>
 

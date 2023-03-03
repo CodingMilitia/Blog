@@ -23,7 +23,7 @@ In this episode, we'll take a look at redesigning an API that has been developed
 
 **Note:** depending on your preference, you can check out the following video or skip it to the written version below.
 
-{{< yt 3Nuc-rXxaEA >}}
+{{< youtube 3Nuc-rXxaEA >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

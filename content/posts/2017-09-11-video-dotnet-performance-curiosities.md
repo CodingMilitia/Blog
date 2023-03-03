@@ -16,7 +16,7 @@ tags:
 
 I added a new video, just talking about very simple stuff we do all the time that can have some impact on our applications performance, and the just as simple ways we can avoid these situations.
 
-{{< yt w2dIePAoEOs >}}
+{{< youtube w2dIePAoEOs >}}
 
 The source code for the sample is here at [GitHub](https://github.com/joaofbantunes/DotNetPerfCuriositiesSample)
 

@@ -30,11 +30,11 @@ Cool article on the importance (and joy) of learning new things, regardless of a
 ## ["C# 7 - Jon Skeet"](https://youtu.be/q13g_Zef8nk)
 Walk-through of the features introduced in C# 7 by the legend himself, Mr. Jon Skeet.
 
-{{< yt q13g_Zef8nk >}}
+{{< youtube q13g_Zef8nk >}}
 <br/>
 ## ["C# 7.1, and 7.2: The releases you didn't know you had - Bill Wagner"](https://youtu.be/IF1aPR6da3A)
 Some more C# language features, this time on 7.1 and 7.2, with a glimpse on 7.3 and 8. Be aware that the sound is low until about minute 22.
 
-{{< yt IF1aPR6da3A >}}
+{{< youtube IF1aPR6da3A >}}
 <br/>
 Cya later!

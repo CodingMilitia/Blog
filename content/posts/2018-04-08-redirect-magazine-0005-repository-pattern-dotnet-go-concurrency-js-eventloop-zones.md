@@ -34,16 +34,16 @@ An interesting read, not really for the performance tests, but mostly because of
 ## ["Philip Roberts: What the heck is the event loop anyway? | JSConf EU 2014"](https://youtu.be/8aGhZQkoFbQ)
 Nice little insight into what the JavaScript event loop is and an overview of the inner workings of the JS runtime.
 
-{{< yt 8aGhZQkoFbQ >}}
+{{< youtube 8aGhZQkoFbQ >}}
 <br/>
 ## ["Brian Ford - Zones - NG-Conf 2014"](https://youtu.be/3IqtmUscE_U)
 A quick talk on what's Zone.js, a JavaScript framework that's used behind the scenes in Angular to provide an execution context shared across async tasks.
 
-{{< yt 3IqtmUscE_U >}}
+{{< youtube 3IqtmUscE_U >}}
 <br/>
 ## ["GopherCon 2017: Kavya Joshi - Understanding Channels"](https://youtu.be/KBZlN0izeiY)
 Quick but informative dive into concurrency in Go, more specifically, how channels work.
 
-{{< yt KBZlN0izeiY >}}
+{{< youtube KBZlN0izeiY >}}
 <br/>
 Thanks for the visit!

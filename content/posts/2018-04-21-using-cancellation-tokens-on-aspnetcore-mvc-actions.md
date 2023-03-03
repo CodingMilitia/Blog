@@ -86,7 +86,7 @@ This may be useful in scenarios we're not doing async work that nevertheless tak
 
 ## Video walk-through <a id="video-walk-through" class="no-anchor-icon"></a>
 If you're more in a mood for video walk-through rather the reading, be my guest :)
-{{< yt KLAsOGyv9ZE >}}
+{{< youtube KLAsOGyv9ZE >}}
 <br/>
 Hope this was useful.
 Thanks for reading/watching, cyaz!

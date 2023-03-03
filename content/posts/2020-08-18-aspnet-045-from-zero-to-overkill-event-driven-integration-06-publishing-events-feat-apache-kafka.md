@@ -19,7 +19,7 @@ In this episode, we implement event publishing to Apache Kafka from the auth ser
 
 **Note:** depending on your preference, you can check out the following video, otherwise, skip to the written version below.
 
-{{< yt T2Dy7cH486c >}}
+{{< youtube T2Dy7cH486c >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

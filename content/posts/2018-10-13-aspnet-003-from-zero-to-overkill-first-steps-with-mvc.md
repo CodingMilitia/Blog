@@ -20,7 +20,7 @@ In this post/video we finally begin with some more serious but simple code (not 
 
 For the walk-through you can check the next video, but if you prefer a quick read, skip to the written synthesis.
 
-{{< yt zDMPwuUbOwc >}}
+{{< youtube zDMPwuUbOwc >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

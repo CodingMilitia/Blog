@@ -20,7 +20,7 @@ In this episode, we start looking at the code needed to integrate IdentityServer
 
 For the walk-through you can check out the next video, but if you prefer a quick read, skip to the written synthesis.
 
-{{< yt EWFsiLSWMjg >}}
+{{< youtube EWFsiLSWMjg >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

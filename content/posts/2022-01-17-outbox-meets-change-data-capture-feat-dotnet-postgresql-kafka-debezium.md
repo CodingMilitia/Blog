@@ -27,7 +27,7 @@ Using change data capture (often referred to as CDC), we hook up something to th
 
 In this example, we'll make use of Debezium, hooked up into a PostgreSQL database, forwarding messages to Kafka.
 
-{{< yt WcmLvoxs9ps >}}
+{{< youtube WcmLvoxs9ps >}}
 
 Here come a bunch of related links:
 

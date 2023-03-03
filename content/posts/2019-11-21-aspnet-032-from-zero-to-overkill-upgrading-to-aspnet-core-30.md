@@ -19,7 +19,7 @@ In this episode, we'll go through the main changes required to upgrade our curre
 
 For the walk-through you can check out the next video, but if you prefer reading, skip to the written synthesis.
 
-{{< yt pPAMeuoPsUE >}}
+{{< youtube pPAMeuoPsUE >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

@@ -31,6 +31,6 @@ Cool idea on depending on functions instead of interfaces (sample in C#).
 ## ["Sasha Goldshtein — PerfView: Measure and Improve Your App's Performance For Free"](https://youtu.be/eX644hod65s)
 Nice intro on using PerfView to profile .NET applications performance issues.
 
-{{< yt eX644hod65s >}}
+{{< youtube eX644hod65s >}}
 <br/>
 Thanks for another visit!

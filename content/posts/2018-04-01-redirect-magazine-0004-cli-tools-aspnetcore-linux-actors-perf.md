@@ -36,6 +36,6 @@ Some tips for getting up and running developing .NET applications (in this case,
 ## ["Federico Lois — Patterns for high-performance C#"](https://youtu.be/7GTpwgsmHgU)
 Another talk from the [RavenDB](https://ravendb.net/) guys on hardcore performance improvement techniques.
 
-{{< yt 7GTpwgsmHgU >}}
+{{< youtube 7GTpwgsmHgU >}}
 <br/>
 I'll be back, cyaz!

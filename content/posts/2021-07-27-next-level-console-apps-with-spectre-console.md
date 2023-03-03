@@ -36,7 +36,7 @@ The gist of it is, we have some data we want to migrate to a new format, for exa
 
 At the end, we'll get this:
 
-{{< yt XElWjKStWtQ >}}
+{{< youtube XElWjKStWtQ >}}
 
 ## Application context
 

@@ -20,7 +20,7 @@ Hey folks!
 
 Quick little video about an interesting new logging related feature coming in .NET 6, compile-time logging source generation, as well as related high-performance logging features, which were already present but probably not very well known.
 
-{{< yt uh0ZL-NBJYw >}}
+{{< youtube uh0ZL-NBJYw >}}
 
 Here come a bunch of related links:
 

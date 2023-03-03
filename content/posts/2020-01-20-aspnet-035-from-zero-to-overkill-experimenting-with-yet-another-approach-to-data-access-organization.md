@@ -19,7 +19,7 @@ In this episode, we'll take a look at (yet) another approach to organizing data 
 
 **Note:** depending on your preference, you can check out the following video or skip it to the written version below.
 
-{{< yt xSmZpZiSBgc >}}
+{{< youtube xSmZpZiSBgc >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

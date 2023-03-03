@@ -21,7 +21,7 @@ In this episode, we'll be creating Docker containers for our applications, with 
 
 For the walk-through you can check out the next video, but if you prefer a quick read, skip to the written synthesis.
 
-{{< yt GZmGTjAam6w >}}
+{{< youtube GZmGTjAam6w >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

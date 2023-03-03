@@ -24,12 +24,12 @@ Nice article on a typical system's main architecture components. Maybe a given f
 ## ["GOTO 2016 • Stability Patterns & Antipatterns • Michael T. Nygard"](https://youtu.be/VZePNGQojfA)
 Very interesting talk on systems stability and availability, some examples of weird things that happened from the speaker's experience, some patterns and anti-patterns.
 
-{{< yt VZePNGQojfA >}}
+{{< youtube VZePNGQojfA >}}
 <br/>
 ## ["How to Kotlin - from the Lead Kotlin Language Designer (Google I/O '18)"](https://youtu.be/6P20npkvcb8)
 Cool talk on Kotlin and how to take advantage of its more terse syntax compared to Java (and even C#). It's on my to try list for quite a bit, I'll eventually try it 😋
 
-{{< yt 6P20npkvcb8 >}}
+{{< youtube 6P20npkvcb8 >}}
 
 <br/>
 

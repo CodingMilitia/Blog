@@ -27,12 +27,12 @@ Excellent thorough article on testing anti-patterns, technology stack agnostic, 
 ## ["GOTO 2018 • Practicalities of Productionizing Distributed Systems • Jeff Hodges"](https://youtu.be/6RlbgpNKvaA)
 Nice talk on distributed systems, problems that might arise and ways of to figure them out.
 
-{{< yt 6RlbgpNKvaA >}}
+{{< youtube 6RlbgpNKvaA >}}
 <br/>
 ## ["Actors in clusters: why, when and how - Pawel Banka, Vagif Abilov"](https://youtu.be/MyP1VFHdxKY)
 Interesting talk on a real world example of using the actor model in .NET with Akka.NET and it's clustering module.
 
-{{< yt MyP1VFHdxKY >}}
+{{< youtube MyP1VFHdxKY >}}
 <br/>
 
 Cyaz!

@@ -20,7 +20,7 @@ Let's take a look at something that's been around for years, but maybe flew unde
 
 It's not free, but it might be worth checking out, to see if your project would benefit from it. You can try it with the available 14-day trial (which was what I used to test it and record this video).
 
-{{< yt iKyoR_qEsKM >}}
+{{< youtube iKyoR_qEsKM >}}
 
 A couple of related links:
 

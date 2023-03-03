@@ -19,7 +19,7 @@ In this episode, we start transforming the current application into a Web API, s
 
 For the walk-through you can check the next video, but if you prefer a quick read, skip to the written synthesis.
 
-{{< yt vxDvAGP9Bh8 >}}
+{{< youtube vxDvAGP9Bh8 >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

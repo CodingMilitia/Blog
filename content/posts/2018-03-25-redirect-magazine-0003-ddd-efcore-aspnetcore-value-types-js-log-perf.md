@@ -39,6 +39,6 @@ Interesting read on differences between logging and instrumentation.
 ## ["Oren Eini - Extreme Performance Architecture"](https://youtu.be/eRjWYjEf8n4)
 Very interesting talk on performance, using the case study of [RavenDB](https://ravendb.net/), written in C#.
 
-{{< yt eRjWYjEf8n4 >}}
+{{< youtube eRjWYjEf8n4 >}}
 <br/>
 Thanks for reading, cyaz!

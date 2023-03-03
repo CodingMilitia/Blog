@@ -32,7 +32,7 @@ In the spirit of the previous article, another set of recommendations for applic
 ## ["Ready for Readable Code? - John Papa"](https://youtu.be/56mETnrByBM)
 Focused on Angular but applies to pretty much any technology, some tips to get readable code.
 
-{{< yt 56mETnrByBM >}}
+{{< youtube 56mETnrByBM >}}
 <br/>
 ## ["Cloud-Scale Event Processing with the Reactive Extensions (Rx) - Bart De Smet"](https://vimeo.com/132192255)
 Really nice talk on using Rx (.NET) in cloud scenarios, showing a bunch of really cool stuff like composing an event stream query locally to run in the cloud.
@@ -42,6 +42,6 @@ Really nice talk on using Rx (.NET) in cloud scenarios, showing a bunch of reall
 ## ["ASYNC + AWAIT (or How To Write Syncronous Looking Code, Without The Wait)"](https://youtu.be/BDqZLfBFeGk)
 Using async await in JavaScript (very similar to .NET).
 
-{{< yt BDqZLfBFeGk >}}
+{{< youtube BDqZLfBFeGk >}}
 <br/>
 Cyaz!

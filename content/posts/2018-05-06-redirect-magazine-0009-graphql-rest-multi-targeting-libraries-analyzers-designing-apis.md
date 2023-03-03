@@ -33,6 +33,6 @@ Introduction to a set of analyzers to help with some of the latest C# performanc
 ## ["Designing Wonderful .NET APIs - James Newton-King"](https://youtu.be/F-Lv-Q5GcCE)
 Some ideas on how to properly design an API (with focus on .NET) by the guy responsible for JSON.NET.
 
-{{< yt F-Lv-Q5GcCE >}}
+{{< youtube F-Lv-Q5GcCE >}}
 <br/>
 Cyaz!

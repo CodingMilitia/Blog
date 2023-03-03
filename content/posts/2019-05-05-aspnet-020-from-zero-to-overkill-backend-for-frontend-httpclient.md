@@ -19,7 +19,7 @@ In this episode, we'll start building our backend for frontend, which will bridg
 
 For the walk-through you can check out the next video, but if you prefer a quick read, skip to the written synthesis.
 
-{{< yt A8ZCVzeqFtA >}}
+{{< youtube A8ZCVzeqFtA >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

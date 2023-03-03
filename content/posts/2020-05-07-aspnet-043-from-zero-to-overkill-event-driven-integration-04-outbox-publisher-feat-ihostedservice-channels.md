@@ -22,7 +22,7 @@ In this episode, we'll implement the outbox publisher, or better yet, two versio
 
 **Note:** depending on your preference, you can check out the following video, otherwise, skip to the written version below.
 
-{{< yt xnn6AnYyC5g >}}
+{{< youtube xnn6AnYyC5g >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

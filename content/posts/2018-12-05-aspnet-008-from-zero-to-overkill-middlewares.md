@@ -18,7 +18,7 @@ slug: aspnet-008-from-zero-to-overkill-middlewares
 In this episode we take a look at ASP.NET Core's middlewares, how to create them and use them in the request handling pipeline.
 For the walk-through you can check the next video, but if you prefer a quick read, skip to the written synthesis.
 
-{{< yt YU28TJWARg0 >}}
+{{< youtube YU28TJWARg0 >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

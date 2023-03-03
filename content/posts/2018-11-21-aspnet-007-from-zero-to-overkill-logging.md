@@ -19,7 +19,7 @@ In this episode we take a look at logging in ASP.NET Core, the builtin support a
 
 For the walk-through you can check the next video, but if you prefer a quick read, skip to the written synthesis.
 
-{{< yt jEx2PgUkLAE >}}
+{{< youtube jEx2PgUkLAE >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

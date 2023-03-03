@@ -20,7 +20,7 @@ In this episode, we'll take a look at BenchmarkDotNet, to explore the performanc
 
 For the walk-through you can check out the next video, but if you prefer reading, the written version is just below the video.
 
-{{< yt 8JOC8kN_WbU >}}
+{{< youtube 8JOC8kN_WbU >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

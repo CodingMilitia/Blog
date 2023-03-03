@@ -19,7 +19,7 @@ In this episode, we take a look at the integration problem we have between servi
 
 **Note:** depending on your preference, you can check out the following video, otherwise, skip to the written version below.
 
-{{< yt rRAO_LoEe4w >}}
+{{< youtube rRAO_LoEe4w >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

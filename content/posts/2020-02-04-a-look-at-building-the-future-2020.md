@@ -41,7 +41,7 @@ The idea here isn't really about those catchphrases we see a lot of times from s
 
 The idea is more on a fundamental level, improve the lives of people by creating things that actually bring value. A great example mentioned on stage was the [Be My Eyes](https://www.bemyeyes.com/) application, which enables volunteers and blind/low-vision people to be paired up, allowing the volunteers to help someone in need of assistance for something as basic as reading some instructions.
 
-{{< yt 6GRfFuWsjNU >}}
+{{< youtube 6GRfFuWsjNU >}}
 <br/>
 
 Even if we, as developers, don't do something as impactful as Be My Eyes, we can surely do more under the radar but still relevant things. Many times I wonder if the time I spend building the same LOB applications at work, or other weird things is time well spent. My hope is that given that most of what I do outside of work is public and (hopefully) educational, if the people that benefit from what I share do more relevant things, I end up having some more impactful contributions indirectly 🤞.

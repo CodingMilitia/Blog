@@ -19,7 +19,7 @@ In this episode, we get back to the authorization topic, playing a bit with role
 
 For the walk-through you can check out the next video, but if you prefer a quick read, skip to the written synthesis.
 
-{{< yt betgDb8AH8k >}}
+{{< youtube betgDb8AH8k >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

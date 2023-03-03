@@ -41,43 +41,43 @@ Nice talk for some history on the nice things we get on our programming language
 
 The talk is by [@kevlinhenney](https://twitter.com/kevlinhenney). Not the first I've seen of him, and they tend to be rather entertaining.
 
-{{< yt eEBOvqMfPoI >}}
+{{< youtube eEBOvqMfPoI >}}
 <br/>
 ### ["Answering Tricky JS Interview Questions"](https://youtu.be/MY0UBGX2FtA)
 
 Some JS shenanigans people may ask on interviews.
 
-{{< yt MY0UBGX2FtA >}}
+{{< youtube MY0UBGX2FtA >}}
 <br/>
 ### ["WHY You Should Build A Progressive Web App NOW"](https://youtu.be/0LOk_OgUWGM)
 
 Interesting stuff on the benefits of PWAs.
 
-{{< yt 0LOk_OgUWGM >}}
+{{< youtube 0LOk_OgUWGM >}}
 <br/>
 ### ["The Frontend Is A Full Stack"](https://youtu.be/0c9OC9NBsro)
 
 More on the amount of parts composing a modern frontend.
 
-{{< yt 0c9OC9NBsro >}}
+{{< youtube 0c9OC9NBsro >}}
 <br/>
 ### ["Beautiful REST & JSON APIs"](https://youtu.be/mZ8_QgJ5mbs)
 
 Now unto the backend, with some ideas on REST & JSON APIs.
 
-{{< yt mZ8_QgJ5mbs >}}
+{{< youtube mZ8_QgJ5mbs >}}
 <br/>
 ### ["[Ben Adams] - What's new for performance in .NET Core 2.0 @ CORESTART 2.0 / Prague 2017"](https://youtu.be/eOdhWTX3Ajk)
 
 Talk about .NET Core 2.0 performance goodies. We're almost in 2.1, but there's still interesting stuff to learn here.
 
-{{< yt eOdhWTX3Ajk >}}
+{{< youtube eOdhWTX3Ajk >}}
 <br/>
 ### ["Things I Was Unprepared For As A Lead Developer"](https://youtu.be/AwuqJ1qORag)
 
 Nice insights on a move into a lead developer role.
 
-{{< yt AwuqJ1qORag >}}
+{{< youtube AwuqJ1qORag >}}
 
 <br/>
 Thanks for stopping by, cyaz!

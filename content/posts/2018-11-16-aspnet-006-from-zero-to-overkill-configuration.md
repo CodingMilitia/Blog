@@ -19,7 +19,7 @@ In this episode we take a look at configuration in ASP.NET Core, the possible so
 
 For the walk-through you can check the next video, but if you prefer a quick read, skip to the written synthesis.
 
-{{< yt 2x6tMPcBJqY >}}
+{{< youtube 2x6tMPcBJqY >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

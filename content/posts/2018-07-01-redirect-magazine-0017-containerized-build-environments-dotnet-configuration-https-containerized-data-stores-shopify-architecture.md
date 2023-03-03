@@ -32,13 +32,13 @@ Don't be one of those that says "my site doesn't need HTTPS because of reasons"!
 ## ["GOTO 2018 • Distributed Data Stores on Kubernetes • Alena Hall"](https://youtu.be/SoaLsshJA8s)
 Very interesting talk on using distributed data stores in a container environment, in this case Kubernetes. Not something I've tried yet but it's a topic I was interested in from the first time I played around with containers.
 
-{{< yt SoaLsshJA8s >}}
+{{< youtube SoaLsshJA8s >}}
 
 <br/>
 ## ["GOTO 2017 • Shopify's Architecture to handle 80K RPS Celebrity Sales • Simon Eskildsen"](https://youtu.be/N8NWDHgWA28)
 Always cool to have a look at the architecture of large scale applications like Shopify, and how they handle the massive amounts of load they get.
 
-{{< yt N8NWDHgWA28 >}}
+{{< youtube N8NWDHgWA28 >}}
 
 <br/>
 Cyaz!

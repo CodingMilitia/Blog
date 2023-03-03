@@ -19,7 +19,7 @@ As we start implementing event-driven integration, the first thing we need to do
 
 **Note:** depending on your preference, you can check out the following video, otherwise, skip to the written version below.
 
-{{< yt suKSJ5DvynA >}}
+{{< youtube suKSJ5DvynA >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

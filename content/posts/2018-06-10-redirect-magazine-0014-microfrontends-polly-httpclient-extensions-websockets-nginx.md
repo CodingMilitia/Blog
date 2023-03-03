@@ -33,7 +33,7 @@ Nice write-up on some things to be aware of when using WebSockets with ASP.NET C
 ## ["Nginx for .NET Developers - Ian Cooper"](https://youtu.be/Z2dE7OpL0Fc)
 Interesting talk introducing using Nginx with ASP.NET Core. It has some slightly outdated bits, as Kestrel has seen some changes with the release of ASP.NET Core 2.1 (like having replaced libuv by default), but it's still a valid and interesting talk.
 
-{{< yt Z2dE7OpL0Fc >}}
+{{< youtube Z2dE7OpL0Fc >}}
 
 <br/>
 Cyaz!

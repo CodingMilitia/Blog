@@ -34,6 +34,6 @@ The new stuff in the latest version of Angular - I really should look at it more
 ## ["Meet the new stack for real-time web communication: ASP.NET Core SignalR"](https://youtu.be/u0_vkWYYXRc)
 Very cool demo of the new ASP.NET Core SignalR. Never really played that much with the old version but this one really seems cool and easy to use. Plus, Damian Edwards and David Fowler always make the best presentations!
 
-{{< yt u0_vkWYYXRc >}}
+{{< youtube u0_vkWYYXRc >}}
 <br/>
 Cyaz!

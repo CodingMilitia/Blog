@@ -14,7 +14,7 @@ slug: video-moving-the-blog-to-jekyll-and-hosting-on-netlify
 
 Just added a new video, talking about the blog's move from WordPress (and all that infrastructure I talked about in [these series of posts](/2016/10/05/getting-this-up-and-running-intro)) to a static site, generated using [Jekyll](https://jekyllrb.com/) and hosted using [Netlify](https://www.netlify.com/).
 <br/>
-{{< yt VikNk5NZzPg >}}
+{{< youtube VikNk5NZzPg >}}
 <br/>
 A side note that I forgot to mention in the video: when using Jekyll, we need to set the environment variable ```JEKYLL_ENV``` to ```production```, or stuff like Google Analytics and Disqus comments won't work, as it's disabled by default unless we're in production. Next you can see a screenshot of the Netlify screen where we can set environment variables.
 <br/>

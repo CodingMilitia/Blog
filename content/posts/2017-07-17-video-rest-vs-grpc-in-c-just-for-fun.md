@@ -19,7 +19,7 @@ I haven't posted in a while and today I felt like doing something different: a v
 
 I have no clue if this will turn out any good so, check it out and make sure to provide some feedback!
 
-{{< yt IknwHZV19HA >}}
+{{< youtube IknwHZV19HA >}}
 
 You can check out the source code here on [GitHub](https://github.com/joaofbantunes/RestVsGrpcSample).
 

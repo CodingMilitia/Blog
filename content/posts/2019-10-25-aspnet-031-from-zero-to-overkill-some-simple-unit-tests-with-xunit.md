@@ -20,7 +20,7 @@ In this episode, we'll take a little break from the explorations we've been doin
 
 For the walk-through you can check out the next video, but if you prefer a quick read, skip to the written synthesis.
 
-{{< yt ntNL2V45RtQ >}}
+{{< youtube ntNL2V45RtQ >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

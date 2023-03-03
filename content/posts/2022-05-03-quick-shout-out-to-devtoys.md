@@ -24,7 +24,7 @@ Additionally, it's open source and built with .NET, so you can also contribute i
 
 For non-Windows alternatives check out the links below.
 
-{{< yt FpPB3TCLjfw >}}
+{{< youtube FpPB3TCLjfw >}}
 
 Here are a couple of related links:
 

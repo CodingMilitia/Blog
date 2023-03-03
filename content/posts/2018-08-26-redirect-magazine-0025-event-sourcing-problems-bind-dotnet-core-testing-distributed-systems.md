@@ -29,7 +29,7 @@ Interesting to know how Bing is benefiting from .NET Core performance improvemen
 Really interesting talk (if a bit on the insane side) on creating deterministic simulations to test distributed systems.
 Note: the sound on the video has some issues, but it's not too bad.
 
-{{< yt 4fFDFbi3toc >}}
+{{< youtube 4fFDFbi3toc >}}
 <br/>
 
 

@@ -19,7 +19,7 @@ In this post/video we continue our look into base concepts of ASP.NET Core, in p
 
 For the walk-through you can check the next video, but if you prefer a quick read, skip to the written synthesis.
 
-{{< yt Dj8CKHokDsQ >}}
+{{< youtube Dj8CKHokDsQ >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

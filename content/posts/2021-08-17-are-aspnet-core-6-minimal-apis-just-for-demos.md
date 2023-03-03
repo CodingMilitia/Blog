@@ -21,7 +21,7 @@ While they seem pretty interesting to me and many others, some folks are not fan
 
 It's a bit of a different video, less coding and more talking about stuff, hope it's interesting.
 
-{{< yt LZsRb3a6MRQ >}}
+{{< youtube LZsRb3a6MRQ >}}
 
 Here come a bunch of related links:
 - [Todo REST API with ASP.NET Core Minimal APIs](https://github.com/davidfowl/CommunityStandUpMinimalAPI)

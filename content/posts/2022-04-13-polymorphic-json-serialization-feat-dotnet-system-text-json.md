@@ -22,7 +22,7 @@ Time for one more video on messing with System.Text.Json, this time to get polym
 
 This is a simple approach, that can certainly be further extended and improved, but has been working well in the projects I needed it.
 
-{{< yt 56e_JC2lxdo >}}
+{{< youtube 56e_JC2lxdo >}}
 
 Here are a couple of related links:
 

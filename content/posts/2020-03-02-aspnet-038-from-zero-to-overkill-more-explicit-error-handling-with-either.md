@@ -19,7 +19,7 @@ Following up on the last episode about the Optional type, we continue taking ins
 
 **Note:** depending on your preference, you can check out the following video, otherwise, skip to the written version below.
 
-{{< yt 3lAjAQ4J13Q >}}
+{{< youtube 3lAjAQ4J13Q >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

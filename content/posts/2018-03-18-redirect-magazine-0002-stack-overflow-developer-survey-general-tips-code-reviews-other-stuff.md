@@ -42,16 +42,16 @@ One might not agree with everything, but some good points are made.
 
 By [@dhh](https://twitter.com/dhh), creator of Ruby on Rails. **Beware, lots of the cursing.**
 
-{{< yt 9LfmrkyP81M >}}
+{{< youtube 9LfmrkyP81M >}}
 <br/>
 ## ["Code Reviews: Honesty, Kindness, Inspiration (aka A New Framework For Giving Feedback)"](https://youtu.be/KIxenMNETY8)
 Some ideas on code reviews, including a proposed process. Not really sure on the process part, but there are some interesting thoughts going on.
 
-{{< yt KIxenMNETY8 >}}
+{{< youtube KIxenMNETY8 >}}
 <br/>
 ## ["Reactive Programming: Why It Matters"](https://youtu.be/49dMGC1hM1o)
 Pretty straight forward intro to reactive programming.
 
-{{< yt 49dMGC1hM1o >}}
+{{< youtube 49dMGC1hM1o >}}
 <br/>
 Thanks for the visit, cyaz!

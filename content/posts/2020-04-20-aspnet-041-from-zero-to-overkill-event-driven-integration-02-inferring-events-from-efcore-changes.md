@@ -20,7 +20,7 @@ In this first step implementing event-driven integration between services, we'll
 
 **Note:** depending on your preference, you can check out the following video, otherwise, skip to the written version below.
 
-{{< yt rJDZiFJGP90 >}}
+{{< youtube rJDZiFJGP90 >}}
 
 The playlist for the whole series is [here](https://www.youtube.com/playlist?list=PLN0oN9Azm_MMAjk3nhRnmHdr1l0160Dhs).
 <br />

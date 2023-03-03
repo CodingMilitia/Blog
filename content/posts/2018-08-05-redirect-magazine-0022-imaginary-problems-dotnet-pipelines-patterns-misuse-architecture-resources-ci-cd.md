@@ -31,7 +31,7 @@ Nice reminder that just blindly following some rules/best practices doesn’t gu
 ## ["What are good ways to learn software architecture and systems design? "](https://dev.to/mikkpr/what-are-good-ways-to-learn-software-architecture-and-systems-design-38b9)
 Interesting discussion on architecture and systems design learning resources.
 <br/>
-## ["Creating a CI/CD pipeline for a .NET library"]({% post_url 2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-01-intro %})
+## ["Creating a CI/CD pipeline for a .NET library"]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-01-intro " >}})
 Shameless plug to a series of posts I shared this past week on creating a continuous integration/delivery pipeline for a .NET library, using tools freely available, although some are only free for open source projects, which is the case I'm presenting in the posts.
 <br/>
 

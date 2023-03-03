@@ -81,9 +81,9 @@ So, to sum this all up (post series wise), the end result is that when I make a 
 Also we saw how practical it is to define the builds in C# using Cake. The out of the box stuff works well and if something’s missing we can just code it!
 I’m pretty sure there are a lot of improvements that can be made, so if you have any feedback about the solution or the posts, send it over!
 
-- [Part 1 - Intro]({% post_url 2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-01-intro %})
-- [Part 2 - Defining the build with Cake and publishing to NuGet]({% post_url 2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-02-defining-the-build-with-cake-publish-nuget %})
-- [Part 3 - Building on AppVeyor and Travis CI]({% post_url 2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-03-building-on-appveyor-and-travis-ci %})
-- [Part 4 - Code coverage on Coveralls, badges and wrap up (this post)]({% post_url 2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-04-coverage-coveralls-badges-wrap-up %})
+- [Part 1 - Intro]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-01-intro " >}})
+- [Part 2 - Defining the build with Cake and publishing to NuGet]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-02-defining-the-build-with-cake-publish-nuget " >}})
+- [Part 3 - Building on AppVeyor and Travis CI]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-03-building-on-appveyor-and-travis-ci " >}})
+- [Part 4 - Code coverage on Coveralls, badges and wrap up (this post)]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-04-coverage-coveralls-badges-wrap-up " >}})
 
 The accompanying code for these posts is [here](https://github.com/CodingMilitia/GrpcExtensions/tree/july-blog-post) (tagged to be sure the code reflects what's written here in the future).

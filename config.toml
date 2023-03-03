@@ -2,49 +2,89 @@ baseURL = "https://blog.codingmilitia.com"
 languageCode = "en-us"
 title = "Coding Militia"
 description = "Code, headbang, grouch, repeat!"
-# theme = "ananke"
-pygmentsCodeFences = true
+theme = "PaperMod"
 enableRobotsTXT = true
 
 [params]
-  latest_posts_count = 10
-  favicon = "assets/favicon.png"
-  show_reading_time = true
-  images = ["assets/logo.jpg"]
-  description = "Code, headbang, grouch, repeat!"
+show_reading_time = true
+images = ["logo.png"]
+description = "Code, headbang, grouch, repeat!"
+author = "João Antunes"
+showtoc = true
+showCodeCopyButtons = true
 
-[author]
-  name = "João Antunes"
-  
+[params.profileMode]
+enabled = false
+
+[params.homeInfoParams]
+title = "Coding Militia"
 
 [permalinks]
-  posts = "/:year/:month/:day/:slug"
+posts = "/:year/:month/:day/:slug"
+
+[[menu.main]]
+identifier = "about"
+name = "About Me"
+url = "https://antunes.dev/about"
+weight = 10
+
+[[menu.main]]
+identifier = "archives"
+name = "Archives"
+url = "archives"
+weight = 20
+
+[[menu.main]]
+identifier = "tags"
+name = "Tags"
+url = "tags"
+weight = 30
 
 [outputFormats]
 [outputFormats.RSS]
-  mediatype = "application/rss"
-  baseName = "feed"
+mediatype = "application/rss"
+baseName = "feed"
 
 [markup]
-  [markup.highlight]
-    anchorLineNos = false
-    codeFences = true
-    guessSyntax = false
-    hl_Lines = ''
-    hl_inline = false
-    lineAnchors = ''
-    lineNoStart = 1
-    lineNos = true
-    # this needs to be false, otherwise horizontal scroll doesn't work with line numbers enabled
-    lineNumbersInTable = false
-    noClasses = true
-    noHl = false
-    style = 'monokai'
-    tabWidth = 4
+[markup.highlight]
+lineNos = true
+style = 'monokai'
 
-# allow raw html in markdown files
-[markup.goldmark.renderer]
-  unsafe= true
+[[params.socialIcons]]
+name = "other"
+title = "antunes.dev"
+url = "https://antunes.dev"
 
-[social]
-  twitter = "joaofbantunes"
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/joaofbantunes"
+
+[[params.socialIcons]]
+name = "youtube"
+url = "https://youtube.com/CodingMilitia"
+
+[[params.socialIcons]]
+name = "mastodon"
+url = "https://mastodon.social/@joaofbantunes"
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://linkedin.com/in/joaofbantunes"
+
+[[params.socialIcons]]
+name = "twitter"
+title = "Twitter (though I'm not using it much these days)"
+url = "https://twitter.com/joaofbantunes"
+
+[[params.socialIcons]]
+name = "instagram"
+url = "https://instagram.com/joaofbantunes"
+
+[[params.socialIcons]]
+name = "buymeacoffee"
+url = "https://buymeacoffee.com/joaofbantunes"
+
+[[params.socialIcons]]
+name = "cv"
+title = "Microsoft MVP"
+url = "https://mvp.microsoft.com/en-us/PublicProfile/5003375"

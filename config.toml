@@ -51,6 +51,11 @@ lineNos = true
 style = 'monokai'
 
 [[params.socialIcons]]
+name = "rss"
+title = "feed"
+url = "feed.xml"
+
+[[params.socialIcons]]
 name = "other"
 title = "antunes.dev"
 url = "https://antunes.dev"

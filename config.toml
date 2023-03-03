@@ -7,7 +7,7 @@ enableRobotsTXT = true
 
 [params]
 show_reading_time = true
-images = ["logo.jpg"]
+images = ["logo.png"]
 description = "Code, headbang, grouch, repeat!"
 author = "João Antunes"
 showtoc = true

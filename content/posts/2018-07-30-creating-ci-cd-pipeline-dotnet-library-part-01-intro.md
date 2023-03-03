@@ -22,7 +22,7 @@ slug: creating-ci-cd-pipeline-dotnet-library-part-01-intro
 
 {{< embedded-image "/images/2018/07/30/ci-post-image.jpg" "CI/CD" >}}
 
-In this series of posts I want to talk about creating a CI/CD (continuous integration/continuous delivery) pipeline for a .NET library that’s distributed as a NuGet package. As reference, I’ll use the [GrpcExtensions](https://github.com/CodingMilitia/GrpcExtensions) library that I talked about in a previous [post]({% post_url 2018-05-19-dotnetifying-grpc-sane-edition %}).
+In this series of posts I want to talk about creating a CI/CD (continuous integration/continuous delivery) pipeline for a .NET library that’s distributed as a NuGet package. As reference, I’ll use the [GrpcExtensions](https://github.com/CodingMilitia/GrpcExtensions) library that I talked about in a previous [post]({{< ref "2018-05-19-dotnetifying-grpc-sane-edition " >}}).
 
 Given we’re in this new world of cross platform .NET, I want to build and test stuff in more than just Windows, so I’m using [AppVeyor](https://www.appveyor.com/) and [Travis CI](https://travis-ci.org/), where the former handles building on Windows and the latter handles the Linux and MacOS work.
 
@@ -38,10 +38,10 @@ I’m assuming the reader understands what I’m talking about from the very sma
 Going with a series of posts instead of a giant one to be (hopefully) easier to read. 
 The following is the list of posts for easy navigation.
 
-- [Part 1 - Intro (this post)]({% post_url 2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-01-intro %})
-- [Part 2 - Defining the build with Cake and publishing to NuGet]({% post_url 2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-02-defining-the-build-with-cake-publish-nuget %})
-- [Part 3 - Building on AppVeyor and Travis CI]({% post_url 2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-03-building-on-appveyor-and-travis-ci %})
-- [Part 4 - Code coverage on Coveralls, badges and wrap up]({% post_url 2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-04-coverage-coveralls-badges-wrap-up %})
+- [Part 1 - Intro (this post)]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-01-intro " >}})
+- [Part 2 - Defining the build with Cake and publishing to NuGet]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-02-defining-the-build-with-cake-publish-nuget " >}})
+- [Part 3 - Building on AppVeyor and Travis CI]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-03-building-on-appveyor-and-travis-ci " >}})
+- [Part 4 - Code coverage on Coveralls, badges and wrap up]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-04-coverage-coveralls-badges-wrap-up " >}})
 
 The accompanying code for these posts is [here](https://github.com/CodingMilitia/GrpcExtensions/tree/july-blog-post) (tagged to be sure the code reflects what's written here in the future).
 

@@ -34,7 +34,7 @@ Introductory article on using Git merge. Although I normally also develop using 
 ## ["Spotify Engineering Culture Full Video (Agile Enterprise Transition with Scrum and Kanban)"](https://www.youtube.com/watch?v=R2o-Xm3UVjs)
 Very cool video on Spotify's engineering culture a colleague shared some time ago, but I only remembered to add to the magazine today, when reading the article on Git merge.
 
-{% youtube "https://www.youtube.com/watch?v=R2o-Xm3UVjs" %}
+{{< yt R2o-Xm3UVjs >}}
 <br/>
 ## ["Entity Framework Core 2.1: Simple, Powerful Data Access for .NET : Build 2018"](https://youtu.be/k55kDH_ixrQ)
 A look at what's new in Entity Framework Core 2.1 (including some sweet performance improvements) and what's next.

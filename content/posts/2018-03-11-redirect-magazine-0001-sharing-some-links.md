@@ -21,7 +21,7 @@ tags:
 slug: redirect-magazine-0001-sharing-some-links
 ---
 
-Haven't shared anything in a while, but that doesn't mean I'm not up to something (I even recorded a video based on the [Docker + Angular + ASP.NET Core]({% post_url 2018-01-31-quick-intro-to-docker-and-docker-compose-angular-aspnetcore-postgres-app %}) post, but the sound turned out crappy and I scratched that).
+Haven't shared anything in a while, but that doesn't mean I'm not up to something (I even recorded a video based on the [Docker + Angular + ASP.NET Core]({{< ref "2018-01-31-quick-intro-to-docker-and-docker-compose-angular-aspnetcore-postgres-app " >}}) post, but the sound turned out crappy and I scratched that).
 
 To try to avoid these times I don't share something I created, I thought of starting a (hopefully) weekly "magazine" linking to some stuff I've been reading/watching.
 

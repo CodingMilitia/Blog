@@ -6,12 +6,14 @@ theme = "PaperMod"
 enableRobotsTXT = true
 
 [params]
-show_reading_time = true
 images = ["logo.png"]
 description = "Code, headbang, grouch, repeat!"
 author = "João Antunes"
 showtoc = true
 showCodeCopyButtons = true
+showReadingTime = true
+showWordCount = true
+#showBreadCrumbs = true
 
 [params.profileMode]
 enabled = false

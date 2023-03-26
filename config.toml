@@ -67,6 +67,11 @@ name = "github"
 url = "https://github.com/joaofbantunes"
 
 [[params.socialIcons]]
+name = "microsoft"
+title = "Microsoft MVP"
+url = "https://mvp.microsoft.com/en-us/PublicProfile/5003375"
+
+[[params.socialIcons]]
 name = "youtube"
 url = "https://youtube.com/CodingMilitia"
 
@@ -88,10 +93,13 @@ name = "instagram"
 url = "https://instagram.com/joaofbantunes"
 
 [[params.socialIcons]]
-name = "buymeacoffee"
-url = "https://buymeacoffee.com/joaofbantunes"
+name = "sessionize"
+url = "https://sessionize.com/joaofbantunes"
 
 [[params.socialIcons]]
-name = "cv"
-title = "Microsoft MVP"
-url = "https://mvp.microsoft.com/en-us/PublicProfile/5003375"
+name = "pluralsight"
+url = "https://app.pluralsight.com/profile/joaofbantunes"
+
+[[params.socialIcons]]
+name = "buymeacoffee"
+url = "https://buymeacoffee.com/joaofbantunes"

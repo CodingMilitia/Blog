@@ -1,4 +1,4 @@
-baseURL = "https://blog.codingmilitia.com"
+baseURL = "https://blog.codingmilitia.com/"
 languageCode = "en-us"
 title = "Coding Militia"
 description = "Code, headbang, grouch, repeat!"

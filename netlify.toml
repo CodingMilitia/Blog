@@ -8,6 +8,20 @@ to = "https://www.youtube.com/watch?v=082C6EdNvus"
 status = 302
 force = true
 
+# Plausible proxy - https://plausible.io/docs/proxy/introduction & https://plausible.io/docs/proxy/guides/netlify
+[[redirects]]
+from = "/p/js/script.js"
+to = "https://plausible.io/js/script.js"
+status = 200
+force = true
+
+# Plausible proxy - https://plausible.io/docs/proxy/introduction & https://plausible.io/docs/proxy/guides/netlify
+[[redirects]]
+from = "/p/api/event"
+to = "https://plausible.io/api/event"
+status = 200
+force = true
+
 # youtube shortcut
 [[redirects]]
 from = "/youtube"

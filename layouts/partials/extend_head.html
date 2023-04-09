@@ -1,12 +1,6 @@
 {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env
 "production") }}
-<script
-  async
-  defer
-  data-domain="blog.codingmilitia.com"
-  src="https://stats.blog.codingmilitia.com/js/index.outbound-links.js"
-></script>
-
+<script defer data-domain="blog.codingmilitia.com" data-api="/p/api/event" src="/p/js/script.js"></script>
 <script
   data-name="BMC-Widget"
   data-cfasync="false"

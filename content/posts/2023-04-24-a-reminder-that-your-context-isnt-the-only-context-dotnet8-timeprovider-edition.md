@@ -12,6 +12,7 @@ categories:
 tags:
 - smalltalk
 - testing
+slug: a-reminder-that-your-context-isnt-the-only-context-dotnet8-timeprovider-edition
 ---
 
 ## Intro

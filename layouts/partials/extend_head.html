@@ -15,6 +15,26 @@
 ></script>
 {{ end }}
 
+{{/* show Giscus only on posts */}}
+{{ if (eq $.Layout "post") }}
+<script src="https://giscus.app/client.js"
+        data-repo="codingmilitia/blog"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkxMTY1ODk2NDk="
+        data-category="Blog comments"
+        data-category-id="DIC_kwDOBvMEUc4CWCSv"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="dark_high_contrast"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+{{ end }}
+
 {{/* need to do this to process the images used for thumbnails in previews (e.g. in social media), otherwise they won't be processed and we'll just get a 404 */}}
 {{/* this is only needed because I didn't put those images in the static folder, to try to optimize them, but the result is having to do this hack 😅 */}}
 {{ $has_images := (isset .Params.images 0) }}

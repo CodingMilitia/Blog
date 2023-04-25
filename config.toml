@@ -1,4 +1,4 @@
-baseURL = "https://blog.codingmilitia.com/"
+#baseURL = "https://blog.codingmilitia.com/" # with this set, it doesn't use relative urls when testing in Netlify
 languageCode = "en-us"
 title = "Coding Militia"
 description = "Code, headbang, grouch, repeat!"
@@ -14,6 +14,7 @@ showCodeCopyButtons = true
 showReadingTime = true
 showWordCount = true
 #showBreadCrumbs = true
+comments = true
 
 [params.profileMode]
 enabled = false

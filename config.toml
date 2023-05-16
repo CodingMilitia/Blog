@@ -34,13 +34,13 @@ weight = 10
 [[menu.main]]
 identifier = "archives"
 name = "Archives"
-url = "archives"
+url = "/archives"
 weight = 20
 
 [[menu.main]]
 identifier = "tags"
 name = "Tags"
-url = "tags"
+url = "/tags"
 weight = 30
 
 [outputFormats]

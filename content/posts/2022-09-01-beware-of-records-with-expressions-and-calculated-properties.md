@@ -1,6 +1,7 @@
 ---
 author: João Antunes
 date: 2022-09-01 18:30:00+01:00
+lastmod: 2023-06-02 08:00:00+01:00
 layout: post
 title: "Beware of records, with expressions and calculated properties"
 summary: "I’ve been using C# records a lot since the feature was introduced. However, when using them, we really need to understand how they work, otherwise we might face unexpected surprises."
@@ -158,7 +159,7 @@ YetAnotherRecordWithLazilyCalculatedPropertyAndCopyCtor
 YetAnotherRecordWithLazilyCalculatedPropertyAndCopyCtor
 {
     SomeValue = This is another some value,SomeCalculate
-    dValue = This is another some value *calculated*
+    SomeCalculatedValue = This is another some value *calculated*
 }
 ```
 
@@ -166,9 +167,11 @@ It does! Because we create a new instance of the lazy backing field, the value i
 
 Note that this wouldn’t work if it wasn’t for the lazy, as at the time the copy constructor is invoked, we still don’t know what the new `SomeValue` will be.
 
+> Update: as pointed out in a comment to this post, note that this approach breaks the record's out of the box equality characteristics, as the automatically implemented `Equals` and `GetHashCode` use all the properties and fields, including private ones. It wasn't important in my use case, as I wasn't using equality, but if it is for your use case, you might need to override `Equals` and `GetHashCode` (and now we have an even less terse record definition 😭😭).
+
 ## Other options
 
-There are, of course, other options to solve this issue. 
+There are, of course, other options to solve this issue.
 
 We could, for example, declare `SomeValue` outside of the primary constructor and make it have a getter only, instead of the getter and init setter that’s generated when using the primary constructor. The side effect would be that we no longer can use a `with` expression to clone the record and change `SomeValue`.
 

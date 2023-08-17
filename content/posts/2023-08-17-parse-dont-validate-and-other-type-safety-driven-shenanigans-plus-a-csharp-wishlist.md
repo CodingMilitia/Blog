@@ -1,6 +1,7 @@
 ---
 author: João Antunes
 date: 2023-08-17 09:00:00+01:00
+lastmod: 2023-08-17 14:30:00+01:00
 layout: post
 title: "\"Parse, don't validate\" and other type safety driven shenanigans (plus a C# wishlist)"
 summary: "Making use of the type system is something I feel should be important when working in a strongly typed language like C#. However, I don't feel like that's the case, and I would love for the language to push folks in the direction of creating more robust programs, where the compiler provides more help in proving the correctness of the code."
@@ -22,6 +23,8 @@ In the last few years, one of the things I've been more interested in, is to try
 C# is a strongly typed language, however it has major deficits in some areas, which makes it harder to write safer code, pushing folks into writing less robust code, just to avoid the complexity. While it's certainly better than dynamically typed languages, sometimes it feels not good enough.
 
 PS: I love C#, so I'm not bashing for the sake of bashing, I'm bashing because it feels like, with a couple of improvements to the language, we could benefit not only from the nice things C# already has, but also be able to more easily write safer and more robust code.
+
+PS2: I know many of the problems I mention here could be solved if I just moved to F# (while new ones would arise). That's not the point of the post. I'm well aware of the existence and awesomeness of F#, but this post is specifically about some pains I feel with C#, and would love to see addressed. If you feel some of my pains, and are willing to move to a different language within the same platform, do consider F# 😉.
 
 ## Parse, don't validate
 

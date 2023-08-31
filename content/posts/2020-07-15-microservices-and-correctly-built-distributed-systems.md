@@ -18,7 +18,7 @@ slug: microservices-and-correctly-built-distributed-systems
 
 One of these days I was watching a [talk about microservices](https://www.youtube.com/watch?v=7uvK4WInq6k) and found it really interesting (and kind of funny) when the presenter showed InfoQ's architecture and design trends graph, focusing on two things: "microservices" and "correctly built distributed systems".
 
-![/assets/2020/07/15/infoq-architecture-and-design-2020-q2.png](/assets/2020/07/15/infoq-architecture-and-design-2020-q2.png)
+{{< embedded-image "/images/2020/07/15/infoq-architecture-and-design-2020-q2.png" "Architecture and Design 2020 Q2 Graph" >}}
 
 (source: [https://www.infoq.com/articles/architecture-trends-2020/](https://www.infoq.com/articles/architecture-trends-2020/))
 

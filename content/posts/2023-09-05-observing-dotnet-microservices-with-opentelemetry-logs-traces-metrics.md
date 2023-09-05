@@ -677,6 +677,7 @@ Finally, if you get into exploring OpenTelemetry, you'll notice that .NET, along
 
 Relevant links:
 
+- [Sample code](https://github.com/joaofbantunes/DotNetMicroservicesObservabilitySample)
 - [Exploring distributed tracing with ASP NET Core 6](https://youtu.be/l1_i8p2hVlE)
 - [OpenTelemetry](https://opentelemetry.io)
 - [OpenTelemetry - Trace Semantic Conventions - Messaging Systems](https://opentelemetry.io/docs/specs/otel/trace/semantic_conventions/messaging/)

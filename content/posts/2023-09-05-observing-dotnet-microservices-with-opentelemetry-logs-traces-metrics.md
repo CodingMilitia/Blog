@@ -1,6 +1,7 @@
 ---
 author: João Antunes
 date: 2023-09-05 08:10:00+01:00
+lastmod: 2023-09-05 20:00:00+01:00
 layout: post
 title: 'Observing .NET microservices with OpenTelemetry - logs, traces and metrics'
 summary: 'Observability has been one of the hot topics, with the increasing complexity of knowing what is going on in our applications. Fortunately, .NET has been investing in making things easier with OpenTelemetry.'
@@ -228,7 +229,7 @@ public async Task PublishAsync(StuffHappened @event)
 {
     using var activity = EventPublisherActivitySource.StartActivity(
         _kafkaSettings.Topic,
-            @event);
+        @event);
 
     await _producer.ProduceAsync(
         _kafkaSettings.Topic,
@@ -258,7 +259,6 @@ public static class EventPublisherActivitySource
 {
     private const string Name = "event publish";
     private const ActivityKind Kind = ActivityKind.Producer;
-    private const string ServerTag = "server";
     private const string EventTopicTag = "event.topic";
     private const string EventIdTag = "event.id";
     private const string EventTypeTag = "event.type";
@@ -276,12 +276,15 @@ public static class EventPublisherActivitySource
             return null;
         }
 
-        var activity = ActivitySource.StartActivity(Name, Kind);
-        activity?.SetTag(ServerTag, Environment.MachineName);
-        activity?.SetTag(EventTopicTag, topic);
-        activity?.SetTag(EventIdTag, @event.Id);
-        activity?.SetTag(EventTypeTag, @event.GetType().Name);
-        return activity;
+        return ActivitySource.StartActivity(
+            name: Name,
+            kind: Kind,
+            tags: new KeyValuePair<string, object?>[]
+            {
+                new (EventTopicTag, topic),
+                new (EventIdTag, @event.Id),
+                new (EventTypeTag, @event.GetType().Name),
+            });
     }
 
     public static Headers EnrichHeadersWithTracingContext(Activity? activity, Headers headers)
@@ -353,7 +356,6 @@ public class EventConsumerActivitySource
 {
     private const string Name = "event handle";
     private const ActivityKind Kind = ActivityKind.Consumer;
-    private const string ServerTag = "server";
     private const string EventTopicTag = "event.topic";
     private const string EventIdTag = "event.id";
     private const string EventTypeTag = "event.type";
@@ -389,7 +391,6 @@ public class EventConsumerActivitySource
             parentContext.ActivityContext,
             tags: new KeyValuePair<string, object?>[]
             {
-                new(ServerTag, Environment.MachineName),
                 new(EventTopicTag, topic),
                 new(EventIdTag, @event.Id),
                 new(EventTypeTag, @event.GetType().Name),
@@ -692,3 +693,10 @@ Relevant links:
 - [Kubernetes Metrics Reference](https://kubernetes.io/docs/reference/instrumentation/metrics/)
 
 Thanks for stopping by, cyaz! 👋
+
+> Update 2023-09-05 20:00:00+01:00
+>
+> A couple of tweaks to starting activity, based on a couple of pointers from Martin Thwaites [on Mastodon](https://hachyderm.io/@Martindotnet/111012279774395865) (thanks Martin!)
+>
+> - Remove duplicated instance tags from activities - besides the fact they were duplicated in the activities and the resources, they should be part of the resources, as they're general attributes, not specific to an activity (making things more efficient in the process)
+> - Passing the tags in when invoking ActivitySource.StartActivity instead of setting later with `SetTag`, as this allows to them to be considered for [sampling](https://opentelemetry.io/docs/concepts/sampling/) (a topic I didn't touch in this post)

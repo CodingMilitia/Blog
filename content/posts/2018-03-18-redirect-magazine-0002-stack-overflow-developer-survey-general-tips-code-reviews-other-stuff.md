@@ -31,7 +31,7 @@ Yes, it’s an ironic title :) Some good advice over here.
 ## ["The Git Rebase Introduction I Wish I'd Had "](https://dev.to/maxwell_dev/the-git-rebase-introduction-i-wish-id-had)
 Quick intro to git rebase, as some people seem afraid of using it :).
 <br/>
-## ["My couple of cents on remote work"]({{< ref "2018-03-15-my-couple-of-cents-on-remote-work " >}})
+## ["My couple of cents on remote work"]({{< ref "2018-03-15-my-couple-of-cents-on-remote-work" >}})
 (Shameless self promotion) post I written this week on some ideas I feel are less talked about in regards of working remotely.
 <br/>
 # Videos

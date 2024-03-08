@@ -127,9 +127,9 @@ As I only want the coverage to be published from one environment and I’m using
 # Outro
 On the Cake and NuGet part we're good to go, on the next post, we'll play around with AppVeyor and Travis CI to run the build in the cloud.
 
-- [Part 1 - Intro]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-01-intro " >}})
-- [Part 2 - Defining the build with Cake and publishing to NuGet (this post)]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-02-defining-the-build-with-cake-publish-nuget " >}})
-- [Part 3 - Building on AppVeyor and Travis CI]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-03-building-on-appveyor-and-travis-ci " >}})
-- [Part 4 - Code coverage on Coveralls, badges and wrap up]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-04-coverage-coveralls-badges-wrap-up " >}})
+- [Part 1 - Intro]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-01-intro" >}})
+- [Part 2 - Defining the build with Cake and publishing to NuGet (this post)]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-02-defining-the-build-with-cake-publish-nuget" >}})
+- [Part 3 - Building on AppVeyor and Travis CI]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-03-building-on-appveyor-and-travis-ci" >}})
+- [Part 4 - Code coverage on Coveralls, badges and wrap up]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-04-coverage-coveralls-badges-wrap-up" >}})
 
 The accompanying code for these posts is [here](https://github.com/CodingMilitia/GrpcExtensions/tree/july-blog-post) (tagged to be sure the code reflects what's written here in the future).

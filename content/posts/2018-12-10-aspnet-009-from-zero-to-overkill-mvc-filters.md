@@ -28,7 +28,7 @@ Like introduced, given the previous episode focused on ASP.NET Core's middleware
 
 Going back to the [docs](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/filters?view=aspnetcore-2.1) for an image that illustrates how the filters fit in the overall picture.
 
-![filter pipeline overview](/assets/2018/12/10/filter-pipeline-overview.png)
+{{< embedded-image "/images/2018/12/10/filter-pipeline-overview.png" "filter pipeline overview" >}}
 
 There are 5 types of filters, as seen in the [docs](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/filters?view=aspnetcore-2.1):
 
@@ -40,7 +40,7 @@ There are 5 types of filters, as seen in the [docs](https://docs.microsoft.com/e
 
 The following image (from the [docs](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/filters?view=aspnetcore-2.1) again) shows some more details of how the filters play together. 
 
-![filter pipeline closeup](/assets/2018/12/10/filter-pipeline-closeup.png)
+{{< embedded-image "/images/2018/12/10/filter-pipeline-closeup.png" "filter pipeline closeup" >}}
 
 In this post we'll only use action and exception filters, as well as the options we have on how to implement and use them. The other filters should be similar in terms of implementation and usage, having of course different reasons to go with them.
 

@@ -232,7 +232,7 @@ The idea is the same, a DTO with the query parameters and a query handler. In th
 
 ## Pros and cons
 
-![but why](/assets/2020/01/20/but-why.webp)
+{{< embedded-image "/images/2020/01/20/but-why.webp" "but why" >}}
 
 I can imagine some looking at this and thinking, why? Overengineering! Again!
 

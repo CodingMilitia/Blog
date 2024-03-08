@@ -17,7 +17,7 @@ slug: dotnetifying-grpc-sane-edition
 
 {{< embedded-image "/images/2018/05/19/csharp-grpc.jpg" "C# + gRPC" >}}
 
-So last time I played around with gRPC (and wrote about it) I went a little bit insane with a different way of implementing and invoking gRPC services in .NET (you can take a look at it [here]({{< ref "2018-04-15-dotnetifying-grpc " >}})). Although it was a fun experiment and I could even see it being used, the reality is it’s better to stick closer to the official and supported way of doing things. With that in mind, this time I went on the completely opposite direction, so it’ll work more as a guide of how to integrate gRPC in a .NET application. I built a library out of this, but it’s really so simple, it’ll be mostly for me to use, as others will probably avoid adding an extra external dependency for not so much added value.
+So last time I played around with gRPC (and wrote about it) I went a little bit insane with a different way of implementing and invoking gRPC services in .NET (you can take a look at it [here]({{< ref "2018-04-15-dotnetifying-grpc" >}})). Although it was a fun experiment and I could even see it being used, the reality is it’s better to stick closer to the official and supported way of doing things. With that in mind, this time I went on the completely opposite direction, so it’ll work more as a guide of how to integrate gRPC in a .NET application. I built a library out of this, but it’s really so simple, it’ll be mostly for me to use, as others will probably avoid adding an extra external dependency for not so much added value.
 
 The accompanying code for this post is [here](https://github.com/CodingMilitia/GrpcExtensions/tree/may-blog-post).
 

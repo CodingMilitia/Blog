@@ -61,7 +61,7 @@ Ok, with the concepts and desired features laid out as best as possible for this
 
 The following is something of the sort of a very high level architecture. It’ll most certainly change along the way (for the best hopefully) but I think can summarize the initial ideas.
 
-![High level architecture](/assets/2018/10/06/architecture-overview.jpg)
+{{< embedded-image "/images/2018/10/06/architecture-overview.jpg" "High level architecture" >}}
 
 We can see basically an organization of the various components, where even if we’re over-engineering the solution, we don’t want the components to be like CRUD services, but be as much as possible self contained services that can implement a specific feature set.
 

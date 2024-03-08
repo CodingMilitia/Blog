@@ -36,7 +36,7 @@ Let's begin with something that, I guess, seems super obvious at first glance, b
 
 Let's think about the user registered event. Our first thought is to go to `Register.cshtml.cs`, and the line after we check if registration was successful, we invoke something like `eventBus.PublishAsync(new UserRegisteredEvent(/*...*/))`. Seems simple enough, right? But is it good enough? What if something happens in that time frame? Or if the event bus is down at that time? Let's see a simple diagram, to try to visualize this a bit more clearly.
 
-![[fail to publish event](/assets/2020/04/13/e040-fail-to-publish-event.png)](/assets/2020/04/13/e040-fail-to-publish-event.png)
+{{< embedded-image "/images/2020/04/13/e040-fail-to-publish-event.png" "fail to publish event" >}}
 
 As we were discussing, and now looking at the diagram, what happens if the server goes done in `(1)`, or maybe if there is a connectivity issue when publishing the event, in `(2)`? In such cases, the registration succeeds, as the information is persisted to the database, but the event is never sent, so the other services will never know a new user was registered.
 
@@ -56,7 +56,7 @@ In either case (SQL or NoSQL) , we'll have another intervenient in the process, 
 
 An illustration of this whole process would be something like:
 
-![[transactional outbox pattern](/assets/2020/04/13/e040-outbox-pattern.png)](/assets/2020/04/13/e040-outbox-pattern.png)
+{{< embedded-image "/images/2020/04/13/e040-outbox-pattern.png" "transactional outbox pattern" >}}
 
 Taking this approach, gives us the at-least-once delivery guarantee we require. It's not perfect though, not only because it's more work to do, but also because, as mentioned, it gives us at-least-once delivery guarantee, not exactly once. Not having exactly once delivery comes from the fact that the outbox publisher might fail to delete the events from the database after publishing to the bus, causing it to try again at a later time.
 

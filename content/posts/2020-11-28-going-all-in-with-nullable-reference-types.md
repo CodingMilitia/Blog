@@ -42,7 +42,7 @@ The `enable` value enables all the features, but there are alternative values, n
 
 With things enabled, we now get warnings if, for example, we try to assign a `null` value to a `string` variable that's not marked as nullable (with a `?` suffix):
 
-{{< embedded-image "/images/2020/11/28/01-warnings-after-enabling-nrts.png" "/assets/2020/11/28/01-warnings-after-enabling-nrts.png" >}}
+{{< embedded-image "/images/2020/11/28/01-warnings-after-enabling-nrts.png" "warnings after enabling nullable reference types" >}}
 
 ## Treat related warnings as errors
 
@@ -66,7 +66,7 @@ A code analysis rule set is what I've been using lately. Recently discovered a s
 
 In summary, in Visual Studio we can create a "Code Analysis Rule Set". When we open the file we get a list of rules and their severity, which we can change as we choose.
 
-{{< embedded-image "/images/2020/11/28/02-code-analysis-rule-set.png" "/assets/2020/11/28/02-code-analysis-rule-set.png" >}}
+{{< embedded-image "/images/2020/11/28/02-code-analysis-rule-set.png" "code analysis rule set" >}}
 
 As you can see in the image, we can even search for the rule text, so in this case I search for "null", to try and find all the rules related with NRTs.
 
@@ -141,7 +141,7 @@ There is another way to use this `WarningsAsErrors` element though, making thing
 
 Regardless of which of these approaches we go with, we should now see an error instead of a warning (noted by the red squiggles), so we need to handle it.
 
-{{< embedded-image "/images/2020/11/28/03-nrts-warning-treated-as-error.png" "/assets/2020/11/28/03-nrts-warning-treated-as-error.png" >}}
+{{< embedded-image "/images/2020/11/28/03-nrts-warning-treated-as-error.png" "nullable reference types warning treated as error" >}}
 
 ## Less null checks and guard clauses, but still some
 
@@ -189,7 +189,7 @@ At first glance, it looks ok, we're checking the size (no `null` check as it's n
 
 Now the problem arises when we use this method:
 
-{{< embedded-image "/images/2020/11/28/04-try-pattern-error-when-we-know-its-not-null.png" "/assets/2020/11/28/04-try-pattern-error-when-we-know-its-not-null.png" >}}
+{{< embedded-image "/images/2020/11/28/04-try-pattern-error-when-we-know-its-not-null.png" "try pattern error when we know its not null" >}}
 
 As we can see in the image, we get an error because we're using the `firstThreeLetters` variable without checking if it's `null`, which we know it isn't because the method returned `true`. We could use the null-forgiving operator, but it's a bit annoying to do so in such scenarios.
 
@@ -207,7 +207,7 @@ public static bool TryGetFirstThreeLetters(
 
 And when we use it, we now have no compiler errors:
 
-{{< embedded-image "/images/2020/11/28/05-try-pattern-no-longer-causes-error.png" "/assets/2020/11/28/05-try-pattern-no-longer-causes-error.png" >}}
+{{< embedded-image "/images/2020/11/28/05-try-pattern-no-longer-causes-error.png" "try pattern no longer causes error" >}}
 
 Be sure to check out the [docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/attributes/nullable-analysis), as this is just one example, but it illustrates that we have ways to keeps things simpler, without being forced into `null` checks and `!` everywhere (although there we certainly be such cases as well).
 

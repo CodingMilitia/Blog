@@ -29,7 +29,7 @@ As we’ve seen, the basic idea of middlewares is that they work like in a chain
 
 The following is a good image to illustrate the behavior, from the official [docs](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/index?view=aspnetcore-2.1).
 
-![request handling pipeline](/assets/2018/12/05/request-delegate-pipeline.png)
+{{< embedded-image "/images/2018/12/05/request-delegate-pipeline.png" "request handling pipeline" >}}
 
 Middlewares can range from simple things just to enrich the request handling pipeline - adding some headers, filter unauthorized access, collect some metrics, etc - to implementing a complete request handling logic - an endpoint for health checks, serving static files, MVC 🙂, etc. 
 

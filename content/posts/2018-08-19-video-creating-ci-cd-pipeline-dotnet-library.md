@@ -26,25 +26,25 @@ Just in case people aren't in a read mood and want to check out how to build a C
 
 {{< youtube g3O2oF-7zLo >}}
 <br/>
-Original post: [Part 1 - Intro]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-01-intro " >}})
+Original post: [Part 1 - Intro]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-01-intro" >}})
 <br/>
 ## ["Creating a CI/CD pipeline for a .NET library: Part 2 - Building with Cake and publishing to NuGet"](https://youtu.be/rZwfSW5zMew)
 
 {{< youtube rZwfSW5zMew >}}
 <br/>
-Original post: [Part 2 - Defining the build with Cake and publishing to NuGet]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-02-defining-the-build-with-cake-publish-nuget " >}})
+Original post: [Part 2 - Defining the build with Cake and publishing to NuGet]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-02-defining-the-build-with-cake-publish-nuget" >}})
 <br/>
 ## ["Creating a CI/CD pipeline for a .NET library: Part 3 - Building on AppVeyor and Travis CI"](https://youtu.be/AuSQomXoPcs)
 
 {{< youtube AuSQomXoPcs >}}
 <br/>
-Original post: [Part 3 - Building on AppVeyor and Travis CI]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-03-building-on-appveyor-and-travis-ci " >}})
+Original post: [Part 3 - Building on AppVeyor and Travis CI]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-03-building-on-appveyor-and-travis-ci" >}})
 <br/>
 ## ["Creating a CI/CD pipeline for a .NET library: Part 4 - Code coverage on Coveralls and build badges"](https://youtu.be/JnfXNbGckqQ)
 
 {{< youtube JnfXNbGckqQ >}}
 <br/>
-Original post: [Part 4 - Code coverage on Coveralls, badges and wrap up]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-04-coverage-coveralls-badges-wrap-up " >}})
+Original post: [Part 4 - Code coverage on Coveralls, badges and wrap up]({{< ref "2018-07-30-creating-ci-cd-pipeline-dotnet-library-part-04-coverage-coveralls-badges-wrap-up" >}})
 <br/>
 
 The accompanying code for these posts is [here](https://github.com/CodingMilitia/GrpcExtensions/tree/july-blog-post) (tagged to be sure the code reflects what's written here in the future).

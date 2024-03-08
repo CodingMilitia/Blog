@@ -71,7 +71,7 @@ As you can see, the first thing the middleware does is register a callback on `c
 
 If we now make a request to the application and check the headers, among other that are already put there by ASP.NET Core, we can see the added `X-Powered-By`.
 
-![Response header added by middleware](/assets/2018/10/27/response-header-added-by-middleware.jpg)
+{{< embedded-image "/images/2018/10/27/response-header-added-by-middleware.jpg" "Response header added by middleware" >}}
 
 #### Using static files
 Now that we made a really simple middleware, let's take a look at another builtin one, the static files middleware. In the `Configure` method, before our custom response header middleware, we simply add the line `app.UseStaticFiles();`. Now we can add a `wwwroot` folder to the root of the web application project, and any static file we put there. This is just the default place from which the middleware retrieves files from, we can configure other folders or even providers that fetch images from a database, external image providers, etc.

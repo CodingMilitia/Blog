@@ -48,7 +48,7 @@ dotnet tool install Nuke.GlobalTool --global
 
 Then we can use it to get things initialized. It provides a nice little wizard, to guide us through the setup.
 
-{{< embedded-image "/images/2020/10/24/01-initial-nuke-setup.png" "/assets/2020/10/24/01-initial-nuke-setup.png" >}}
+{{< embedded-image "/images/2020/10/24/01-initial-nuke-setup.png" "initial nuke setup" >}}
 
 Going through the choices I made:
 
@@ -65,7 +65,7 @@ Going through the choices I made:
 
 After finishing the setup, we can take a look at the solution folder to see what went on:
 
-{{< embedded-image "/images/2020/10/24/02-initial-setup-created-files.png" "/assets/2020/10/24/02-initial-setup-created-files.png" >}}
+{{< embedded-image "/images/2020/10/24/02-initial-setup-created-files.png" "initial setup created files" >}}
 
 We can see the expected new build project (`_build.csproj` and other related files), but we can also see that some additional files were added to the repository's root.
 
@@ -75,7 +75,7 @@ I'm not going to paste the contents of the `build.xyz` files here, but in short,
 
 We'll see the generated build definition in a minute, but we can run it immediately and see the result, by executing `.\build.ps1` (because I'm on Windows using PowerShell right now).
 
-{{< embedded-image "/images/2020/10/24/03-running-the-generated-build.png" "/assets/2020/10/24/03-running-the-generated-build.png" >}}
+{{< embedded-image "/images/2020/10/24/03-running-the-generated-build.png" "running the generated build" >}}
 
 ## Customizing the build
 
@@ -146,7 +146,7 @@ As we can see, `Compile` `DependsOn` `Restore`, so even though the `Main` method
 
 If we want to target a specific step, we simply pass its name when running the build script.
 
-{{< embedded-image "/images/2020/10/24/04-running-a-build-targeting-a-specific-step.png" "/assets/2020/10/24/04-running-a-build-targeting-a-specific-step.png" >}}
+{{< embedded-image "/images/2020/10/24/04-running-a-build-targeting-a-specific-step.png" "running a build targeting a specific step" >}}
 
 ### Adding some more steps
 
@@ -192,7 +192,7 @@ You'll notice the `NoRestore` and `NoBuild` being used many times. As we already
 
 With the new steps ready, we can head to the console and target them with a `.\build.ps1 pack`.
 
-{{< embedded-image "/images/2020/10/24/05-running-a-build-targeting-the-new-steps.png" "/assets/2020/10/24/05-running-a-build-targeting-the-new-steps.png" >}}
+{{< embedded-image "/images/2020/10/24/05-running-a-build-targeting-the-new-steps.png" "running a build targeting the new steps" >}}
 
 Now, besides what we already had, we can see the test results and that the NuGet packages were created and stored in the previously defined artifacts directory.
 

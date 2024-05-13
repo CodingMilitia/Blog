@@ -1,6 +1,7 @@
 ---
 author: João Antunes
 date: 2024-05-13 08:55:00+01:00
+update_date: 2024-05-13 09:20:00+01:00
 layout: post
 title: Where are my traces? (weird .NET meets OpenTelemetry gotcha)
 summary: Quick post about a weird gotcha I found when using distributed tracing with OpenTelemetry .NET, in a system where not all services have otel setup
@@ -65,6 +66,8 @@ If touching potentially dozens of services (or more, depending on how applicatio
 
 Gotta study the topic a bit more to try and figure out additional work around options. Let me know if you have any other ideas on how to work around this issue.
 
+Update: if we have APIs that are public facing, in which case we probably don't want to propagate inbound trace context, we can disable it. [This article](https://martinjt.me/2023/07/07/trace-propagation-and-public-api-endpoints-in-net-part-1-disable-all/) explains how to do it.
+
 ## Outro
 
 That's it for this quick post. As mentioned, this post is more of a reminder for myself, but if someone faces the same issue, hopefully can find this post before wasting as many hours on it as I did.
@@ -80,5 +83,6 @@ Relevant links:
 - [Sample code](https://github.com/joaofbantunes/OpenTelemetryDotnetTracePropagationGotchaSample)
 - [W3C Trace Context](https://www.w3.org/TR/trace-context/)
 - [OpenTelemetry Docs - Sampling](https://opentelemetry.io/docs/concepts/sampling/)
+- [Trace Propagation and Public API Endpoints in .NET – Part 1 (Disable All)](https://martinjt.me/2023/07/07/trace-propagation-and-public-api-endpoints-in-net-part-1-disable-all/)
 
 Thanks for stopping by, cyaz! 👋

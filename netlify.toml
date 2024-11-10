@@ -36,17 +36,17 @@ to = "https://twitch.tv/joaofbantunes"
 status = 302
 force = true
 
-# twitter shortcut
+# linkedin shortcut
 [[redirects]]
-from = "/twitter"
-to = "https://twitter.com/joaofbantunes"
+from = "/linkedin"
+to = "https://linkedin.com/in/joaofbantunes"
 status = 302
 force = true
 
-# linkedin shortcut
+# bluesky shortcut
 [[redirects]]
-from = "/twitch"
-to = "https://linkedin.com/in/joaofbantunes"
+from = "/bsky"
+to = "https://bsky.app/profile/joao.antunes.dev"
 status = 302
 force = true
 

@@ -81,12 +81,12 @@ name = "mastodon"
 url = "https://mastodon.social/@joaofbantunes"
 
 [[params.socialIcons]]
-name = "linkedin"
-url = "https://linkedin.com/in/joaofbantunes"
+name = "bluesky"
+url = "https://bsky.app/profile/joao.antunes.dev"
 
 [[params.socialIcons]]
-name = "instagram"
-url = "https://instagram.com/joaofbantunes"
+name = "linkedin"
+url = "https://linkedin.com/in/joaofbantunes"
 
 [[params.socialIcons]]
 name = "sessionize"

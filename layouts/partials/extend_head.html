@@ -1,5 +1,10 @@
-{{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env
-"production") }}
+{{- $cssSource := "scss/custom.scss" }}
+{{- $cssTarget := "css/custom.css" }}
+{{- $cssOptions := dict "targetPath" $cssTarget "outputStyle" "compressed" }}
+{{- $style := resources.Get $cssSource | toCSS $cssOptions }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+{{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production") }}
 <script defer data-domain="blog.codingmilitia.com" data-api="/p/api/event" src="/p/js/script.js"></script>
 <script
   data-name="BMC-Widget"

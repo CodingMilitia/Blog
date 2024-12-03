@@ -139,6 +139,7 @@ We can even see when there's an eager refresh, in which case the API responds im
 {{< embedded-image "/images/2024/11/17/03-trace-eager-refresh.png" "Trace with eager refresh" >}}
 
 In the trace, note that not only is a tag included in the span, indicating there was an eager refresh, but also that the top level span took only around 3ms, as the factory continued to execute in the background, after the response was already returned to the API client.
+
 ### Keeping an eye on the cache hit ratio
 
 Besides tracing, FusionCache also defines metrics we can export using the OpenTelemetry protocol, allowing us to query them and extract useful insights. When talking about a cache, I'd say the likely most helpful insights we can get are the amount of cache hits and misses, so we can calculate the cache hit ratio.

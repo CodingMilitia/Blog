@@ -25,6 +25,9 @@ title = "Coding Militia"
 [permalinks]
 posts = "/:year/:month/:day/:slug"
 
+[markup.goldmark.renderer]
+unsafe = true # allow raw HTML in markdown
+
 [[menu.main]]
 identifier = "about"
 name = "About Me"

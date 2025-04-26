@@ -2,7 +2,7 @@
     HUGO_ENV = "production"
 
 [build.environment]
-  HUGO_VERSION = "v0.138.0"
+  HUGO_VERSION = "v0.147.0"
 
 # Annoy the bots
 [[redirects]]

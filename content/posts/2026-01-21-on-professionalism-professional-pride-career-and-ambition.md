@@ -109,6 +109,6 @@ I wrote this post, as always, based on my experiences and observations, not just
 
 At the end of the day, all I wanted to say is, don't half-ass your work, whole-ass it!
 
-Don't think I ever saw another bit of text with so many "half-ass" thrown in there. If I say half-ass, two more times, that's ten half-asses in this half-assed post (nobody will get this Limp Bizkit reference, but I'll keep it anyway 😂).
+As a parting note: don't think I ever saw another bit of text with so many "half-ass" thrown in there. If I say half-ass, two more times, that's ten half-asses in this half-assed post (nobody will get this Limp Bizkit reference, but I'll keep it anyway 😂).
 
 Thanks for stopping by, cyaz! 👋

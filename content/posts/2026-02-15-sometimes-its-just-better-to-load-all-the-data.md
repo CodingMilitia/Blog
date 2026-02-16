@@ -3,7 +3,7 @@ author: João Antunes
 date: 2026-02-15 17:00:00+00:00
 layout: post
 title: Sometimes it's just better to load "all" the data
-summary: A quick post on the importance of understanding the problem at hand, and how sometimes, it's just better to load "all" the data into memory to work with it, instead of trying to fetch one thing at a time, as its need arises.
+summary: A quick post on adapting your approach to the problem at hand, not just following the same ideas indiscriminately.
 images:
   - /images/2026/02/15/sometimes-its-just-better-to-load-all-the-data.png
 categories:

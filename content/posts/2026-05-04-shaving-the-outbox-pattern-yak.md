@@ -2,7 +2,7 @@
 author: João Antunes
 date: 2026-05-04 18:50:00+01:00
 layout: post
-title: '[Video] On .NET Live - Shaving the Outbox Pattern Yak'
+title: '[Video] On .NET Live - Shaving the outbox pattern yak'
 summary: Got the chance to talk about the transactional outbox pattern "On .NET Live", sharing the recording here if anyone's interested.
 images:
   - /images/2026/05/04/shaving-the-outbox-pattern-yak.jpg

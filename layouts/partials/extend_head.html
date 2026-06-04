@@ -4,6 +4,10 @@
 {{- $style := resources.Get $cssSource | toCSS $cssOptions }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
+{{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production") }}
+<script defer data-domain="blog.codingmilitia.com" data-api="/p/api/event" src="/p/js/script.js"></script>
+{{ end }}
+
 {{/* show Giscus only on posts */}}
 {{ if (eq $.Layout "post") }}
 <script src="https://giscus.app/client.js"

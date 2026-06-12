@@ -1,6 +1,7 @@
 ---
 author: João Antunes
 date: 2026-06-04 21:30:00+01:00
+update_date: 2026-06-12 09:00:00+01:00
 layout: post
 title: 'Funny, but not so funny, Buy Me a Coffee story'
 summary: 'Well, this is a different and unexpected post, with a story of I what I can only describe as carelessness and incompetence at Buy Me a Coffee '
@@ -26,6 +27,16 @@ I built IPTV applications a long time ago, when my job was building them for a l
 Now, was this an automated process looking blindly for keywords, or some eager moderation team member that has no idea that IPTV isn’t synonymous with pirating? No clue, but in either case, doesn’t make any sense. Maybe with the football world cup imminent (or some other sports event) they are more sensitive to these kinds of things, though that doesn’t justify this sort of mistake.
 
 So far, I've not heard back from them after trying to explain to them their mistake. I replied not really because I care about the account, if I'm honest all of this has made me want to cancel it anyway, but this sort of carelessness for the users makes me mad. Given the radio silence, I assume they'll close my account soon, but I'll update this post with the outcome.
+
+---
+
+Quick update: they didn't close the account, but they refunded the only "coffee" anyone bought me, and they didn't reply to my last email either.
+
+Given all of this, I closed the account myself, because this is just unacceptable. Cherry on top, closing the account via the website or app doesn't work, so I had to email them to ask them to close it...
+
+Given all of this, if you were thinking about using Buy Me a Coffee for yourself, I'd recommend against it (though I'm sure other folks might have had better experiences).
+
+---
 
 Now, to close with the funny(ish) bit.
 
